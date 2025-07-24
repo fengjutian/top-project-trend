@@ -15,3 +15,15 @@ slorber:
   title: Docusaurus maintainer
   url: https://sebastienlorber.com
   image_url: https://github.com/slorber.png
+
+fengjutian:
+  name: fengjutian
+  title: Ex-Meta Staff Engineer, Co-founder GreatFrontEnd
+  url: https://github.com/fengjutian
+  image_url: https://avatars.githubusercontent.com/u/10450635?v=4
+  page: true
+  socials:
+    x: ''
+    linkedin: ''
+    github: fengjutian
+    newsletter: https://github.com/fengjutian
