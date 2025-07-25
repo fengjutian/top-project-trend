@@ -17,3 +17,13 @@ To get started with Docusaurus on Vercel, you can use the [Docusaurus CLI](https
 ```shell
 npx create-docusaurus@latest my-website classic
 ```
+
+
+# 部署
+```shell
+$env:USE_SSH="true"
+yarn deploy
+
+$env:GIT_USER="你的GitHub用户名"
+yarn deploy
+```
