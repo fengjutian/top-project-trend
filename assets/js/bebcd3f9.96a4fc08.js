@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[2465],{1152:e=>{e.exports=JSON.parse('{"label":"\u6731\u96c0\u4eff\u5b8b","permalink":"/top-project-trend/blog/tags/\u6731\u96c0\u4eff\u5b8b","allTagsPath":"/top-project-trend/blog/tags","count":1}')}}]);

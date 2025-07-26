@@ -14,9 +14,18 @@
             <guid>zhoukan1</guid>
             <pubDate>Thu, 24 Jul 2025 00:00:00 GMT</pubDate>
             <description><![CDATA[朱雀仿宋]]></description>
-            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="朱雀仿宋">朱雀仿宋<a class="hash-link" href="#朱雀仿宋" title="Direct link to heading">​</a></h2><h3 class="anchor anchorWithStickyNavbar_LWe7" id="简介">简介：<a class="hash-link" href="#简介" title="Direct link to heading">​</a></h3><p>朱雀仿宋/朱雀宋朝/Zhuque Fangsong: An open-source Fangsong typeface project</p><h1></h1><h3 class="anchor anchorWithStickyNavbar_LWe7" id="地址">地址：<a class="hash-link" href="#地址" title="Direct link to heading">​</a></h3><p><a href="https://github.com/TrionesType/zhuque" target="_blank" rel="noopener noreferrer">https://github.com/TrionesType/zhuque</a></p><h1>【文章】</h1><h2 class="anchor anchorWithStickyNavbar_LWe7" id="windows-任务管理器的四种替代品英文">Windows 任务管理器的四种替代品（英文）<a class="hash-link" href="#windows-任务管理器的四种替代品英文" title="Direct link to heading">​</a></h2><p><a href="https://www.xda-developers.com/powerful-tools-should-use-instead-task-manager/" target="_blank" rel="noopener noreferrer">https://www.xda-developers.com/powerful-tools-should-use-instead-task-manager/</a></p>]]></content:encoded>
-            <category>hello</category>
-            <category>docusaurus</category>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="朱雀仿宋">朱雀仿宋<a class="hash-link" href="#朱雀仿宋" title="Direct link to heading">​</a></h2><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/zhuque-308843821876d028e225a7008f3f9b65.png" width="1280" height="640" class="img_ev3q">
+简介：
+朱雀仿宋/朱雀宋朝/Zhuque Fangsong: An open-source Fangsong typeface project</p><p>地址：
+<a href="https://github.com/TrionesType/zhuque" target="_blank" rel="noopener noreferrer">https://github.com/TrionesType/zhuque</a></p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="windows-任务管理器的四种替代品英文">Windows 任务管理器的四种替代品（英文）<a class="hash-link" href="#windows-任务管理器的四种替代品英文" title="Direct link to heading">​</a></h2><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/windows-59c11e33a592662c7905ff005e40bc5c.png" width="2280" height="1283" class="img_ev3q"></p><p><a href="https://www.xda-developers.com/powerful-tools-should-use-instead-task-manager/" target="_blank" rel="noopener noreferrer">https://www.xda-developers.com/powerful-tools-should-use-instead-task-manager/</a></p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="rustscan">RustScan<a class="hash-link" href="#rustscan" title="Direct link to heading">​</a></h2><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/rustscan-91ed37b004b8310d7ac2c4187e46426d.png" width="550" height="528" class="img_ev3q">
+RustScan 是一个基于 Rust 语言的端口扫描工具，它的速度非常快，支持多线程扫描，并且可以扫描指定范围内的端口。</p><p>地址：
+<a href="https://github.com/bee-san/RustScan" target="_blank" rel="noopener noreferrer">https://github.com/bee-san/RustScan</a></p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="tsx">tsx<a class="hash-link" href="#tsx" title="Direct link to heading">​</a></h2><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/tsx-0a714937aa16e77d021f5f6bce0df31e.png" width="700" height="380" class="img_ev3q">
+tsx 是一个用于运行 TypeScript 的命令行工具，它可以直接运行 TypeScript 文件而无需编译。</p><p>地址：
+<a href="https://github.com/privatenumber/tsx" target="_blank" rel="noopener noreferrer">https://github.com/privatenumber/tsx</a></p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="oss-rebuild">oss-rebuild<a class="hash-link" href="#oss-rebuild" title="Direct link to heading">​</a></h2><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/image-b4ae1bba189a100d6bdfaa2ed9158e6c.png" width="800" height="434" class="img_ev3q">
+谷歌本周推出的一项服务，用来验证网上的 NPM、PyPI、Rust 的软件包，是否跟源码构建出来的完全一样，保证软件供应链安全。</p><p>地址：<a href="https://oss-rebuild.dev/" target="_blank" rel="noopener noreferrer">https://oss-rebuild.dev/</a></p>]]></content:encoded>
+            <category>朱雀仿宋</category>
+            <category>RustScan</category>
+            <category>tsx</category>
         </item>
         <item>
             <title><![CDATA[Welcome]]></title>
