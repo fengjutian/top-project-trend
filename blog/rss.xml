@@ -4,10 +4,22 @@
         <title>tip-project-trend Blog</title>
         <link>https://fengjutian.github.io/top-project-trend/blog</link>
         <description>tip-project-trend Blog</description>
-        <lastBuildDate>Thu, 24 Jul 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 27 Jul 2025 04:04:06 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[技术周刊二]]></title>
+            <link>https://fengjutian.github.io/top-project-trend/blog/zhoukan2</link>
+            <guid>zhoukan2</guid>
+            <pubDate>Sun, 27 Jul 2025 04:04:06 GMT</pubDate>
+            <description><![CDATA[Vue Bits]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="vue-bits">Vue Bits<a class="hash-link" href="#vue-bits" title="Direct link to heading">​</a></h2><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/vuebits-778c93626abe75224a72efa60d2807af.png" width="3839" height="1865" class="img_ev3q">
+一个超棒的Vue UI 动效库</p><p>地址：<a href="https://vue-bits.dev/" target="_blank" rel="noopener noreferrer">https://vue-bits.dev/</a></p>]]></content:encoded>
+            <category>Vue Bits</category>
+            <category>RustScan</category>
+            <category>tsx</category>
+        </item>
         <item>
             <title><![CDATA[技术周刊一]]></title>
             <link>https://fengjutian.github.io/top-project-trend/blog/zhoukan1</link>
