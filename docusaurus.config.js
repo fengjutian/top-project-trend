@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'tip-project-trend',
-  tagline: 'Dinosaurs are cool',
+  title: 'fengjutian 技术周刊',
+  tagline: '分享最新技术趋势和开源项目',
   url: 'https://fengjutian.github.io',
   baseUrl: '/top-project-trend/',
   onBrokenLinks: 'throw',
