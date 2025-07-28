@@ -5,89 +5,65 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import styles from './index.module.css';
 
-function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
-  return (
-    <header className={clsx('hero', styles.heroBanner)}>
-      <div className="container">
-        <div className={styles.heroContent}>
-          <img
-            src={require('@site/static/img/dinosaur-cute.svg').default}
-            alt="logo"
-            className={styles.heroLogo}
-          />
-          <h1 className={styles.gradientText}>Top Project Trend</h1>
-          <p className={styles.heroSubtitle}>
-            发现、追踪和分享最值得关注的开源项目与技术趋势。
-          </p>
-          <div className={styles.heroActions}>
-            <Link className={clsx('button', styles.mainButton)} to="/blog">
-              立即探索
-            </Link>
-            <a
-              className={clsx('button', styles.ghButton)}
-              href="https://github.com/fengjutian/top-project-trend"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span role="img" aria-label="github">🌟</span> GitHub
-            </a>
-          </div>
-        </div>
-      </div>
-    </header>
-  );
-}
-
-function HomepageCards() {
-  // 极简卡片区块
-  const cards = [
-    {
-      icon: '🦕',
-      title: '开源项目周榜',
-      desc: '每周精选开源项目，涵盖前端、后端、AI、工具库等领域。',
-    },
-    {
-      icon: '⚡',
-      title: '技术趋势追踪',
-      desc: '追踪技术热点，聚焦社区讨论与创新实践。',
-    },
-    {
-      icon: '🛠️',
-      title: '开发者工具',
-      desc: '推荐高效开发工具，提升你的生产力。',
-    },
-    {
-      icon: '🌍',
-      title: '全球社区',
-      desc: '连接全球开发者，分享经验与灵感。',
-    },
-  ];
-  return (
-    <section className={styles.cardsSection}>
-      <div className="container">
-        <div className={styles.cardsGrid}>
-          {cards.map((card, idx) => (
-            <div className={styles.card} key={idx}>
-              <div className={styles.cardIcon}>{card.icon}</div>
-              <div className={styles.cardTitle}>{card.title}</div>
-              <div className={styles.cardDesc}>{card.desc}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
+const features = [
+  {
+    icon: '🦕',
+    title: '极致简洁',
+    desc: '专注于极简设计与高效体验，界面清爽，交互流畅，助你专注内容本身。',
+  },
+  {
+    icon: '⚡',
+    title: '高性能',
+    desc: '基于现代前端技术栈，极速加载，动画丝滑，移动端与桌面端体验一致。',
+  },
+  {
+    icon: '🌈',
+    title: '主题可定制',
+    desc: '支持多种主题色彩与暗黑模式，轻松适配你的品牌风格。',
+  },
+];
 
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
-    <Layout
-      title={`${siteConfig.title} - 技术周刊`}
-      description="发现、追踪和分享最值得关注的开源项目与技术趋势">
-      <HomepageHeader />
-      <HomepageCards />
+    <Layout title={siteConfig.title} description={siteConfig.tagline}>
+      <main className={styles.main}>
+        {/* Hero Section */}
+        <section className={styles.heroSection}>
+          <div className={styles.heroLeft}>
+            <h1 className={styles.heroTitle}>{siteConfig.title}</h1>
+            <p className={styles.heroDesc}>{siteConfig.tagline}</p>
+            <div className={styles.heroButtons}>
+              <Link className={clsx('button', styles.primaryButton)} to="/blog">
+                立即体验
+              </Link>
+              <Link className={clsx('button', styles.secondaryButton)} to="https://github.com/fengjutian/top-project-trend" target="_blank">
+                GitHub
+              </Link>
+            </div>
+          </div>
+          <div className={styles.heroRight}>
+            <img
+              src={require('../../static/img/dinosaur-cute.svg').default}
+              alt="Dinosaur Mascot"
+              className={styles.heroDino}
+            />
+          </div>
+        </section>
+
+        {/* Features Section */}
+        <section className={styles.featuresSection}>
+          <div className={styles.featuresGrid}>
+            {features.map((f, i) => (
+              <div className={styles.featureCard} key={i}>
+                <div className={styles.featureIcon}>{f.icon}</div>
+                <div className={styles.featureTitle}>{f.title}</div>
+                <div className={styles.featureDesc}>{f.desc}</div>
+              </div>
+            ))}
+          </div>
+        </section>
+      </main>
     </Layout>
   );
 }
