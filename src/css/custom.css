@@ -1,40 +1,43 @@
 
 :root {
-  --ifm-color-primary: #6366f1;
-  --ifm-color-primary-dark: #4f46e5;
-  --ifm-color-primary-darker: #4338ca;
-  --ifm-color-primary-darkest: #3730a3;
-  --ifm-color-primary-light: #818cf8;
-  --ifm-color-primary-lighter: #a5b4fc;
-  --ifm-color-primary-lightest: #c7d2fe;
+  --ifm-color-primary: #00dc82;
+  --ifm-color-primary-dark: #00b368;
+  --ifm-color-primary-darker: #00a05c;
+  --ifm-color-primary-darkest: #00834c;
+  --ifm-color-primary-light: #00e896;
+  --ifm-color-primary-lighter: #00f0a0;
+  --ifm-color-primary-lightest: #00f8aa;
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(99, 102, 241, 0.1);
+  --docusaurus-highlighted-code-line-bg: rgba(0, 220, 130, 0.1);
   
-  /* 新增现代化变量 */
+  /* NuxtJS 风格的变量 */
   --ifm-background-color: #ffffff;
-  --ifm-background-surface-color: #f8fafc;
+  --ifm-background-surface-color: #f7fafc;
   --ifm-card-background-color: #ffffff;
   --ifm-card-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-  --ifm-card-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --ifm-card-shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --ifm-navbar-background-color: rgba(255, 255, 255, 0.95);
+  --ifm-footer-background-color: #1a1a1a;
 }
 
 /* 深色模式 */
 [data-theme='dark'] {
-  --ifm-color-primary: #a855f7;
-  --ifm-color-primary-dark: #9333ea;
-  --ifm-color-primary-darker: #7c3aed;
-  --ifm-color-primary-darkest: #6b21a8;
-  --ifm-color-primary-light: #c084fc;
-  --ifm-color-primary-lighter: #d8b4fe;
-  --ifm-color-primary-lightest: #e9d5ff;
-  --docusaurus-highlighted-code-line-bg: rgba(168, 85, 247, 0.2);
+  --ifm-color-primary: #00dc82;
+  --ifm-color-primary-dark: #00b368;
+  --ifm-color-primary-darker: #00a05c;
+  --ifm-color-primary-darkest: #00834c;
+  --ifm-color-primary-light: #00e896;
+  --ifm-color-primary-lighter: #00f0a0;
+  --ifm-color-primary-lightest: #00f8aa;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 220, 130, 0.2);
   
   /* 深色模式变量 */
-  --ifm-background-color: #0f172a;
-  --ifm-background-surface-color: #1e293b;
-  --ifm-card-background-color: #1e293b;
+  --ifm-background-color: #0a0a0a;
+  --ifm-background-surface-color: #1a1a1a;
+  --ifm-card-background-color: #1a1a1a;
   --ifm-card-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
-  --ifm-card-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+  --ifm-card-shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+  --ifm-navbar-background-color: rgba(26, 26, 26, 0.95);
 }
 
 /* 全局样式 */
@@ -45,49 +48,58 @@ html {
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.6;
+  color: #2c3e50;
 }
 
-/* 导航栏美化 */
+[data-theme='dark'] body {
+  color: #e2e8f0;
+}
+
+/* 导航栏美化 - NuxtJS 风格 */
 .navbar {
-  backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.8) !important;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  background: var(--ifm-navbar-background-color) !important;
+  border-bottom: 1px solid rgba(0, 220, 130, 0.1);
   transition: all 0.3s ease;
+  padding: 0.5rem 0;
 }
 
 [data-theme='dark'] .navbar {
-  background: rgba(15, 23, 42, 0.8) !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(0, 220, 130, 0.2);
 }
 
 .navbar__brand {
   font-weight: 700;
   font-size: 1.5rem;
-  background: linear-gradient(135deg, var(--ifm-color-primary), var(--ifm-color-primary-light));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--ifm-color-primary);
+  transition: all 0.3s ease;
 }
 
-/* 卡片样式 */
+.navbar__brand:hover {
+  color: var(--ifm-color-primary-light);
+}
+
+/* 卡片样式 - NuxtJS 风格 */
 .card {
   background: var(--ifm-card-background-color);
   border-radius: 12px;
   box-shadow: var(--ifm-card-shadow);
   transition: all 0.3s ease;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 220, 130, 0.1);
+  overflow: hidden;
 }
 
 [data-theme='dark'] .card {
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 220, 130, 0.2);
 }
 
 .card:hover {
-  transform: translateY(-2px);
+  transform: translateY(-4px);
   box-shadow: var(--ifm-card-shadow-hover);
+  border-color: var(--ifm-color-primary);
 }
 
-/* 按钮样式 */
+/* 按钮样式 - NuxtJS 风格 */
 .button {
   background: linear-gradient(135deg, var(--ifm-color-primary), var(--ifm-color-primary-light));
   border: none;
@@ -95,15 +107,32 @@ body {
   padding: 12px 24px;
   font-weight: 600;
   transition: all 0.3s ease;
-  color: white;
+  color: #1a1a1a;
   text-decoration: none;
   display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.button:hover::before {
+  left: 100%;
 }
 
 .button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
-  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 220, 130, 0.3);
+  color: #1a1a1a;
   text-decoration: none;
 }
 
@@ -118,7 +147,7 @@ body {
   transform: scale(1.05);
 }
 
-/* 博客卡片 */
+/* 博客卡片 - NuxtJS 风格 */
 .blog-list-page article {
   background: var(--ifm-card-background-color);
   border-radius: 12px;
@@ -126,16 +155,17 @@ body {
   margin-bottom: 24px;
   box-shadow: var(--ifm-card-shadow);
   transition: all 0.3s ease;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 220, 130, 0.1);
 }
 
 [data-theme='dark'] .blog-list-page article {
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 220, 130, 0.2);
 }
 
 .blog-list-page article:hover {
-  transform: translateY(-2px);
+  transform: translateY(-4px);
   box-shadow: var(--ifm-card-shadow-hover);
+  border-color: var(--ifm-color-primary);
 }
 
 /* 代码块美化 */
@@ -143,33 +173,46 @@ body {
   border-radius: 8px;
   font-size: 14px;
   line-height: 1.5;
+  background: #1a1a1a !important;
 }
 
 /* 侧边栏美化 */
 .theme-doc-sidebar-container {
   background: var(--ifm-background-surface-color);
-  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  border-right: 1px solid rgba(0, 220, 130, 0.1);
 }
 
 [data-theme='dark'] .theme-doc-sidebar-container {
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  border-right: 1px solid rgba(0, 220, 130, 0.2);
 }
 
-/* 页脚美化 */
+/* 页脚美化 - NuxtJS 风格 */
 .footer {
-  background: linear-gradient(135deg, var(--ifm-color-primary-darkest), var(--ifm-color-primary-dark));
-  color: white;
+  background: var(--ifm-footer-background-color);
+  color: #ffffff;
+  border-top: 1px solid rgba(0, 220, 130, 0.2);
 }
 
 /* 动画效果 */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
@@ -204,4 +247,40 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--ifm-color-primary-dark);
+}
+
+/* NuxtJS 风格的渐变背景 */
+.nuxt-gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+[data-theme='dark'] .nuxt-gradient {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d3748 100%);
+}
+
+/* 现代化卡片边框 */
+.modern-card {
+  position: relative;
+  background: var(--ifm-card-background-color);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: var(--ifm-card-shadow);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 220, 130, 0.1);
+}
+
+.modern-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--ifm-color-primary), var(--ifm-color-primary-light));
+  border-radius: 16px 16px 0 0;
+}
+
+.modern-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--ifm-card-shadow-hover);
 }
