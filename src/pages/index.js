@@ -4,6 +4,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import styles from './index.module.css';
+import AuroraBackground from './AuroraBackground';
 
 const features = [
   {
@@ -28,29 +29,32 @@ export default function Home() {
   return (
     <Layout title={siteConfig.title} description={siteConfig.tagline}>
       <main className={styles.main}>
-        {/* Hero Section */}
-        <section className={styles.heroSection}>
-          <div className={styles.heroLeft}>
-            <h1 className={styles.heroTitle}>{siteConfig.title}</h1>
-            <p className={styles.heroDesc}>{siteConfig.tagline}</p>
-            <div className={styles.heroButtons}>
-              <Link className={clsx('button', styles.primaryButton)} to="/blog">
-                立即体验
-              </Link>
-              <Link className={clsx('button', styles.secondaryButton)} to="https://github.com/fengjutian/top-project-trend" target="_blank">
-                GitHub
-              </Link>
+        {/* Aurora 背景层 */}
+        <div style={{position: 'relative', width: '100%', minHeight: '60vh'}}>
+          <AuroraBackground />
+          {/* Hero Section */}
+          <section className={styles.heroSection} style={{position: 'relative', zIndex: 1}}>
+            <div className={styles.heroLeft}>
+              <h1 className={styles.heroTitle}>{siteConfig.title}</h1>
+              <p className={styles.heroDesc}>{siteConfig.tagline}</p>
+              <div className={styles.heroButtons}>
+                <Link className={clsx('button', styles.primaryButton)} to="/blog">
+                  立即体验
+                </Link>
+                <Link className={clsx('button', styles.secondaryButton)} to="https://github.com/fengjutian/top-project-trend" target="_blank">
+                  GitHub
+                </Link>
+              </div>
             </div>
-          </div>
-          <div className={styles.heroRight}>
-            <img
-              src={require('../../static/img/dinosaur-cute.svg').default}
-              alt="Dinosaur Mascot"
-              className={styles.heroDino}
-            />
-          </div>
-        </section>
-
+            <div className={styles.heroRight}>
+              <img
+                src={require('../../static/img/dinosaur-cute.svg').default}
+                alt="Dinosaur Mascot"
+                className={styles.heroDino}
+              />
+            </div>
+          </section>
+        </div>
         {/* Features Section */}
         <section className={styles.featuresSection}>
           <div className={styles.featuresGrid}>
