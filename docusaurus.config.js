@@ -12,7 +12,7 @@ const config = {
   baseUrl: '/top-project-trend/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/dinosaur-favicon.svg',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -90,7 +90,7 @@ const config = {
         title: 'fengjutian 技术周刊',
         logo: {
           alt: 'fengjutian 技术周刊',
-          src: 'img/logo.svg',
+          src: 'img/dinosaur-cute.svg',
         },
         items: [
           {to: '/blog', label: 'Blog', position: 'left'},
