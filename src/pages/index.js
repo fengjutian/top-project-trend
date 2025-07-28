@@ -29,10 +29,8 @@ export default function Home() {
   return (
     <Layout title={siteConfig.title} description={siteConfig.tagline}>
       <main className={styles.main}>
-        {/* Aurora 背景层 */}
         <div style={{position: 'relative', width: '100%', minHeight: '60vh'}}>
           <AuroraBackground />
-          {/* Hero Section */}
           <section className={styles.heroSection} style={{position: 'relative', zIndex: 1}}>
             <div className={styles.heroLeft}>
               <h1 className={styles.heroTitle}>{siteConfig.title}</h1>
