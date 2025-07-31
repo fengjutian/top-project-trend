@@ -44,5 +44,6 @@ EVCC 是一个开源的家用电动汽车充电控制器/充电桩解决方案�
 
 ### [SongGeneration](https://github.com/tencent-ailab/songgeneration/)
 ![alt text](./static/imgs/SongGeneration.jpg)
+腾讯开源的歌词生成模型，基于大规模歌词数据集训练而成。该项目提供了一个简单易用的接口，可以快速生成高质量的歌词文本。它支持多种语言和风格，能够满足不同场景下的需求。目前已经应用于音乐创作、歌词自动填充等多个领域，受到了广泛的关注和应用
 
 地址：https://github.com/tencent-ailab/songgeneration/
