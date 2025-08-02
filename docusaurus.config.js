@@ -48,6 +48,17 @@ const config = {
         ],
       },
     ],
+    [
+      '@docusaurus/plugin-content-blog',
+      {
+        id: 'algorithm',
+        path: 'algorithm',
+        routeBasePath: 'algorithm',
+        showReadingTime: true,
+        editUrl:
+          'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+      },
+    ],
   ],
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -76,7 +87,9 @@ const config = {
           editUrl:
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
+        // 移除下面这部分
         // algorithm: {
+        //   path: 'algorithm',
         //   showReadingTime: true,
         //   // Please change this to your repo.
         //   // Remove this to remove the "edit this page" links.
@@ -101,11 +114,7 @@ const config = {
         },
         items: [
           {to: '/blog', label: '博客', position: 'left'},
-          {
-            to: '/algorithm',
-            label: '算法',
-            position: 'left'
-          },
+          {to: '/algorithm', label: '算法', position: 'left'},
           {
             type: 'doc',
             docId: 'intro',
