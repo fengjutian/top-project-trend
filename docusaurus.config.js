@@ -48,8 +48,7 @@ const config = {
         ],
       },
     ],
-    [
-      '@docusaurus/plugin-content-blog',
+    ['@docusaurus/plugin-content-blog',
       {
         id: 'algorithm',
         path: 'algorithm',
@@ -58,6 +57,8 @@ const config = {
         editUrl:
           'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
       },
+    ],
+    ['@docusaurus/plugin-content-blog',
       {
         id: 'rust',
         path: 'rust',
@@ -66,6 +67,8 @@ const config = {
         editUrl:
           'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
       },
+    ],
+    ['@docusaurus/plugin-content-blog',
       {
         id: 'python',
         path: 'python',
