@@ -58,6 +58,22 @@ const config = {
         editUrl:
           'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
       },
+      {
+        id: 'rust',
+        path: 'rust',
+        routeBasePath: 'rust',
+        showReadingTime: true,
+        editUrl:
+          'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+      },
+      {
+        id: 'python',
+        path: 'python',
+        routeBasePath: 'python',
+        showReadingTime: true,
+        editUrl:
+          'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+      },
     ],
   ],
   // Even if you don't use internalization, you can use this field to set useful
@@ -115,6 +131,8 @@ const config = {
         items: [
           {to: '/blog', label: '博客', position: 'left'},
           {to: '/algorithm', label: '算法', position: 'left'},
+          {to: '/rust', label: 'Rust', position: 'left'},
+          {to: '/python', label: 'Python', position: 'left'},
           {
             type: 'doc',
             docId: 'intro',
