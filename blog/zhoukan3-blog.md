@@ -25,7 +25,9 @@ React Flow 是一个基于 React 的流程图库，用于创建交互式的流�
 ![alt text](./static/imgs/reactflow.png)
 地址：https://reactflow.dev/
 
-### uBlock Origin (uBO)(https://github.com/gorhill/uBlock)
-uBlock Origin (uBO) ——一个功能强大且高效的内容屏蔽器，适用于 Chromium 和 Firefox 浏览器。
+### [uBlock Origin (uBO)](https://github.com/gorhill/uBlock)
 ![alt text](./static/imgs/ub.png)
+
+uBlock Origin (uBO) ——一个功能强大且高效的内容屏蔽器，适用于 Chromium 和 Firefox 浏览器。
+
 地址：https://github.com/gorhill/uBlock
