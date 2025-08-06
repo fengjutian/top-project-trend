@@ -78,6 +78,16 @@ const config = {
           'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
       },
     ],
+    ['@docusaurus/plugin-content-blog',
+      {
+        id: 'LangChain',
+        path: 'lang-chain',
+        routeBasePath: 'lang-chain',
+        showReadingTime: true,
+        editUrl:
+          'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+      },
+    ],
   ],
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -132,10 +142,11 @@ const config = {
           src: 'img/dinosaur-cute.svg',
         },
         items: [
-          {to: '/blog', label: '博客', position: 'left'},
+          {to: '/blog', label: '周刊', position: 'left'},
           {to: '/algorithm', label: '算法', position: 'left'},
-          {to: '/rust', label: 'Rust', position: 'left'},
+          // {to: '/rust', label: 'Rust', position: 'left'},
           {to: '/python', label: 'Python', position: 'left'},
+          {to: '/lang-chain', label: 'LangChain', position: 'left'},
           {
             type: 'doc',
             docId: 'intro',
