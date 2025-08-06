@@ -5,24 +5,56 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import styles from './index.module.css';
 import { motion } from 'framer-motion';
-import { ArrowRight, Github, Code, TrendingUp, BookOpen, Heart, Moon, Sun } from 'lucide-react';
+import { 
+  ArrowRight, Github, Code, TrendingUp, BookOpen, 
+  Heart, Moon, Sun, Search, User, Clock, Flame, 
+  MessageSquare, Star, Zap, Tag, ChevronDown 
+} from 'lucide-react';
 
-const features = [
+// 热门项目数据
+const projects = [
   {
-    icon: <Code className="w-8 h-8" />,
-    title: '精选开源项目',
-    desc: '每周更新优质开源项目，涵盖前端、后端、工具库等多个领域。',
+    id: 1,
+    name: 'RustScan',
+    description: '现代化的端口扫描工具，速度比nmap快200倍',
+    tags: ['rust', 'security', 'networking'],
+    votes: 342,
+    comments: 28,
+    launchDate: '3天前',
+    icon: <Zap className="w-5 h-5 text-yellow-500" />,
   },
   {
-    icon: <TrendingUp className="w-8 h-8" />,
-    title: '技术趋势分析',
-    desc: '深入解析前沿技术动态，帮助你把握行业发展方向。',
+    id: 2,
+    name: 'VueBits',
+    description: 'Vue 3组件库，包含60+精心设计的UI组件',
+    tags: ['vue', 'ui', 'frontend'],
+    votes: 215,
+    comments: 15,
+    launchDate: '1周前',
+    icon: <Star className="w-5 h-5 text-blue-500" />,
   },
   {
-    icon: <BookOpen className="w-8 h-8" />,
-    title: '实战教程',
-    desc: '提供实用技术教程，从入门到精通，提升你的开发技能。',
+    id: 3,
+    name: 'FileBrowser',
+    description: '基于Web的文件管理器，支持多种存储后端',
+    tags: ['go', 'storage', 'web'],
+    votes: 187,
+    comments: 12,
+    launchDate: '2周前',
+    icon: <Flame className="w-5 h-5 text-red-500" />,
   },
+];
+
+// 热门标签
+const popularTags = [
+  { name: 'javascript', count: 1245 },
+  { name: 'python', count: 987 },
+  { name: 'rust', count: 765 },
+  { name: 'vue', count: 654 },
+  { name: 'react', count: 543 },
+  { name: 'go', count: 432 },
+  { name: 'ai', count: 321 },
+  { name: 'database', count: 210 },
 ];
 
 // Animation variants
@@ -53,7 +85,6 @@ export default function Home() {
   const [isDarkMode, setIsDarkMode] = React.useState(false);
 
   React.useEffect(() => {
-    // Check system preference
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     setIsDarkMode(prefersDark);
   }, []);
@@ -65,86 +96,155 @@ export default function Home() {
 
   return (
     <Layout title={siteConfig.title} description={siteConfig.tagline}>
-      <main className={styles.main}>
-        {/* Theme Toggle */}
-        <button 
-          onClick={toggleDarkMode}
-          className={styles.themeToggle}
-          aria-label={isDarkMode ? '切换到亮色模式' : '切换到暗色模式'}
-        >
-          {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-        </button>
-
-        {/* Hero Section */}
-        <section className={styles.heroSection}>
-          <div className={styles.container}>
-            <motion.div 
-              className={styles.heroContent}
-              initial="hidden"
-              animate="visible"
-              variants={containerVariants}
-            >
-              <motion.h1 
-                className={styles.heroTitle}
-                variants={itemVariants}
-              >
-                {siteConfig.title}
-              </motion.h1>
-              <motion.p 
-                className={styles.heroDesc}
-                variants={itemVariants}
-              >
-                {siteConfig.tagline}
-              </motion.p>
-              <motion.div 
-                className={styles.heroButtons}
-                variants={itemVariants}
-              >
-                <Link 
-                  className={clsx('button', styles.primaryButton)} 
-                  to="/blog"
-                >
-                  浏览周刊 <ArrowRight className="ml-2 w-4 h-4" />
-                </Link>
-                <Link 
-                  className={clsx('button', styles.secondaryButton)} 
-                  to="https://github.com/fengjutian/top-project-trend" 
-                  target="_blank"
-                >
-                  <Github className="mr-2 w-4 h-4" /> GitHub
-                </Link>
-              </motion.div>
-            </motion.div>
+      {/* 顶部导航栏 */}
+      <header className={styles.header}>
+        <div className={styles.headerContainer}>
+          <Link to="/" className={styles.logo}>
+            {siteConfig.title}
+          </Link>
+          
+          <div className={styles.searchBar}>
+            <Search className={styles.searchIcon} />
+            <input 
+              type="text" 
+              placeholder="搜索项目、标签或用户..." 
+              className={styles.searchInput}
+            />
           </div>
-        </section>
-
-        {/* Features Section */}
-        <section className={styles.featuresSection}>
-          <div className={styles.container}>
-            <motion.div 
-              className={styles.featuresGrid}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={containerVariants}
+          
+          <nav className={styles.nav}>
+            <Link to="/projects" className={styles.navLink}>项目</Link>
+            <Link to="/community" className={styles.navLink}>社区</Link>
+            <Link to="/blog" className={styles.navLink}>博客</Link>
+            <div className={styles.userMenu}>
+              <User className={styles.userIcon} />
+              <ChevronDown className={styles.chevronIcon} />
+            </div>
+            <button 
+              onClick={toggleDarkMode}
+              className={styles.themeToggle}
+              aria-label={isDarkMode ? '切换到亮色模式' : '切换到暗色模式'}
             >
-              {features.map((feature, index) => (
+              {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            </button>
+          </nav>
+        </div>
+      </header>
+
+      <main className={styles.main}>
+        <div className={styles.layout}>
+          {/* 主要内容区 */}
+          <div className={styles.content}>
+            <div className={styles.contentHeader}>
+              <h1 className={styles.contentTitle}>热门项目</h1>
+              <div className={styles.sortOptions}>
+                <span className={styles.sortOptionActive}>最新</span>
+                <span className={styles.sortOption}>热门</span>
+                <span className={styles.sortOption}>最多评论</span>
+              </div>
+            </div>
+
+            {/* 项目列表 */}
+            <div className={styles.projectsList}>
+              {projects.map((project) => (
                 <motion.div 
-                  key={index}
-                  className={styles.featureCard}
+                  key={project.id}
+                  className={styles.projectCard}
+                  initial="hidden"
+                  whileInView="visible"
                   variants={itemVariants}
-                  whileHover={{ y: -5, transition: { duration: 0.2 } }}
+                  whileHover={{ scale: 1.02 }}
                 >
-                  <div className={styles.featureIcon}>{feature.icon}</div>
-                  <h3 className={styles.featureTitle}>{feature.title}</h3>
-                  <p className={styles.featureDesc}>{feature.desc}</p>
+                  <div className={styles.projectHeader}>
+                    <div className={styles.projectIcon}>{project.icon}</div>
+                    <div className={styles.projectMeta}>
+                      <h3 className={styles.projectName}>{project.name}</h3>
+                      <div className={styles.projectLaunchDate}>
+                        <Clock className={styles.clockIcon} />
+                        <span>{project.launchDate}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <p className={styles.projectDescription}>{project.description}</p>
+                  <div className={styles.projectTags}>
+                    {project.tags.map((tag) => (
+                      <span key={tag} className={styles.projectTag}>
+                        #{tag}
+                      </span>
+                    ))}
+                  </div>
+                  <div className={styles.projectStats}>
+                    <div className={styles.statItem}>
+                      <MessageSquare className={styles.statIcon} />
+                      <span>{project.comments}</span>
+                    </div>
+                    <div className={styles.statItem}>
+                      <Heart className={styles.statIcon} />
+                      <span>{project.votes}</span>
+                    </div>
+                  </div>
                 </motion.div>
               ))}
-            </motion.div>
+            </div>
           </div>
-        </section>
 
-        {/* Newsletter Section */}
+          {/* 侧边栏 */}
+          <aside className={styles.sidebar}>
+            <div className={styles.sidebarSection}>
+              <h3 className={styles.sidebarTitle}>热门标签</h3>
+              <div className={styles.tagsList}>
+                {popularTags.map((tag) => (
+                  <Link 
+                    key={tag.name} 
+                    to={`/tags/${tag.name}`} 
+                    className={styles.tagItem}
+                  >
+                    <Tag className={styles.tagIcon} />
+                    <span className={styles.tagName}>#{tag.name}</span>
+                    <span className={styles.tagCount}>{tag.count}</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div className={styles.sidebarSection}>
+              <h3 className={styles.sidebarTitle}>本周热门</h3>
+              <div className={styles.topProjects}>
+                {projects.slice(0, 3).map((project) => (
+                  <Link 
+                    key={project.id} 
+                    to={`/projects/${project.id}`} 
+                    className={styles.topProjectItem}
+                  >
+                    <div className={styles.topProjectIcon}>{project.icon}</div>
+                    <div className={styles.topProjectInfo}>
+                      <div className={styles.topProjectName}>{project.name}</div>
+                      <div className={styles.topProjectVotes}>
+                        <Heart className={styles.smallHeartIcon} />
+                        <span>{project.votes}</span>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        {/* 页脚 */}
+        <footer className={styles.footer}>
+          <div className={styles.footerContainer}>
+            <div className={styles.footerLinks}>
+              <Link to="/about" className={styles.footerLink}>关于我们</Link>
+              <Link to="/privacy" className={styles.footerLink}>隐私政策</Link>
+              <Link to="/terms" className={styles.footerLink}>服务条款</Link>
+              <Link to="/contact" className={styles.footerLink}>联系我们</Link>
+            </div>
+            <div className={styles.footerCopyright}>
+              © {new Date().getFullYear()} {siteConfig.title}. All rights reserved.
+            </div>
+          </div>
+        </footer>
         <section className={styles.newsletterSection}>
           <div className={styles.container}>
             <motion.div 
