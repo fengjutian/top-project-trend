@@ -1,6 +1,6 @@
 ---
-slug: zhoukan4
-title: 字体图标库
+slug: icons
+title: icons图标库
 authors: fengjutian
 tags: [uv, filebrowser, React Bits, Stirling-PDF, node-modules-inspectorx]
 ---
