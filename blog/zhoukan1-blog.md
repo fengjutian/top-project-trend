@@ -2,8 +2,9 @@
 slug: zhoukan1
 title: 技术周刊一
 authors: fengjutian
-tags: [朱雀仿宋, RustScan, tsx]
+tags: [Vue Bits, RustScan, tsx]
 ---
+
 ## 朱雀仿宋
 ![alt text](./static/imgs/zhuque.png)
 简介：
