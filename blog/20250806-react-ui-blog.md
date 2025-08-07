@@ -2,7 +2,7 @@
 slug: react-ui-library
 title: React UI 库
 authors: fengjutian
-tags: [uv, filebrowser, React Bits, Stirling-PDF, node-modules-inspectorx]
+tags: [react, blog]
 ---
 
 ## [React Icons](https://mui.com/)
@@ -81,7 +81,7 @@ tags: [uv, filebrowser, React Bits, Stirling-PDF, node-modules-inspectorx]
 
 ## [HeroUI](https://www.heroui.com/)
 
-![alt text](heroui.png)
+![alt text](./static/heroui.png)
 
 ### 🌟 项目简介：HeroUI（前身为 NextUI）
 - **HeroUI** 是一个现代化、快速且美观的 React UI 组件库。
@@ -141,3 +141,91 @@ npx heroui-cli@latest init
 
 
 地址： https://www.heroui.com/
+
+## [gestalt](https://gestalt.pinterest.systems/home)
+
+![alt text](./static/gestalt.png)
+
+### 🎨 什么是 Gestalt？
+- **Gestalt** 是 Pinterest 官方推出的设计系统。
+- 旨在帮助设计师和开发者构建激发用户灵感的产品体验。
+- 提供统一的 UI 组件、设计规范和工具资源。
+
+---
+
+### 🚀 快速入门指南
+- **设计师入门**：提供新手指南和工具配置说明，帮助设计师快速上手 Gestalt。
+- **开发者入门**：涵盖开发环境设置、如何创建 Pull Request 等流程。
+- **协作指南**：说明如何与 Gestalt 团队合作、何时参与贡献。
+
+---
+
+### 🧱 核心模块
+| 模块         | 内容简介 |
+|--------------|----------|
+| **Components** | 丰富的 UI 控件和工具集，支持高质量界面构建 |
+| **Foundations** | 包含颜色、排版、图标等基础设计规范 |
+| **Resources** | 提供 Figma 资源库、插件、平台支持（Web、iOS、Android） |
+
+---
+
+### 🧰 支持与工具
+- **Figma 插件与库**：加速设计流程
+- **Slack 频道**：设计与工程团队沟通支持
+- **代码资源**：
+  - GitHub 仓库
+  - CodeSandbox 示例
+  - Web 工程库
+
+---
+
+### 🏢 背景与技术
+- 由 Pinterest 设计与工程团队维护
+- 网站由 Netlify 提供支持
+- 版权归 Pinterest 所有 © 2025
+
+
+地址：https://gestalt.pinterest.systems/home
+
+## [shadcn](https://ui.shadcn.com/)
+
+![alt text](./static/imgs/shadcn.png)
+
+### 🧱 项目简介：shadcn/ui
+- **shadcn/ui** 是一个开源的 React 组件库，强调设计系统的可扩展性与可定制性。
+- 提供一套美观、实用的 UI 组件，适合构建现代 Web 应用。
+- 设计理念是：**“Start here, then make it your own.”**
+
+---
+
+### 🎯 核心特点
+- **开源代码**：所有组件均可查看源代码并自由修改。
+- **可定制性强**：组件结构清晰，支持 Tailwind CSS 和多种主题配置。
+- **组件丰富**：涵盖表单、仪表盘、认证、图表、日历等常用 UI 模块。
+- **设计系统基础**：适合构建自己的 UI 体系或产品组件库。
+
+---
+
+### 📦 示例与功能模块
+- **Dashboard 示例**：展示收入、订阅等数据统计组件。
+- **Authentication 模块**：提供登录、注册等用户认证界面。
+- **Calendar 组件**：新推出的日历功能，支持交互式日期选择。
+- **Charts & Blocks**：用于可视化和布局的高级组件。
+
+---
+
+### 💼 订阅与计划
+- 提供免费计划与 Pro 计划：
+  - **Starter Plan**：适合小型项目或个人使用。
+  - **Pro Plan**：解锁更多功能与存储空间。
+- 支持团队协作功能，可邀请成员共同编辑项目。
+
+---
+
+### 🔐 其他功能亮点
+- **Cookie 设置管理**：支持个性化功能与隐私控制。
+- **支付系统集成**：展示付款状态与用户信息。
+- **消息与问题反馈系统**：内置聊天与问题报告界面。
+
+
+地址：https://ui.shadcn.com/
