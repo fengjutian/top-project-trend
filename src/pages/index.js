@@ -6,7 +6,6 @@ import Layout from '@theme/Layout';
 import styles from './index.module.css';
 import { motion } from 'framer-motion';
 import { 
-  ArrowRight, Github, Code, TrendingUp, BookOpen, 
   Heart, Moon, Sun, Search, User, Clock, Flame, 
   MessageSquare, Star, Zap, Tag, ChevronDown 
 } from 'lucide-react';
@@ -113,9 +112,10 @@ export default function Home() {
           </div>
           
           <nav className={styles.nav}>
-            <Link to="/projects" className={styles.navLink}>项目</Link>
-            <Link to="/community" className={styles.navLink}>社区</Link>
             <Link to="/blog" className={styles.navLink}>博客</Link>
+            <Link to="/algorithm" className={styles.navLink}>算法</Link>
+            <Link to="/python" className={styles.navLink}>Python</Link>
+            <Link to="/lang-chain" className={styles.navLink}>LangChain</Link>
             <div className={styles.userMenu}>
               <User className={styles.userIcon} />
               <ChevronDown className={styles.chevronIcon} />
@@ -148,12 +148,12 @@ export default function Home() {
             <div className={styles.projectsList}>
               {projects.map((project) => (
                 <motion.div 
-                  key={project.id}
-                  className={styles.projectCard}
-                  initial="hidden"
-                  whileInView="visible"
-                  variants={itemVariants}
-                  whileHover={{ scale: 1.02 }}
+                  key={project.id} 
+                  className={styles.projectCard} 
+                  initial="hidden" 
+                  whileInView="visible" 
+                  variants={itemVariants} 
+                  whileHover={{ scale: 1.02 }} 
                 >
                   <div className={styles.projectHeader}>
                     <div className={styles.projectIcon}>{project.icon}</div>
@@ -196,8 +196,8 @@ export default function Home() {
                 {popularTags.map((tag) => (
                   <Link 
                     key={tag.name} 
-                    to={`/tags/${tag.name}`} 
-                    className={styles.tagItem}
+                    to={`/blog`} 
+                    className={styles.tagItem} 
                   >
                     <Tag className={styles.tagIcon} />
                     <span className={styles.tagName}>#{tag.name}</span>
@@ -212,10 +212,10 @@ export default function Home() {
               <div className={styles.topProjects}>
                 {projects.slice(0, 3).map((project) => (
                   <Link 
-                    key={project.id} 
-                    to={`/projects/${project.id}`} 
-                    className={styles.topProjectItem}
-                  >
+                      key={project.id} 
+                      to={`/blog`} 
+                      className={styles.topProjectItem} 
+                    >
                     <div className={styles.topProjectIcon}>{project.icon}</div>
                     <div className={styles.topProjectInfo}>
                       <div className={styles.topProjectName}>{project.name}</div>
@@ -235,10 +235,10 @@ export default function Home() {
         <footer className={styles.footer}>
           <div className={styles.footerContainer}>
             <div className={styles.footerLinks}>
-              <Link to="/about" className={styles.footerLink}>关于我们</Link>
-              <Link to="/privacy" className={styles.footerLink}>隐私政策</Link>
-              <Link to="/terms" className={styles.footerLink}>服务条款</Link>
-              <Link to="/contact" className={styles.footerLink}>联系我们</Link>
+              <Link to="/blog" className={styles.footerLink}>博客</Link>
+              <Link to="/algorithm" className={styles.footerLink}>算法</Link>
+              <Link to="/python" className={styles.footerLink}>Python</Link>
+              <Link to="/lang-chain" className={styles.footerLink}>LangChain</Link>
             </div>
             <div className={styles.footerCopyright}>
               © {new Date().getFullYear()} {siteConfig.title}. All rights reserved.

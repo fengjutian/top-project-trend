@@ -10,7 +10,7 @@ const config = {
   tagline: '分享最新技术趋势和开源项目',
   url: 'https://fengjutian.github.io',
   baseUrl: '/top-project-trend/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/dinosaur-favicon.svg',
 
