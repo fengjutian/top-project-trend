@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://fengjutian.github.io/top-project-trend/algorithm</id>
+    <title>fengjutian 技术周刊 Blog</title>
+    <updated>2025-08-06T02:01:42.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://fengjutian.github.io/top-project-trend/algorithm"/>
+    <subtitle>fengjutian 技术周刊 Blog</subtitle>
+    <icon>https://fengjutian.github.io/top-project-trend/img/dinosaur-favicon.svg</icon>
+    <entry>
+        <title type="html"><![CDATA[An Interactive Guide To Rate Limiting]]></title>
+        <id>zhoukan1</id>
+        <link href="https://fengjutian.github.io/top-project-trend/algorithm/zhoukan1"/>
+        <updated>2025-08-06T02:01:42.000Z</updated>
+        <summary type="html"><![CDATA[An Interactive Guide To Rate Limiting]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_m6px" id="an-interactive-guide-to-rate-limiting">An Interactive Guide To Rate Limiting<a class="hash-link" href="#an-interactive-guide-to-rate-limiting" title="Direct link to heading">​</a></h2><hr><h2 class="anchor anchorWithStickyNavbar_m6px" id="-rate-limiting-简介">🚦 Rate Limiting 简介<a class="hash-link" href="#-rate-limiting-简介" title="Direct link to heading">​</a></h2><ul><li><strong>目的</strong>：限制用户请求频率，防止资源被滥用，提升服务稳定性与质量。</li><li><strong>优势</strong>：<ul><li>防止资源枯竭</li><li>降低服务器成本</li><li>提供 DDoS 防护的基础手段</li></ul></li></ul><hr><h2 class="anchor anchorWithStickyNavbar_m6px" id="-四种常见-rate-limiting-算法均附有交互式演示">🧪 四种常见 Rate Limiting 算法（均附有交互式演示）<a class="hash-link" href="#-四种常见-rate-limiting-算法均附有交互式演示" title="Direct link to heading">​</a></h2><h3 class="anchor anchorWithStickyNavbar_m6px" id="️-token-bucket">🎟️ Token Bucket<a class="hash-link" href="#️-token-bucket" title="Direct link to heading">​</a></h3><ul><li>固定容量的令牌桶</li><li>定期填充令牌，处理请求需消费一个令牌</li><li>若无令牌，则拒绝请求或延迟处理</li><li>支持短时间突发流量</li></ul><h3 class="anchor anchorWithStickyNavbar_m6px" id="-leaky-bucket">💧 Leaky Bucket<a class="hash-link" href="#-leaky-bucket" title="Direct link to heading">​</a></h3><ul><li>请求进入桶中，桶以恒定速率漏出（处理请求）</li><li>桶满则新请求被丢弃</li><li>平滑处理流量，输出速率稳定</li></ul><h3 class="anchor anchorWithStickyNavbar_m6px" id="-fixed-window-counter">🕒 Fixed Window Counter<a class="hash-link" href="#-fixed-window-counter" title="Direct link to heading">​</a></h3><ul><li>时间被划分为固定窗口（如每分钟）</li><li>每个窗口统计请求数量，超出则拒绝</li><li>简单高效，但可能在窗口交界处引发请求突刺</li></ul><h3 class="anchor anchorWithStickyNavbar_m6px" id="-sliding-window-counter">🪟 Sliding Window Counter<a class="hash-link" href="#-sliding-window-counter" title="Direct link to heading">​</a></h3><ul><li>记录每个请求的时间戳</li><li>每次新请求到来时，检查过去 X 秒内的请求数量</li><li>超限则拒绝，否则记录请求</li><li>更平滑但实现稍复杂</li></ul><p>地址：<a href="https://blog.sagyamthapa.com.np/interactive-guide-to-rate-limiting" target="_blank" rel="noopener noreferrer">https://blog.sagyamthapa.com.np/interactive-guide-to-rate-limiting</a></p>]]></content>
+        <author>
+            <name>fengjutian</name>
+            <uri>https://github.com/fengjutian</uri>
+        </author>
+        <category label="An Interactive Guide To Rate Limiting" term="An Interactive Guide To Rate Limiting"/>
+    </entry>
+</feed>

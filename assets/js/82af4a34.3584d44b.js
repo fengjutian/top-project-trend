@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[7476],{1722:e=>{e.exports=JSON.parse('{"permalink":"/top-project-trend/rust/tags/vue-bits","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

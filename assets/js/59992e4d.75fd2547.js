@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[2512],{4431:e=>{e.exports=JSON.parse('{"permalink":"/top-project-trend/lang-chain/tags/kelp","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
