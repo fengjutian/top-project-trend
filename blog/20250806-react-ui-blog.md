@@ -283,3 +283,18 @@ npx heroui-cli@latest init
 
 
 地址：https://react-spectrum.adobe.com/react-aria/index.html
+
+## [Skiper UI](https://skiper-ui.com/)
+![alt text](./static/imgs/skiper-ui.png)
+
+Skiper UI(https://skiper-ui.com/)提供了一系列现代，简约的组件，该组件由CSS，Next.js和React构建。该库提供了副本组件，包括着陆页模板，投资组合设计以及具有Supabase Integration的全栈模板。功能包括制定运动动画，响应式设计。
+
+地址：https://skiper-ui.com/
+
+## [MiroTalk SFU](https://github.com/miroslavpejic85/mirotalksfu)
+
+![alt text](./static/imgs/miro-talk.png)
+
+基于浏览器 WebRTC 的在线视频通信开源解决方案，链接是多人视频会议版本，另有点对点通信版本、一对一通信版本。
+
+地址：https://github.com/miroslavpejic85/mirotalksfu
