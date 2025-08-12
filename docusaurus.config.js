@@ -50,6 +50,26 @@ const config = {
     ],
     ['@docusaurus/plugin-content-blog',
       {
+        id: 'java',
+        path: 'java',
+        routeBasePath: 'java',
+        showReadingTime: true,
+        editUrl:
+          'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+      },
+    ],
+        ['@docusaurus/plugin-content-blog',
+      {
+        id: 'code',
+        path: 'code',
+        routeBasePath: 'code',
+        showReadingTime: true,
+        editUrl:
+          'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+      },
+    ],
+    ['@docusaurus/plugin-content-blog',
+      {
         id: 'algorithm',
         path: 'algorithm',
         routeBasePath: 'algorithm',
