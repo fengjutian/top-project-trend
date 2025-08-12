@@ -21,3 +21,9 @@ PinMe 是一个部署工具，可以让你一行命令上线自己的博客、�
 
 地址：https://pinme.eth.limo/
 
+## [Typora 的主题](https://theme.typora.io/)
+
+![alt text](./static//imgs/typora.png)
+
+地址：https://theme.typora.io/
+
