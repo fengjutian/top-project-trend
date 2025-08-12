@@ -20,18 +20,6 @@ tags: [react, blog]
 
 ---
 
-### 🚀 核心优势
-- **组件丰富**：涵盖按钮、卡片、表单、导航等常用 UI 元素
-- **高度可定制**：支持主题定制、样式覆盖、响应式设计
-- **无障碍支持**：每个组件都注重可访问性（Accessibility）
-- **文档完善**：拥有 2,000+ 贡献者的文档系统，覆盖广泛使用场景
-- **社区活跃**：
-  - 每周下载量：580 万+
-  - GitHub Star 数：93.9k+
-  - 贡献者：3,000+
-  - X（原 Twitter）关注者：19.2k+
-
-
 地址：https://mui.com/
 
 
@@ -54,23 +42,7 @@ tags: [react, blog]
 
 ---
 
-### 🧱 提供的组件（部分）
-- **交互类**：
-  - Dialog（对话框）
-  - Popover（弹出层）
-  - Dropdown Menu（下拉菜单）
-  - Tabs（标签页）
-  - Transition（过渡动画）
 
-- **表单类**：
-  - Combobox（组合框）
-  - Listbox（列表框）
-  - Radio Group（单选组）
-  - Switch（开关）
-  - Checkbox（复选框）
-  - Input / Textarea / Select 等基础表单元素
-
----
 
 ### 📦 使用场景
 - 构建自定义设计系统
@@ -119,20 +91,7 @@ tags: [react, blog]
 
 ---
 
-### 🧰 开发体验亮点
-- **组件插槽定制**：轻松修改组件结构与样式。
-- **Polymorphic `as` 属性**：可更改组件标签类型。
-- **无样式污染**：无冗余 CSS 类，优化打包体积。
-- **React Server Components 支持**：组件默认包含 `use client` 指令。
 
----
-
-### 💬 社区与支持
-- 社区平台：GitHub、Discord、X（原 Twitter）
-- 支持方式：Open Collective、Patreon
-- 作者：Junior Garcia
-
----
 
 ### 📦 快速开始命令
 ```bash
@@ -169,20 +128,9 @@ npx heroui-cli@latest init
 
 ---
 
-### 🧰 支持与工具
-- **Figma 插件与库**：加速设计流程
-- **Slack 频道**：设计与工程团队沟通支持
-- **代码资源**：
-  - GitHub 仓库
-  - CodeSandbox 示例
-  - Web 工程库
 
----
 
-### 🏢 背景与技术
-- 由 Pinterest 设计与工程团队维护
-- 网站由 Netlify 提供支持
-- 版权归 Pinterest 所有 © 2025
+
 
 
 地址：https://gestalt.pinterest.systems/home
@@ -206,28 +154,6 @@ npx heroui-cli@latest init
 
 ---
 
-### 📦 示例与功能模块
-- **Dashboard 示例**：展示收入、订阅等数据统计组件。
-- **Authentication 模块**：提供登录、注册等用户认证界面。
-- **Calendar 组件**：新推出的日历功能，支持交互式日期选择。
-- **Charts & Blocks**：用于可视化和布局的高级组件。
-
----
-
-### 💼 订阅与计划
-- 提供免费计划与 Pro 计划：
-  - **Starter Plan**：适合小型项目或个人使用。
-  - **Pro Plan**：解锁更多功能与存储空间。
-- 支持团队协作功能，可邀请成员共同编辑项目。
-
----
-
-### 🔐 其他功能亮点
-- **Cookie 设置管理**：支持个性化功能与隐私控制。
-- **支付系统集成**：展示付款状态与用户信息。
-- **消息与问题反馈系统**：内置聊天与问题报告界面。
-
-
 地址：https://ui.shadcn.com/
 
 ## [React Aria](https://react-spectrum.adobe.com/react-aria/index.html)
@@ -250,37 +176,6 @@ npx heroui-cli@latest init
 
 ---
 
-### 🛠 高级功能
-- 支持复杂交互，如：
-  - 拖放（Drag and Drop）
-  - 多项选择（Multi-selection）
-  - 表单验证
-  - 表格列宽调整
-- 适配不同设备与平台，提升原生体验感。
-
----
-
-### 📦 示例组件（部分）
-- DatePicker（日期选择器）
-- Popover（弹出层）
-- Tooltip（提示框）
-- SearchField（搜索框）
-- Table（表格）
-- Modal（模态框）
-- Checkbox / ToggleButton / Menu 等表单与交互组件
-
----
-
-### 🧪 开发体验亮点
-- 提供一致的默认类名与数据属性，便于样式覆盖：
-  ```css
-  .react-aria-CalendarCell[data-selected] {
-    background: var(--blue-600);
-    color: var(--gray-50);
-  }
-  ```
-
-
 
 地址：https://react-spectrum.adobe.com/react-aria/index.html
 
@@ -298,3 +193,11 @@ Skiper UI(https://skiper-ui.com/)提供了一系列现代，简约的组件，�
 基于浏览器 WebRTC 的在线视频通信开源解决方案，链接是多人视频会议版本，另有点对点通信版本、一对一通信版本。
 
 地址：https://github.com/miroslavpejic85/mirotalksfu
+
+## [react](https://github.com/untitleduico/react)
+
+![alt text](./static/imgs/react.png)
+
+全球最大的开源 React 组件库，基于 Tailwind CSS 和 React Aria 构建
+
+地址：https://github.com/untitleduico/react
