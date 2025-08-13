@@ -55,7 +55,7 @@ const config = {
         routeBasePath: 'java',
         showReadingTime: true,
         editUrl:
-          'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          'https://github.com/fengjutian/top-project-trend/tree/main',
       },
     ],
         ['@docusaurus/plugin-content-blog',
@@ -65,7 +65,7 @@ const config = {
         routeBasePath: 'code',
         showReadingTime: true,
         editUrl:
-          'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          'https://github.com/fengjutian/top-project-trend/tree/main',
       },
     ],
     ['@docusaurus/plugin-content-blog',
@@ -75,7 +75,7 @@ const config = {
         routeBasePath: 'algorithm',
         showReadingTime: true,
         editUrl:
-          'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          'https://github.com/fengjutian/top-project-trend/tree/main',
       },
     ],
     ['@docusaurus/plugin-content-blog',
@@ -85,7 +85,7 @@ const config = {
         routeBasePath: 'golang',
         showReadingTime: true,
         editUrl:
-          'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          'https://github.com/fengjutian/top-project-trend/tree/main',
       },
     ],
 
@@ -96,7 +96,7 @@ const config = {
         routeBasePath: 'rust',
         showReadingTime: true,
         editUrl:
-          'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          'https://github.com/fengjutian/top-project-trend/tree/main',
       },
     ],
     ['@docusaurus/plugin-content-blog',
@@ -106,7 +106,7 @@ const config = {
         routeBasePath: 'python',
         showReadingTime: true,
         editUrl:
-          'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          'https://github.com/fengjutian/top-project-trend/tree/main',
       },
     ],
     ['@docusaurus/plugin-content-blog',
@@ -116,7 +116,7 @@ const config = {
         routeBasePath: 'android',
         showReadingTime: true,
         editUrl:
-          'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          'https://github.com/fengjutian/top-project-trend/tree/main',
       },
     ],
     ['@docusaurus/plugin-content-blog',
@@ -126,7 +126,7 @@ const config = {
         routeBasePath: 'lang-chain',
         showReadingTime: true,
         editUrl:
-          'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          'https://github.com/fengjutian/top-project-trend/tree/main',
       },
     ],
     ['@docusaurus/plugin-content-blog',
@@ -136,7 +136,7 @@ const config = {
         routeBasePath: 'static-website',
         showReadingTime: true,
         editUrl:
-          'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          'https://github.com/fengjutian/top-project-trend/tree/main',
       },
     ],
 
