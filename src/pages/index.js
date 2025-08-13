@@ -1,18 +1,16 @@
 import React from 'react';
-import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Layout from '@theme/Layout';
 import styles from './index.module.css';
-import { motion } from 'framer-motion';
 import { 
-  Heart, Moon, Sun, Search, User, Clock, Flame, 
-  MessageSquare, Star, Zap, Tag, ChevronDown 
+  Moon, Sun, Search, User,  
+ ChevronDown 
 } from 'lucide-react';
+
+import Header from './Header'
 
 import Silk from '../MainPage/Silk';
 
-import BlurText from "../MainPage/BlurText";
 
 const handleAnimationComplete = () => {
   console.log('Animation completed!');

@@ -50,14 +50,45 @@ const config = {
     ],
     ['@docusaurus/plugin-content-blog',
       {
+        id: 'java',
+        path: 'java',
+        routeBasePath: 'java',
+        showReadingTime: true,
+        editUrl:
+          'https://github.com/fengjutian/top-project-trend/tree/main',
+      },
+    ],
+        ['@docusaurus/plugin-content-blog',
+      {
+        id: 'code',
+        path: 'code',
+        routeBasePath: 'code',
+        showReadingTime: true,
+        editUrl:
+          'https://github.com/fengjutian/top-project-trend/tree/main',
+      },
+    ],
+    ['@docusaurus/plugin-content-blog',
+      {
         id: 'algorithm',
         path: 'algorithm',
         routeBasePath: 'algorithm',
         showReadingTime: true,
         editUrl:
-          'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          'https://github.com/fengjutian/top-project-trend/tree/main',
       },
     ],
+    ['@docusaurus/plugin-content-blog',
+      {
+        id: 'golang',
+        path: 'golang',
+        routeBasePath: 'golang',
+        showReadingTime: true,
+        editUrl:
+          'https://github.com/fengjutian/top-project-trend/tree/main',
+      },
+    ],
+
     ['@docusaurus/plugin-content-blog',
       {
         id: 'rust',
@@ -65,7 +96,7 @@ const config = {
         routeBasePath: 'rust',
         showReadingTime: true,
         editUrl:
-          'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          'https://github.com/fengjutian/top-project-trend/tree/main',
       },
     ],
     ['@docusaurus/plugin-content-blog',
@@ -75,7 +106,17 @@ const config = {
         routeBasePath: 'python',
         showReadingTime: true,
         editUrl:
-          'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          'https://github.com/fengjutian/top-project-trend/tree/main',
+      },
+    ],
+    ['@docusaurus/plugin-content-blog',
+      {
+        id: 'android',
+        path: 'android',
+        routeBasePath: 'android',
+        showReadingTime: true,
+        editUrl:
+          'https://github.com/fengjutian/top-project-trend/tree/main',
       },
     ],
     ['@docusaurus/plugin-content-blog',
@@ -85,9 +126,20 @@ const config = {
         routeBasePath: 'lang-chain',
         showReadingTime: true,
         editUrl:
-          'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          'https://github.com/fengjutian/top-project-trend/tree/main',
       },
     ],
+    ['@docusaurus/plugin-content-blog',
+      {
+        id: 'static-website',
+        path: 'static-website',
+        routeBasePath: 'static-website',
+        showReadingTime: true,
+        editUrl:
+          'https://github.com/fengjutian/top-project-trend/tree/main',
+      },
+    ],
+
   ],
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -146,9 +198,13 @@ const config = {
         },
         items: [
           {to: '/blog', label: '周刊', position: 'left'},
+          {to: '/java', label: 'Java', position: 'left'},
+          {to: '/code', label: '代码', position: 'left'},
           {to: '/algorithm', label: '算法', position: 'left'},
-          // {to: '/rust', label: 'Rust', position: 'left'},
+          {to: '/golang', label: 'Golang', position: 'left'},
+          {to: '/rust', label: 'Rust', position: 'left'},
           {to: '/python', label: 'Python', position: 'left'},
+          {to: '/android', label: 'Android', position: 'left'},
           {to: '/lang-chain', label: 'LangChain', position: 'left'},
           {
             type: 'doc',
@@ -156,6 +212,7 @@ const config = {
             position: 'left',
             label: 'Tutorial',
           },
+          {to: '/static-website', label: '资源网站', position: 'left'},
           {
             href: 'https://github.com/fengjutian',
             label: 'GitHub',
