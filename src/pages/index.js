@@ -85,14 +85,17 @@ export default function Home() {
       </header>
 
 
-
-    <Silk
+    <div  style={{width: '100vw', height: '100vh', position: 'relative'}}>
+          <Silk
       speed={5}
       scale={1}
       color="#5033F1FF"
       noiseIntensity={1.5}
       rotation={0}
     />
+
+    </div>
+
 
     <SnowfallBg />
 
