@@ -111,6 +111,16 @@ const config = {
     ],
     ['@docusaurus/plugin-content-blog',
       {
+        id: 'android',
+        path: 'android',
+        routeBasePath: 'android',
+        showReadingTime: true,
+        editUrl:
+          'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+      },
+    ],
+    ['@docusaurus/plugin-content-blog',
+      {
         id: 'LangChain',
         path: 'lang-chain',
         routeBasePath: 'lang-chain',
@@ -194,6 +204,7 @@ const config = {
           {to: '/golang', label: 'Golang', position: 'left'},
           {to: '/rust', label: 'Rust', position: 'left'},
           {to: '/python', label: 'Python', position: 'left'},
+          {to: '/android', label: 'Android', position: 'left'},
           {to: '/lang-chain', label: 'LangChain', position: 'left'},
           {
             type: 'doc',
