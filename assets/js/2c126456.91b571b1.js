@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[8532],{709:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"java web-\u6846\u67b6","permalink":"/top-project-trend/java/java-web-framework"}]}')}}]);

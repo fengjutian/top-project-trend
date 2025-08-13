@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[2368],{2717:e=>{e.exports=JSON.parse('{"label":"wallpaper","permalink":"/top-project-trend/blog/tags/wallpaper","allTagsPath":"/top-project-trend/blog/tags","count":1}')}}]);

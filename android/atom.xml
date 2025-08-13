@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://fengjutian.github.io/top-project-trend/android</id>
+    <title>fengjutian 技术周刊 Blog</title>
+    <updated>2025-07-24T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://fengjutian.github.io/top-project-trend/android"/>
+    <subtitle>fengjutian 技术周刊 Blog</subtitle>
+    <icon>https://fengjutian.github.io/top-project-trend/img/dinosaur-favicon.svg</icon>
+    <entry>
+        <title type="html"><![CDATA[Android 文章]]></title>
+        <id>android-article</id>
+        <link href="https://fengjutian.github.io/top-project-trend/android/android-article"/>
+        <updated>2025-07-24T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[- 救命Jetpack Compose还能这样玩后悔药功能get]]></summary>
+        <content type="html"><![CDATA[<ul><li><a href="https://mp.weixin.qq.com/s/TTEWA1R63_POfDuwDaOa7Q" target="_blank" rel="noopener noreferrer">救命Jetpack Compose还能这样玩后悔药功能get</a></li><li><a href="https://mp.weixin.qq.com/s/6rW6jz2hxlV9kalPk6s8yw" target="_blank" rel="noopener noreferrer">用Jetpack Compose打造酷炫转角徽章：从原理到实战</a></li></ul>]]></content>
+        <author>
+            <name>fengjutian</name>
+            <uri>https://github.com/fengjutian</uri>
+        </author>
+    </entry>
+</feed>

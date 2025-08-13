@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[69],{335:e=>{e.exports=JSON.parse('{"permalink":"/top-project-trend/lang-chain/tags/rust-scan","page":1,"postsPerPage":10,"totalPages":1,"totalCount":2,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

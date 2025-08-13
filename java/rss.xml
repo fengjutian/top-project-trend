@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>fengjutian 技术周刊 Blog</title>
+        <link>https://fengjutian.github.io/top-project-trend/java</link>
+        <description>fengjutian 技术周刊 Blog</description>
+        <lastBuildDate>Thu, 24 Jul 2025 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>en</language>
+        <item>
+            <title><![CDATA[java web-框架]]></title>
+            <link>https://fengjutian.github.io/top-project-trend/java/java-web-framework</link>
+            <guid>java-web-framework</guid>
+            <pubDate>Thu, 24 Jul 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Micronaut]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_m6px" id="micronaut"><a href="https://micronaut.io/" target="_blank" rel="noopener noreferrer">Micronaut</a><a class="hash-link" href="#micronaut" title="Direct link to heading">​</a></h2><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/micronaut-98088981d2b2889c74feaf0cf7e0ffb0.png" width="1912" height="962" class="img_FQL_"></p><p>Micronaut是一个轻量级的微服务框架，强调模块化和灵活性。它通过编译时注入和AOP（面向切面编程）技术，实现了高性能和低内存占用。Micronaut注重模块化和依赖注入，提供了高度的可定制性和灵活性。</p><p>地址：<a href="https://micronaut.io/" target="_blank" rel="noopener noreferrer">https://micronaut.io/</a></p><h2 class="anchor anchorWithStickyNavbar_m6px" id="quarkus"><a href="https://quarkus.io/" target="_blank" rel="noopener noreferrer">Quarkus</a><a class="hash-link" href="#quarkus" title="Direct link to heading">​</a></h2><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/quarkus-4ee953fa27c3b2897d38625186cb4665.png" width="1912" height="962" class="img_FQL_"></p><p>Quarkus是由Red Hat推出的新一代Java微服务框架，主打高性能和低资源消耗。它通过GraalVM原生编译和高效的代码生成技术，实现了微服务的极致优化。Quarkus专为云原生应用设计，能够很好地适应现代开发环境的需求。</p><p>地址：<a href="https://quarkus.io/" target="_blank" rel="noopener noreferrer">https://quarkus.io/</a></p>]]></content:encoded>
+        </item>
+    </channel>
+</rss>

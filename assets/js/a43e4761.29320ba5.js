@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[3392],{1527:e=>{e.exports=JSON.parse('{"permalink":"/top-project-trend/static-website/tags/wallpaper","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

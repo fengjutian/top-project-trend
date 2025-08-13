@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://fengjutian.github.io/top-project-trend/java</id>
+    <title>fengjutian 技术周刊 Blog</title>
+    <updated>2025-07-24T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://fengjutian.github.io/top-project-trend/java"/>
+    <subtitle>fengjutian 技术周刊 Blog</subtitle>
+    <icon>https://fengjutian.github.io/top-project-trend/img/dinosaur-favicon.svg</icon>
+    <entry>
+        <title type="html"><![CDATA[java web-框架]]></title>
+        <id>java-web-framework</id>
+        <link href="https://fengjutian.github.io/top-project-trend/java/java-web-framework"/>
+        <updated>2025-07-24T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Micronaut]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_m6px" id="micronaut"><a href="https://micronaut.io/" target="_blank" rel="noopener noreferrer">Micronaut</a><a class="hash-link" href="#micronaut" title="Direct link to heading">​</a></h2><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/micronaut-98088981d2b2889c74feaf0cf7e0ffb0.png" width="1912" height="962" class="img_FQL_"></p><p>Micronaut是一个轻量级的微服务框架，强调模块化和灵活性。它通过编译时注入和AOP（面向切面编程）技术，实现了高性能和低内存占用。Micronaut注重模块化和依赖注入，提供了高度的可定制性和灵活性。</p><p>地址：<a href="https://micronaut.io/" target="_blank" rel="noopener noreferrer">https://micronaut.io/</a></p><h2 class="anchor anchorWithStickyNavbar_m6px" id="quarkus"><a href="https://quarkus.io/" target="_blank" rel="noopener noreferrer">Quarkus</a><a class="hash-link" href="#quarkus" title="Direct link to heading">​</a></h2><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/quarkus-4ee953fa27c3b2897d38625186cb4665.png" width="1912" height="962" class="img_FQL_"></p><p>Quarkus是由Red Hat推出的新一代Java微服务框架，主打高性能和低资源消耗。它通过GraalVM原生编译和高效的代码生成技术，实现了微服务的极致优化。Quarkus专为云原生应用设计，能够很好地适应现代开发环境的需求。</p><p>地址：<a href="https://quarkus.io/" target="_blank" rel="noopener noreferrer">https://quarkus.io/</a></p>]]></content>
+        <author>
+            <name>fengjutian</name>
+            <uri>https://github.com/fengjutian</uri>
+        </author>
+    </entry>
+</feed>

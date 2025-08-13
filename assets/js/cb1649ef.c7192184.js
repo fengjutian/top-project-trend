@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[329],{5853:t=>{t.exports=JSON.parse('{"label":"React Bits","permalink":"/top-project-trend/static-website/tags/react-bits","allTagsPath":"/top-project-trend/static-website/tags","count":1}')}}]);

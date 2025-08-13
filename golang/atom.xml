@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://fengjutian.github.io/top-project-trend/golang</id>
+    <title>fengjutian 技术周刊 Blog</title>
+    <updated>2025-08-10T02:34:35.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://fengjutian.github.io/top-project-trend/golang"/>
+    <subtitle>fengjutian 技术周刊 Blog</subtitle>
+    <icon>https://fengjutian.github.io/top-project-trend/img/dinosaur-favicon.svg</icon>
+    <entry>
+        <title type="html"><![CDATA[Golang web 框架]]></title>
+        <id>golang-web</id>
+        <link href="https://fengjutian.github.io/top-project-trend/golang/golang-web"/>
+        <updated>2025-08-10T02:34:35.000Z</updated>
+        <summary type="html"><![CDATA[Gin]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_m6px" id="gin"><a href="https://github.com/gin-gonic/gin" target="_blank" rel="noopener noreferrer">Gin</a><a class="hash-link" href="#gin" title="Direct link to heading">​</a></h2><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/gin-e49eb475ebd35e3fa2b9f4868c456a93.png" width="1912" height="962" class="img_FQL_"></p><p>Gin 框架提供了多种功能，包括请求/响应处理、路由、中间件、验证、日志记录等。</p><p>与 Martini 相比，Gin 在性能上提升了最多 40 倍，是开发高性能应用程序的理想选择。其简洁直观的语法让开发人员能够快速构建复杂的 Web 应用程序。</p><p>地址：<a href="https://github.com/gin-gonic/gin" target="_blank" rel="noopener noreferrer">https://github.com/gin-gonic/gin</a></p><h2 class="anchor anchorWithStickyNavbar_m6px" id="beego"><a href="https://github.com/beego/beego" target="_blank" rel="noopener noreferrer">beego</a><a class="hash-link" href="#beego" title="Direct link to heading">​</a></h2><p>Beego 是一个开源的 Golang Web 框架，以卓越的性能和遵循 MVC（模型-视图-控制器）设计模式为特点。它支持开发 Web 应用程序、API 和后端服务，并内置了路由、ORM、日志记录和 HTTP 处理工具。</p><p>Beego 的一个重要优势是其模块化设计，开发人员可以根据需要选择使用特定的组件。其内置的库使得数据库访问、请求处理和日志记录等任务变得更加简单和高效。</p><p>地址：<a href="https://github.com/beego/beego" target="_blank" rel="noopener noreferrer">https://github.com/beego/beego</a></p><h2 class="anchor anchorWithStickyNavbar_m6px" id="iris"><a href="https://iris-go.com/" target="_blank" rel="noopener noreferrer">iris</a><a class="hash-link" href="#iris" title="Direct link to heading">​</a></h2><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/iris-ce46caefc52f33f897dd22ab1b109002.png" width="1912" height="962" class="img_FQL_"></p><p>Iris 内置了对 MVC（模型-视图-控制器）架构的支持，非常适合管理大型应用程序。它提供了会话处理、路由、缓存中间件等基本功能。</p><p>此外，Iris 还支持多个第三方库，如 Passport、Express-Session、Body-Parser 和 Morgan，允许开发人员将这些工具无缝集成到项目中。</p><p>地址：<a href="https://iris-go.com/" target="_blank" rel="noopener noreferrer">https://iris-go.com/</a></p>]]></content>
+        <author>
+            <name>fengjutian</name>
+            <uri>https://github.com/fengjutian</uri>
+        </author>
+    </entry>
+</feed>
