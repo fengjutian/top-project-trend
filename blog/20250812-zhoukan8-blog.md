@@ -27,3 +27,13 @@ PinMe 是一个部署工具，可以让你一行命令上线自己的博客、�
 
 地址：https://theme.typora.io/
 
+## [Excalidraw](https://github.com/excalidraw/excalidraw)
+
+![alt text](./static/imgs/excalidraw.png)
+
+- Excalidraw 是一个开源的虚拟白板工具，支持手绘风格图示的绘制。
+- 适用于创建流程图、线框图、草图等。
+- 提供协作功能和端到端加密，适合团队使用。
+
+地址：https://github.com/excalidraw/excalidraw
+
