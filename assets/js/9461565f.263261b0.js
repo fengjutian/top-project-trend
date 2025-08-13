@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[4631],{3116:e=>{e.exports=JSON.parse('{"permalink":"/top-project-trend/java/tags/\u6731\u96c0\u4eff\u5b8b","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[1404],{5625:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Golang web \u6846\u67b6","permalink":"/top-project-trend/golang/golang-web"}]}')}}]);

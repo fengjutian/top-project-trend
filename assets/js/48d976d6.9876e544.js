@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[755],{8320:e=>{e.exports=JSON.parse('{"label":"Vue Bits","permalink":"/top-project-trend/java/tags/vue-bits","allTagsPath":"/top-project-trend/java/tags","count":1}')}}]);
