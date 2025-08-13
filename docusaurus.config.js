@@ -188,7 +188,7 @@ const config = {
         },
         items: [
           {to: '/blog', label: '周刊', position: 'left'},
-          {to: '/java', label: 'java', position: 'left'},
+          {to: '/java', label: 'Java', position: 'left'},
           {to: '/code', label: '代码', position: 'left'},
           {to: '/algorithm', label: '算法', position: 'left'},
           {to: '/golang', label: 'Golang', position: 'left'},
