@@ -7,6 +7,8 @@ import {
  ChevronDown 
 } from 'lucide-react';
 
+import NosieTitle from '../custom-theme/noise-title';
+
 import Header from './Header'
 
 import Silk from '../MainPage/Silk';
@@ -49,9 +51,9 @@ export default function Home() {
 
        <header className={styles.header}>
         <div className={styles.headerContainer}>
-          <Link to="/" className={styles.logo}>
-            {siteConfig.title}
-          </Link>
+          {/* <Link to="/" className={styles.logo}> */}
+            <NosieTitle title={siteConfig.title}/>
+          {/* </Link> */}
 
           <div className={styles.searchBar}>
             <Search className={styles.searchIcon} />
@@ -93,8 +95,8 @@ export default function Home() {
     />
 
     <SnowfallBg />
-</>
 
 
+  </>
   );
 }
