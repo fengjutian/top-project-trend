@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[80],{4473:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Python web \u6846\u67b6","permalink":"/top-project-trend/python/python-web"}]}')}}]);

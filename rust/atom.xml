@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://fengjutian.github.io/top-project-trend/rust</id>
+    <title>fengjutian 技术周刊 Blog</title>
+    <updated>2025-07-27T04:04:06.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://fengjutian.github.io/top-project-trend/rust"/>
+    <subtitle>fengjutian 技术周刊 Blog</subtitle>
+    <icon>https://fengjutian.github.io/top-project-trend/img/dinosaur-favicon.svg</icon>
+    <entry>
+        <title type="html"><![CDATA[Rust web 框架]]></title>
+        <id>rust-web</id>
+        <link href="https://fengjutian.github.io/top-project-trend/rust/rust-web"/>
+        <updated>2025-07-27T04:04:06.000Z</updated>
+        <summary type="html"><![CDATA[actix-web]]></summary>
+        <content type="html"><![CDATA[<h3 class="anchor anchorWithStickyNavbar_m6px" id="actix-web"><a href="https://github.com/actix/actix-web" target="_blank" rel="noopener noreferrer">actix-web</a><a class="hash-link" href="#actix-web" title="Direct link to heading">​</a></h3><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/actix-47e3d56247006e23ca6f6236f016860d.png" width="1912" height="962" class="img_FQL_"></p><p>地址：<a href="https://actix.rs/" target="_blank" rel="noopener noreferrer">https://actix.rs/</a></p><h3 class="anchor anchorWithStickyNavbar_m6px" id="axum"><a href="https://github.com/tokio-rs/axum" target="_blank" rel="noopener noreferrer">axum</a><a class="hash-link" href="#axum" title="Direct link to heading">​</a></h3><p>地址：<a href="https://github.com/tokio-rs/axum" target="_blank" rel="noopener noreferrer">https://github.com/tokio-rs/axum</a></p>]]></content>
+        <author>
+            <name>fengjutian</name>
+            <uri>https://github.com/fengjutian</uri>
+        </author>
+    </entry>
+</feed>

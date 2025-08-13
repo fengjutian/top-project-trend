@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://fengjutian.github.io/top-project-trend/java</id>
+    <title>fengjutian 技术周刊 Blog</title>
+    <updated>2025-08-01T14:36:05.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://fengjutian.github.io/top-project-trend/java"/>
+    <subtitle>fengjutian 技术周刊 Blog</subtitle>
+    <icon>https://fengjutian.github.io/top-project-trend/img/dinosaur-favicon.svg</icon>
+    <entry>
+        <title type="html"><![CDATA[技术周刊三]]></title>
+        <id>zhoukan3</id>
+        <link href="https://fengjutian.github.io/top-project-trend/java/zhoukan3"/>
+        <updated>2025-08-01T14:36:05.000Z</updated>
+        <summary type="html"><![CDATA[Python 脚本运行器uv教程]]></summary>
+        <content type="html"><![CDATA[<h3 class="anchor anchorWithStickyNavbar_m6px" id="python-脚本运行器uv教程"><a href="https://docs.astral.sh/uv/guides/scripts/" target="_blank" rel="noopener noreferrer">Python 脚本运行器uv教程</a><a class="hash-link" href="#python-脚本运行器uv教程" title="Direct link to heading">​</a></h3><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/uv-10db6970ce90e8b198b96cecd4066a93.png" width="3263" height="1581" class="img_FQL_">
+uv 可以用来运行 Python 脚本，本文是一篇初学者教程。</p><p>地址：<a href="https://docs.astral.sh/uv/guides/scripts/" target="_blank" rel="noopener noreferrer">https://docs.astral.sh/uv/guides/scripts/</a></p><h3 class="anchor anchorWithStickyNavbar_m6px" id="kelp"><a href="https://kelpui.com/docs/getting-started/installation/" target="_blank" rel="noopener noreferrer">Kelp</a><a class="hash-link" href="#kelp" title="Direct link to heading">​</a></h3><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/kelp-ce5b46ae0ae0526f79812c0c78beca53.png" width="3263" height="1581" class="img_FQL_">
+地址：<a href="https://kelpui.com/docs/getting-started/installation/" target="_blank" rel="noopener noreferrer">https://kelpui.com/docs/getting-started/installation/</a></p><h3 class="anchor anchorWithStickyNavbar_m6px" id="filebrowser"><a href="https://github.com/filebrowser/filebrowser" target="_blank" rel="noopener noreferrer">filebrowser</a><a class="hash-link" href="#filebrowser" title="Direct link to heading">​</a></h3><p>filebrowser/filebrowser 是一个流行的开源文件管理器项目，允许你通过 Web 浏览器方便地管理、上传、下载和分享服务器或本地电脑上的文件。它支持多种平台（Linux、Windows、macOS、Docker 等），拥有现代化的 Web UI，适合个人和团队使用。
+<img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/filebrowser-66c8b8d39a16122a7612dc6394e272eb.png" width="2486" height="516" class="img_FQL_">
+地址：<a href="https://github.com/filebrowser/filebrowser" target="_blank" rel="noopener noreferrer">https://github.com/filebrowser/filebrowser</a></p>]]></content>
+        <author>
+            <name>fengjutian</name>
+            <uri>https://github.com/fengjutian</uri>
+        </author>
+        <category label="uv" term="uv"/>
+        <category label="Kelp" term="Kelp"/>
+        <category label="tsx" term="tsx"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[技术周刊二]]></title>
+        <id>zhoukan2</id>
+        <link href="https://fengjutian.github.io/top-project-trend/java/zhoukan2"/>
+        <updated>2025-07-27T04:04:06.000Z</updated>
+        <summary type="html"><![CDATA[Vue Bits]]></summary>
+        <content type="html"><![CDATA[<h3 class="anchor anchorWithStickyNavbar_m6px" id="vue-bits"><a href="https://vue-bits.dev/" target="_blank" rel="noopener noreferrer">Vue Bits</a><a class="hash-link" href="#vue-bits" title="Direct link to heading">​</a></h3><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/vuebits-778c93626abe75224a72efa60d2807af.png" width="3839" height="1865" class="img_FQL_">
+一个超棒的Vue UI 动效库</p><p>地址：<a href="https://vue-bits.dev/" target="_blank" rel="noopener noreferrer">https://vue-bits.dev/</a></p><h2 class="anchor anchorWithStickyNavbar_m6px" id="billionmail">BillionMail<a class="hash-link" href="#billionmail" title="Direct link to heading">​</a></h2><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/billionmail-e970c8f629c66042e7c266adf000998c.png" width="3422" height="1772" class="img_FQL_">
+BillionMail 是一个未来的开源邮件服务器和电子邮件营销平台，旨在帮助企业和个人轻松管理他们的电子邮件营销活动。无论您是发送新闻通讯、促销邮件还是交易消息，这个工具都将为您的电子邮件营销工作提供完全控制。通过高级分析和客户管理等功能，您将能够像专业人士一样创建、发送和跟踪电子邮件。</p><p>地址：<a href="https://github.com/aaPanel/BillionMail" target="_blank" rel="noopener noreferrer">https://github.com/aaPanel/BillionMail</a></p><h3 class="anchor anchorWithStickyNavbar_m6px" id="evcc"><a href="https://github.com/evcc-io/evcc" target="_blank" rel="noopener noreferrer">evcc</a><a class="hash-link" href="#evcc" title="Direct link to heading">​</a></h3><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/evcc-92fb5dea63672c0120d37b5577d8e719.webp" width="1795" height="1000" class="img_FQL_">
+EVCC 是一个开源的家用电动汽车充电控制器/充电桩解决方案，使用 Go 语言编写，内置一个 web ui 和一组 API 用来远程控制和监控
+它适用于 12 - 53kw 的家用充电桩，也支持 5g 与 4g 网络远程控制。</p><p>地址: <a href="https://github.com/evcc-io/evcc" target="_blank" rel="noopener noreferrer">https://github.com/evcc-io/evcc</a></p><h3 class="anchor anchorWithStickyNavbar_m6px" id="base-ui"><a href="https://github.com/mui/base-ui" target="_blank" rel="noopener noreferrer">base-ui</a><a class="hash-link" href="#base-ui" title="Direct link to heading">​</a></h3><p>轻松定制的无样式 React 组件库。该项目提供了一套基础、无样式的 React 组件，仅包含必要的功能逻辑，不附带任何预设样式。帮助开发者摆脱传统 UI 库的样式束缚，无需耗费大量精力覆盖和修改默认样式。</p><p>地址: <a href="https://github.com/mui/base-ui" target="_blank" rel="noopener noreferrer">https://github.com/mui/base-ui</a></p><h3 class="anchor anchorWithStickyNavbar_m6px" id="cap"><a href="https://github.com/tiagorangel1/cap" target="_blank" rel="noopener noreferrer">cap</a><a class="hash-link" href="#cap" title="Direct link to heading">​</a></h3><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/cap-df6e822b3070003ac6489ec079d3fdd6.webp" width="1080" height="489" class="img_FQL_">
+轻量级的 CAPTCHA 替代方案。这是一个轻量级、开源的验证码方案，适用于防止机器人滥用和数据抓取等场景。它基于 SHA-256 工作量证明（Proof-of-Work）技术，易于集成、即插即用，为网站提供自托管的防滥用验证机制。</p><p>地址: <a href="https://github.com/tiagorangel1/cap" target="_blank" rel="noopener noreferrer">https://github.com/tiagorangel1/cap</a></p><h3 class="anchor anchorWithStickyNavbar_m6px" id="drawnix"><a href="https://github.com/plait-board/drawnix" target="_blank" rel="noopener noreferrer">Drawnix</a><a class="hash-link" href="#drawnix" title="Direct link to heading">​</a></h3><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/drawnix-e72092d4dcb14eb8c9c5e159e38e1c83.png" width="3248" height="2112" class="img_FQL_">
+开源白板工具（SaaS），一体化白板，包含思维导图、流程图、自由画等。</p><p>地址: <a href="https://github.com/plait-board/drawnix" target="_blank" rel="noopener noreferrer">https://github.com/plait-board/drawnix</a></p><h3 class="anchor anchorWithStickyNavbar_m6px" id="500-ai-agent-projects"><a href="https://github.com/ashishpatel26/500-AI-Agents-Projects" target="_blank" rel="noopener noreferrer">500+ AI Agent Projects</a><a class="hash-link" href="#500-ai-agent-projects" title="Direct link to heading">​</a></h3><p>这个项目收集了500多个AI智能体在不同行业的实际应用案例，覆盖医疗、金融、教育、零售等多个领域。它整理了各种AI代理的具体用途，比如医疗报告分析、股票自动交易、个性化教学等，还提供了开源项目的代码链接，方便开发者直接参考或实现。无论你是想找灵感、学习还是落地AI解决方案，这个仓库都能帮你快速找到相关案例和资源。</p><p>地址:<a href="https://github.com/ashishpatel26/500-AI-Agents-Projects" target="_blank" rel="noopener noreferrer">https://github.com/ashishpatel26/500-AI-Agents-Projects</a></p><h3 class="anchor anchorWithStickyNavbar_m6px" id="songgeneration"><a href="https://github.com/tencent-ailab/songgeneration/" target="_blank" rel="noopener noreferrer">SongGeneration</a><a class="hash-link" href="#songgeneration" title="Direct link to heading">​</a></h3><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/SongGeneration-7d8ab493c3aa9a5b8ec35cb9283c0143.jpg" width="800" height="800" class="img_FQL_">
+腾讯开源的歌词生成模型，基于大规模歌词数据集训练而成。该项目提供了一个简单易用的接口，可以快速生成高质量的歌词文本。它支持多种语言和风格，能够满足不同场景下的需求。目前已经应用于音乐创作、歌词自动填充等多个领域，受到了广泛的关注和应用</p><p>地址：<a href="https://github.com/tencent-ailab/songgeneration/" target="_blank" rel="noopener noreferrer">https://github.com/tencent-ailab/songgeneration/</a></p>]]></content>
+        <author>
+            <name>fengjutian</name>
+            <uri>https://github.com/fengjutian</uri>
+        </author>
+        <category label="Vue Bits" term="Vue Bits"/>
+        <category label="RustScan" term="RustScan"/>
+        <category label="tsx" term="tsx"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[技术周刊一]]></title>
+        <id>zhoukan1</id>
+        <link href="https://fengjutian.github.io/top-project-trend/java/zhoukan1"/>
+        <updated>2025-07-24T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[朱雀仿宋]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_m6px" id="朱雀仿宋">朱雀仿宋<a class="hash-link" href="#朱雀仿宋" title="Direct link to heading">​</a></h2><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/zhuque-308843821876d028e225a7008f3f9b65.png" width="1280" height="640" class="img_FQL_">
+简介：
+朱雀仿宋/朱雀宋朝/Zhuque Fangsong: An open-source Fangsong typeface project</p><p>地址：
+<a href="https://github.com/TrionesType/zhuque" target="_blank" rel="noopener noreferrer">https://github.com/TrionesType/zhuque</a></p><h2 class="anchor anchorWithStickyNavbar_m6px" id="windows-任务管理器的四种替代品英文">Windows 任务管理器的四种替代品（英文）<a class="hash-link" href="#windows-任务管理器的四种替代品英文" title="Direct link to heading">​</a></h2><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/windows-59c11e33a592662c7905ff005e40bc5c.png" width="2280" height="1283" class="img_FQL_"></p><p><a href="https://www.xda-developers.com/powerful-tools-should-use-instead-task-manager/" target="_blank" rel="noopener noreferrer">https://www.xda-developers.com/powerful-tools-should-use-instead-task-manager/</a></p><h2 class="anchor anchorWithStickyNavbar_m6px" id="rustscan">RustScan<a class="hash-link" href="#rustscan" title="Direct link to heading">​</a></h2><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/rustscan-91ed37b004b8310d7ac2c4187e46426d.png" width="550" height="528" class="img_FQL_">
+RustScan 是一个基于 Rust 语言的端口扫描工具，它的速度非常快，支持多线程扫描，并且可以扫描指定范围内的端口。</p><p>地址：
+<a href="https://github.com/bee-san/RustScan" target="_blank" rel="noopener noreferrer">https://github.com/bee-san/RustScan</a></p><h2 class="anchor anchorWithStickyNavbar_m6px" id="tsx">tsx<a class="hash-link" href="#tsx" title="Direct link to heading">​</a></h2><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/tsx-0a714937aa16e77d021f5f6bce0df31e.png" width="700" height="380" class="img_FQL_">
+tsx 是一个用于运行 TypeScript 的命令行工具，它可以直接运行 TypeScript 文件而无需编译。</p><p>地址：
+<a href="https://github.com/privatenumber/tsx" target="_blank" rel="noopener noreferrer">https://github.com/privatenumber/tsx</a></p><h2 class="anchor anchorWithStickyNavbar_m6px" id="oss-rebuild">oss-rebuild<a class="hash-link" href="#oss-rebuild" title="Direct link to heading">​</a></h2><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/image-b4ae1bba189a100d6bdfaa2ed9158e6c.png" width="800" height="434" class="img_FQL_">
+谷歌本周推出的一项服务，用来验证网上的 NPM、PyPI、Rust 的软件包，是否跟源码构建出来的完全一样，保证软件供应链安全。</p><p>地址：<a href="https://oss-rebuild.dev/" target="_blank" rel="noopener noreferrer">https://oss-rebuild.dev/</a></p>]]></content>
+        <author>
+            <name>fengjutian</name>
+            <uri>https://github.com/fengjutian</uri>
+        </author>
+        <category label="朱雀仿宋" term="朱雀仿宋"/>
+        <category label="RustScan" term="RustScan"/>
+        <category label="tsx" term="tsx"/>
+    </entry>
+</feed>

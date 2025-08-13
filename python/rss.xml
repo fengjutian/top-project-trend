@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>fengjutian 技术周刊 Blog</title>
+        <link>https://fengjutian.github.io/top-project-trend/python</link>
+        <description>fengjutian 技术周刊 Blog</description>
+        <lastBuildDate>Fri, 01 Aug 2025 14:36:05 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>en</language>
+        <item>
+            <title><![CDATA[Python web 框架]]></title>
+            <link>https://fengjutian.github.io/top-project-trend/python/python-web</link>
+            <guid>python-web</guid>
+            <pubDate>Fri, 01 Aug 2025 14:36:05 GMT</pubDate>
+            <description><![CDATA[Python 脚本运行器uv教程]]></description>
+            <content:encoded><![CDATA[<h3 class="anchor anchorWithStickyNavbar_m6px" id="python-脚本运行器uv教程"><a href="https://docs.astral.sh/uv/guides/scripts/" target="_blank" rel="noopener noreferrer">Python 脚本运行器uv教程</a><a class="hash-link" href="#python-脚本运行器uv教程" title="Direct link to heading">​</a></h3><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/uv-10db6970ce90e8b198b96cecd4066a93.png" width="3263" height="1581" class="img_FQL_">
+uv 可以用来运行 Python 脚本，本文是一篇初学者教程。</p><p>地址：<a href="https://docs.astral.sh/uv/guides/scripts/" target="_blank" rel="noopener noreferrer">https://docs.astral.sh/uv/guides/scripts/</a></p>]]></content:encoded>
+            <category>uv</category>
+            <category>Kelp</category>
+            <category>tsx</category>
+        </item>
+    </channel>
+</rss>

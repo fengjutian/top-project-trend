@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[5024],{2318:a=>{a.exports=JSON.parse('{"label":"uv","permalink":"/top-project-trend/java/tags/uv","allTagsPath":"/top-project-trend/java/tags","count":1}')}}]);

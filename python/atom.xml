@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://fengjutian.github.io/top-project-trend/python</id>
+    <title>fengjutian 技术周刊 Blog</title>
+    <updated>2025-08-01T14:36:05.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://fengjutian.github.io/top-project-trend/python"/>
+    <subtitle>fengjutian 技术周刊 Blog</subtitle>
+    <icon>https://fengjutian.github.io/top-project-trend/img/dinosaur-favicon.svg</icon>
+    <entry>
+        <title type="html"><![CDATA[Python web 框架]]></title>
+        <id>python-web</id>
+        <link href="https://fengjutian.github.io/top-project-trend/python/python-web"/>
+        <updated>2025-08-01T14:36:05.000Z</updated>
+        <summary type="html"><![CDATA[Python 脚本运行器uv教程]]></summary>
+        <content type="html"><![CDATA[<h3 class="anchor anchorWithStickyNavbar_m6px" id="python-脚本运行器uv教程"><a href="https://docs.astral.sh/uv/guides/scripts/" target="_blank" rel="noopener noreferrer">Python 脚本运行器uv教程</a><a class="hash-link" href="#python-脚本运行器uv教程" title="Direct link to heading">​</a></h3><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/uv-10db6970ce90e8b198b96cecd4066a93.png" width="3263" height="1581" class="img_FQL_">
+uv 可以用来运行 Python 脚本，本文是一篇初学者教程。</p><p>地址：<a href="https://docs.astral.sh/uv/guides/scripts/" target="_blank" rel="noopener noreferrer">https://docs.astral.sh/uv/guides/scripts/</a></p>]]></content>
+        <author>
+            <name>fengjutian</name>
+            <uri>https://github.com/fengjutian</uri>
+        </author>
+        <category label="uv" term="uv"/>
+        <category label="Kelp" term="Kelp"/>
+        <category label="tsx" term="tsx"/>
+    </entry>
+</feed>
