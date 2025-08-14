@@ -189,3 +189,10 @@ Kibo UI（https://www.kibo-ui.com/）是一个可自定义的注册表，该注�
 
 地址：https://www.kibo-ui.com/
 
+## [Nurui](https://github.com/afsar-dev/Nurui)
+
+![alt text](./static/nurui.png)
+
+Nurui 是一个基于 React 和 Next.js 的现代化 UI 组件库,旨在简化前端开发。它提供了 CLI 脚手架、自动将 TypeScript 转换为 JavaScript 的功能,以及实时组件预览,为开发人员提供了更快捷、更可定制的工作流程。
+
+地址: https://github.com/afsar-dev/Nurui
