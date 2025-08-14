@@ -4,10 +4,18 @@
         <title>fengjutian 技术周刊 Blog</title>
         <link>https://fengjutian.github.io/top-project-trend/blog</link>
         <description>fengjutian 技术周刊 Blog</description>
-        <lastBuildDate>Wed, 13 Aug 2025 01:17:27 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 14 Aug 2025 01:29:07 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[技术周刊九]]></title>
+            <link>https://fengjutian.github.io/top-project-trend/blog/zhoukan9</link>
+            <guid>zhoukan9</guid>
+            <pubDate>Thu, 14 Aug 2025 01:29:07 GMT</pubDate>
+            <description><![CDATA[project-based-learning]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_m6px" id="project-based-learning"><a href="https://github.com/practical-tutorials/project-based-learning" target="_blank" rel="noopener noreferrer">project-based-learning</a><a class="hash-link" href="#project-based-learning" title="Direct link to heading">​</a></h2><p>这是一个GitHub上的项目合集，专门为想通过实战学习编程的人准备。里面收集了各种编程语言的教程，教你从零开始搭建实际应用，比如写个小游戏、做个聊天软件、开发网页应用，甚至自己写个操作系统或编译器。每个教程都分步骤讲解，适合想动手练技术的新手和进阶开发者。你可以按自己感兴趣的语言或项目类型挑选学习，直接fork仓库就能开始实践。</p><p>地址：<a href="https://github.com/practical-tutorials/project-based-learning" target="_blank" rel="noopener noreferrer">https://github.com/practical-tutorials/project-based-learning</a></p><h2 class="anchor anchorWithStickyNavbar_m6px" id="conductor"><a href="https://github.com/conductor-oss/conductor" target="_blank" rel="noopener noreferrer">Conductor</a><a class="hash-link" href="#conductor" title="Direct link to heading">​</a></h2><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/conductor-4265a25df5b3dd633f1fdf286422e63a.png" width="1912" height="962" class="img_FQL_"></p><p>Conductor是Netflix开源的一个微服务编排引擎，专门用来管理和协调分布式系统中的异步工作流。简单来说，它就像个智能调度员，能帮你把多个微服务、数据库或外部API串联成复杂的业务流程，还能自动处理错误、重试失败任务，并提供可视化监控。无论是电商订单处理还是数据流水线，它都能让这些跨服务的协作变得更灵活可靠，支持用代码定义工作流，还兼容多种数据库和编程语言SDK。</p><p>地址：<a href="https://github.com/conductor-oss/conductor" target="_blank" rel="noopener noreferrer">https://github.com/conductor-oss/conductor</a></p>]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[技术网站]]></title>
             <link>https://fengjutian.github.io/top-project-trend/blog/technology-website</link>

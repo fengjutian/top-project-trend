@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>fengjutian 技术周刊 Blog</title>
+        <link>https://fengjutian.github.io/top-project-trend/llm</link>
+        <description>fengjutian 技术周刊 Blog</description>
+        <lastBuildDate>Sun, 10 Aug 2025 02:34:35 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>en</language>
+        <item>
+            <title><![CDATA[llm]]></title>
+            <link>https://fengjutian.github.io/top-project-trend/llm/llm</link>
+            <guid>llm</guid>
+            <pubDate>Sun, 10 Aug 2025 02:34:35 GMT</pubDate>
+            <description><![CDATA[notebooks]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_m6px" id="notebooks"><a href="https://github.com/unslothai/notebooks" target="_blank" rel="noopener noreferrer">notebooks</a><a class="hash-link" href="#notebooks" title="Direct link to heading">​</a></h2><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/notebooks-a4ab7c5abab1bf0718c258420e05e1e8.png" width="1912" height="962" class="img_FQL_"></p><p>这是一个提供各种AI模型微调教程的GitHub仓库，主要包含在Google Colab、Kaggle等平台上运行的Jupyter笔记本。这些笔记本涵盖了多种热门模型如Llama、Qwen、Gemma、Mistral等，适用于对话、视觉、文本生成等不同任务。项目提供了详细的指导，帮助用户准备数据、训练模型和保存结果，同时也欢迎社区贡献新的笔记本。</p><p>地址：<a href="https://github.com/unslothai/notebooks" target="_blank" rel="noopener noreferrer">https://github.com/unslothai/notebooks</a></p>]]></content:encoded>
+        </item>
+    </channel>
+</rss>

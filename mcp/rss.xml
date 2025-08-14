@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>fengjutian 技术周刊 Blog</title>
+        <link>https://fengjutian.github.io/top-project-trend/mcp</link>
+        <description>fengjutian 技术周刊 Blog</description>
+        <lastBuildDate>Thu, 14 Aug 2025 01:29:07 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>en</language>
+        <item>
+            <title><![CDATA[MCP]]></title>
+            <link>https://fengjutian.github.io/top-project-trend/mcp/mcp</link>
+            <guid>mcp</guid>
+            <pubDate>Thu, 14 Aug 2025 01:29:07 GMT</pubDate>
+            <description><![CDATA[fastapimcp]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_m6px" id="fastapi_mcp"><a href="https://github.com/tadata-org/fastapi_mcp" target="_blank" rel="noopener noreferrer">fastapi_mcp</a><a class="hash-link" href="#fastapi_mcp" title="Direct link to heading">​</a></h2><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/fastapi-mcp-c629f90d7dfee53d4e6a49b35fd7c798.gif" width="800" height="450" class="img_FQL_"></p><p>FastAPI-MCP 是一个工具库，可以轻松将你的 FastAPI 接口转换成符合 Model Context Protocol (MCP) 标准的工具，并自带认证功能。它直接集成到 FastAPI 应用中，无需复杂配置，保留原有的请求/响应模型结构和文档，支持灵活部署。适合想快速为现有 FastAPI 服务添加 MCP 兼容能力的开发者，同时提供托管方案选项。</p><p>地址：<a href="https://github.com/tadata-org/fastapi_mcp" target="_blank" rel="noopener noreferrer">https://github.com/tadata-org/fastapi_mcp</a></p>]]></content:encoded>
+        </item>
+    </channel>
+</rss>

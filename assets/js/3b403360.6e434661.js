@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[2556],{5361:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"MCP","permalink":"/top-project-trend/mcp/mcp"}]}')}}]);

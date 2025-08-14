@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://fengjutian.github.io/top-project-trend/mcp</id>
+    <title>fengjutian 技术周刊 Blog</title>
+    <updated>2025-08-14T01:29:07.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://fengjutian.github.io/top-project-trend/mcp"/>
+    <subtitle>fengjutian 技术周刊 Blog</subtitle>
+    <icon>https://fengjutian.github.io/top-project-trend/img/dinosaur-favicon.svg</icon>
+    <entry>
+        <title type="html"><![CDATA[MCP]]></title>
+        <id>mcp</id>
+        <link href="https://fengjutian.github.io/top-project-trend/mcp/mcp"/>
+        <updated>2025-08-14T01:29:07.000Z</updated>
+        <summary type="html"><![CDATA[fastapimcp]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_m6px" id="fastapi_mcp"><a href="https://github.com/tadata-org/fastapi_mcp" target="_blank" rel="noopener noreferrer">fastapi_mcp</a><a class="hash-link" href="#fastapi_mcp" title="Direct link to heading">​</a></h2><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/fastapi-mcp-c629f90d7dfee53d4e6a49b35fd7c798.gif" width="800" height="450" class="img_FQL_"></p><p>FastAPI-MCP 是一个工具库，可以轻松将你的 FastAPI 接口转换成符合 Model Context Protocol (MCP) 标准的工具，并自带认证功能。它直接集成到 FastAPI 应用中，无需复杂配置，保留原有的请求/响应模型结构和文档，支持灵活部署。适合想快速为现有 FastAPI 服务添加 MCP 兼容能力的开发者，同时提供托管方案选项。</p><p>地址：<a href="https://github.com/tadata-org/fastapi_mcp" target="_blank" rel="noopener noreferrer">https://github.com/tadata-org/fastapi_mcp</a></p>]]></content>
+        <author>
+            <name>fengjutian</name>
+            <uri>https://github.com/fengjutian</uri>
+        </author>
+    </entry>
+</feed>
