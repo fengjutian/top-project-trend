@@ -224,7 +224,7 @@ const config = {
           {to: '/golang', label: 'Golang', position: 'left'},
           {to: '/rust', label: 'Rust', position: 'left'},
           {to: '/python', label: 'Python', position: 'left'},
-          {to: '/android', label: 'Android', position: 'left'},
+          {to: '/android', label: 'Android/Flutter', position: 'left'},
           {to: '/mcp', label: 'MCP', position: 'left'},
           {to: '/llm', label: 'LLM', position: 'left'},
           {
