@@ -58,7 +58,7 @@ const config = {
           'https://github.com/fengjutian/top-project-trend/tree/main',
       },
     ],
-        ['@docusaurus/plugin-content-blog',
+    ['@docusaurus/plugin-content-blog',
       {
         id: 'code',
         path: 'code',
@@ -124,6 +124,26 @@ const config = {
         id: 'LangChain',
         path: 'lang-chain',
         routeBasePath: 'lang-chain',
+        showReadingTime: true,
+        editUrl:
+          'https://github.com/fengjutian/top-project-trend/tree/main',
+      },
+    ],
+    ['@docusaurus/plugin-content-blog',
+      {
+        id: 'mcp',
+        path: 'mcp',
+        routeBasePath: 'mcp',
+        showReadingTime: true,
+        editUrl:
+          'https://github.com/fengjutian/top-project-trend/tree/main',
+      },
+    ],
+    ['@docusaurus/plugin-content-blog',
+      {
+        id: 'llm',
+        path: 'llm',
+        routeBasePath: 'llm',
         showReadingTime: true,
         editUrl:
           'https://github.com/fengjutian/top-project-trend/tree/main',
@@ -205,7 +225,8 @@ const config = {
           {to: '/rust', label: 'Rust', position: 'left'},
           {to: '/python', label: 'Python', position: 'left'},
           {to: '/android', label: 'Android', position: 'left'},
-          {to: '/lang-chain', label: 'LangChain', position: 'left'},
+          {to: '/mcp', label: 'MCP', position: 'left'},
+          {to: '/llm', label: 'LLM', position: 'left'},
           {
             type: 'doc',
             docId: 'intro',
