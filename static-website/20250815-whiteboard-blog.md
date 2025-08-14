@@ -19,3 +19,15 @@ tldraw 是由 tldraw.com[1] 团队维护的开源项目，其核心目标是为�
 •开发者友好，文档齐全，社区活跃
 
 地址：https://github.com/tldraw/tldraw
+
+## [excalidraw](https://github.com/excalidraw/excalidraw)
+
+![alt text](./static/excalidraw.png)
+
+- Excalidraw 是一个开源的虚拟白板工具，支持手绘风格的图表绘制。
+
+- 适用于创建草图、线框图、流程图等。
+
+- 提供协作功能，并支持端到端加密。
+
+地址：https://github.com/excalidraw/excalidraw
