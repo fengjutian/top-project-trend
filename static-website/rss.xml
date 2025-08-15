@@ -4,17 +4,25 @@
         <title>fengjutian 技术周刊 Blog</title>
         <link>https://fengjutian.github.io/top-project-trend/static-website</link>
         <description>fengjutian 技术周刊 Blog</description>
-        <lastBuildDate>Thu, 14 Aug 2025 01:04:02 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 15 Aug 2025 01:19:43 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[权限认证]]></title>
+            <link>https://fengjutian.github.io/top-project-trend/static-website/author</link>
+            <guid>author</guid>
+            <pubDate>Fri, 15 Aug 2025 01:19:43 GMT</pubDate>
+            <description><![CDATA[Better Auth]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_m6px" id="better-auth"><a href="https://www.better-auth.com/" target="_blank" rel="noopener noreferrer">Better Auth</a><a class="hash-link" href="#better-auth" title="Direct link to heading">​</a></h2><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/better-auth-bd46bce37b2c320fed3550ffe9c3e484.png" width="1912" height="962" class="img_FQL_"></p><p>Better Auth是一个与框架无关的TypeScript认证和授权框架。它提供开箱即用功能完善的认证解决方案，并包含一个插件生态系统，简化了添加高级功能。</p><p>地址：<a href="https://www.better-auth.com/" target="_blank" rel="noopener noreferrer">https://www.better-auth.com/</a></p>]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[文本编辑器]]></title>
             <link>https://fengjutian.github.io/top-project-trend/static-website/text-editoer-blog</link>
             <guid>text-editoer-blog</guid>
             <pubDate>Thu, 14 Aug 2025 01:04:02 GMT</pubDate>
             <description><![CDATA[gpt4all]]></description>
-            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_m6px" id="gpt4all"><a href="https://github.com/nomic-ai/gpt4all" target="_blank" rel="noopener noreferrer">gpt4all</a><a class="hash-link" href="#gpt4all" title="Direct link to heading">​</a></h2><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/gpt4all-68a73e2183f4750601e4dc674816ec52.png" width="1912" height="962" class="img_FQL_"></p><p>GPT4All是一个开源项目，让你能在自己的电脑上本地运行各种大语言模型（LLM），不需要联网或高端显卡。它提供了简单易用的桌面应用和Python库，支持多种模型比如Meta的Llama 3，还能让你用本地文档聊天。适合想隐私保护或离线使用AI功能的用户，Windows、Mac和Linux都能用，连树莓派这类设备也能跑。</p><p>地址：<a href="https://github.com/nomic-ai/gpt4all" target="_blank" rel="noopener noreferrer">https://github.com/nomic-ai/gpt4all</a></p>]]></content:encoded>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_m6px" id="gpt4all"><a href="https://github.com/nomic-ai/gpt4all" target="_blank" rel="noopener noreferrer">gpt4all</a><a class="hash-link" href="#gpt4all" title="Direct link to heading">​</a></h2><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/gpt4all-68a73e2183f4750601e4dc674816ec52.png" width="1912" height="962" class="img_FQL_"></p><p>GPT4All是一个开源项目，让你能在自己的电脑上本地运行各种大语言模型（LLM），不需要联网或高端显卡。它提供了简单易用的桌面应用和Python库，支持多种模型比如Meta的Llama 3，还能让你用本地文档聊天。适合想隐私保护或离线使用AI功能的用户，Windows、Mac和Linux都能用，连树莓派这类设备也能跑。</p><p>地址：<a href="https://github.com/nomic-ai/gpt4all" target="_blank" rel="noopener noreferrer">https://github.com/nomic-ai/gpt4all</a></p><h2 class="anchor anchorWithStickyNavbar_m6px" id="notebooklm"><a href="https://notebooklm.google/" target="_blank" rel="noopener noreferrer">NotebookLM</a><a class="hash-link" href="#notebooklm" title="Direct link to heading">​</a></h2><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/notebooklm-300b035999d2e4ce137388a37c371a94.png" width="1912" height="962" class="img_FQL_"></p><p>NotebookLM 是由 Google 推出的 AI 研究工具，基于最新的 Gemini 模型，旨在帮助用户更高效地进行研究、学习和创意工作。</p><p>地址： <a href="https://notebooklm.google/" target="_blank" rel="noopener noreferrer">https://notebooklm.google/</a></p><h2 class="anchor anchorWithStickyNavbar_m6px" id="cherry-markdown-writer"><a href="https://github.com/Tencent/cherry-markdown" target="_blank" rel="noopener noreferrer">Cherry Markdown Writer</a><a class="hash-link" href="#cherry-markdown-writer" title="Direct link to heading">​</a></h2><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/cherry-markdown-97e7a559af0ccb6ab1a6858f4c0864ec.png" width="1079" height="801" class="img_FQL_"></p><p>Cherry Markdown Writer 是一款 Javascript Markdown 编辑器，具有开箱即用、轻量简洁、易于扩展等特点. 它可以运行在浏览器或服务端(NodeJs).</p><p>地址：<a href="https://github.com/Tencent/cherry-markdown" target="_blank" rel="noopener noreferrer">https://github.com/Tencent/cherry-markdown</a></p><h2 class="anchor anchorWithStickyNavbar_m6px" id="appflowy"><a href="https://github.com/AppFlowy-IO/AppFlowy?tab=readme-ov-file" target="_blank" rel="noopener noreferrer">AppFlowy</a><a class="hash-link" href="#appflowy" title="Direct link to heading">​</a></h2><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/AppFlowy-b43054544e88d4fe64146b66982683c6.png" width="854" height="771" class="img_FQL_"></p><p>AppFlowy是一款开源的知识管理和团队协作工具，它被设计为Notion的替代品。通过提供强大的文档编辑、任务管理和团队合作功能，AppFlowy让用户能够在保持数据安全的同时，享受到流畅的工作体验。使用Flutter和Rust开发的它，支持多平台运行，无论是桌面还是移动设备都能完美适配。</p><p>地址： <a href="https://github.com/AppFlowy-IO/AppFlowy?tab=readme-ov-file" target="_blank" rel="noopener noreferrer">https://github.com/AppFlowy-IO/AppFlowy?tab=readme-ov-file</a></p>]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[白板]]></title>
