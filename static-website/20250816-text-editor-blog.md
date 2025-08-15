@@ -13,3 +13,9 @@ GPT4All是一个开源项目，让你能在自己的电脑上本地运行各种�
 
 地址：https://github.com/nomic-ai/gpt4all
 
+## [NotebookLM](https://notebooklm.google/)
+
+![alt text](./static/notebooklm.png)
+
+
+地址： https://notebooklm.google/
