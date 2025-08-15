@@ -20,3 +20,11 @@ GPT4All是一个开源项目，让你能在自己的电脑上本地运行各种�
 NotebookLM 是由 Google 推出的 AI 研究工具，基于最新的 Gemini 模型，旨在帮助用户更高效地进行研究、学习和创意工作。
 
 地址： https://notebooklm.google/
+
+## [Cherry Markdown Writer](https://github.com/Tencent/cherry-markdown)
+
+![alt text](./static/cherry-markdown.png)
+
+Cherry Markdown Writer 是一款 Javascript Markdown 编辑器，具有开箱即用、轻量简洁、易于扩展等特点. 它可以运行在浏览器或服务端(NodeJs).
+
+地址：https://github.com/Tencent/cherry-markdown
