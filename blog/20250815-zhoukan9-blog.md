@@ -28,3 +28,15 @@ Refine是一个基于React的前端框架，专为快速开发Web应用程序而
 作为一个"headless"（无头）框架，Refine的核心优势在于其解耦的设计理念——它将业务逻辑与UI呈现完全分离，让开发者可以自由选择自己喜欢的UI库或自定义设计，同时享受框架提供的强大功能支持。
 
 地址：https://refine.dev/
+
+## [yn](https://github.com/purocean/yn)
+
+![alt text](./static/yank.png)
+
+- 使用方便：使用 Monaco 内核，专为 Markdown 优化，拥有和 VSCode 一样的编辑体验。
+- 功能强大：支持历史版本回溯；可在文档中嵌入小工具、可运行的代码块、表格、PlantUML 图形、Drawio 图形、宏替换等；支持 AI Copilot。
+- 兼容性强：数据保存为本地 Markdown 文件；拓展功能尽量用 Markdown 原有的语法实现。
+- 插件拓展：支持用户编写自己的插件来拓展编辑器的功能。
+- 支持加密：用来保存账号等隐私文件，文件可单独设置密码。
+
+地址：https://github.com/purocean/yn
