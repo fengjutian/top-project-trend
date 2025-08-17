@@ -65,7 +65,7 @@
     
     @media (prefers-color-scheme: light) {
       background-image: linear-gradient(
-        to right var(--space), 
+        to right var(--space),
         black, gray
       );
       
