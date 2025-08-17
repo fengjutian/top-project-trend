@@ -10,3 +10,9 @@ tags: []
 ![alt text](./static/gobyexample.png)
 
 地址：https://gobyexample.com/
+
+## [Wails](https://wails.io/)
+
+![alt text](./static/wails.png)
+
+地址：https://wails.io/
