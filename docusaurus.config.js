@@ -70,6 +70,16 @@ const config = {
     ],
     ['@docusaurus/plugin-content-blog',
       {
+        id: 'ts',
+        path: 'ts',
+        routeBasePath: 'ts',
+        showReadingTime: true,
+        editUrl:
+          'https://github.com/fengjutian/top-project-trend/tree/main',
+      },
+    ],
+    ['@docusaurus/plugin-content-blog',
+      {
         id: 'algorithm',
         path: 'algorithm',
         routeBasePath: 'algorithm',
@@ -220,6 +230,7 @@ const config = {
           {to: '/blog', label: '周刊', position: 'left'},
           {to: '/java', label: 'Java', position: 'left'},
           {to: '/code', label: '代码', position: 'left'},
+          {to: '/ts', label: 'TypeScript', position: 'left'},
           {to: '/algorithm', label: '算法', position: 'left'},
           {to: '/golang', label: 'Golang', position: 'left'},
           {to: '/rust', label: 'Rust', position: 'left'},
