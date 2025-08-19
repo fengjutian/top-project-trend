@@ -40,3 +40,11 @@ Refine是一个基于React的前端框架，专为快速开发Web应用程序而
 - 支持加密：用来保存账号等隐私文件，文件可单独设置密码。
 
 地址：https://github.com/purocean/yn
+
+## [zod](https://www.zodjs.cn/)
+
+![alt text](./static/zod.png)
+
+原生支持 TypeScript 的数据校验库，并且具备静态类型推导功能
+
+地址：https://www.zodjs.cn/
