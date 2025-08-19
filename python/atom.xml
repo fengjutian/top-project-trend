@@ -2,11 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://fengjutian.github.io/top-project-trend/python</id>
     <title>fengjutian 技术周刊 Blog</title>
-    <updated>2025-08-15T00:00:00.000Z</updated>
+    <updated>2025-08-17T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://fengjutian.github.io/top-project-trend/python"/>
     <subtitle>fengjutian 技术周刊 Blog</subtitle>
     <icon>https://fengjutian.github.io/top-project-trend/img/dinosaur-favicon.svg</icon>
+    <entry>
+        <title type="html"><![CDATA[Python 库]]></title>
+        <id>python-lib</id>
+        <link href="https://fengjutian.github.io/top-project-trend/python/python-lib"/>
+        <updated>2025-08-17T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[loguru]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_m6px" id="loguru"><a href="https://github.com/delgan/loguru" target="_blank" rel="noopener noreferrer">loguru</a><a class="hash-link" href="#loguru" title="Direct link to heading">​</a></h2><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/loguru-dee53c71e7d13ecc7c0f8197abaebfc9.png" width="507" height="150" class="img_FQL_">
+<img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/loguru-002d451e533cee2ce08eef5971c35b40.gif" width="680" height="300" class="img_FQL_"></p><p>A Python logging library designed to be simple, powerful, and enjoyable to use.</p><p>Eliminates boilerplate and complexity found in the standard logging module.</p><p>Encourages developers to use logging from the start instead of relying on print().</p><p>地址：<a href="https://github.com/delgan/loguru" target="_blank" rel="noopener noreferrer">https://github.com/delgan/loguru</a></p>]]></content>
+        <author>
+            <name>fengjutian</name>
+            <uri>https://github.com/fengjutian</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Python App]]></title>
         <id>py-app</id>

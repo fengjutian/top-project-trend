@@ -4,10 +4,19 @@
         <title>fengjutian 技术周刊 Blog</title>
         <link>https://fengjutian.github.io/top-project-trend/python</link>
         <description>fengjutian 技术周刊 Blog</description>
-        <lastBuildDate>Fri, 15 Aug 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 17 Aug 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Python 库]]></title>
+            <link>https://fengjutian.github.io/top-project-trend/python/python-lib</link>
+            <guid>python-lib</guid>
+            <pubDate>Sun, 17 Aug 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[loguru]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_m6px" id="loguru"><a href="https://github.com/delgan/loguru" target="_blank" rel="noopener noreferrer">loguru</a><a class="hash-link" href="#loguru" title="Direct link to heading">​</a></h2><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/loguru-dee53c71e7d13ecc7c0f8197abaebfc9.png" width="507" height="150" class="img_FQL_">
+<img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/loguru-002d451e533cee2ce08eef5971c35b40.gif" width="680" height="300" class="img_FQL_"></p><p>A Python logging library designed to be simple, powerful, and enjoyable to use.</p><p>Eliminates boilerplate and complexity found in the standard logging module.</p><p>Encourages developers to use logging from the start instead of relying on print().</p><p>地址：<a href="https://github.com/delgan/loguru" target="_blank" rel="noopener noreferrer">https://github.com/delgan/loguru</a></p>]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[Python App]]></title>
             <link>https://fengjutian.github.io/top-project-trend/python/py-app</link>

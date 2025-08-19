@@ -4,10 +4,18 @@
         <title>fengjutian 技术周刊 Blog</title>
         <link>https://fengjutian.github.io/top-project-trend/golang</link>
         <description>fengjutian 技术周刊 Blog</description>
-        <lastBuildDate>Sun, 10 Aug 2025 02:34:35 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 17 Aug 2025 05:52:07 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Golang 资源]]></title>
+            <link>https://fengjutian.github.io/top-project-trend/golang/golang-sources</link>
+            <guid>golang-sources</guid>
+            <pubDate>Sun, 17 Aug 2025 05:52:07 GMT</pubDate>
+            <description><![CDATA[Go by Example]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_m6px" id="go-by-example"><a href="https://gobyexample.com/" target="_blank" rel="noopener noreferrer">Go by Example</a><a class="hash-link" href="#go-by-example" title="Direct link to heading">​</a></h2><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/gobyexample-08f188c4a136680959c40dd2b38d7b05.png" width="1003" height="665" class="img_FQL_"></p><p>地址：<a href="https://gobyexample.com/" target="_blank" rel="noopener noreferrer">https://gobyexample.com/</a></p><h2 class="anchor anchorWithStickyNavbar_m6px" id="wails"><a href="https://wails.io/" target="_blank" rel="noopener noreferrer">Wails</a><a class="hash-link" href="#wails" title="Direct link to heading">​</a></h2><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/wails-68d1ce77088886befbd7638971eea3df.png" width="3243" height="1573" class="img_FQL_"></p><p>地址：<a href="https://wails.io/" target="_blank" rel="noopener noreferrer">https://wails.io/</a></p>]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[Golang web 框架]]></title>
             <link>https://fengjutian.github.io/top-project-trend/golang/golang-web</link>

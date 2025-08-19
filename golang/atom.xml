@@ -2,11 +2,23 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://fengjutian.github.io/top-project-trend/golang</id>
     <title>fengjutian 技术周刊 Blog</title>
-    <updated>2025-08-10T02:34:35.000Z</updated>
+    <updated>2025-08-17T05:52:07.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://fengjutian.github.io/top-project-trend/golang"/>
     <subtitle>fengjutian 技术周刊 Blog</subtitle>
     <icon>https://fengjutian.github.io/top-project-trend/img/dinosaur-favicon.svg</icon>
+    <entry>
+        <title type="html"><![CDATA[Golang 资源]]></title>
+        <id>golang-sources</id>
+        <link href="https://fengjutian.github.io/top-project-trend/golang/golang-sources"/>
+        <updated>2025-08-17T05:52:07.000Z</updated>
+        <summary type="html"><![CDATA[Go by Example]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_m6px" id="go-by-example"><a href="https://gobyexample.com/" target="_blank" rel="noopener noreferrer">Go by Example</a><a class="hash-link" href="#go-by-example" title="Direct link to heading">​</a></h2><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/gobyexample-08f188c4a136680959c40dd2b38d7b05.png" width="1003" height="665" class="img_FQL_"></p><p>地址：<a href="https://gobyexample.com/" target="_blank" rel="noopener noreferrer">https://gobyexample.com/</a></p><h2 class="anchor anchorWithStickyNavbar_m6px" id="wails"><a href="https://wails.io/" target="_blank" rel="noopener noreferrer">Wails</a><a class="hash-link" href="#wails" title="Direct link to heading">​</a></h2><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/wails-68d1ce77088886befbd7638971eea3df.png" width="3243" height="1573" class="img_FQL_"></p><p>地址：<a href="https://wails.io/" target="_blank" rel="noopener noreferrer">https://wails.io/</a></p>]]></content>
+        <author>
+            <name>fengjutian</name>
+            <uri>https://github.com/fengjutian</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Golang web 框架]]></title>
         <id>golang-web</id>

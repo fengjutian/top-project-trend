@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://fengjutian.github.io/top-project-trend/ts</id>
+    <title>fengjutian 技术周刊 Blog</title>
+    <updated>2025-08-18T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://fengjutian.github.io/top-project-trend/ts"/>
+    <subtitle>fengjutian 技术周刊 Blog</subtitle>
+    <icon>https://fengjutian.github.io/top-project-trend/img/dinosaur-favicon.svg</icon>
+    <entry>
+        <title type="html"><![CDATA[TypeScript 类型]]></title>
+        <id>ts-type</id>
+        <link href="https://fengjutian.github.io/top-project-trend/ts/ts-type"/>
+        <updated>2025-08-18T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[TypeScript 类型挑战]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_m6px" id="typescript-类型挑战"><a href="https://github.com/type-challenges/type-challenges" target="_blank" rel="noopener noreferrer">TypeScript 类型挑战</a><a class="hash-link" href="#typescript-类型挑战" title="Direct link to heading">​</a></h2><p>高质量的类型可以提高项目的可维护性并避免一些潜在的漏洞。本项目意在于让你更好的了解 TS 的类型系统，编写你自己的类型工具，或者只是单纯的享受挑战的乐趣！</p><p>地址：<a href="https://github.com/type-challenges/type-challenges" target="_blank" rel="noopener noreferrer">https://github.com/type-challenges/type-challenges</a></p><h2 class="anchor anchorWithStickyNavbar_m6px" id="definitelytyped"><a href="https://github.com/DefinitelyTyped/DefinitelyTyped" target="_blank" rel="noopener noreferrer">DefinitelyTyped</a><a class="hash-link" href="#definitelytyped" title="Direct link to heading">​</a></h2><p>DefinitelyTyped 包含大量的高质量的 TypeScript 类型定义。通过使用 DefinitelyTyped 及其包含的声明文件，我们可以使用大多数流行的JavaScript库，就像它们是 TypeScript 库一样，将通过编译器进行类型验证。</p><p>地址：<a href="https://github.com/DefinitelyTyped/DefinitelyTyped" target="_blank" rel="noopener noreferrer">https://github.com/DefinitelyTyped/DefinitelyTyped</a></p><h2 class="anchor anchorWithStickyNavbar_m6px" id="react-redux-typescript-guide"><a href="https://github.com/piotrwitek/react-redux-typescript-guide" target="_blank" rel="noopener noreferrer">React Redux TypeScript Guide</a><a class="hash-link" href="#react-redux-typescript-guide" title="Direct link to heading">​</a></h2><p>本指南记录了有关在 React（及其生态系统）中以函数式风格使用 TypeScript 的模式和秘诀。它将使代码类型安全，同时专注于从实现中推断类型，从长远来看更容易编写和维护正确的类型。</p><p>地址：<a href="https://github.com/piotrwitek/react-redux-typescript-guide" target="_blank" rel="noopener noreferrer">https://github.com/piotrwitek/react-redux-typescript-guide</a></p><h2 class="anchor anchorWithStickyNavbar_m6px" id="react-typescript-cheatsheets"><a href="https://github.com/typescript-cheatsheets/react" target="_blank" rel="noopener noreferrer">React TypeScript Cheatsheets</a><a class="hash-link" href="#react-typescript-cheatsheets" title="Direct link to heading">​</a></h2><p>专注于帮助 React 开发人员在 React 应用中使用 TypeScript。</p><p>地址：<a href="https://github.com/typescript-cheatsheets/react" target="_blank" rel="noopener noreferrer">https://github.com/typescript-cheatsheets/react</a></p><h2 class="anchor anchorWithStickyNavbar_m6px" id="clean-code-typescript"><a href="https://github.com/labs42io/clean-code-typescript" target="_blank" rel="noopener noreferrer">Clean Code TypeScript</a><a class="hash-link" href="#clean-code-typescript" title="Direct link to heading">​</a></h2><p>将 Clean Code 的概念适用到 TypeScript，引导读者使用 TypeScript 编写易读、可扩展的应用。</p><p>地址：<a href="https://github.com/labs42io/clean-code-typescript" target="_blank" rel="noopener noreferrer">https://github.com/labs42io/clean-code-typescript</a></p><h2 class="anchor anchorWithStickyNavbar_m6px" id="typescript-风格指南"><a href="https://google.github.io/styleguide/tsguide.html" target="_blank" rel="noopener noreferrer">TypeScript 风格指南</a><a class="hash-link" href="#typescript-风格指南" title="Direct link to heading">​</a></h2><p>Google 的 TypeScript 风格指南。</p><p>地址：<a href="https://google.github.io/styleguide/tsguide.html" target="_blank" rel="noopener noreferrer">https://google.github.io/styleguide/tsguide.html</a></p><h2 class="anchor anchorWithStickyNavbar_m6px" id="awesome-typescript"><a href="https://github.com/semlinker/awesome-typescript" target="_blank" rel="noopener noreferrer">Awesome TypeScript</a><a class="hash-link" href="#awesome-typescript" title="Direct link to heading">​</a></h2><p>很棒的 TypeScript 资源</p><p>地址：<a href="https://github.com/semlinker/awesome-typescript" target="_blank" rel="noopener noreferrer">https://github.com/semlinker/awesome-typescript</a></p>]]></content>
+        <author>
+            <name>fengjutian</name>
+            <uri>https://github.com/fengjutian</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[TypeScript 框架]]></title>
+        <id>framework</id>
+        <link href="https://fengjutian.github.io/top-project-trend/ts/framework"/>
+        <updated>2025-08-16T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Encore]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_m6px" id="encore"><a href="https://encore.dev/" target="_blank" rel="noopener noreferrer">Encore</a><a class="hash-link" href="#encore" title="Direct link to heading">​</a></h2><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/encore-833189021a9ab654b89e7bdf8eab2e0d.png" width="1912" height="962" class="img_FQL_"></p><p>Encore.ts 是一款面向 TypeScript 的新型后端框架，号称在性能上比 Express.js 快 9 倍，并比 Bun（配合 Zod 验证）快 3 倍。本文将从性能数据、架构设计、团队效率提升、实战场景、生态现状等方面，对 Encore.ts 进行全面的技术分析，并分享相关的开发实践经验。</p><p>地址：<a href="https://encore.dev/" target="_blank" rel="noopener noreferrer">https://encore.dev/</a></p><h2 class="anchor anchorWithStickyNavbar_m6px" id="motia"><a href="https://github.com/MotiaDev/motia" target="_blank" rel="noopener noreferrer">Motia</a><a class="hash-link" href="#motia" title="Direct link to heading">​</a></h2><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/motia-1c669ae83b2c7d2a4dced0b80fce5a5c.gif" width="5688" height="5024" class="img_FQL_"></p><p>这是一款一站式后端后框架，集成了 API、事件驱动、定时任务、实时数据流和 AI Agent 等能力，支持 TypeScript、Python 等多语言混合开发。它内置状态管理、结构化日志、端到端链路追踪与可视化调试器（Workbench），支持流程图、日志流和实时测试等功能。</p><p>地址：<a href="https://github.com/MotiaDev/motia" target="_blank" rel="noopener noreferrer">https://github.com/MotiaDev/motia</a></p>]]></content>
+        <author>
+            <name>fengjutian</name>
+            <uri>https://github.com/fengjutian</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[开源项目]]></title>
+        <id>opensource-1</id>
+        <link href="https://fengjutian.github.io/top-project-trend/ts/opensource-1"/>
+        <updated>2025-08-13T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Editor.js]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_m6px" id="editorjs"><a href="https://github.com/codex-team/editor.js" target="_blank" rel="noopener noreferrer">Editor.js</a><a class="hash-link" href="#editorjs" title="Direct link to heading">​</a></h2><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/editor-0d3140f284c84141889730d9c2f3dfe6.png" width="1912" height="962" class="img_FQL_"></p><p>Editor.js 是一个块风格的编辑器。块是组成条目的结构单元。例如，段落，标题，图像，视频，列表都是块。每个块由插件表示。此外，Editor.js 还为开发者提供了许多现成的插件和一个用于创建新插件的简单 API。</p><p>地址：<a href="https://github.com/codex-team/editor.js" target="_blank" rel="noopener noreferrer">https://github.com/codex-team/editor.js</a></p>]]></content>
+        <author>
+            <name>fengjutian</name>
+            <uri>https://github.com/fengjutian</uri>
+        </author>
+    </entry>
+</feed>

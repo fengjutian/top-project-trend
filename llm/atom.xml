@@ -2,11 +2,23 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://fengjutian.github.io/top-project-trend/llm</id>
     <title>fengjutian 技术周刊 Blog</title>
-    <updated>2025-08-10T02:34:35.000Z</updated>
+    <updated>2025-08-17T13:39:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://fengjutian.github.io/top-project-trend/llm"/>
     <subtitle>fengjutian 技术周刊 Blog</subtitle>
     <icon>https://fengjutian.github.io/top-project-trend/img/dinosaur-favicon.svg</icon>
+    <entry>
+        <title type="html"><![CDATA[知识库]]></title>
+        <id>knowledge</id>
+        <link href="https://fengjutian.github.io/top-project-trend/llm/knowledge"/>
+        <updated>2025-08-17T13:39:00.000Z</updated>
+        <summary type="html"><![CDATA[Archon]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_m6px" id="archon"><a href="https://github.com/coleam00/Archon" target="_blank" rel="noopener noreferrer">Archon</a><a class="hash-link" href="#archon" title="Direct link to heading">​</a></h2><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/Archon-35e22c5e2e5068c603155dae6252a050.png" width="1280" height="633" class="img_FQL_"></p><p>Archon是一个能自动创建其他AI智能体的AI工具，就像一个"AI造物主"。它拥有先进的编程工作流程和知识库，可以构建、优化各种AI助手。最新版本提供了预置工具库和集成开发环境支持，能快速组装新AI并减少错误。开发者可以用它高效构建智能体，同时它本身也是展示AI进化过程的活教材。</p><p>地址：<a href="https://github.com/coleam00/Archon" target="_blank" rel="noopener noreferrer">https://github.com/coleam00/Archon</a></p>]]></content>
+        <author>
+            <name>fengjutian</name>
+            <uri>https://github.com/fengjutian</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[llm]]></title>
         <id>llm</id>
