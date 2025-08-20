@@ -39,3 +39,9 @@ Heroicons 是一套简单直接的高品质图标库，由大名鼎鼎的前端�
 
 
 地址：https://remixicon.com/
+
+## [lucide](https://lucide.dev/)
+
+![alt text](./static/lucide.png)
+
+地址：https://lucide.dev/
