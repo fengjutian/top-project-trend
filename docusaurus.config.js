@@ -190,7 +190,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/fengjutian/top-project-trend/tree/main',
         },
         blog: {
           showReadingTime: true,
@@ -199,8 +199,17 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/fengjutian/top-project-trend/tree/main',
         },
+        // 'static-website': {
+        //   showReadingTime: true,
+        //   blogSidebarTitle: '静态网站',
+        //   blogSidebarCount: 'ALL',
+        //   // Please change this to your repo.
+        //   // Remove this to remove the "edit this page" links.
+        //   editUrl:
+        //     'https://github.com/fengjutian/top-project-trend/tree/main',
+        // },
         // 移除下面这部分
         // algorithm: {
         //   path: 'algorithm',
