@@ -185,7 +185,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-
+          sidebarCollapsible: false,
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
@@ -196,8 +196,6 @@ const config = {
           showReadingTime: true,
           blogSidebarTitle: '博文',
           blogSidebarCount: 'ALL',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/fengjutian/top-project-trend/tree/main',
         },

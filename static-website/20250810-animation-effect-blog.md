@@ -38,9 +38,27 @@ tags: [react, blog]
 
 地址：https://originui.com/
 
-## [magicui](https://magicui.design/)
+## [cult-ui](www.cult-ui.com/)
 
-![alt text](./static/magicui.png)
+![alt text](./static/cult-ui.png)   
 
 地址：https://www.cult-ui.com/
+
+## [kokonutui](https://kokonutui.com/)
+
+![alt text](./static/kokonutui.png)
+
+地址：https://kokonutui.com/
+
+## [spectrumhq](https://ui.spectrumhq.in/)
+
+![alt text](./static/spectrumhq.png)
+
+地址：https://ui.spectrumhq.in/
+
+## [eldoraui](https://www.eldoraui.site/)
+
+![alt text](./static/eldoraui.png)
+
+地址：https://www.eldoraui.site/
 
