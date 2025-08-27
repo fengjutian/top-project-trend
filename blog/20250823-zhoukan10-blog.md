@@ -50,3 +50,11 @@ Manage your Java environment
 ![alt text](./static/jenv.png)
 
 地址：https://github.com/jenv/jenv
+
+## [Montage](https://github.com/MatijaNovosel/montage)
+
+![alt text](./static/montage.png)
+
+montage 是一个轻量级、跨平台的视频剪辑编辑器，适合需要快速进行视频剪辑的用户。它结合了 Tauri 的高性能和 Rust 的后端处理能力，提供了一个简单易用的界面和基本的剪辑功能。
+
+地址：https://github.com/MatijaNovosel/montage
