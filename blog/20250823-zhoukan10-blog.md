@@ -42,3 +42,11 @@ OxyGent 是一个开源框架，将工具、模型、智能体统一为可插拔
 Tiledesk 是一个开源的无代码开发平台，用于创建聊天机器人和对话式应用
 
 地址：https://github.com/Tiledesk/design-studio
+
+## [jenv](https://github.com/jenv/jenv)
+
+Manage your Java environment
+
+![alt text](./static/jenv.png)
+
+地址：https://github.com/jenv/jenv
