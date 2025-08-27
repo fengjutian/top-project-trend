@@ -26,3 +26,11 @@ Supabase 不仅提供了数据库服务，也是一个全功能的后端服务�
 Color Thief 是一个 JavaScript 库，用于从图片中提取主色。
 
 地址：https://github.com/lokesh/color-thief
+
+## [Oxygen](https://oxygent.jd.com/)
+
+![alt text](./static/oxygent.png)
+
+OxyGent 是一个开源框架，将工具、模型、智能体统一为可插拔的原子算子——Oxy。专为开发者设计，OxyGent 让你像搭乐高一样构建灵活的多智能体系统，极致可扩展，每一步决策全链路可追溯。从构建、推理到持续进化，OxyGent 打造了一个闭环智能体流水线——无缝集成 Oxy，弹性扩展，协同创新，驱动 AI 生态无限可能。
+
+地址：https://oxygent.jd.com/
