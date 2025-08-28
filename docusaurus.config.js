@@ -48,6 +48,21 @@ const config = {
         ],
       },
     ],
+    [
+      '@easyops-cn/docusaurus-search-local',
+      {
+        hashed: true,
+        language: ['en', 'zh'],
+        highlightSearchTermsOnTargetPage: true,
+        explicitSearchResultPath: true,
+        indexBlog: true,
+        indexDocs: true,
+        indexPages: true,
+        // 启用开发环境下的搜索功能
+        docsRouteBasePath: '/docs',
+        blogRouteBasePath: '/blog',
+      },
+    ],
     ['@docusaurus/plugin-content-blog',
       {
         id: 'java',
@@ -255,6 +270,10 @@ const config = {
           {
             href: 'https://github.com/fengjutian',
             label: 'GitHub',
+            position: 'right',
+          },
+          {
+            type: 'search',
             position: 'right',
           },
         ],
