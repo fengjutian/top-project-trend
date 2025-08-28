@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[6256],{5708:t=>{t.exports=JSON.parse('{"permalink":"/top-project-trend/static-website/tags/react-bits","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

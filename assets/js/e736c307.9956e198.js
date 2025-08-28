@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[2897],{997:e=>{e.exports=JSON.parse('{"permalink":"/top-project-trend/lang-chain/tags/vue-bits","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

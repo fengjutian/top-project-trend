@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[3110],{11065:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Rust web \u6846\u67b6","permalink":"/top-project-trend/rust/rust-web"}]}')}}]);

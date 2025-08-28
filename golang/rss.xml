@@ -4,10 +4,18 @@
         <title>fengjutian 技术周刊 Blog</title>
         <link>https://fengjutian.github.io/top-project-trend/golang</link>
         <description>fengjutian 技术周刊 Blog</description>
-        <lastBuildDate>Sun, 17 Aug 2025 05:52:07 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 20 Aug 2025 01:00:28 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[收集]]></title>
+            <link>https://fengjutian.github.io/top-project-trend/golang/zhoukan2</link>
+            <guid>zhoukan2</guid>
+            <pubDate>Wed, 20 Aug 2025 01:00:28 GMT</pubDate>
+            <description><![CDATA[Hugo]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_m6px" id="hugo"><a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a><a class="hash-link" href="#hugo" title="Direct link to heading">​</a></h2><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/hugo-f58f11cb0824cdcb49babb76d63d949f.png" width="1912" height="962" class="img_FQL_"></p><p>The world’s fastest framework for building websites</p><p>地址：<a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">https://gohugo.io/</a></p>]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[Golang 资源]]></title>
             <link>https://fengjutian.github.io/top-project-trend/golang/golang-sources</link>

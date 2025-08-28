@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[1770],{7672:e=>{e.exports=JSON.parse('{"label":"Kelp","permalink":"/top-project-trend/lang-chain/tags/kelp","allTagsPath":"/top-project-trend/lang-chain/tags","count":1}')}}]);

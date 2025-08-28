@@ -2,11 +2,23 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://fengjutian.github.io/top-project-trend/llm</id>
     <title>fengjutian 技术周刊 Blog</title>
-    <updated>2025-08-17T13:39:00.000Z</updated>
+    <updated>2025-08-20T01:00:28.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://fengjutian.github.io/top-project-trend/llm"/>
     <subtitle>fengjutian 技术周刊 Blog</subtitle>
     <icon>https://fengjutian.github.io/top-project-trend/img/dinosaur-favicon.svg</icon>
+    <entry>
+        <title type="html"><![CDATA[大模型]]></title>
+        <id>llm-blog</id>
+        <link href="https://fengjutian.github.io/top-project-trend/llm/llm-blog"/>
+        <updated>2025-08-20T01:00:28.000Z</updated>
+        <summary type="html"><![CDATA[Qwen-Image-Edit]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_m6px" id="qwen-image-edit"><a href="https://qwenlm.github.io/blog/qwen-image-edit/" target="_blank" rel="noopener noreferrer">Qwen-Image-Edit</a><a class="hash-link" href="#qwen-image-edit" title="Direct link to heading">​</a></h2><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/Qwen-Image-Edit-c582e4acc8b6c5a5cdbd5bb1dc6b867d.png" width="1912" height="962" class="img_FQL_"></p><p>Qwen-Image-Edit: 全能图像编辑，驱动内容创作提质增效</p><p>地址：<a href="https://qwenlm.github.io/blog/qwen-image-edit/" target="_blank" rel="noopener noreferrer">https://qwenlm.github.io/blog/qwen-image-edit/</a></p>]]></content>
+        <author>
+            <name>fengjutian</name>
+            <uri>https://github.com/fengjutian</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[知识库]]></title>
         <id>knowledge</id>

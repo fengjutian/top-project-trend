@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[9646],{77045:e=>{e.exports=JSON.parse('{"permalink":"/top-project-trend/lang-chain/tags/tsx","page":1,"postsPerPage":10,"totalPages":1,"totalCount":3,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

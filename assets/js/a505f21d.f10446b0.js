@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[6131],{97872:a=>{a.exports=JSON.parse('{"label":"\u6731\u96c0\u4eff\u5b8b","permalink":"/top-project-trend/lang-chain/tags/\u6731\u96c0\u4eff\u5b8b","allTagsPath":"/top-project-trend/lang-chain/tags","count":1}')}}]);

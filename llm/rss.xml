@@ -4,10 +4,18 @@
         <title>fengjutian 技术周刊 Blog</title>
         <link>https://fengjutian.github.io/top-project-trend/llm</link>
         <description>fengjutian 技术周刊 Blog</description>
-        <lastBuildDate>Sun, 17 Aug 2025 13:39:00 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 20 Aug 2025 01:00:28 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[大模型]]></title>
+            <link>https://fengjutian.github.io/top-project-trend/llm/llm-blog</link>
+            <guid>llm-blog</guid>
+            <pubDate>Wed, 20 Aug 2025 01:00:28 GMT</pubDate>
+            <description><![CDATA[Qwen-Image-Edit]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_m6px" id="qwen-image-edit"><a href="https://qwenlm.github.io/blog/qwen-image-edit/" target="_blank" rel="noopener noreferrer">Qwen-Image-Edit</a><a class="hash-link" href="#qwen-image-edit" title="Direct link to heading">​</a></h2><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/Qwen-Image-Edit-c582e4acc8b6c5a5cdbd5bb1dc6b867d.png" width="1912" height="962" class="img_FQL_"></p><p>Qwen-Image-Edit: 全能图像编辑，驱动内容创作提质增效</p><p>地址：<a href="https://qwenlm.github.io/blog/qwen-image-edit/" target="_blank" rel="noopener noreferrer">https://qwenlm.github.io/blog/qwen-image-edit/</a></p>]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[知识库]]></title>
             <link>https://fengjutian.github.io/top-project-trend/llm/knowledge</link>

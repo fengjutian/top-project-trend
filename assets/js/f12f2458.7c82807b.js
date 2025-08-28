@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[417],{33224:a=>{a.exports=JSON.parse('{"label":"RustScan","permalink":"/top-project-trend/lang-chain/tags/rust-scan","allTagsPath":"/top-project-trend/lang-chain/tags","count":2}')}}]);
