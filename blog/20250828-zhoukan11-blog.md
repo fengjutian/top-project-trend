@@ -44,3 +44,12 @@ asm-lessons：FFmpeg 社区音视频汇编实战教程。该项目是由 FFmpeg 
 开源的沉浸式翻译，一款革命性的浏览器翻译插件，让所有人都能够拥有母语般的阅读体验。
 
 地址: https://github.com/Bistutu/FluentRead
+
+## [rainbond](https://github.com/goodrain/rainbond)
+
+![alt text](./static/rainbond.png)
+
+Rainbond 是一个基于 Kubernetes 的云原生应用管理平台，它简化了应用容器化、部署和管理的所有流程。你不用懂 K8s 的复杂知识，只需通过图形化界面，就能完成应用从开发到上线的全生命周期管理！就像玩积木一样，开发者几分钟内就能“搭”出一个强大的微服务系统！
+
+
+地址：https://github.com/goodrain/rainbond
