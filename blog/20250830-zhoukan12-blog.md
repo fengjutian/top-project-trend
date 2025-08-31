@@ -15,6 +15,9 @@ lutoPrint 是一个轻量级且易于使用的 Python 库，用于将 HTML 或 X
 
 ## [copyparty](https://github.com/9001/copyparty)
 
+https://mmbiz.qpic.cn/mmbiz_jpg/TpAfliaLqyRJcyzNY6L1yIPOpWv4VDCNwFglCkIjhrL82eZASowQ68oiak7m99A84tCW8KTIpKdCpCI1eLkkuTIg/640?wx_fmt=jpeg&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1
+
 Portable file server with accelerated resumable uploads, dedup, WebDAV, FTP, TFTP, zeroconf, media indexer, thumbnails++ all in one file, no deps
 
 地址：https://github.com/9001/copyparty
+
