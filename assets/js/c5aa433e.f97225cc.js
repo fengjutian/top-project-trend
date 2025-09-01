@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[1842],{83525:e=>{e.exports=JSON.parse('{"permalink":"/top-project-trend/blog/page/2","page":2,"postsPerPage":10,"totalPages":2,"totalCount":11,"previousPage":"/top-project-trend/blog","blogDescription":"Blog","blogTitle":"Blog"}')}}]);
