@@ -29,5 +29,20 @@ Portable file server with accelerated resumable uploads, dedup, WebDAV, FTP, TFT
 
 地址：https://github.com/chaitin/MonkeyCode
 
+## [awesome-public-datasets](https://github.com/awesomedata/awesome-public-datasets)
+
+这个项目叫做“Awesome Public Datatasets”，是一个精心整理的高质量公开数据集集合。它按主题分类，涵盖了农业、生物学、气候、经济、医疗、社会科学等众多领域，帮你轻松找到需要的数据。这些数据来自博客、用户分享和学术研究，大部分可以免费使用。如果你在做数据分析、机器学习或者学术研究，这个仓库会是个非常实用的资源宝库。
+
+
+地址：https://github.com/awesomedata/awesome-public-datasets
+
+## [Edge Security](https://www.edge-security.com/)
+
+![alt text](./static/security.png)
+
+theHarvester 是一款专门用于网络安全侦察的开源情报（OSINT）收集工具。它可以帮助安全研究人员或渗透测试人员快速查找与目标域名相关的公开信息，比如电子邮件地址、子域名、IP 地址和主机信息。通过集成多个搜索引擎和数据源，它能够自动化地从互联网中搜集这些信息，为后续的安全评估提供基础数据支持。简单来说，它就像是一个“数字侦探”，帮你发现企业在网络上可能暴露的敏感信息。
+
+地址：https://www.edge-security.com/
+
 
 
