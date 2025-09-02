@@ -44,5 +44,11 @@ theHarvester 是一款专门用于网络安全侦察的开源情报（OSINT）�
 
 地址：https://www.edge-security.com/
 
+## [triplit](https://github.com/aspen-cloud/triplit)
+
+Triplit 是一个开源的实时同步数据库,可以在服务器和浏览器之间进行实时同步。它提供了一个实时同步的数据存储,可以作为一个TypeScript包集成到您的应用程序中。Triplit 负责在服务器上存储您的数据,并智能地将查询同步到您的客户端。这种系统被称为"全栈数据库"。
+
+地址：https://github.com/aspen-cloud/triplit
+
 
 
