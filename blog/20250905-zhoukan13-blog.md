@@ -41,7 +41,6 @@ Termix 是一个开源的、可自托管的服务器管理平台，让你通过�
 
 地址：https://github.com/eriklindernoren/ML-From-Scratch
 
-![alt text](image.png)
 
 ## [Foxel](https://github.com/DrizzleTime/Foxel)
 
