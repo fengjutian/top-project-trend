@@ -54,3 +54,19 @@ This is a repo with links to everything you'd ever want to learn about data engi
 家庭照片系统
 
 地址：https://github.com/immich-app/immich
+
+## [MedResearcher-R1](https://github.com/AQ-MedAI/MedResearcher-R1)
+
+![alt text](./static/MedResearcher.png)
+
+MedResearcher-R1 是一个综合性的训练数据生成与合成框架，通过知识引导的轨迹合成技术解决领域特定AI推理的挑战。
+
+地址：https://github.com/AQ-MedAI/MedResearcher-R1
+
+## [htmldocs](https://github.com/htmldocs-js/htmldocs)
+
+![alt text](./static/htmldocs.png)
+
+htmldocs是一个使用React、TypeScript和Tailwind构建的现代化文档生成工具。它提供了与LaTeX类似的结构化文档编辑功能,但使用更加熟悉的HTML和CSS。开发者可以使用JSX编写文档模板(如发票、报告、合同等),并通过传递数据作为props来生成PDF文档。
+
+地址：https://github.com/htmldocs-js/htmldocs

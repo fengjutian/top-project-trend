@@ -201,6 +201,8 @@ Nurui 是一个基于 React 和 Next.js 的现代化 UI 组件库,旨在简化�
 
 ![alt text](./static/reui.png)
 
+ReUI 是一个开源的 UI 组件和动画效果集合,使用 React、TypeScript、Tailwind CSS 和 Motion 构建。它与 shadcn/ui 完美配合。
+
 地址：https://reui.io/
 
 ## [Headless UI](https://headlessui.com/v1)
