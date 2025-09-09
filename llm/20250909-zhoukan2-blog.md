@@ -48,3 +48,12 @@ Kilo Code 是一款开源的 VS Code AI 编程助手，能帮你用自然语言�
 kotaemon 是一个开源的文档对话工具，让你能用自然语言和自己的文件聊天。它基于 RAG 技术搭建，提供了一个干净简洁的界面，既适合普通用户直接使用，也方便开发者二次开发。你可以上传文档、用多种大模型（包括本地或云端模型）进行问答，还支持多模态文件和复杂推理。简单来说，它就是帮你轻松从文档里提取信息的智能助手。
 
 地址：https://github.com/Cinnamon/kotaemon
+
+## [UI-TARS-desktop](https://github.com/bytedance/UI-TARS-desktop?tab=readme-ov-file)
+
+![alt text](./static/UI-TARS-desktop.png)
+
+UI-TARS-desktop 是一个开源的桌面应用，它能让你用自然语言控制电脑操作，比如自动调整软件设置或远程操作浏览器。它像个人工智能助手，能看懂屏幕内容并精准执行点击、输入等任务，支持本地和远程操作，适合自动化办公或开发场景。简单来说，就是让电脑听懂你的话并自己干活。
+
+
+地址：https://github.com/bytedance/UI-TARS-desktop?tab=readme-ov-file
