@@ -65,3 +65,11 @@ UI-TARS-desktop 是一个开源的桌面应用，它能让你用自然语言控�
 Pydantic AI 是一个 Python Agent 框架，旨在帮助您快速、自信且轻松地构建生产级的生成式 AI 应用程序和工作流。
 
 地址：https://ai.pydantic.org.cn/
+
+## [midscene](https://github.com/web-infra-dev/midscene)
+
+![alt text](./static/midscene.png)
+
+开源的 AI 操作助手，适用于 Web、移动端、自动化和测试
+
+地址：https://github.com/web-infra-dev/midscene
