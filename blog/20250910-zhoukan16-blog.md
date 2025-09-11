@@ -20,3 +20,11 @@ GitHub Release Monitor 是一个功能强大、可自托管的工具，可自动
 XIAOJUSURVEY（小桔调研）是一款轻量、安全的开源调研系统，提供面向个人和企业的一站式解决方案，帮助用户快速构建各类问卷、考试、测评和复杂表单，满足多样化的线上调研需求。
 
 地址：https://github.com/didi/xiaoju-survey
+
+## [LinksHub](https://github.com/rupali-codes/LinksHub)
+
+![alt text](./static/LinksHub.png)
+
+LinksHub 是一个由社区创建和维护的资源中心,旨在为开发人员提供各种免费的软件、库、框架和工具等资源,帮助他们在工作中使用。
+
+地址：https://github.com/rupali-codes/LinksHub
