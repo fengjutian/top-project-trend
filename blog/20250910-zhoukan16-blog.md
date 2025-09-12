@@ -28,3 +28,20 @@ XIAOJUSURVEY（小桔调研）是一款轻量、安全的开源调研系统，�
 LinksHub 是一个由社区创建和维护的资源中心,旨在为开发人员提供各种免费的软件、库、框架和工具等资源,帮助他们在工作中使用。
 
 地址：https://github.com/rupali-codes/LinksHub
+
+## [JVS Knowledge UI](https://gitee.com/software-minister/jvs-knowledge-ui)
+
+![alt text](./static/jvs.png)
+
+无忧·企业文档=企业级知识库+在线编辑工具集+企业搜索引擎+内容展示平台
+
+地址：https://gitee.com/software-minister/jvs-knowledge-ui
+
+## [POINTS-Reader](https://github.com/Tencent/POINTS-Reader)
+
+![alt text](./static/POINTS.png)
+
+在端到端方案中，POINTS-Reader提出了一套高度可扩展的数据生成方案，包含两个核心阶段：统一格式预热阶段(Uniform Format Warm-up Stage)和迭代自我改进阶段(Iterative Self-improvement Stage)
+
+
+地址：https://github.com/Tencent/POINTS-Reader
