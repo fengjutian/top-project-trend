@@ -53,3 +53,95 @@ npmgraph：可视化 npm 模块依赖关系的工具 — 为这个基于 Web 的
 
 
 地址：https://github.com/astracompiler/cli
+
+## [pdfslick](https://github.com/pdfslick/pdfslick)
+
+
+![alt text](./imgs/pdfslick.png)
+
+在 JS 应用程序中查看 PDF 文档并与之交互 — 适用于 React、Solid、Svelte 和 vanilla JS 应用程序的全功能 PDF 查看器。它建立在PDF.js之上，提供了广泛的功能，从简单的 PDF 查看到处理带有注释的多个大型文档。演示。v3.0 升级到 PDF.js v5，支持 ICC 配置文件、更好的 JPEG 2000 支持以及改进的大页面渲染
+
+
+地址：https://github.com/pdfslick/pdfslick
+
+## [pintura](https://pqina.nl/pintura/install/)
+
+![alt text](./imgs/pintura.png)
+
+为您的 Web 应用程序提供即插即用图像编辑器 — 省去构建图像编辑器的麻烦。导入 pintura 模块，为其提供图像源，并立即获得裁剪、旋转、调整大小和注释等功能。需要帮助？支持可以满足您的需求
+
+
+地址：https://pqina.nl/pintura/install/
+
+## [animejs](https://animejs.com/)
+
+![alt text](./imgs/animejs.png)
+
+如果您厌倦了 Web 动画，也许Anime.js会让您胃口大开。这是对用于动画处理 CSS 属性、SVG、DOM 和 JS 对象的成熟库的重大升级。
+
+地址：https://animejs.com/
+
+## [uvcanvas](https://uvcanvas.com/)
+
+![alt text](./imgs/uvcanvas.png)
+
+React 渲染精美的阴影画布
+
+地址：https://uvcanvas.com/
+
+## [danfojs](https://github.com/javascriptdata/danfojs)
+
+![alt text](./imgs/danfojs.png)
+
+受 Pandas 启发的 JavaScript 数据分析工具包
+
+地址：https://github.com/javascriptdata/danfojs
+
+
+## [fuzzball.js](https://github.com/javascriptdata/danfojs)
+
+🔎 Fuzzball：模糊字符串匹配库 — 解决键入内容不完全符合预期的情况。有一个简洁的树主题基于 Web 的演示。
+
+地址：https://github.com/nol13/fuzzball.js
+
+## [BlockNote](https://github.com/blocknote/blocknote)
+
+![alt text](./imgs/blocknote.png)
+
+类型：基于 React 的块状富文本编辑器，风格类似 Notion
+
+技术栈：构建于 Prosemirror 和 Tiptap 之上
+
+特点：高度可扩展，适合嵌入现代 Web 应用
+
+地址：https://www.blocknotejs.org/
+
+## [Streamdown](https://github.com/streamdown/streamdown)
+
+Streamdown：支持流媒体的嵌入式 react-markdown 替代品 — react-markdown 非常适合渲染 Markdown，但如果您必须处理实时流媒体内容（例如在 AI 上下文中），Vercel 的新项目可以提供您所需的功能。GitHub 存储库。
+
+地址：https://streamdown.ai/
+
+## [CSS Doodle](https://github.com/css-doodle/css-doodle)
+
+用于使用 CSS 绘制图案的 Web 组件
+
+![alt text](./imgs/css-doodle.png)
+
+地址：https://css-doodle.com/
+
+## [QuickJS](https://github.com/sebastianwessel/quickjs)
+
+![alt text](./imgs/quickjs.png)
+
+QuickJS Sandbox 2.0：在 QuickJS 支持的沙箱中执行 JS/TS — QuickJS 是由 Fabrice Bellard 构建的小型可嵌入 JavaScript 引擎，它扩展了它，使其可以轻松地在隔离的沙盒环境中运行代码，以及一些基本的 Node 模块支持和虚拟文件系统。GitHub 存储库。
+
+地址：https://sebastianwessel.github.io/quickjs/
+
+## [Mastra](https://mastra.ai/)
+
+![alt text](./imgs/mastra.png)
+
+Gatsby 团队的 TypeScript AI 框架 — Gatsby React 框架背后的一些人提出了一种新方法来构建 LLM 驱动的代理，这些代理可以执行各种任务、使用知识库和保存内存。想想像 Next.js 这样的元框架，但适用于 AI 代理。GitHub 存储库。
+
+地址：https://mastra.ai/
