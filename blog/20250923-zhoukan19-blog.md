@@ -18,3 +18,37 @@ tags: []
 这是一个去除 Google 服务依赖的 Chromium 浏览器版本。
 
 地址：https://github.com/ungoogled-software/ungoogled-chromium
+
+## [DeepResearch](https://github.com/Alibaba-NLP/DeepResearch)
+
+DeepResearch 是阿里巴巴通义实验室开发的一款开源智能研究助手，它能够自主进行复杂的信息搜索和深度分析任务。
+
+地址：https://github.com/Alibaba-NLP/DeepResearch
+
+## [free-programming-books](https://github.com/EbookFoundation/free-programming-books)
+
+这是一个名为“free-programming-books”的GitHub项目，它收集了大量免费的编程书籍和学习资源，涵盖多种编程语言和主题。
+
+地址：https://github.com/EbookFoundation/free-programming-books?tab=readme-ov-file
+
+## [tldraw](https://github.com/tldraw/tldraw)
+
+![alt text](imgs/tldraw.png)
+
+tldraw 是一个用于创建无限画布体验的 React 组件库，非常适合开发数字白板或绘图应用。
+
+地址：https://github.com/tldraw/tldraw
+
+## [system-design-primer](https://github.com/donnemartin/system-design-primer)
+
+![alt text](imgs/system-design-primer.png)
+
+这是一个教你如何设计大型系统的GitHub开源项目，特别适合准备系统设计面试的程序员。
+
+地址：https://github.com/donnemartin/system-design-primer
+
+## [neumorphism.io](https://neumorphism.io/#e5a4a4)
+
+![alt text](imgs/neumorphism.png)
+
+地址：https://neumorphism.io/#e5a4a4

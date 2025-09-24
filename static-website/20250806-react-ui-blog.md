@@ -212,3 +212,9 @@ ReUI 是一个开源的 UI 组件和动画效果集合,使用 React、TypeScript
 Completely unstyled, fully accessible UI components, designed to integrate beautifully with Tailwind CSS.
 
 地址：https://headlessui.com/v1
+
+## [UI Layouts](https://www.ui-layouts.com/)
+
+![alt text](./static/ui-layouts.png)
+
+地址：https://www.ui-layouts.com/
