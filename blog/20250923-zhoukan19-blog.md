@@ -52,3 +52,19 @@ tldraw 是一个用于创建无限画布体验的 React 组件库，非常适合
 ![alt text](imgs/neumorphism.png)
 
 地址：https://neumorphism.io/#e5a4a4
+
+## [map3d](https://github.com/cartesiancs/map3d)
+
+![alt text](./imgs/map3d.png)
+
+map3d 是一个开源项目，旨在利用 React Three Fiber（R3F）构建城市 3D 地图。它基于 OpenStreetMap 数据，支持生成包含建筑物和道路信息的 3D 地图，并允许将地图导出为 GLB 文件。
+
+地址：https://github.com/cartesiancs/map3d
+
+## [3D-Portfolio](https://github.com/trevsm/3D-Portfolio)
+
+![alt text](./imgs/3D-Portfolio.png)
+
+创建一个个人房间模型，用户可以探索物体，如电脑、书架等，每个物体链接到作者的简历、项目或联系方式。这种设计像一个数字化的“开放日”，让访客感觉在参观作者的虚拟空间。
+
+地址：https://github.com/trevsm/3D-Portfolio
