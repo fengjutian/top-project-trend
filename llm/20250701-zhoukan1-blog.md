@@ -13,6 +13,14 @@ tags: []
 
 地址：https://github.com/unslothai/notebooks
 
+## [awesome-llm-apps](https://www.zdoc.app/zh/Shubhamsaboo/awesome-llm-apps)
+
+![alt text](./static/awesome-llm-apps.png)
+
+精选整理的使用 RAG、AI 智能体、多智能体团队、MCP、语音智能体等技术构建的 Awesome LLM 应用集合。本仓库收录的 LLM 应用使用了来自 openai logoOpenAI、anthropic logoAnthropic、google logoGoogle、X logoxAI 的模型，以及如 alibaba logoQwen 或 meta logoLlama 等可在本地计算机上运行的开源模型。
+
+地址：https://www.zdoc.app/zh/Shubhamsaboo/awesome-llm-apps
+
 
 
 
