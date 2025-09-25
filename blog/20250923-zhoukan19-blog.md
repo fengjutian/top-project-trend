@@ -68,3 +68,27 @@ map3d 是一个开源项目，旨在利用 React Three Fiber（R3F）构建城�
 创建一个个人房间模型，用户可以探索物体，如电脑、书架等，每个物体链接到作者的简历、项目或联系方式。这种设计像一个数字化的“开放日”，让访客感觉在参观作者的虚拟空间。
 
 地址：https://github.com/trevsm/3D-Portfolio
+
+## [codeforge](https://github.com/devlive-community/codeforge)
+
+![alt text](./imgs/codeforge.png)
+
+CodeForge 是一款轻量级、高性能的桌面代码执行器，专为开发者、学生和编程爱好者设计。CodeRunner 的替代品。
+
+地址：https://github.com/devlive-community/codeforge
+
+## [directories](https://github.com/pontusab/directories)
+
+![alt text](./imgs/directories.png)
+
+为 Cursor 和 Windsurf 社区提供规则（rules）和 MCPs（可能是“模型控制参数”或类似配置项）
+
+地址：https://github.com/pontusab/directories
+
+## [lightningcss](https://lightningcss.dev/)
+
+![alt text](./imgs/lightningcss.png)
+
+Lightning CSS 的最大优势是性能卓越。它能在毫秒级别完成大型 CSS 文件的解析和压缩任务。
+
+地址：https://lightningcss.dev/
