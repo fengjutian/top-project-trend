@@ -138,3 +138,33 @@ chrome-devtools-mcp 是一个 Model-Context-Protocol (MCP) 服务器，允许 AI
 Dayflow 是一款 macOS 原生应用，自动记录你的屏幕活动，并通过 AI 每 15 分钟分析一次，生成清晰的时间线和摘要，帮助你了解一天的工作节奏与分心时刻。
 
 地址：https://github.com/JerryZLiu/Dayflow
+
+## [reddit-ai-trends](https://github.com/liyedanpdx/reddit-ai-trends)
+
+自动从Reddit AI相关社区生成趋势报告，支持英文和中文双语。通过每日报告，随时了解AI领域的最新发展。
+
+地址：https://github.com/liyedanpdx/reddit-ai-trends?tab=readme-ov-file
+
+## [hyper3d.ai](https://hyper3d.ai/)
+
+![alt text](./imgs/hyper3d.png)
+
+Rodin 是由 Hyper3D 提供的免费 AI 工具，可将图像快速转换为高质量的 3D 模型，适用于游戏开发、动画制作、3D 打印等领域。
+
+地址：https://hyper3d.ai/
+
+## [SPlayer](https://github.com/imsyy/SPlayer)
+
+![alt text](./imgs/SPlayer.png)
+
+SPlayer 是一个基于 Electron 的简约音乐播放器，支持网易云音乐的多项功能，适用于 Windows 平台，网页端也可使用。项目采用 Vue 3 + TypeScript + Naïve UI 构建，强调本地化体验与功能完整性。
+
+地址：https://github.com/imsyy/SPlayer
+
+## [Caido](https://github.com/caido/caido)
+
+![alt text](./imgs/caido.png)
+
+Caido 是一个专为安全研究人员和渗透测试者设计的 Web 应用审计工具，旨在提升效率与易用性。它提供了丰富的功能用于分析、调试和测试 Web 应用的安全性。
+
+地址：https://github.com/caido/caido
