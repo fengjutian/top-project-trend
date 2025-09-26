@@ -114,3 +114,27 @@ Better-T-Stack 是一个现代化、开源的命令行工具（CLI），用于�
 Spark UI 是一个用于快速构建动画网站的前端组件库，基于 Vue、TypeScript、TailwindCSS 和 VueUse Motion 打造。它专注于视觉动效与开发效率，适合构建现代化、响应式的 Web 页面。
 
 地址：https://spark-ui.dev/
+
+## [helium](https://github.com/imputnet/helium)
+
+![alt text](./imgs/helium.png)
+
+默认启用 uBlock Origin，自动屏蔽广告、追踪器、指纹识别、第三方 Cookie、加密挖矿和钓鱼网站。
+
+地址：https://github.com/imputnet/helium
+
+## [chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp)
+
+![alt text](./imgs/chrome-devtools-mcp.png)
+
+chrome-devtools-mcp 是一个 Model-Context-Protocol (MCP) 服务器，允许 AI 编程助手（如 Copilot、Claude、Gemini 等）控制并检查一个实时运行的 Chrome 浏览器。它将 Chrome DevTools 的强大功能开放给自动化、调试和性能分析任务。
+
+地址：https://github.com/ChromeDevTools/chrome-devtools-mcp
+
+## [Dayflow](https://github.com/JerryZLiu/Dayflow)
+
+![alt text](./imgs/Dayflow.gif)
+
+Dayflow 是一款 macOS 原生应用，自动记录你的屏幕活动，并通过 AI 每 15 分钟分析一次，生成清晰的时间线和摘要，帮助你了解一天的工作节奏与分心时刻。
+
+地址：https://github.com/JerryZLiu/Dayflow
