@@ -2,11 +2,23 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://fengjutian.github.io/top-project-trend/llm</id>
     <title>fengjutian 技术周刊 Blog</title>
-    <updated>2025-09-09T01:31:47.000Z</updated>
+    <updated>2025-09-25T01:41:28.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://fengjutian.github.io/top-project-trend/llm"/>
     <subtitle>fengjutian 技术周刊 Blog</subtitle>
     <icon>https://fengjutian.github.io/top-project-trend/img/dinosaur-favicon.svg</icon>
+    <entry>
+        <title type="html"><![CDATA[强化学习算法]]></title>
+        <id>algorithms</id>
+        <link href="https://fengjutian.github.io/top-project-trend/llm/algorithms"/>
+        <updated>2025-09-25T01:41:28.000Z</updated>
+        <summary type="html"><![CDATA[all-rl-algorithms]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_m6px" id="all-rl-algorithms"><a href="https://github.com/FareedKhan-dev/all-rl-algorithms" target="_blank" rel="noopener noreferrer">all-rl-algorithms</a><a class="hash-link" href="#all-rl-algorithms" title="Direct link to heading">​</a></h2><p>强化学习 （RL） 算法的 Python 实现的集合</p><p>地址：<a href="https://github.com/FareedKhan-dev/all-rl-algorithms" target="_blank" rel="noopener noreferrer">https://github.com/FareedKhan-dev/all-rl-algorithms</a></p>]]></content>
+        <author>
+            <name>fengjutian</name>
+            <uri>https://github.com/fengjutian</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[周刊二]]></title>
         <id>周刊二</id>
@@ -49,7 +61,7 @@
         <link href="https://fengjutian.github.io/top-project-trend/llm/llm"/>
         <updated>2025-08-10T02:34:35.000Z</updated>
         <summary type="html"><![CDATA[notebooks]]></summary>
-        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_m6px" id="notebooks"><a href="https://github.com/unslothai/notebooks" target="_blank" rel="noopener noreferrer">notebooks</a><a class="hash-link" href="#notebooks" title="Direct link to heading">​</a></h2><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/notebooks-a4ab7c5abab1bf0718c258420e05e1e8.png" width="1912" height="962" class="img_FQL_"></p><p>这是一个提供各种AI模型微调教程的GitHub仓库，主要包含在Google Colab、Kaggle等平台上运行的Jupyter笔记本。这些笔记本涵盖了多种热门模型如Llama、Qwen、Gemma、Mistral等，适用于对话、视觉、文本生成等不同任务。项目提供了详细的指导，帮助用户准备数据、训练模型和保存结果，同时也欢迎社区贡献新的笔记本。</p><p>地址：<a href="https://github.com/unslothai/notebooks" target="_blank" rel="noopener noreferrer">https://github.com/unslothai/notebooks</a></p>]]></content>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_m6px" id="notebooks"><a href="https://github.com/unslothai/notebooks" target="_blank" rel="noopener noreferrer">notebooks</a><a class="hash-link" href="#notebooks" title="Direct link to heading">​</a></h2><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/notebooks-a4ab7c5abab1bf0718c258420e05e1e8.png" width="1912" height="962" class="img_FQL_"></p><p>这是一个提供各种AI模型微调教程的GitHub仓库，主要包含在Google Colab、Kaggle等平台上运行的Jupyter笔记本。这些笔记本涵盖了多种热门模型如Llama、Qwen、Gemma、Mistral等，适用于对话、视觉、文本生成等不同任务。项目提供了详细的指导，帮助用户准备数据、训练模型和保存结果，同时也欢迎社区贡献新的笔记本。</p><p>地址：<a href="https://github.com/unslothai/notebooks" target="_blank" rel="noopener noreferrer">https://github.com/unslothai/notebooks</a></p><h2 class="anchor anchorWithStickyNavbar_m6px" id="awesome-llm-apps"><a href="https://www.zdoc.app/zh/Shubhamsaboo/awesome-llm-apps" target="_blank" rel="noopener noreferrer">awesome-llm-apps</a><a class="hash-link" href="#awesome-llm-apps" title="Direct link to heading">​</a></h2><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/awesome-llm-apps-0784645c487a59b09f5513a204db08f6.png" width="1500" height="500" class="img_FQL_"></p><p>精选整理的使用 RAG、AI 智能体、多智能体团队、MCP、语音智能体等技术构建的 Awesome LLM 应用集合。本仓库收录的 LLM 应用使用了来自 openai logoOpenAI、anthropic logoAnthropic、google logoGoogle、X logoxAI 的模型，以及如 alibaba logoQwen 或 meta logoLlama 等可在本地计算机上运行的开源模型。</p><p>地址：<a href="https://www.zdoc.app/zh/Shubhamsaboo/awesome-llm-apps" target="_blank" rel="noopener noreferrer">https://www.zdoc.app/zh/Shubhamsaboo/awesome-llm-apps</a></p>]]></content>
         <author>
             <name>fengjutian</name>
             <uri>https://github.com/fengjutian</uri>

@@ -2,11 +2,23 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://fengjutian.github.io/top-project-trend/ts</id>
     <title>fengjutian 技术周刊 Blog</title>
-    <updated>2025-08-18T00:00:00.000Z</updated>
+    <updated>2025-09-25T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://fengjutian.github.io/top-project-trend/ts"/>
     <subtitle>fengjutian 技术周刊 Blog</subtitle>
     <icon>https://fengjutian.github.io/top-project-trend/img/dinosaur-favicon.svg</icon>
+    <entry>
+        <title type="html"><![CDATA[npm 库]]></title>
+        <id>npm-project-blog</id>
+        <link href="https://fengjutian.github.io/top-project-trend/ts/npm-project-blog"/>
+        <updated>2025-09-25T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[rough-notation]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_m6px" id="rough-notation"><a href="https://github.com/rough-stuff/rough-notation" target="_blank" rel="noopener noreferrer">rough-notation</a><a class="hash-link" href="#rough-notation" title="Direct link to heading">​</a></h2><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/rough-notation-2205cd6f0a12ca959fd99cd9a31367b9.png" width="951" height="705" class="img_FQL_"></p><p>rough-notation 可是个超轻便的库，能给网页元素加上那种手绘风格的标注动画。</p><p>地址：<a href="https://github.com/rough-stuff/rough-notation" target="_blank" rel="noopener noreferrer">https://github.com/rough-stuff/rough-notation</a></p>]]></content>
+        <author>
+            <name>fengjutian</name>
+            <uri>https://github.com/fengjutian</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[TypeScript 类型]]></title>
         <id>ts-type</id>

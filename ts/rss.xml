@@ -4,10 +4,18 @@
         <title>fengjutian 技术周刊 Blog</title>
         <link>https://fengjutian.github.io/top-project-trend/ts</link>
         <description>fengjutian 技术周刊 Blog</description>
-        <lastBuildDate>Mon, 18 Aug 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 25 Sep 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[npm 库]]></title>
+            <link>https://fengjutian.github.io/top-project-trend/ts/npm-project-blog</link>
+            <guid>npm-project-blog</guid>
+            <pubDate>Thu, 25 Sep 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[rough-notation]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_m6px" id="rough-notation"><a href="https://github.com/rough-stuff/rough-notation" target="_blank" rel="noopener noreferrer">rough-notation</a><a class="hash-link" href="#rough-notation" title="Direct link to heading">​</a></h2><p><img loading="lazy" alt="alt text" src="/top-project-trend/assets/images/rough-notation-2205cd6f0a12ca959fd99cd9a31367b9.png" width="951" height="705" class="img_FQL_"></p><p>rough-notation 可是个超轻便的库，能给网页元素加上那种手绘风格的标注动画。</p><p>地址：<a href="https://github.com/rough-stuff/rough-notation" target="_blank" rel="noopener noreferrer">https://github.com/rough-stuff/rough-notation</a></p>]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[TypeScript 类型]]></title>
             <link>https://fengjutian.github.io/top-project-trend/ts/ts-type</link>
