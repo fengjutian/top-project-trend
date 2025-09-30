@@ -32,3 +32,27 @@ HumanLayer 是一个让 AI 智能体在关键操作中自动引入人工审核�
 一个基于 WPF 和 WebView2 的轻量级托盘浏览器，专为 Windows 设计。类似 MenubarX，但更加轻便和功能丰富。
 
 地址：https://github.com/cornradio/tray-chrome
+
+## [bestofjs.org](https://bestofjs.org/)
+
+![alt text](./imgs/bestofjs.png)
+
+展示了最近 GitHub 上星标增长最快的 JavaScript 项目
+
+地址：https://bestofjs.org/
+
+## [fresh](https://fresh.deno.dev/)
+
+![alt text](./imgs/fresh.deno.png)
+
+Fresh 是一个基于 Deno 的现代 Web 框架，主打“简单、易用、高效”，适合构建快速响应的服务端渲染应用。
+
+地址：https://fresh.deno.dev/
+
+## [nodebestpractices](https://github.com/goldbergyoni/nodebestpractices)
+
+![alt text](./imgs/nodebestpractices.png)
+
+Node.js 最佳实践
+
+地址：https://github.com/goldbergyoni/nodebestpractices?tab=readme-ov-file
