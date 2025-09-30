@@ -53,7 +53,7 @@ Shadcn Admin 是一个使用 ShadcnUI 和 Vite 构建的现代化管理后台界
 
 ## [yazi](https://github.com/sxyazi/yazi)
 
-![alt text](./imgs/yazi.mp4)
+<!-- ![alt text](./imgs/yazi.mp4) -->
 
 Yazi 是一个用 Rust 编写的终端文件管理器，基于异步 I/O 架构，追求极致性能与现代交互体验。它的名字来自中文“鸭子”，象征轻快灵活。
 
@@ -77,7 +77,7 @@ ZenStack 是一个基于 TypeScript 的全栈开发工具包，最初构建于 P
 
 ## [elysia](https://elysiajs.com/)
 
-![alt text](./imgs/elysia.png)
+![alt text](./imgs/elysiajs.png)
 
 ElysiaJS 是一个由 Bun 驱动的现代 Web 框架，专为人类设计，强调人体工学（Ergonomic）、类型安全（Type Safety）和卓越的开发体验。它是首个生产可用、广受欢迎的 Bun 框架。
 
