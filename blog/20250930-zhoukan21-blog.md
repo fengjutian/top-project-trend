@@ -71,3 +71,28 @@ Node.js 最佳实践
 FreeSubStats：免费追踪 Reddit 子版块增长与热门趋势
 
 地址：https://freesubstats.com/
+## [nextcloud/server](https://github.com/nextcloud/server)
+
+![alt text](./imgs/nextcloud.png)
+
+Nextcloud 是一个开源的文件同步和共享平台，允许用户在个人或企业环境中安全、便捷地存储和分享文件。
+
+地址：https://github.com/nextcloud/server
+
+## [commaai/openpilot](https://github.com/commaai/openpilot)
+
+![alt text](./imgs/openpilot.png)
+
+openpilot 是一个用于机器人的操作系统，目前主要用来升级300多种汽车的驾驶辅助系统。
+
+地址：https://github.com/commaai/openpilot
+
+## [lobehub/lobe-chat](https://github.com/lobehub/lobe-chat)
+
+![alt text](./imgs/lobe-chat.png)
+
+现代化设计的开源 ChatGPT/LLMs 聊天应用与开发框架
+支持语音合成、多模态、可扩展的（function call）插件系统
+一键免费拥有你自己的 ChatGPT/Gemini/Claude/Ollama 应用
+
+地址：https://github.com/lobehub/lobe-chat?tab=readme-ov-file
