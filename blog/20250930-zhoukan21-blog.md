@@ -4,7 +4,6 @@ title: 技术周刊二十一
 authors: fengjutian
 tags: []
 ---
-
 ## [humanlayer](https://github.com/humanlayer/humanlayer)
 
 HumanLayer 是一个让 AI 智能体在关键操作中自动引入人工审核的工具库。它确保像发送邮件、修改数据库或发布内容这类高风险操作，必须经过真人批准才能执行。你可以把它看作给 AI 加了一道“安全锁”，既让 AI 能自主工作，又避免了错误操作带来的后果。
@@ -56,3 +55,19 @@ Fresh 是一个基于 Deno 的现代 Web 框架，主打“简单、易用、高
 Node.js 最佳实践
 
 地址：https://github.com/goldbergyoni/nodebestpractices?tab=readme-ov-file
+
+## [eclaire](https://github.com/eclaire-labs/eclaire)
+
+![alt text](./imgs/eclaire-demo-preview.gif)
+
+一款完全本地运行的开源 AI 助手：Eclaire，集成了超多 AI 功能。  支持文档、图片、笔记、书签等数据类型的统一管理，并通过本地 LLM 模型提供问答对话。
+
+地址： https://github.com/eclaire-labs/eclaire
+
+## [freesubstats](https://freesubstats.com/)
+
+![alt text](./imgs/freesubstats.png)
+
+FreeSubStats：免费追踪 Reddit 子版块增长与热门趋势
+
+地址：https://freesubstats.com/
