@@ -5,13 +5,13 @@ authors: fengjutian
 tags: []
 ---
 
-##[BitNet](https://github.com/microsoft/BitNet)
+## [BitNet](https://github.com/microsoft/BitNet)
 
 BitNet.cpp 是微软推出的高效 CPU 推理框架，专为 1.58 比特大语言模型（如 BitNet b1.58）设计，通过优化内核实现无损加速，在 ARM 和 x86 处理器上可提升 1.37x-6.17x 速度并降低 55%-82% 能耗，支持单 CPU 运行百亿参数模型。
 
 地址：https://github.com/microsoft/BitNet
 
-##[Stremio](https://github.com/Stremio/stremio-web)
+## [Stremio](https://github.com/Stremio/stremio-web)
 
 ![alt text](./imgs/stremio-web.png)
 
@@ -20,7 +20,7 @@ Stremio 是一个开源的视频流服务，用户可以在其平台上订阅和
 
 地址：https://github.com/Stremio/stremio-web
 
-##[Infisical](https://github.com/Infisical/infisical)
+## [Infisical](https://github.com/Infisical/infisical)
 
 ![alt text](./imgs/infisical.png)
 
@@ -28,7 +28,7 @@ Infisical 是一个开源的密码管理工具，用于存储和管理敏感信�
 
 地址：https://github.com/Infisical/infisical
 
-##[Flowise](https://github.com/FlowiseAI/Flowise)
+## [Flowise](https://github.com/FlowiseAI/Flowise)
 
 ![alt text](./imgs/flowise_agentflow.gif)
 
@@ -36,7 +36,7 @@ Flowise 是一个基于 Node.js 的可视化低代码平台，用于构建和部
 
 地址：https://github.com/FlowiseAI/Flowise
 
-##[changedetection.io](https://github.com/dgtlmoon/changedetection.io)、
+## [changedetection.io](https://github.com/dgtlmoon/changedetection.io)、
 
 ![alt text](./imgs/changedetection.png)
 
