@@ -4,7 +4,6 @@ title: 技术周刊二十二
 authors: fengjutian
 tags: []
 ---
-
 ## [BitNet](https://github.com/microsoft/BitNet)
 
 BitNet.cpp 是微软推出的高效 CPU 推理框架，专为 1.58 比特大语言模型（如 BitNet b1.58）设计，通过优化内核实现无损加速，在 ARM 和 x86 处理器上可提升 1.37x-6.17x 速度并降低 55%-82% 能耗，支持单 CPU 运行百亿参数模型。
