@@ -52,3 +52,35 @@ SyncTV 是一个允许您远程一起观看电影和直播的程序。它提供�
 一个现代化、完全静态、快速、安全且高度可定制的起始页（或应用仪表盘），支持 Docker 和超过 100 种服务 API 集成。
 
 地址：https://github.com/gethomepage/homepage
+
+## [Open Notebook](https://github.com/lfnovo/open-notebook?tab=readme-ov-file)
+
+![alt text](./imgs/open-notebook.png)
+
+一个开源、隐私优先的替代方案，旨在提供比 Google Notebook LM 更灵活、更强大的笔记与研究平台。支持本地部署、多模型 AI、播客生成等高级功能。
+
+地址：https://github.com/lfnovo/open-notebook?tab=readme-ov-file
+
+## [Minimind](https://github.com/jingyaogong/minimind)
+
+这是一个名为MiniMind的开源项目，让你能只用一张普通显卡（比如3090）和不到3块钱的电费成本，在短短2小时内从零开始训练一个超轻量级的中文语言模型。它完整公开了从数据清洗、模型预训练到微调、强化学习的全部代码，就像一份手把手教你造AI的实践教程，帮助初学者真正理解大模型背后的原理，而不仅仅是调用现成的接口。
+
+地址：https://github.com/jingyaogong/minimind
+
+## [Ebook2Audiobook](https://github.com/DrewThomasson/ebook2audiobook)
+
+这是一个能将电子书转换成有声书的工具，你可以用它把喜欢的电子书变成语音版本，还能选择不同的朗读声音，甚至用自己的声音来朗读。它支持1100多种语言，操作简单，有图形界面和命令行两种使用方式，适合普通用户和技术爱好者。
+
+地址：https://github.com/DrewThomasson/ebook2audiobook
+
+## [OpenVoice](https://github.com/myshell-ai/OpenVoice)
+
+OpenVoice是一个强大的AI语音克隆工具，由MIT和MyShell联合开发。它能瞬间复制任何人的声音音色，并让你自由调整说话的情感、节奏和口音。这个工具支持多种语言，生成的语音自然流畅，而且完全免费商用，特别适合做视频配音或虚拟助手等场景。
+
+地址：https://github.com/myshell-ai/OpenVoice
+
+## [SpacetimeDB](https://github.com/clockworklabs/SpacetimeDB)
+
+SpacetimeDB 是一个把数据库和服务器合二为一的开发工具，专为需要实时交互的应用设计，比如多人在线游戏和聊天软件。它让你可以直接把程序逻辑上传到数据库里运行，省去了传统后端服务器的繁琐部署。这样一来，客户端能直连数据库，数据同步更快，整个开发流程也更简单高效。
+
+地址：https://github.com/clockworklabs/SpacetimeDB
