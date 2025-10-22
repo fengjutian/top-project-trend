@@ -84,3 +84,12 @@ OpenVoice是一个强大的AI语音克隆工具，由MIT和MyShell联合开发�
 SpacetimeDB 是一个把数据库和服务器合二为一的开发工具，专为需要实时交互的应用设计，比如多人在线游戏和聊天软件。它让你可以直接把程序逻辑上传到数据库里运行，省去了传统后端服务器的繁琐部署。这样一来，客户端能直连数据库，数据同步更快，整个开发流程也更简单高效。
 
 地址：https://github.com/clockworklabs/SpacetimeDB
+
+## [Cloudflare Sandbox](https://sandbox.cloudflare.com/)
+
+
+![alt text](./imgs/sandbox-cloudflar.png)
+
+Cloudflare Sandbox 是一项新服务，用于在基于容器的安全“沙盒”环境中运行不受信任的 JavaScript（和 Python）代码。
+
+地址：https://sandbox.cloudflare.com/
