@@ -93,3 +93,28 @@ SpacetimeDB 是一个把数据库和服务器合二为一的开发工具，专�
 Cloudflare Sandbox 是一项新服务，用于在基于容器的安全“沙盒”环境中运行不受信任的 JavaScript（和 Python）代码。
 
 地址：https://sandbox.cloudflare.com/
+
+## [Image Classification with Local VLMs](https://github.com/Paulescu/image-classification-with-local-vlms)
+
+![alt text](./imgs/image-classification-with-local-vlms.gif)
+
+使用本地视觉语言模型（Visual Language Models, VLMs）在边缘设备上构建和部署高效图像分类器。
+
+地址：https://github.com/Paulescu/image-classification-with-local-vlms
+
+## [LinkSwift](https://github.com/hmjz100/LinkSwift?tab=readme-ov-file)
+
+![alt text](./imgs/LinkSwift.png)
+
+一个基于 JavaScript 的网盘文件下载地址获取工具。基于【网盘直链下载助手】修改 ，支持 百度网盘 / 阿里云盘 / 中国移动云盘 / 天翼云盘 / 迅雷云盘 / 夸克网盘 / UC网盘 / 123云盘 八大网盘
+
+
+地址：https://github.com/hmjz100/LinkSwift?tab=readme-ov-file
+
+## [CubeCity](https://github.com/hexianWeb/CubeCity)
+
+![alt text](./imgs/CubeCity.png)
+
+这是一款轻量级、卡通风格的 2.5D 城市模拟游戏，基于 Three.js 和 Vue3 构建。玩家可在浏览器中通过点选和拖放，实时建造、搬迁和拆除建筑。建筑会自动产出金币，可用于新建或升级设施。游戏融合了环境、社会与治理（ESG）理念，城市规划需兼顾多元需求，才能打造出可持续发展的理想城市。
+
+地址：https://github.com/hexianWeb/CubeCity
