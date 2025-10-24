@@ -118,3 +118,11 @@ Cloudflare Sandbox 是一项新服务，用于在基于容器的安全“沙盒�
 这是一款轻量级、卡通风格的 2.5D 城市模拟游戏，基于 Three.js 和 Vue3 构建。玩家可在浏览器中通过点选和拖放，实时建造、搬迁和拆除建筑。建筑会自动产出金币，可用于新建或升级设施。游戏融合了环境、社会与治理（ESG）理念，城市规划需兼顾多元需求，才能打造出可持续发展的理想城市。
 
 地址：https://github.com/hexianWeb/CubeCity
+
+## [HTML Rev](https://htmlrev.com)
+
+![alt text](./imgs/htmlrev.png)
+
+HTML Rev 是一个 HTML 静态站点生成器，基于 Vue3 构建。它允许用户使用所见即所得的方式创建静态站点，并生成 HTML、CSS 和 JavaScript 文件。
+
+地址：https://htmlrev.com
