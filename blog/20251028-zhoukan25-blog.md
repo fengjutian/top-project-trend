@@ -97,3 +97,21 @@ Office 文件在线编辑器。这是一个基于 OnlyOffice 和 WebAssembly 的
 《Agentic Design Patterns》中文翻译版。该项目是《Agentic Design Patterns》一书的中英文对照版，这本书系统性地介绍了构建现代 AI 智能体（Agent）的实践方法与设计模式，包括提示链、RAG、MCP 和多智能体协作等内容。
 
 地址：https://github.com/ginobefun/agentic-design-patterns-cn
+
+## [GPUI Component](https://github.com/longbridge/gpui-component)
+
+![alt text](./imgs/gpui-component.png)
+
+"GPUI Component 是一个基于 GPUI 的跨平台桌面 UI 组件库，提供 40+ 现代化组件，支持多主题、灵活布局和高性能渲染，已应用于 Longbridge Pro 等应用。
+
+地址：https://github.com/longbridge/gpui-component
+
+## [Agent Lightning](https://github.com/microsoft/agent-lightning)
+
+![alt text](./imgs/agent-lightning.png)
+
+
+Agent Lightning是一个能够轻松训练和优化AI智能体的工具，让你无需修改代码就能提升智能体的性能。它支持各种主流框架，甚至无框架的Python开发，通过强化学习、自动提示优化等技术，帮助智能体在单机或多智能体系统中持续学习和改进。简单来说，它就像给AI智能体装上了自动升级引擎，让它们越用越聪明。
+
+
+地址：https://github.com/microsoft/agent-lightning
