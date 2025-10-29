@@ -122,5 +122,13 @@ Agent Lightning是一个能够轻松训练和优化AI智能体的工具，让你
 
 Social Analyzer 是一个开源情报工具，它能帮助你在上千个社交媒体网站上查找和分析特定人物的公开资料。这个工具提供了网页版、命令行和API三种使用方式，通过多种检测技术来评估匹配的可能性，并用0-100的评分来显示结果的可信度。它常用于调查网络骚扰、虚假信息传播等可疑网络活动，一些资源有限的执法机构也在使用它进行网络身份溯源。
 
-
 地址：https://github.com/qeeqbox/social-analyzer
+
+## [Awesome LLM Apps](https://github.com/Shubhamsaboo/awesome-llm-apps)
+
+![alt text](./imgs/awesome-llm-apps.png)
+
+这个项目是一个精选的大型语言模型应用合集，涵盖了各种基于RAG、AI智能体、多智能体协作等技术的实用案例。它包含了使用OpenAI、Anthropic、Gemini等商业模型以及DeepSeek、Qwen、Llama等开源模型的应用程序，覆盖了旅行规划、金融分析、医疗影像、游戏开发等多个领域。你可以在这里找到现成的AI应用代码，学习如何构建自己的智能助手，甚至贡献你的创意项目。
+
+
+地址：https://github.com/Shubhamsaboo/awesome-llm-apps
