@@ -115,3 +115,12 @@ Agent Lightning是一个能够轻松训练和优化AI智能体的工具，让你
 
 
 地址：https://github.com/microsoft/agent-lightning
+
+## [Social Analyzer](https://github.com/qeeqbox/social-analyzer)
+
+![alt text](./imgs/social-analyzer.png)
+
+Social Analyzer 是一个开源情报工具，它能帮助你在上千个社交媒体网站上查找和分析特定人物的公开资料。这个工具提供了网页版、命令行和API三种使用方式，通过多种检测技术来评估匹配的可能性，并用0-100的评分来显示结果的可信度。它常用于调查网络骚扰、虚假信息传播等可疑网络活动，一些资源有限的执法机构也在使用它进行网络身份溯源。
+
+
+地址：https://github.com/qeeqbox/social-analyzer
