@@ -30,3 +30,11 @@ tags: []
 
 
 地址：https://github.com/cookiengineer/gooey
+
+## [htmldocs.js](https://github.com/htmldocs-js/htmldocs)
+
+![alt text](./imgs/htmldocs.png)
+
+一个现代化的 LaTeX 替代方案，使用 React、JSX 和 Tailwind CSS 来创建 PDF 文档模板
+
+地址：https://github.com/htmldocs-js/htmldocs
