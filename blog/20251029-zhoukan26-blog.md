@@ -38,3 +38,43 @@ tags: []
 一个现代化的 LaTeX 替代方案，使用 React、JSX 和 Tailwind CSS 来创建 PDF 文档模板
 
 地址：https://github.com/htmldocs-js/htmldocs
+
+## 【星辰Agent】【https://github.com/iflytek/astron-agent?tab=readme-ov-file】
+
+![alt text](./imgs/astron-agent.png)
+
+星辰Agent是一个企业级、商业友好的 Agentic Workflow开发平台，融合了 AI 工作流编排、模型管理、AI 与 MCP 工具集、RPA 自动化和团队空间等特性。 平台支持高可用部署，帮助企业快速构建可规模化落地的智能体应用，打造面向未来的 AI 基座。
+
+地址：https://github.com/iflytek/astron-agent?tab=readme-ov-file
+
+## [qscan](https://github.com/qi4L/qscan)
+
+![alt text](./imgs/qscan.png)
+
+一个速度极快的内网扫描器，具备端口扫描、协议检测、指纹识别，暴力破解，漏洞探测等功能。支持协议1200+，协议指纹10000+，应用指纹20000+，暴力破解协议10余种
+
+地址：https://github.com/qi4L/qscan
+
+## [Skill Seekers](https://github.com/yusufkaraaslan/Skill_Seekers)
+
+![alt text](./imgs/Skill_Seekers.png)
+
+一个自动化工具，用于将文档网站、GitHub 仓库和 PDF 文件转换为 Claude AI 可用的技能包。
+
+地址：https://github.com/yusufkaraaslan/Skill_Seekers
+
+## [ladybird](https://github.com/LadybirdBrowser/ladybird)
+
+![alt text](./imgs/ladybird.png)
+
+Ladybird是一个真正独立的网页浏览器，采用全新的引擎并基于现代网页标准开发。它采用多进程架构，包括独立的渲染进程、图像解码进程和网络请求进程，以提高安全性和稳定性。目前项目处于预发布阶段，适合开发者参与。Ladybird可在Linux、macOS和Windows等系统运行，并继承了SerenityOS的多个核心组件。该项目采用2-clause BSD开源协议，欢迎开发者加入社区共同建设。
+
+地址：https://github.com/LadybirdBrowser/ladybird
+
+## [Public APIs](https://github.com/public-apis/public-apis)
+
+![alt text](./imgs/public-apis.png)
+
+这是一个收集了各种免费API的GitHub仓库，里面包含了大量不同领域的公共接口，比如天气、股票、动物、动漫、书籍等。你可以直接使用这些API来开发自己的应用或项目，无需付费。这个仓库由社区成员和APILayer团队共同维护，相当于一个免费API的宝藏库，方便开发者快速找到需要的接口。
+
+地址：https://github.com/public-apis/public-apis
