@@ -21,3 +21,12 @@ tags: []
 
 
 地址：https://github.com/spipm/Depixelization_poc
+
+## [Gooey](https://github.com/cookiengineer/gooey)
+
+![alt text](./imgs/gooey.png)
+
+它是一个用 Go 语言编写的 WebAssembly 框架，主要用于构建 Web 应用。
+
+
+地址：https://github.com/cookiengineer/gooey
