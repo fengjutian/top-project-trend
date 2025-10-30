@@ -86,3 +86,11 @@ Ladybird是一个真正独立的网页浏览器，采用全新的引擎并基于
 Goose是一个开源的AI助手，专门为开发者设计，能帮你自动完成各种编程任务。它不只是简单的代码补全，还能从头开始构建项目、编写执行代码、调试错误、管理复杂的工作流程，甚至和外部API交互。你可以把它当作一个本地AI小助手，支持各种大语言模型，还能通过桌面应用或命令行使用，让开发更高效。无论是快速原型设计还是优化现有代码，Goose都能帮你节省时间，专注于创新。
 
 地址：https://github.com/block/goose
+
+## [System Design Primer](https://github.com/donnemartin/system-design-primer?tab=readme-ov-file)
+
+![alt text](./imgs/system-design-primer-1.png)
+
+系统设计
+
+地址：https://github.com/donnemartin/system-design-primer?tab=readme-ov-file
