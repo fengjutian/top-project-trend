@@ -103,9 +103,9 @@ Goose是一个开源的AI助手，专门为开发者设计，能帮你自动完�
 
 地址：https://github.com/allenai/olmocr
 
-## [mem0ai](https://github.com/mem0ai/mem0ai)
+## [mem0ai](https://github.com/mem0ai/mem0)
 
-![alt text](./imgs/mem0.png)
+![alt text](./imgs/mem0ai.png)
 
 为 AI 提供可扩展的长期记忆，使其能记住用户偏好、适应个性化需求，并持续学习。
 
@@ -123,3 +123,9 @@ Goose是一个开源的AI助手，专门为开发者设计，能帮你自动完�
 ![alt text](./imgs/MONAI.png)
 
 地址：https://github.com/Project-MONAI/MONAI
+
+## [OpenTelemetry Collector](https://github.com/open-telemetry/opentelemetry-collector)
+
+![alt text](./imgs/opentelemetry-collector.png)
+
+地址：https://github.com/open-telemetry/opentelemetry-collector
