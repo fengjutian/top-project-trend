@@ -129,3 +129,11 @@ Goose是一个开源的AI助手，专门为开发者设计，能帮你自动完�
 ![alt text](./imgs/opentelemetry-collector.png)
 
 地址：https://github.com/open-telemetry/opentelemetry-collector
+
+## [oxdraw](https://github.com/RohanAdwankar/oxdraw)
+
+![alt text](./imgs/oxdraw.png)
+
+一个 Rust 语言编写的 Web 服务，用来可视化生成图表，同时给出对应的 Mermaid 语法代码。
+
+地址：https://github.com/RohanAdwankar/oxdraw
