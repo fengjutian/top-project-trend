@@ -94,3 +94,32 @@ Goose是一个开源的AI助手，专门为开发者设计，能帮你自动完�
 系统设计
 
 地址：https://github.com/donnemartin/system-design-primer?tab=readme-ov-file
+
+## [Olmocr](https://github.com/allenai/olmocr)
+
+![alt text](./imgs/olmocr.png)
+
+这是一个由艾伦人工智能研究所开发的OCR工具包，专门将PDF和图片文档转换成干净易读的纯文本格式。它能智能处理复杂的排版布局，包括表格、公式和多栏内容，还能自动去除页眉页脚，让文档保持自然的阅读顺序。这个工具特别适合为大型语言模型准备训练数据，处理百万页文档的成本不到200美元。
+
+地址：https://github.com/allenai/olmocr
+
+## [mem0ai](https://github.com/mem0ai/mem0ai)
+
+![alt text](./imgs/mem0.png)
+
+为 AI 提供可扩展的长期记忆，使其能记住用户偏好、适应个性化需求，并持续学习。
+
+地址：https://github.com/mem0ai/mem0
+
+## [cpp-httplib](https://github.com/yhirose/cpp-httplib)
+
+
+这是一个用C++写的超轻量级HTTP库，只需要包含一个头文件就能让你的程序变身Web服务器或客户端。它特别适合快速搭建简单的网络服务，比如写个接口测试工具或者小型网站后端。用它写个返回"Hello World"的服务器只需要几行代码，而且同时支持HTTP和HTTPS协议，用起来非常方便。
+
+地址：https://github.com/yhirose/cpp-httplib
+
+## [MONAI](https://github.com/Project-MONAI/MONAI)
+
+![alt text](./imgs/MONAI.png)
+
+地址：https://github.com/Project-MONAI/MONAI
