@@ -137,3 +137,19 @@ Goose是一个开源的AI助手，专门为开发者设计，能帮你自动完�
 一个 Rust 语言编写的 Web 服务，用来可视化生成图表，同时给出对应的 Mermaid 语法代码。
 
 地址：https://github.com/RohanAdwankar/oxdraw
+
+## [docs](https://github.com/suitenumerique/docs)
+
+![alt text](./imgs/suitenumerique.png)
+
+一个开源的内容管理系统，支持多人实时协作，需要自搭建。
+
+地址：https://github.com/suitenumerique/docs
+
+## [Shadcn Themer](https://shadcnthemer.com/)
+
+![alt text](./imgs/shadcnthemer.png)
+
+这个网站收集 ShadCN UI 的各种主题。
+
+地址：https://shadcnthemer.com/
