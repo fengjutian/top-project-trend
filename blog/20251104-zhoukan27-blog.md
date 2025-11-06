@@ -26,3 +26,11 @@ Deep-Live-Cam 是一款能实时进行人脸替换的AI工具，只需要一张�
 PipesHub 是一个可扩展且可解释的企业级工作场所 AI 平台，专注于企业搜索与工作流自动化。
 
 地址：https://github.com/pipeshub-ai/pipeshub-ai
+
+##[Xan](https://github.com/medialab/xan)
+
+![alt text](./imgs/xan.png)
+
+xan 是由法国 Sciences Po 大学下属的 medialab 实验室开发的开源终端工具，专为 高效浏览和分析大型表格数据 而设计。它基于 Rust 编写，使用 TUI（终端用户界面）构建，可在终端中流畅查看数十万行甚至百万行的 CSV 文件而不卡顿。
+
+地址：https://github.com/medialab/xan
