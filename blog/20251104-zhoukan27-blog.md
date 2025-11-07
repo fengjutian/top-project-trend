@@ -34,3 +34,31 @@ PipesHub 是一个可扩展且可解释的企业级工作场所 AI 平台，专�
 xan 是由法国 Sciences Po 大学下属的 medialab 实验室开发的开源终端工具，专为 高效浏览和分析大型表格数据 而设计。它基于 Rust 编写，使用 TUI（终端用户界面）构建，可在终端中流畅查看数十万行甚至百万行的 CSV 文件而不卡顿。
 
 地址：https://github.com/medialab/xan
+
+## [NocoBase](https://github.com/nocobase/nocobase)
+
+![alt text](./imgs/nocobase.png)
+
+
+NocoBase 是一个极易扩展的 AI 无代码开发平台。
+
+完全掌控，无限扩展，AI 协同。
+让你的团队快速响应变化，大幅降低成本。
+无需多年研发，无需数百万投入。
+花几分钟部署 NocoBase，立即拥有一切。
+
+地址：https://github.com/nocobase/nocobase?tab=readme-ov-file
+
+## [Filebrowser](https://github.com/gtsteffaniak/filebrowser)
+
+![alt text](./imgs/filebrowser.png)
+
+一个自搭建的、基于 Web 的文件管理器
+
+地址：https://github.com/gtsteffaniak/filebrowser
+
+## [Tdesign-uniapp](https://github.com/novlan1/tdesign-uniapp)
+
+腾讯 TDesign 组件库的非官方 uniapp 适配，兼容 H5/微信小程序/支付宝小程序/APP 等。
+
+地址：https://github.com/novlan1/tdesign-uniapp
