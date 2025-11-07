@@ -62,3 +62,17 @@ NocoBase 是一个极易扩展的 AI 无代码开发平台。
 腾讯 TDesign 组件库的非官方 uniapp 适配，兼容 H5/微信小程序/支付宝小程序/APP 等。
 
 地址：https://github.com/novlan1/tdesign-uniapp
+
+## [Chinese-days](https://github.com/vsme/chinese-days)
+
+![alt text](./imgs/chinese-days.png)
+
+中国法定节假日、调休和工作日、24节气查询，农历阳历互转，支持 TS、CommonJS、UMD 模块化使用，对非开发者，提供 iCal 日历订阅，可供 Google Calendar、Apple Calendar、Microsoft Outlook 等客户端使用。
+
+地址：https://github.com/vsme/chinese-days
+
+## [Qiluo Admin](https://github.com/chelunfu/qiluo_admin)
+
+![alt text](./imgs/qiluo_admin.png)
+
+地址：https://github.com/chelunfu/qiluo_admin
