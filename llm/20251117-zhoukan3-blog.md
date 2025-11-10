@@ -40,3 +40,5 @@ Paper Burner X - 浏览器即开即用，AI文献识别、文档批量翻译、�
 用于图像编辑的桌面软件，Photoshop 的替代品，被 Canva 公司收购后，现在可以免费下载使用。
 
 地址：https://www.affinity.studio/
+
+
