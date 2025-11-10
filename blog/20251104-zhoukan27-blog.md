@@ -76,3 +76,11 @@ NocoBase 是一个极易扩展的 AI 无代码开发平台。
 ![alt text](./imgs/qiluo_admin.png)
 
 地址：https://github.com/chelunfu/qiluo_admin
+
+## [gopeed](https://github.com/GopeedLab/gopeed)
+
+![alt text](./imgs/gopeed.png)
+
+一个支持多源下载的开源软件，支持 HTTP/HTTPS、FTP、SFTP、Magnet、BitTorrent、Youtube 等源，支持多线程下载，支持断点续传。
+
+地址：https://github.com/GopeedLab/gopeed
