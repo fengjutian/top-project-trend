@@ -84,3 +84,19 @@ NocoBase 是一个极易扩展的 AI 无代码开发平台。
 一个支持多源下载的开源软件，支持 HTTP/HTTPS、FTP、SFTP、Magnet、BitTorrent、Youtube 等源，支持多线程下载，支持断点续传。
 
 地址：https://github.com/GopeedLab/gopeed
+
+## [ADK-Go](https://github.com/google/adk-go)
+
+![alt text](./imgs/adk-go.png)
+
+ADK-Go 是一个用 Go 语言开发 AI 智能体的开源工具包。它采用代码优先的设计理念，让你能像搭积木一样灵活地构建、测试和部署复杂的 AI 应用。无论你是想创建单个智能体还是组装多智能体系统，这个工具包都能充分利用 Go 语言的高并发特性，帮助你轻松打造云原生的智能应用。
+
+地址：https://github.com/google/adk-go
+
+## [Call-Center-AI](https://github.com/microsoft/call-center-ai)
+
+![alt text](./imgs/call-center-ai.png)
+
+这是一个AI智能客服电话系统，让你通过简单的API调用就能让AI客服给任何人打电话。它就像个虚拟客服代表，能处理保险理赔、IT技术支持、客户服务等各种场景，通话内容会实时记录并生成工单信息。系统基于微软Azure和OpenAI技术构建，支持多语言和个性化声音，还能在复杂情况下转接给人工客服。
+
+地址：https://github.com/microsoft/call-center-ai
