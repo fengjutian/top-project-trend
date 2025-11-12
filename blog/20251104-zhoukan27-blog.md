@@ -108,3 +108,11 @@ ADK-Go 是一个用 Go 语言开发 AI 智能体的开源工具包。它采用�
 OpenCloud是一个开源的后端服务器项目，使用Go语言编写，主要用于构建云服务相关的后端功能。它不需要数据库，所有数据都直接存储在文件系统中。项目内置了身份验证功能，支持OpenID Connect协议，既可以用外部身份提供商，也可以使用自带的身份服务。任何人都可以参与贡献代码、报告问题或完善文档，项目采用友好的Apache 2.0开源协议。
 
 地址：https://github.com/opencloud-eu/opencloud
+
+## [HeroUI](https://v3.heroui.com/)
+
+![alt text](./imgs/heroui.png)
+
+提供丰富的 UI 组件库，适用于网页和移动端开发。
+
+地址：https://v3.heroui.com/
