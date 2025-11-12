@@ -41,4 +41,10 @@ Paper Burner X - 浏览器即开即用，AI文献识别、文档批量翻译、�
 
 地址：https://www.affinity.studio/
 
+## [Memori](https://github.com/GibsonAI/memori)
 
+![alt text](./static/memori.png)
+
+“Neon”是 Memori 支持的 SQL 数据库之一，用于存储大型语言模型（LLM）的记忆数据。
+
+地址：https://github.com/GibsonAI/memori
