@@ -15,6 +15,7 @@ const SnowfallBg = lazy(() => import('../custom-theme/snow-fall'));
 
 function AnimatedBackground() {
   const [shouldAnimate, setShouldAnimate] = React.useState(true);
+  const [canLoad, setCanLoad] = React.useState(false);
 
   React.useEffect(() => {
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -32,7 +33,23 @@ function AnimatedBackground() {
     };
   }, []);
 
-  if (!shouldAnimate) {
+  React.useEffect(() => {
+    if (!shouldAnimate) {
+      return undefined;
+    }
+
+    if ('requestIdleCallback' in window) {
+      const idleId = window.requestIdleCallback(() => setCanLoad(true), {
+        timeout: 1500,
+      });
+      return () => window.cancelIdleCallback(idleId);
+    }
+
+    const timeoutId = window.setTimeout(() => setCanLoad(true), 500);
+    return () => window.clearTimeout(timeoutId);
+  }, [shouldAnimate]);
+
+  if (!shouldAnimate || !canLoad) {
     return <div className={styles.staticBackground} />;
   }
 

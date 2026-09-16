@@ -23,6 +23,10 @@ const config = {
       '@docusaurus/plugin-pwa',
       {
         debug: process.env.NODE_ENV === 'development',
+        injectManifestConfig: {
+          // Article media is loaded on demand instead of filling the offline cache.
+          globIgnores: ['**/assets/images/**'],
+        },
         offlineModeActivationStrategies: [
           'appInstalled',
           'standalone',
