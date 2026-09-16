@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {lazy, Suspense} from 'react';
+import BrowserOnly from '@docusaurus/BrowserOnly';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
@@ -9,16 +10,45 @@ import {
 
 import NosieTitle from '../custom-theme/noise-title';
 
-import Header from './Header'
+const Silk = lazy(() => import('../MainPage/Silk'));
+const SnowfallBg = lazy(() => import('../custom-theme/snow-fall'));
 
-import Silk from '../MainPage/Silk';
+function AnimatedBackground() {
+  const [shouldAnimate, setShouldAnimate] = React.useState(true);
 
+  React.useEffect(() => {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const updateAnimationState = () => {
+      setShouldAnimate(!reducedMotion.matches && !document.hidden);
+    };
 
-const handleAnimationComplete = () => {
-  console.log('Animation completed!');
-};
+    updateAnimationState();
+    reducedMotion.addEventListener('change', updateAnimationState);
+    document.addEventListener('visibilitychange', updateAnimationState);
 
-import SnowfallBg from '../custom-theme/snow-fall';
+    return () => {
+      reducedMotion.removeEventListener('change', updateAnimationState);
+      document.removeEventListener('visibilitychange', updateAnimationState);
+    };
+  }, []);
+
+  if (!shouldAnimate) {
+    return <div className={styles.staticBackground} />;
+  }
+
+  return (
+    <Suspense fallback={<div className={styles.staticBackground} />}>
+      <Silk
+        speed={5}
+        scale={1}
+        color="#5033F1FF"
+        noiseIntensity={1.5}
+        rotation={0}
+      />
+      <SnowfallBg />
+    </Suspense>
+  );
+}
 
 
 
@@ -85,19 +115,11 @@ export default function Home() {
       </header>
 
 
-    <div  style={{width: '100vw', height: '100vh', position: 'relative'}}>
-          <Silk
-      speed={5}
-      scale={1}
-      color="#5033F1FF"
-      noiseIntensity={1.5}
-      rotation={0}
-    />
-
+    <div className={styles.heroBackground}>
+      <BrowserOnly fallback={<div className={styles.staticBackground} />}>
+        {() => <AnimatedBackground />}
+      </BrowserOnly>
     </div>
-
-
-    <SnowfallBg />
 
 
   </>

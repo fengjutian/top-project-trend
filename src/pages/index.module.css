@@ -16,6 +16,21 @@
   --danger: #ef4444;
 }
 
+.heroBackground {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.staticBackground {
+  width: 100%;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.65), transparent 45%),
+    linear-gradient(135deg, #17123b 0%, #5033f1 55%, #24105c 100%);
+}
+
 .dark {
   --primary: #6366f1;
   --primary-hover: #818cf8;
