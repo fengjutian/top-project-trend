@@ -1,5 +1,8 @@
 
 :root {
+  --site-serif-font: 'Source Han Serif SC', 'Source Han Serif CN', 'Noto Serif CJK SC', 'Noto Serif SC', '思源宋体', 'Songti SC', STSong, SimSun, serif;
+  --ifm-font-family-base: var(--site-serif-font);
+  --ifm-heading-font-family: var(--site-serif-font);
   --ifm-color-primary: #3b82f6;
   --ifm-color-primary-dark: #2563eb;
   --ifm-color-primary-darker: #1d4ed8;
@@ -52,7 +55,7 @@ html {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: var(--site-serif-font);
   line-height: 1.6;
   color: var(--ifm-text-color);
   background: var(--ifm-background-color);

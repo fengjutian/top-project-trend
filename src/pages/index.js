@@ -1,6 +1,7 @@
 import React, {lazy, Suspense} from 'react';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import Link from '@docusaurus/Link';
+import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
 import { 
@@ -85,7 +86,7 @@ export default function Home() {
 
   return (
 
-<>
+<Layout title="首页" description="每周精选值得关注的技术趋势与开源项目">
 
     {/* <BlurText
       text="Isn't this so cool?!"
@@ -136,9 +137,36 @@ export default function Home() {
       <BrowserOnly fallback={<div className={styles.staticBackground} />}>
         {() => <AnimatedBackground />}
       </BrowserOnly>
+
+      <main className={styles.heroContent}>
+        <div className={styles.heroPanel}>
+          <span className={styles.heroEyebrow}>每周发现值得关注的技术与开源项目</span>
+          <h1 className={styles.heroTitle}>把技术趋势，变成你的下一步行动</h1>
+          <p className={styles.heroDescription}>
+            精选开发工具、开源项目、AI 应用与工程实践，用更少时间掌握真正有价值的新方向。
+          </p>
+
+          <div className={styles.heroActions}>
+            <Link className={styles.primaryAction} to="/blog">
+              浏览最新周刊
+            </Link>
+            <Link className={styles.secondaryAction} to="/static-website">
+              探索资源网站
+            </Link>
+          </div>
+
+          <nav className={styles.heroTopics} aria-label="热门技术分类">
+            <span>热门方向</span>
+            <Link to="/llm">AI / LLM</Link>
+            <Link to="/ts">TypeScript</Link>
+            <Link to="/python">Python</Link>
+            <Link to="/golang">Golang</Link>
+          </nav>
+        </div>
+      </main>
     </div>
 
 
-  </>
+  </Layout>
   );
 }
