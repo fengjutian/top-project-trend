@@ -1,4 +1,5 @@
 ---
+date: 2025-09-05
 slug: 3d-website
 title: 3D 网站
 authors: fengjutian

@@ -1,4 +1,5 @@
 ---
+date: 2025-07-27
 slug: rust-web
 title: Rust web 框架
 authors: fengjutian

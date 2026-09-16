@@ -1,4 +1,5 @@
 ---
+date: 2025-08-31
 slug: interview
 title: 技术面试
 authors: fengjutian

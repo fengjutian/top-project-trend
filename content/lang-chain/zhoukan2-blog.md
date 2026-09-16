@@ -1,4 +1,5 @@
 ---
+date: 2025-07-27
 slug: zhoukan2
 title: 技术周刊二
 authors: fengjutian

@@ -1,4 +1,5 @@
 ---
+date: 2025-08-01
 slug: zhoukan3
 title: 技术周刊三
 authors: fengjutian
