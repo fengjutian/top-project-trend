@@ -346,3 +346,274 @@ a:hover {
 .glow-effect:hover::after {
   opacity: 1;
 }
+
+/* Article reading experience */
+:root {
+  --site-content-width: 1440px;
+  --article-content-width: 920px;
+  --article-border-color: rgba(148, 163, 184, 0.24);
+  --article-muted-color: #64748b;
+  --article-image-shadow: 0 14px 40px rgba(15, 23, 42, 0.1);
+}
+
+[data-theme='dark'] {
+  --article-border-color: rgba(148, 163, 184, 0.18);
+  --article-muted-color: #94a3b8;
+  --article-image-shadow: 0 18px 48px rgba(0, 0, 0, 0.32);
+}
+
+/* Keep the wide three-column layout compact enough to scan comfortably. */
+.container {
+  max-width: var(--site-content-width);
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.theme-blog-post-page main {
+  min-width: 0;
+}
+
+.theme-blog-post-page article {
+  max-width: var(--article-content-width);
+  margin: 0 auto;
+  color: var(--ifm-color-emphasis-800);
+  font-size: 1rem;
+  line-height: 1.85;
+}
+
+.theme-blog-post-page article > header {
+  margin-bottom: 2.75rem;
+  padding-bottom: 1.75rem;
+  border-bottom: 1px solid var(--article-border-color);
+}
+
+.theme-blog-post-page article > header h1 {
+  margin-bottom: 1rem;
+  color: var(--ifm-color-emphasis-900);
+  font-size: clamp(2.35rem, 4vw, 3.5rem);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+}
+
+.theme-blog-post-page article > header time,
+.theme-blog-post-page article > header .avatar__subtitle {
+  color: var(--article-muted-color);
+}
+
+.theme-blog-post-page article h2 {
+  margin-top: 3.75rem;
+  margin-bottom: 1.35rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--article-border-color);
+  font-size: clamp(1.55rem, 2.4vw, 1.9rem);
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  scroll-margin-top: 5.5rem;
+}
+
+.theme-blog-post-page article h2:first-of-type {
+  margin-top: 2rem;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.theme-blog-post-page article h2 > a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.theme-blog-post-page article h2 > a:hover {
+  color: var(--ifm-color-primary);
+}
+
+.theme-blog-post-page article p {
+  margin-bottom: 1.25rem;
+}
+
+.theme-blog-post-page article img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 78vh;
+  margin: 1.5rem auto 1.75rem;
+  border: 1px solid var(--article-border-color);
+  border-radius: 16px;
+  box-shadow: var(--article-image-shadow);
+  background: var(--ifm-background-surface-color);
+  object-fit: contain;
+}
+
+/* Docusaurus keeps an empty TOC column on short posts. Reclaim that space. */
+.theme-blog-post-page .row:not(:has(.table-of-contents)) > main.col {
+  --ifm-col-width: 75%;
+  flex: 0 0 75%;
+  max-width: 75%;
+}
+
+.theme-blog-post-page article blockquote {
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  border-left: 3px solid var(--ifm-color-primary);
+  border-radius: 0 10px 10px 0;
+  background: var(--ifm-background-surface-color);
+  color: var(--ifm-color-emphasis-700);
+}
+
+.theme-blog-post-page article :not(pre) > code {
+  border: 1px solid var(--article-border-color);
+  border-radius: 5px;
+}
+
+/* Side navigation should support the article instead of competing with it. */
+.theme-blog-post-page .blog-post-page__sidebar,
+.theme-blog-post-page .table-of-contents {
+  font-size: 0.84rem;
+  line-height: 1.55;
+}
+
+.theme-blog-post-page .table-of-contents {
+  padding-left: 1rem;
+  border-left-color: var(--article-border-color);
+}
+
+.theme-blog-post-page .table-of-contents__link {
+  display: block;
+  padding: 0.22rem 0;
+  color: var(--ifm-color-emphasis-600);
+  transition: color 0.18s ease, transform 0.18s ease;
+}
+
+.theme-blog-post-page .table-of-contents__link:hover,
+.theme-blog-post-page .table-of-contents__link--active {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  transform: translateX(2px);
+}
+
+.theme-blog-post-page .table-of-contents__link--active {
+  font-weight: 650;
+}
+
+/* A quieter, more polished top navigation. */
+.navbar {
+  min-height: 64px;
+  padding: 0.5rem 0;
+  box-shadow: 0 1px 0 rgba(15, 23, 42, 0.04);
+}
+
+.navbar__inner {
+  max-width: var(--site-content-width);
+  margin: 0 auto;
+  flex-wrap: nowrap;
+}
+
+.navbar__logo {
+  height: 2rem;
+}
+
+.navbar__link {
+  border-radius: 7px;
+  padding: 0.45rem 0.55rem;
+  font-size: 0.94rem;
+  white-space: nowrap;
+}
+
+.navbar__brand {
+  flex-shrink: 0;
+  margin-right: 1.25rem;
+  white-space: nowrap;
+}
+
+.navbar__items {
+  min-width: 0;
+  flex-wrap: nowrap;
+}
+
+.dropdown__menu {
+  min-width: 11rem;
+  padding: 0.5rem;
+  border: 1px solid var(--article-border-color);
+  border-radius: 12px;
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.12);
+}
+
+.dropdown__link {
+  border-radius: 7px;
+}
+
+.navbar__link:hover,
+.navbar__link--active {
+  background: rgba(59, 130, 246, 0.08);
+  text-decoration: none;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    padding-right: 1.25rem;
+    padding-left: 1.25rem;
+  }
+
+  .navbar__link {
+    padding-right: 0.4rem;
+    padding-left: 0.4rem;
+    font-size: 0.88rem;
+  }
+}
+
+@media (max-width: 996px) {
+  .theme-blog-post-page .row:not(:has(.table-of-contents)) > main.col {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+
+  .theme-blog-post-page article {
+    max-width: 760px;
+  }
+
+  .theme-blog-post-page article > header h1 {
+    font-size: clamp(2.1rem, 7vw, 3rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  .theme-blog-post-page article {
+    font-size: 0.98rem;
+    line-height: 1.78;
+  }
+
+  .theme-blog-post-page article > header {
+    margin-bottom: 2rem;
+    padding-bottom: 1.25rem;
+  }
+
+  .theme-blog-post-page article h2 {
+    margin-top: 2.75rem;
+    padding-top: 1.5rem;
+  }
+
+  .theme-blog-post-page article img {
+    margin-top: 1.15rem;
+    border-radius: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
