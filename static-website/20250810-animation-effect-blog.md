@@ -38,7 +38,7 @@ tags: [react, blog]
 
 地址：https://originui.com/
 
-## [cult-ui](www.cult-ui.com/)
+## [cult-ui](https://www.cult-ui.com/)
 
 ![alt text](./static/cult-ui.png)   
 
