@@ -20,38 +20,6 @@ const config = {
   deploymentBranch: 'gh-pages',
   plugins: [
     [
-      '@docusaurus/plugin-pwa',
-      {
-        debug: process.env.NODE_ENV === 'development',
-        injectManifestConfig: {
-          // Article media is loaded on demand instead of filling the offline cache.
-          globIgnores: ['**/assets/images/**'],
-        },
-        offlineModeActivationStrategies: [
-          'appInstalled',
-          'standalone',
-          'queryString',
-        ],
-        pwaHead: [
-          {
-            tagName: 'link',
-            rel: 'icon',
-            href: '/img/docusaurus.png',
-          },
-          {
-            tagName: 'link',
-            rel: 'manifest',
-            href: '/manifest.json', // your PWA manifest
-          },
-          {
-            tagName: 'meta',
-            name: 'theme-color',
-            content: 'rgb(37, 194, 160)',
-          },
-        ],
-      },
-    ],
-    [
       '@easyops-cn/docusaurus-search-local',
       {
         hashed: true,

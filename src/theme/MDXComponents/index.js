@@ -1,12 +1,23 @@
 import React from 'react';
 import MDXComponents from '@theme-original/MDXComponents';
 
-function LazyImage({loading, decoding, ...props}) {
+function LazyImage({loading, decoding, style, ...props}) {
   return (
     <img
       {...props}
       loading={loading ?? 'lazy'}
       decoding={decoding ?? 'async'}
+      style={{
+        ...style,
+        display: 'block',
+        width: '420px',
+        height: '236px',
+        maxWidth: '100%',
+        objectFit: 'cover',
+        objectPosition: 'center',
+        marginRight: 'auto',
+        marginLeft: 'auto',
+      }}
     />
   );
 }

@@ -430,17 +430,18 @@ html.blog-post-page article p {
   margin-bottom: 1.25rem;
 }
 
-html.blog-post-page #post-content img {
+#post-content img {
   display: block;
-  width: 480px !important;
-  height: 270px !important;
+  width: 420px !important;
+  height: 236px !important;
   max-width: 100%;
   margin: 1.5rem auto 1.75rem;
   border: 1px solid var(--article-border-color);
   border-radius: 16px;
   box-shadow: var(--article-image-shadow);
   background: var(--ifm-background-surface-color);
-  object-fit: cover;
+  object-fit: cover !important;
+  object-position: center;
 }
 
 /* Give article media more room than Docusaurus' default 3/7/2 layout. */
@@ -611,10 +612,10 @@ html.blog-post-page .table-of-contents__link--active {
     padding-top: 1.5rem;
   }
 
-  html.blog-post-page #post-content img {
-    width: 100% !important;
-    height: auto !important;
-    aspect-ratio: 16 / 9;
+  #post-content img {
+    width: 420px !important;
+    height: 236px !important;
+    max-width: 100%;
     margin-top: 1.15rem;
     border-radius: 12px;
   }
