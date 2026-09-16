@@ -7,6 +7,22 @@ title: 文章发布
 
 本站支持两种写作方式，文章最终都保存在 GitHub 仓库的 `content/` 目录中。
 
+## 使用内置管理后台
+
+访问站点的 `/admin` 路径，例如本地开发环境：
+
+```text
+http://localhost:3000/top-project-trend/admin
+```
+
+首次进入时，需要提供一个 GitHub Fine-grained personal access token：
+
+- Repository access 只选择 `fengjutian/top-project-trend`。
+- Repository permissions 中仅开启 **Contents: Read and write**。
+- Token 只保存在当前浏览器的 `sessionStorage`，关闭标签页后清除，不会写入源码或提交到仓库。
+
+后台支持按栏目和发布日期倒序浏览文章、搜索、新建和编辑、自动生成链接标识、自动摘要、提取技术标签、草稿控制及 Markdown 预览。保存后会直接提交到 `main`，并触发 GitHub Actions 自动部署。
+
 ## 在 Pages CMS 中发布
 
 1. 打开 [Pages CMS](https://app.pagescms.org/)，使用 GitHub 登录。
