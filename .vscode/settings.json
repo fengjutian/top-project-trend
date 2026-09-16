@@ -1,0 +1,8 @@
+{
+  "files.exclude": {
+    "**/.docusaurus": true,
+    "**/build": true,
+    "**/node_modules": true,
+    "**/.cache-loader": true
+  }
+}

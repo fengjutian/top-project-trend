@@ -69,7 +69,7 @@ const config = {
     ['@docusaurus/plugin-content-blog',
       {
         id: 'java',
-        path: 'java',
+        path: 'content/topics/java',
         routeBasePath: 'java',
         showReadingTime: true,
         blogSidebarCount: 10,
@@ -80,7 +80,7 @@ const config = {
     ['@docusaurus/plugin-content-blog',
       {
         id: 'code',
-        path: 'code',
+        path: 'content/topics/code',
         routeBasePath: 'code',
         showReadingTime: true,
         blogSidebarCount: 10,
@@ -91,7 +91,7 @@ const config = {
     ['@docusaurus/plugin-content-blog',
       {
         id: 'ts',
-        path: 'ts',
+        path: 'content/topics/typescript',
         routeBasePath: 'ts',
         showReadingTime: true,
         blogSidebarCount: 10,
@@ -102,7 +102,7 @@ const config = {
     ['@docusaurus/plugin-content-blog',
       {
         id: 'algorithm',
-        path: 'algorithm',
+        path: 'content/topics/algorithm',
         routeBasePath: 'algorithm',
         showReadingTime: true,
         blogSidebarCount: 10,
@@ -113,7 +113,7 @@ const config = {
     ['@docusaurus/plugin-content-blog',
       {
         id: 'golang',
-        path: 'golang',
+        path: 'content/topics/golang',
         routeBasePath: 'golang',
         showReadingTime: true,
         blogSidebarCount: 10,
@@ -125,7 +125,7 @@ const config = {
     ['@docusaurus/plugin-content-blog',
       {
         id: 'rust',
-        path: 'rust',
+        path: 'content/topics/rust',
         routeBasePath: 'rust',
         showReadingTime: true,
         blogSidebarCount: 10,
@@ -136,7 +136,7 @@ const config = {
     ['@docusaurus/plugin-content-blog',
       {
         id: 'python',
-        path: 'python',
+        path: 'content/topics/python',
         routeBasePath: 'python',
         showReadingTime: true,
         blogSidebarCount: 10,
@@ -147,7 +147,7 @@ const config = {
     ['@docusaurus/plugin-content-blog',
       {
         id: 'android',
-        path: 'android',
+        path: 'content/topics/android',
         routeBasePath: 'android',
         showReadingTime: true,
         blogSidebarCount: 10,
@@ -158,7 +158,7 @@ const config = {
     ['@docusaurus/plugin-content-blog',
       {
         id: 'LangChain',
-        path: 'lang-chain',
+        path: 'content/topics/lang-chain',
         routeBasePath: 'lang-chain',
         showReadingTime: true,
         blogSidebarCount: 10,
@@ -169,7 +169,7 @@ const config = {
     ['@docusaurus/plugin-content-blog',
       {
         id: 'mcp',
-        path: 'mcp',
+        path: 'content/topics/mcp',
         routeBasePath: 'mcp',
         showReadingTime: true,
         blogSidebarCount: 10,
@@ -180,7 +180,7 @@ const config = {
     ['@docusaurus/plugin-content-blog',
       {
         id: 'llm',
-        path: 'llm',
+        path: 'content/topics/llm',
         routeBasePath: 'llm',
         showReadingTime: true,
         blogSidebarCount: 10,
@@ -191,7 +191,7 @@ const config = {
     ['@docusaurus/plugin-content-blog',
       {
         id: 'static-website',
-        path: 'static-website',
+        path: 'content/resources/static-website',
         routeBasePath: 'static-website',
         showReadingTime: true,
         blogSidebarCount: 10,
@@ -224,6 +224,7 @@ const config = {
             'https://github.com/fengjutian/top-project-trend/tree/main',
         },
         blog: {
+          path: 'content/weekly',
           showReadingTime: true,
           blogSidebarTitle: '博文',
           blogSidebarCount: 10,

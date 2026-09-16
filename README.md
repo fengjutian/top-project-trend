@@ -93,11 +93,10 @@ npm run serve
 ├── src/pages/index.js          # 首页主视觉与极光动画
 ├── src/pages/AuroraBackground.js # 极光动画 SVG 组件
 ├── static/img/                 # 静态资源，包括恐龙吉祥物 SVG
-├── blog/                       # 技术周刊内容（按分类组织）
-│   ├── java/                   # Java 技术相关文章
-│   ├── code/                   # 编程技巧相关文章
-│   ├── ts/                     # TypeScript 相关文章
-│   └── ...                     # 其他分类
+├── content/                    # 网站内容
+│   ├── weekly/                 # 技术周刊
+│   ├── topics/                 # Java、TypeScript 等技术栏目
+│   └── resources/              # 资源网站栏目
 ├── docs/                       # 文档教程
 ├── docusaurus.config.js        # 项目配置文件
 ├── package.json                # 依赖管理
