@@ -30,6 +30,7 @@ slug: ${slug}
 title: ${title}
 authors: fengjutian
 tags: []
+draft: true
 ---
 
 在这里开始写文章。

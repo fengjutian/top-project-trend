@@ -1,0 +1,201 @@
+media:
+  name: article_images
+  label: 文章图片（WebP）
+  input: static/media
+  output: /top-project-trend/media
+  extensions: [webp]
+  categories: [image]
+  rename: safe
+
+content:
+  - name: articles
+    label: 文章
+    type: group
+    items:
+      - name: blog
+        label: 技术周刊
+        type: collection
+        path: content/blog
+        format: yaml-frontmatter
+        subfolders: false
+        filename:
+          template: "{year}{month}{day}-{slug}-blog.md"
+          field: create
+        view:
+          primary: title
+          fields: [title, slug, draft]
+          search: [title, slug, tags]
+        fields: &article_fields
+          - name: title
+            label: 标题
+            type: string
+            required: true
+          - name: slug
+            label: 链接标识
+            type: string
+            required: true
+            description: 推荐使用英文字母、数字和短横线；保留对已有中文链接的兼容。
+          - name: authors
+            label: 作者
+            type: string
+            required: true
+            default: fengjutian
+          - name: tags
+            label: 标签
+            type: string
+            list: true
+          - name: draft
+            label: 草稿
+            type: boolean
+            default: true
+            description: 开启时只在本地开发环境显示，不会出现在生产站点。
+          - name: description
+            label: 摘要
+            type: text
+            required: false
+          - name: image
+            label: 封面
+            type: image
+            required: false
+            options:
+              media: article_images
+          - name: body
+            label: 正文
+            type: rich-text
+            required: true
+            options:
+              format: markdown
+              switcher: true
+              media: article_images
+              rename: safe
+
+      - name: java
+        label: Java
+        type: collection
+        path: content/java
+        format: yaml-frontmatter
+        subfolders: false
+        filename: {template: "{year}{month}{day}-{slug}-blog.md", field: create}
+        view: {primary: title, fields: [title, slug, draft], search: [title, slug, tags]}
+        fields: *article_fields
+
+      - name: code
+        label: 编程综合
+        type: collection
+        path: content/code
+        format: yaml-frontmatter
+        subfolders: false
+        filename: {template: "{year}{month}{day}-{slug}-blog.md", field: create}
+        view: {primary: title, fields: [title, slug, draft], search: [title, slug, tags]}
+        fields: *article_fields
+
+      - name: ts
+        label: TypeScript
+        type: collection
+        path: content/ts
+        format: yaml-frontmatter
+        subfolders: false
+        filename: {template: "{year}{month}{day}-{slug}-blog.md", field: create}
+        view: {primary: title, fields: [title, slug, draft], search: [title, slug, tags]}
+        fields: *article_fields
+
+      - name: algorithm
+        label: 算法
+        type: collection
+        path: content/algorithm
+        format: yaml-frontmatter
+        subfolders: false
+        filename: {template: "{year}{month}{day}-{slug}-blog.md", field: create}
+        view: {primary: title, fields: [title, slug, draft], search: [title, slug, tags]}
+        fields: *article_fields
+
+      - name: golang
+        label: Go
+        type: collection
+        path: content/golang
+        format: yaml-frontmatter
+        subfolders: false
+        filename: {template: "{year}{month}{day}-{slug}-blog.md", field: create}
+        view: {primary: title, fields: [title, slug, draft], search: [title, slug, tags]}
+        fields: *article_fields
+
+      - name: rust
+        label: Rust
+        type: collection
+        path: content/rust
+        format: yaml-frontmatter
+        subfolders: false
+        filename: {template: "{year}{month}{day}-{slug}-blog.md", field: create}
+        view: {primary: title, fields: [title, slug, draft], search: [title, slug, tags]}
+        fields: *article_fields
+
+      - name: python
+        label: Python
+        type: collection
+        path: content/python
+        format: yaml-frontmatter
+        subfolders: false
+        filename: {template: "{year}{month}{day}-{slug}-blog.md", field: create}
+        view: {primary: title, fields: [title, slug, draft], search: [title, slug, tags]}
+        fields: *article_fields
+
+      - name: android
+        label: Android
+        type: collection
+        path: content/android
+        format: yaml-frontmatter
+        subfolders: false
+        filename: {template: "{year}{month}{day}-{slug}-blog.md", field: create}
+        view: {primary: title, fields: [title, slug, draft], search: [title, slug, tags]}
+        fields: *article_fields
+
+      - name: lang_chain
+        label: LangChain
+        type: collection
+        path: content/lang-chain
+        format: yaml-frontmatter
+        subfolders: false
+        filename: {template: "{year}{month}{day}-{slug}-blog.md", field: create}
+        view: {primary: title, fields: [title, slug, draft], search: [title, slug, tags]}
+        fields: *article_fields
+
+      - name: mcp
+        label: MCP
+        type: collection
+        path: content/mcp
+        format: yaml-frontmatter
+        subfolders: false
+        filename: {template: "{year}{month}{day}-{slug}-blog.md", field: create}
+        view: {primary: title, fields: [title, slug, draft], search: [title, slug, tags]}
+        fields: *article_fields
+
+      - name: llm
+        label: LLM
+        type: collection
+        path: content/llm
+        format: yaml-frontmatter
+        subfolders: false
+        filename: {template: "{year}{month}{day}-{slug}-blog.md", field: create}
+        view: {primary: title, fields: [title, slug, draft], search: [title, slug, tags]}
+        fields: *article_fields
+
+      - name: static_website
+        label: 静态网站资源
+        type: collection
+        path: content/static-website
+        format: yaml-frontmatter
+        subfolders: false
+        filename: {template: "{year}{month}{day}-{slug}-blog.md", field: create}
+        view: {primary: title, fields: [title, slug, draft], search: [title, slug, tags]}
+        fields: *article_fields
+
+settings:
+  content:
+    merge: true
+  commit:
+    identity: user
+    templates:
+      create: "content: 新增 {filename}"
+      update: "content: 更新 {filename}"
+      delete: "content: 删除 {filename}"
+      rename: "content: 重命名 {oldFilename} 为 {newFilename}"
