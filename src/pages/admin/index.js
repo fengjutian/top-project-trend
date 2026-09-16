@@ -17,7 +17,7 @@ const SECTIONS = [
 const emptyArticle = () => ({
   title: '', slug: '', date: new Date().toISOString().slice(0, 10),
   authors: 'fengjutian', tags: [], draft: true, description: '', image: '', body: '',
-  rawFrontmatter: '', path: '', sha: '',
+  rawFrontmatter: '', path: '', sha: '', savedContent: '',
 });
 
 function toSlug(value) {
@@ -33,6 +33,38 @@ function decodeBase64(value) {
 
 function encodeBase64(value) {
   const bytes = new TextEncoder().encode(value);
+  let binary = '';
+  bytes.forEach((byte) => { binary += String.fromCharCode(byte); });
+  return btoa(binary);
+}
+
+function safeFilename(value) {
+  const dot = value.lastIndexOf('.');
+  const stem = dot > 0 ? value.slice(0, dot) : value;
+  return toSlug(stem).replace(/[\u4e00-\u9fff]/g, '') || 'image';
+}
+
+async function optimizeImage(file) {
+  const bitmap = await createImageBitmap(file);
+  const scale = Math.min(1, 2560 / bitmap.width);
+  const canvas = document.createElement('canvas');
+  canvas.width = Math.round(bitmap.width * scale);
+  canvas.height = Math.round(bitmap.height * scale);
+  canvas.getContext('2d').drawImage(bitmap, 0, 0, canvas.width, canvas.height);
+  bitmap.close();
+
+  let quality = 0.84;
+  let blob;
+  do {
+    blob = await new Promise((resolve) => canvas.toBlob(resolve, 'image/webp', quality));
+    quality -= 0.08;
+  } while (blob?.size > 200 * 1024 && quality >= 0.36);
+  if (!blob || blob.size > 200 * 1024) throw new Error('图片压缩后仍超过 200KB，请先裁剪后再上传。');
+  return blob;
+}
+
+async function blobToBase64(blob) {
+  const bytes = new Uint8Array(await blob.arrayBuffer());
   let binary = '';
   bytes.forEach((byte) => { binary += String.fromCharCode(byte); });
   return btoa(binary);
@@ -54,6 +86,7 @@ function parseArticle(source) {
     else if (key === 'draft') value.draft = raw.trim() === 'true';
     else if (Object.hasOwn(value, key)) value[key] = raw.replace(/^['"]|['"]$/g, '');
   }
+  value.savedContent = serializeArticle(value);
   return value;
 }
 
@@ -91,6 +124,33 @@ function inferTags(title, body) {
   const text = `${title} ${body}`.toLowerCase();
   const keywords = ['React', 'Vue', 'TypeScript', 'JavaScript', 'Python', 'Rust', 'Go', 'Java', 'Android', 'AI', 'LLM', 'MCP', 'CSS', 'WebGL', 'GitHub'];
   return keywords.filter((keyword) => text.includes(keyword.toLowerCase())).slice(0, 6);
+}
+
+function auditArticle(article, articles) {
+  const issues = [];
+  if (article.title.trim().length < 6) issues.push({level: 'warn', text: '标题较短，建议至少 6 个字符。'});
+  if (article.title.length > 60) issues.push({level: 'warn', text: '标题超过 60 个字符，搜索结果可能被截断。'});
+  if (!article.description) issues.push({level: 'error', text: '缺少文章摘要。'});
+  else if (article.description.length > 160) issues.push({level: 'warn', text: '摘要超过 160 个字符。'});
+  if (!article.image) issues.push({level: 'warn', text: '缺少社交分享封面。'});
+  if (!article.tags.length) issues.push({level: 'warn', text: '至少添加一个标签。'});
+  if (articles.some((item) => item.path !== article.path && item.slug === article.slug)) issues.push({level: 'error', text: `链接标识 ${article.slug} 与其他文章重复。`});
+  const emptyLinks = [...article.body.matchAll(/\[[^\]]*\]\(\s*\)/g)];
+  if (emptyLinks.length) issues.push({level: 'error', text: `发现 ${emptyLinks.length} 个空链接。`});
+  const images = [...article.body.matchAll(/!\[([^\]]*)\]\(([^)]+)\)/g)];
+  const missingAlt = images.filter((match) => !match[1].trim()).length;
+  if (missingAlt) issues.push({level: 'warn', text: `${missingAlt} 张图片缺少替代文字。`});
+  const headings = [...article.body.matchAll(/^(#{1,6})\s+/gm)].map((match) => match[1].length);
+  for (let index = 1; index < headings.length; index += 1) {
+    if (headings[index] - headings[index - 1] > 1) {
+      issues.push({level: 'warn', text: '正文标题层级存在跳级。'});
+      break;
+    }
+  }
+  const malformedUrls = [...article.body.matchAll(/\[[^\]]*\]\(([^)]+)\)/g)]
+    .map((match) => match[1]).filter((url) => /^(https?:)/.test(url) && !/^https?:\/\/\S+$/.test(url));
+  if (malformedUrls.length) issues.push({level: 'error', text: `发现 ${malformedUrls.length} 个格式异常的外部链接。`});
+  return issues;
 }
 
 async function github(path, token, options = {}) {
@@ -140,9 +200,58 @@ function AdminApp() {
   const [message, setMessage] = useState('');
   const [preview, setPreview] = useState(false);
   const [query, setQuery] = useState('');
+  const [statusFilter, setStatusFilter] = useState('all');
+  const [uploading, setUploading] = useState(false);
+  const [panel, setPanel] = useState(null);
+  const [history, setHistory] = useState([]);
+  const [media, setMedia] = useState([]);
+  const [panelLoading, setPanelLoading] = useState(false);
+  const [workspace, setWorkspace] = useState('editor');
+  const [selectedPaths, setSelectedPaths] = useState([]);
+  const [batching, setBatching] = useState(false);
 
-  const visibleArticles = useMemo(() => articles.filter((item) =>
-    `${item.title} ${item.slug}`.toLowerCase().includes(query.toLowerCase())), [articles, query]);
+  const dirty = useMemo(() => article.savedContent
+    ? serializeArticle(article) !== article.savedContent
+    : Boolean(article.title || article.slug || article.body || article.description || article.image || article.tags.length), [article]);
+  const visibleArticles = useMemo(() => articles.filter((item) => {
+    const matchesQuery = `${item.title} ${item.slug}`.toLowerCase().includes(query.toLowerCase());
+    const matchesStatus = statusFilter === 'all' || (statusFilter === 'draft' ? item.draft : !item.draft);
+    return matchesQuery && matchesStatus;
+  }), [articles, query, statusFilter]);
+  const currentIssues = useMemo(() => auditArticle(article, articles), [article, articles]);
+  const tagStats = useMemo(() => {
+    const counts = new Map();
+    articles.forEach((item) => item.tags.forEach((tag) => counts.set(tag, (counts.get(tag) || 0) + 1)));
+    return [...counts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+  }, [articles]);
+  const dashboard = useMemo(() => ({
+    total: articles.length,
+    drafts: articles.filter((item) => item.draft).length,
+    published: articles.filter((item) => !item.draft).length,
+    unhealthy: articles.filter((item) => auditArticle(item, articles).some((issue) => issue.level === 'error')).length,
+    missingDescription: articles.filter((item) => !item.description).length,
+    missingImage: articles.filter((item) => !item.image).length,
+  }), [articles]);
+
+  useEffect(() => {
+    const warn = (event) => {
+      if (!dirty) return;
+      event.preventDefault();
+      event.returnValue = '';
+    };
+    window.addEventListener('beforeunload', warn);
+    return () => window.removeEventListener('beforeunload', warn);
+  }, [dirty]);
+
+  useEffect(() => {
+    if (!connected) return undefined;
+    const key = `top-project-draft:${article.path || `${section}:new`}`;
+    const timer = window.setTimeout(() => {
+      if (dirty) localStorage.setItem(key, JSON.stringify({content: serializeArticle(article), savedAt: new Date().toISOString()}));
+      else localStorage.removeItem(key);
+    }, 800);
+    return () => window.clearTimeout(timer);
+  }, [article, connected, dirty, section]);
 
   async function listMarkdownFiles(directory, authToken) {
     const entries = await github(`contents/${directory}?ref=${BRANCH}`, authToken);
@@ -151,6 +260,33 @@ function AdminApp() {
       return entry.type === 'file' && /\.mdx?$/.test(entry.name) ? [entry] : [];
     }));
     return nested.flat();
+  }
+
+  async function listFiles(directory, authToken, matcher) {
+    const entries = await github(`contents/${directory}?ref=${BRANCH}`, authToken);
+    const nested = await Promise.all(entries.map(async (entry) => {
+      if (entry.type === 'dir') return listFiles(entry.path, authToken, matcher);
+      return entry.type === 'file' && matcher(entry) ? [entry] : [];
+    }));
+    return nested.flat();
+  }
+
+  function withRecoveredDraft(item) {
+    const key = `top-project-draft:${item.path || `${section}:new`}`;
+    const saved = localStorage.getItem(key);
+    if (!saved) return item;
+    try {
+      const draft = JSON.parse(saved);
+      if (!draft.content || draft.content === item.savedContent) return item;
+      if (!window.confirm(`发现 ${new Date(draft.savedAt).toLocaleString()} 自动保存的内容，是否恢复？`)) {
+        localStorage.removeItem(key);
+        return item;
+      }
+      return {...parseArticle(draft.content), path: item.path, sha: item.sha, filename: item.filename, savedContent: item.savedContent};
+    } catch {
+      localStorage.removeItem(key);
+      return item;
+    }
   }
 
   async function loadArticles(nextSection = section, authToken = token) {
@@ -166,7 +302,7 @@ function AdminApp() {
       }));
       entries.sort((a, b) => (b.date || '').localeCompare(a.date || '') || a.title.localeCompare(b.title));
       setArticles(entries);
-      setArticle(entries[0] || emptyArticle());
+      setArticle(withRecoveredDraft(entries[0] || emptyArticle()));
     } catch (error) {
       setMessage(error.message);
     } finally {
@@ -185,13 +321,183 @@ function AdminApp() {
   }
 
   function newArticle() {
-    setArticle(emptyArticle());
+    if (dirty && !window.confirm('当前修改尚未保存，确定新建文章吗？')) return;
+    setArticle(withRecoveredDraft(emptyArticle()));
     setPreview(false);
     setMessage('正在创建新文章');
   }
 
   function update(field, value) {
     setArticle((current) => ({...current, [field]: value}));
+  }
+
+  function selectArticle(item) {
+    if (dirty && article.path !== item.path && !window.confirm('当前修改尚未保存，确定切换文章吗？')) return;
+    setArticle(withRecoveredDraft(item));
+    setPreview(false);
+    setMessage('');
+  }
+
+  function changeSection(nextSection) {
+    if (dirty && !window.confirm('当前修改尚未保存，确定切换栏目吗？')) return;
+    setSection(nextSection);
+    setArticle(emptyArticle());
+    setPreview(false);
+  }
+
+  function duplicateArticle() {
+    const copy = {
+      ...article,
+      title: `${article.title}（副本）`,
+      slug: `${article.slug || toSlug(article.title)}-copy`,
+      draft: true,
+      path: '',
+      sha: '',
+      savedContent: '',
+      rawFrontmatter: article.rawFrontmatter.replace(/^date:.*$/m, '').replace(/^slug:.*$/m, '').replace(/^title:.*$/m, ''),
+    };
+    setArticle(copy);
+    setMessage('已创建副本，修改后保存即可生成新文章。');
+  }
+
+  async function deleteArticle() {
+    if (!article.path || !article.sha) return;
+    if (!window.confirm(`确定永久删除《${article.title}》吗？Git 历史中仍可恢复。`)) return;
+    setSaving(true);
+    try {
+      await github(`contents/${article.path}`, token, {
+        method: 'DELETE',
+        body: JSON.stringify({message: `content: 删除 ${article.title}`, sha: article.sha, branch: BRANCH}),
+      });
+      await loadArticles(section);
+      setMessage('文章已从当前版本删除，可通过 Git 历史恢复。');
+    } catch (error) {
+      setMessage(error.message);
+    } finally {
+      setSaving(false);
+    }
+  }
+
+  async function uploadImage(event) {
+    const file = event.target.files?.[0];
+    event.target.value = '';
+    if (!file) return;
+    if (!article.slug) {
+      setMessage('请先填写标题并生成链接标识。');
+      return;
+    }
+    setUploading(true);
+    setMessage('正在压缩并上传图片…');
+    try {
+      const blob = await optimizeImage(file);
+      const year = article.date.slice(0, 4);
+      const filename = `${safeFilename(file.name)}-${Date.now().toString(36)}.webp`;
+      const repoPath = `static/media/${section}/${year}/${article.slug}/${filename}`;
+      await github(`contents/${repoPath}`, token, {
+        method: 'PUT',
+        body: JSON.stringify({
+          message: `media: 上传 ${filename}`,
+          content: await blobToBase64(blob),
+          branch: BRANCH,
+        }),
+      });
+      const publicPath = `/top-project-trend/media/${section}/${year}/${article.slug}/${filename}`;
+      update('body', `${article.body.trimEnd()}\n\n![${file.name.replace(/\.[^.]+$/, '')}](${publicPath})\n`);
+      setMessage(`图片已压缩至 ${Math.round(blob.size / 1024)}KB 并插入正文，请保存文章。`);
+    } catch (error) {
+      setMessage(error.message);
+    } finally {
+      setUploading(false);
+    }
+  }
+
+  async function openHistory() {
+    if (!article.path) return;
+    setPanel('history');
+    setPanelLoading(true);
+    try {
+      const commits = await github(`commits?path=${encodeURIComponent(article.path)}&sha=${BRANCH}&per_page=20`, token);
+      setHistory(commits);
+    } catch (error) {
+      setMessage(error.message);
+      setPanel(null);
+    } finally {
+      setPanelLoading(false);
+    }
+  }
+
+  async function restoreVersion(commitSha) {
+    setPanelLoading(true);
+    try {
+      const data = await github(`contents/${article.path}?ref=${commitSha}`, token);
+      const restored = parseArticle(decodeBase64(data.content));
+      setArticle((current) => ({...restored, path: current.path, sha: current.sha, filename: current.filename, savedContent: current.savedContent}));
+      setPanel(null);
+      setMessage('历史版本已载入编辑器，确认内容后点击保存才会提交。');
+    } catch (error) {
+      setMessage(error.message);
+    } finally {
+      setPanelLoading(false);
+    }
+  }
+
+  async function openMedia() {
+    setPanel('media');
+    setPanelLoading(true);
+    try {
+      const files = await listFiles(`static/media/${section}`, token, (entry) => /\.(webp|png|jpe?g|gif|svg)$/i.test(entry.name));
+      files.sort((a, b) => b.path.localeCompare(a.path));
+      setMedia(files);
+    } catch (error) {
+      if (/404/.test(error.message) || /Not Found/i.test(error.message)) setMedia([]);
+      else setMessage(error.message);
+    } finally {
+      setPanelLoading(false);
+    }
+  }
+
+  function mediaPublicPath(item) {
+    return `/top-project-trend/${item.path.replace(/^static\//, '')}`;
+  }
+
+  function insertMedia(item) {
+    const path = mediaPublicPath(item);
+    update('body', `${article.body.trimEnd()}\n\n![${item.name.replace(/\.[^.]+$/, '')}](${path})\n`);
+    setPanel(null);
+    setMessage('图片已插入正文，请保存文章。');
+  }
+
+  async function deleteMedia(item) {
+    const publicPath = mediaPublicPath(item);
+    const references = articles.filter((entry) => entry.body.includes(publicPath) || entry.body.includes(item.name));
+    if (references.length) {
+      setMessage(`无法删除：该图片可能被 ${references.length} 篇文章引用。`);
+      return;
+    }
+    if (!window.confirm(`确定删除媒体文件 ${item.name} 吗？`)) return;
+    setPanelLoading(true);
+    try {
+      await github(`contents/${item.path}`, token, {
+        method: 'DELETE',
+        body: JSON.stringify({message: `media: 删除 ${item.name}`, sha: item.sha, branch: BRANCH}),
+      });
+      setMedia((current) => current.filter((entry) => entry.path !== item.path));
+      setMessage('媒体文件已删除。');
+    } catch (error) {
+      setMessage(error.message);
+    } finally {
+      setPanelLoading(false);
+    }
+  }
+
+  function logout() {
+    if (dirty && !window.confirm('当前修改尚未保存，确定退出吗？')) return;
+    sessionStorage.removeItem('top-project-admin-token');
+    setToken('');
+    setTokenInput('');
+    setConnected(false);
+    setArticles([]);
+    setArticle(emptyArticle());
   }
 
   async function save() {
@@ -203,6 +509,12 @@ function AdminApp() {
     setMessage('');
     try {
       const filename = article.path || `content/${section}/${article.date.replaceAll('-', '')}-${article.slug}-blog.md`;
+      if (article.path && article.sha) {
+        const current = await github(`contents/${article.path}?ref=${BRANCH}`, token);
+        if (current.sha !== article.sha) {
+          throw new Error('保存已停止：GitHub 上的文章在你编辑期间发生了变化。请复制当前内容后刷新，再合并修改。');
+        }
+      }
       const payload = {
         message: `${article.sha ? 'content: 更新' : 'content: 新增'} ${article.title}`,
         content: encodeBase64(serializeArticle(article)),
@@ -210,8 +522,9 @@ function AdminApp() {
         ...(article.sha ? {sha: article.sha} : {}),
       };
       await github(`contents/${filename}`, token, {method: 'PUT', body: JSON.stringify(payload)});
-      setMessage('已提交到 GitHub，部署工作流将自动发布。');
+      localStorage.removeItem(`top-project-draft:${article.path || `${section}:new`}`);
       await loadArticles(section);
+      setMessage('已提交到 GitHub，部署工作流将自动发布。');
     } catch (error) {
       setMessage(error.message);
     } finally {
@@ -231,23 +544,33 @@ function AdminApp() {
     <aside className={styles.sidebar}>
       <div className={styles.brand}><span>F</span><div><strong>Content Studio</strong><small>{OWNER}/{REPO}</small></div></div>
       <label className={styles.search}><span>⌕</span><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="搜索文章" /></label>
-      <select value={section} onChange={(event) => setSection(event.target.value)}>
+      <select value={section} onChange={(event) => changeSection(event.target.value)}>
         {SECTIONS.map(([value, label]) => <option key={value} value={value}>{label}</option>)}
       </select>
+      <div className={styles.filters}>
+        {[['all', '全部'], ['draft', '草稿'], ['published', '已发布']].map(([value, label]) =>
+          <button type="button" key={value} className={statusFilter === value ? styles.filterActive : ''} onClick={() => setStatusFilter(value)}>{label}</button>)}
+      </div>
       <button type="button" className={styles.newButton} onClick={newArticle}>＋ 新建文章</button>
       <div className={styles.articleList}>
         {loading ? <p className={styles.muted}>正在读取文章…</p> : visibleArticles.map((item) =>
-          <button type="button" key={item.path} className={`${styles.articleItem} ${article.path === item.path ? styles.active : ''}`} onClick={() => setArticle(item)}>
+          <button type="button" key={item.path} className={`${styles.articleItem} ${article.path === item.path ? styles.active : ''}`} onClick={() => selectArticle(item)}>
             <strong>{item.title || item.filename}</strong>
             <span>{item.date || '无日期'} {item.draft ? '· 草稿' : ''}</span>
           </button>)}
       </div>
+      <button type="button" className={styles.logout} onClick={logout}>退出当前会话</button>
     </aside>
 
     <main className={styles.editor}>
       <header className={styles.toolbar}>
-        <div><span className={article.draft ? styles.draft : styles.published}>{article.draft ? '草稿' : '已发布'}</span><small>{article.path || '新文章'}</small></div>
+        <div><span className={article.draft ? styles.draft : styles.published}>{article.draft ? '草稿' : '已发布'}</span>{dirty && <span className={styles.unsaved}>未保存</span>}<small>{article.path || '新文章'}</small></div>
         <div className={styles.toolbarActions}>
+          <label className={styles.uploadButton}>{uploading ? '上传中…' : '上传图片'}<input type="file" accept="image/png,image/jpeg,image/webp" onChange={uploadImage} disabled={uploading} /></label>
+          <button type="button" onClick={openMedia}>媒体库</button>
+          <button type="button" onClick={openHistory} disabled={!article.path}>版本</button>
+          <button type="button" onClick={duplicateArticle} disabled={!article.title}>复制</button>
+          <button type="button" className={styles.danger} onClick={deleteArticle} disabled={!article.path || saving}>删除</button>
           <button type="button" onClick={() => setPreview((value) => !value)}>{preview ? '继续编辑' : '预览'}</button>
           <button type="button" className={styles.primary} onClick={save} disabled={saving}>{saving ? '提交中…' : article.draft ? '保存草稿' : '提交并发布'}</button>
         </div>
@@ -279,6 +602,25 @@ function AdminApp() {
         <label className={styles.bodyLabel}>正文<textarea value={article.body} onChange={(event) => update('body', event.target.value)} placeholder="使用 Markdown 开始写作…" /></label>
       </div>}
     </main>
+
+    {panel && <div className={styles.modalBackdrop} onMouseDown={(event) => { if (event.target === event.currentTarget) setPanel(null); }}>
+      <section className={styles.modal}>
+        <header><div><span className={styles.eyebrow}>{panel === 'history' ? 'VERSION CONTROL' : 'MEDIA LIBRARY'}</span><h2>{panel === 'history' ? '文章版本' : `${SECTIONS.find(([value]) => value === section)?.[1]}媒体库`}</h2></div><button type="button" onClick={() => setPanel(null)}>×</button></header>
+        {panelLoading ? <p className={styles.panelEmpty}>正在读取…</p> : panel === 'history' ? <div className={styles.historyList}>
+          {history.length ? history.map((item) => <div key={item.sha} className={styles.historyItem}>
+            <div><strong>{item.commit.message}</strong><span>{item.commit.author?.name} · {new Date(item.commit.author?.date).toLocaleString()}</span><code>{item.sha.slice(0, 8)}</code></div>
+            <button type="button" onClick={() => restoreVersion(item.sha)}>载入此版本</button>
+          </div>) : <p className={styles.panelEmpty}>暂无版本记录</p>}
+        </div> : <div className={styles.mediaGrid}>
+          {media.length ? media.map((item) => <article key={item.path} className={styles.mediaItem}>
+            <img src={item.download_url} alt={item.name} loading="lazy" />
+            <strong title={item.path}>{item.name}</strong>
+            <span>{Math.round((item.size || 0) / 1024)}KB</span>
+            <div><button type="button" onClick={() => insertMedia(item)}>插入</button><button type="button" className={styles.danger} onClick={() => deleteMedia(item)}>删除</button></div>
+          </article>) : <p className={styles.panelEmpty}>当前栏目还没有集中管理的媒体文件</p>}
+        </div>}
+      </section>
+    </div>}
   </div>;
 }
 
