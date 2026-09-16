@@ -37,7 +37,7 @@ Flowise 是一个基于 Node.js 的可视化低代码平台，用于构建和部
 
 ## [changedetection.io](https://github.com/dgtlmoon/changedetection.io)、
 
-![alt text](./imgs/changedetection.png)
+![alt text](./imgs/changedetection.webp)
 
 changedetection.io 是一个开源的网页变化检测工具，用于监控网页的变化并通知用户。该项目的目标是提供一个简单、方便的方式来监控网页的变化，同时确保数据的安全性和隐私性。
 

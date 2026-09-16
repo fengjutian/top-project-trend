@@ -15,7 +15,7 @@ doxx：终端里的 Word 文档阅读器。这是一款用 Rust 开发的终端 
 
 ## [LunarBar](https://github.com/LunarBar-app/LunarBar)
 
-![alt text](./static/LunarBar.png)
+![alt text](./static/LunarBar.webp)
 
 
 LunarBar：极简的 Mac 菜单栏日历。这是一款专为 macOS 设计的菜单栏日历工具，支持农历、节日、节气和提醒等功能。
@@ -24,7 +24,7 @@ LunarBar：极简的 Mac 菜单栏日历。这是一款专为 macOS 设计的菜
 
 ## [langflow](https://github.com/langflow-ai/langflow)
 
-![alt text](./static/langflow.png)
+![alt text](./static/langflow.webp)
 
 langflow：可视化 AI 工作流构建平台。这是一款面向开发者和企业用户的开源 AI 智能体与工作流构建平台。它将 LangChain 的核心能力（链、工具、记忆、向量存储等）封装成可复用组件，并结合 React Flow 实现可视化流程编辑，用户无需编写代码即可快速设计、调试并部署复杂的 AI 工作流。
 
@@ -47,7 +47,7 @@ asm-lessons：FFmpeg 社区音视频汇编实战教程。该项目是由 FFmpeg 
 
 ## [rainbond](https://github.com/goodrain/rainbond)
 
-![alt text](./static/rainbond.png)
+![alt text](./static/rainbond.webp)
 
 Rainbond 是一个基于 Kubernetes 的云原生应用管理平台，它简化了应用容器化、部署和管理的所有流程。你不用懂 K8s 的复杂知识，只需通过图形化界面，就能完成应用从开发到上线的全生命周期管理！就像玩积木一样，开发者几分钟内就能“搭”出一个强大的微服务系统！
 

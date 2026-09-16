@@ -21,7 +21,7 @@ Deep-Live-Cam 是一款能实时进行人脸替换的AI工具，只需要一张�
 
 ## [Pipehub](https://github.com/pipeshub-ai/pipeshub-ai)
 
-![alt text](./imgs/pipeshub-ai.png)
+![alt text](./imgs/pipeshub-ai.webp)
 
 PipesHub 是一个可扩展且可解释的企业级工作场所 AI 平台，专注于企业搜索与工作流自动化。
 
@@ -29,7 +29,7 @@ PipesHub 是一个可扩展且可解释的企业级工作场所 AI 平台，专�
 
 ##[Xan](https://github.com/medialab/xan)
 
-![alt text](./imgs/xan.png)
+![alt text](./imgs/xan.webp)
 
 xan 是由法国 Sciences Po 大学下属的 medialab 实验室开发的开源终端工具，专为 高效浏览和分析大型表格数据 而设计。它基于 Rust 编写，使用 TUI（终端用户界面）构建，可在终端中流畅查看数十万行甚至百万行的 CSV 文件而不卡顿。
 
@@ -37,7 +37,7 @@ xan 是由法国 Sciences Po 大学下属的 medialab 实验室开发的开源�
 
 ## [NocoBase](https://github.com/nocobase/nocobase)
 
-![alt text](./imgs/nocobase.png)
+![alt text](./imgs/nocobase.webp)
 
 
 NocoBase 是一个极易扩展的 AI 无代码开发平台。
@@ -65,7 +65,7 @@ NocoBase 是一个极易扩展的 AI 无代码开发平台。
 
 ## [Chinese-days](https://github.com/vsme/chinese-days)
 
-![alt text](./imgs/chinese-days.png)
+![alt text](./imgs/chinese-days.webp)
 
 中国法定节假日、调休和工作日、24节气查询，农历阳历互转，支持 TS、CommonJS、UMD 模块化使用，对非开发者，提供 iCal 日历订阅，可供 Google Calendar、Apple Calendar、Microsoft Outlook 等客户端使用。
 
@@ -95,7 +95,7 @@ ADK-Go 是一个用 Go 语言开发 AI 智能体的开源工具包。它采用�
 
 ## [Call-Center-AI](https://github.com/microsoft/call-center-ai)
 
-![alt text](./imgs/call-center-ai.png)
+![alt text](./imgs/call-center-ai.webp)
 
 这是一个AI智能客服电话系统，让你通过简单的API调用就能让AI客服给任何人打电话。它就像个虚拟客服代表，能处理保险理赔、IT技术支持、客户服务等各种场景，通话内容会实时记录并生成工单信息。系统基于微软Azure和OpenAI技术构建，支持多语言和个性化声音，还能在复杂情况下转接给人工客服。
 

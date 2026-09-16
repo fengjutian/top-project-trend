@@ -7,7 +7,7 @@ tags: []
 
 ## [react-devtools-plus](https://github.com/wzc520pyfm/react-devtools-plus)
 
-![alt text](./static/react-devtools-plus.png)
+![alt text](./static/react-devtools-plus.webp)
 
 React DevTools Plus：一个面向开发者的调试工具，专注于提升开发体验（DX）。
 
@@ -15,7 +15,7 @@ React DevTools Plus：一个面向开发者的调试工具，专注于提升开�
 
 ## [dbdiagram](https://dbdiagram.io/home)
 
-![alt text](./static/dbdiagram.png)
+![alt text](./static/dbdiagram.webp)
 
 dbdiagram.io —— 一个在线绘制数据库关系图（ER 图）的工具。
 

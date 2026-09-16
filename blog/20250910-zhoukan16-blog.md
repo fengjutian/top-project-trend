@@ -31,7 +31,7 @@ LinksHub 是一个由社区创建和维护的资源中心,旨在为开发人员�
 
 ## [JVS Knowledge UI](https://gitee.com/software-minister/jvs-knowledge-ui)
 
-![alt text](./static/jvs.png)
+![alt text](./static/jvs.webp)
 
 无忧·企业文档=企业级知识库+在线编辑工具集+企业搜索引擎+内容展示平台
 

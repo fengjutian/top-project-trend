@@ -7,7 +7,7 @@ tags: []
 
 ## [Reka UI](https://reka-ui.com/)
 
-![alt text](./imgs/reka-ui.png)
+![alt text](./imgs/reka-ui.webp)
 
 Reka UI 是一个开源的 UI 组件库。
 
@@ -15,7 +15,7 @@ Reka UI 是一个开源的 UI 组件库。
 
 ## [awesome-n8n-templates](https://github.com/enescingoz/awesome-n8n-templates?tab=readme-ov-file)
 
-![alt text](./imgs/awesome-n8n-templates.png)
+![alt text](./imgs/awesome-n8n-templates.webp)
 
 使用这个精选的 n8n 模板集合增强您的工作流程自动化！
 
@@ -23,7 +23,7 @@ Reka UI 是一个开源的 UI 组件库。
 
 ## [SyncTV](https://github.com/synctv-org/synctv?tab=readme-ov-file)
 
-![alt text](./imgs/synctv.png)
+![alt text](./imgs/synctv.webp)
 
 SyncTV 是一个允许您远程一起观看电影和直播的程序。它提供了同步观影、直播、聊天等功能。使用 SyncTV，您可以与朋友和家人一起观看视频和直播，无论他们在哪里。
 
@@ -31,7 +31,7 @@ SyncTV 是一个允许您远程一起观看电影和直播的程序。它提供�
 
 ## [Redis](https://redis.tinycraft.cc/)
 
-![alt text](./imgs/tinycraft.png)
+![alt text](./imgs/tinycraft.webp)
 
 现代化的 Redis 桌面管理工具
 
@@ -55,7 +55,7 @@ SyncTV 是一个允许您远程一起观看电影和直播的程序。它提供�
 
 ## [Open Notebook](https://github.com/lfnovo/open-notebook?tab=readme-ov-file)
 
-![alt text](./imgs/open-notebook.png)
+![alt text](./imgs/open-notebook.webp)
 
 一个开源、隐私优先的替代方案，旨在提供比 Google Notebook LM 更灵活、更强大的笔记与研究平台。支持本地部署、多模型 AI、播客生成等高级功能。
 
@@ -104,7 +104,7 @@ Cloudflare Sandbox 是一项新服务，用于在基于容器的安全“沙盒�
 
 ## [LinkSwift](https://github.com/hmjz100/LinkSwift?tab=readme-ov-file)
 
-![alt text](./imgs/LinkSwift.png)
+![alt text](./imgs/LinkSwift.webp)
 
 一个基于 JavaScript 的网盘文件下载地址获取工具。基于【网盘直链下载助手】修改 ，支持 百度网盘 / 阿里云盘 / 中国移动云盘 / 天翼云盘 / 迅雷云盘 / 夸克网盘 / UC网盘 / 123云盘 八大网盘
 
@@ -113,7 +113,7 @@ Cloudflare Sandbox 是一项新服务，用于在基于容器的安全“沙盒�
 
 ## [CubeCity](https://github.com/hexianWeb/CubeCity)
 
-![alt text](./imgs/CubeCity.png)
+![alt text](./imgs/CubeCity.webp)
 
 这是一款轻量级、卡通风格的 2.5D 城市模拟游戏，基于 Three.js 和 Vue3 构建。玩家可在浏览器中通过点选和拖放，实时建造、搬迁和拆除建筑。建筑会自动产出金币，可用于新建或升级设施。游戏融合了环境、社会与治理（ESG）理念，城市规划需兼顾多元需求，才能打造出可持续发展的理想城市。
 
@@ -121,7 +121,7 @@ Cloudflare Sandbox 是一项新服务，用于在基于容器的安全“沙盒�
 
 ## [HTML Rev](https://htmlrev.com)
 
-![alt text](./imgs/htmlrev.png)
+![alt text](./imgs/htmlrev.webp)
 
 HTML Rev 是一个 HTML 静态站点生成器，基于 Vue3 构建。它允许用户使用所见即所得的方式创建静态站点，并生成 HTML、CSS 和 JavaScript 文件。
 

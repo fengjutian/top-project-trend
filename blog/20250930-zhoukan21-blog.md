@@ -42,7 +42,7 @@ HumanLayer 是一个让 AI 智能体在关键操作中自动引入人工审核�
 
 ## [fresh](https://fresh.deno.dev/)
 
-![alt text](./imgs/fresh.deno.png)
+![alt text](./imgs/fresh.deno.webp)
 
 Fresh 是一个基于 Deno 的现代 Web 框架，主打“简单、易用、高效”，适合构建快速响应的服务端渲染应用。
 
@@ -50,7 +50,7 @@ Fresh 是一个基于 Deno 的现代 Web 框架，主打“简单、易用、高
 
 ## [nodebestpractices](https://github.com/goldbergyoni/nodebestpractices)
 
-![alt text](./imgs/nodebestpractices.png)
+![alt text](./imgs/nodebestpractices.webp)
 
 Node.js 最佳实践
 
@@ -66,14 +66,14 @@ Node.js 最佳实践
 
 ## [freesubstats](https://freesubstats.com/)
 
-![alt text](./imgs/freesubstats.png)
+![alt text](./imgs/freesubstats.webp)
 
 FreeSubStats：免费追踪 Reddit 子版块增长与热门趋势
 
 地址：https://freesubstats.com/
 ## [nextcloud/server](https://github.com/nextcloud/server)
 
-![alt text](./imgs/nextcloud.png)
+![alt text](./imgs/nextcloud.webp)
 
 Nextcloud 是一个开源的文件同步和共享平台，允许用户在个人或企业环境中安全、便捷地存储和分享文件。
 
@@ -81,7 +81,7 @@ Nextcloud 是一个开源的文件同步和共享平台，允许用户在个人�
 
 ## [commaai/openpilot](https://github.com/commaai/openpilot)
 
-![alt text](./imgs/openpilot.png)
+![alt text](./imgs/openpilot.webp)
 
 openpilot 是一个用于机器人的操作系统，目前主要用来升级300多种汽车的驾驶辅助系统。
 

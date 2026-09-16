@@ -13,6 +13,6 @@ tags: []
 
 ## [Wails](https://wails.io/)
 
-![alt text](./static/wails.png)
+![alt text](./static/wails.webp)
 
 地址：https://wails.io/

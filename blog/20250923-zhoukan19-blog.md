@@ -7,7 +7,7 @@ tags: []
 
 ## [21st.dev](https://21st.dev/home)
 
-![alt text](imgs/21st.png)
+![alt text](imgs/21st.webp)
 
 21st.dev 是一个专注于「氛围打造」的创意工具库，提供大量可视化 UI 组件，帮助开发者和设计师快速构建具有视觉冲击力的网页和应用界面。
 
@@ -41,7 +41,7 @@ tldraw 是一个用于创建无限画布体验的 React 组件库，非常适合
 
 ## [system-design-primer](https://github.com/donnemartin/system-design-primer)
 
-![alt text](imgs/system-design-primer.png)
+![alt text](imgs/system-design-primer.webp)
 
 这是一个教你如何设计大型系统的GitHub开源项目，特别适合准备系统设计面试的程序员。
 
@@ -87,7 +87,7 @@ CodeForge 是一款轻量级、高性能的桌面代码执行器，专为开发�
 
 ## [lightningcss](https://lightningcss.dev/)
 
-![alt text](./imgs/lightningcss.png)
+![alt text](./imgs/lightningcss.webp)
 
 Lightning CSS 的最大优势是性能卓越。它能在毫秒级别完成大型 CSS 文件的解析和压缩任务。
 

@@ -53,7 +53,7 @@ tags: [react, blog]
 
 ## [HeroUI](https://www.heroui.com/)
 
-![alt text](./static/heroui.png)
+![alt text](./static/heroui.webp)
 
 ### 🌟 项目简介：HeroUI（前身为 NextUI）
 - **HeroUI** 是一个现代化、快速且美观的 React UI 组件库。
@@ -103,7 +103,7 @@ npx heroui-cli@latest init
 
 ## [gestalt](https://gestalt.pinterest.systems/home)
 
-![alt text](./static/gestalt.png)
+![alt text](./static/gestalt.webp)
 
 ### 🎨 什么是 Gestalt？
 - **Gestalt** 是 Pinterest 官方推出的设计系统。
@@ -159,7 +159,7 @@ npx heroui-cli@latest init
 地址：https://react-spectrum.adobe.com/react-aria/index.html
 
 ## [Skiper UI](https://skiper-ui.com/)
-![alt text](./static/imgs/skiper-ui.png)
+![alt text](./static/imgs/skiper-ui.webp)
 
 Skiper UI(https://skiper-ui.com/)提供了一系列现代，简约的组件，该组件由CSS，Next.js和React构建。该库提供了副本组件，包括着陆页模板，投资组合设计以及具有Supabase Integration的全栈模板。功能包括制定运动动画，响应式设计。
 
@@ -167,7 +167,7 @@ Skiper UI(https://skiper-ui.com/)提供了一系列现代，简约的组件，�
 
 ## [MiroTalk SFU](https://github.com/miroslavpejic85/mirotalksfu)
 
-![alt text](./static/imgs/miro-talk.png)
+![alt text](./static/imgs/miro-talk.webp)
 
 基于浏览器 WebRTC 的在线视频通信开源解决方案，链接是多人视频会议版本，另有点对点通信版本、一对一通信版本。
 
@@ -175,7 +175,7 @@ Skiper UI(https://skiper-ui.com/)提供了一系列现代，简约的组件，�
 
 ## [react](https://github.com/untitleduico/react)
 
-![alt text](./static/imgs/react.png)
+![alt text](./static/imgs/react.webp)
 
 全球最大的开源 React 组件库，基于 Tailwind CSS 和 React Aria 构建
 
@@ -183,7 +183,7 @@ Skiper UI(https://skiper-ui.com/)提供了一系列现代，简约的组件，�
 
 ## [Kibo UI](https://www.kibo-ui.com/)
 
-![alt text](./static/kibo.png)
+![alt text](./static/kibo.webp)
 
 Kibo UI（https://www.kibo-ui.com/）是一个可自定义的注册表，该注册表是可与ShadCN/UI一起使用的可组合，可访问和开源组件。
 
@@ -191,7 +191,7 @@ Kibo UI（https://www.kibo-ui.com/）是一个可自定义的注册表，该注�
 
 ## [Nurui](https://github.com/afsar-dev/Nurui)
 
-![alt text](./static/nurui.png)
+![alt text](./static/nurui.webp)
 
 Nurui 是一个基于 React 和 Next.js 的现代化 UI 组件库,旨在简化前端开发。它提供了 CLI 脚手架、自动将 TypeScript 转换为 JavaScript 的功能,以及实时组件预览,为开发人员提供了更快捷、更可定制的工作流程。
 
@@ -207,7 +207,7 @@ ReUI 是一个开源的 UI 组件和动画效果集合,使用 React、TypeScript
 
 ## [Headless UI](https://headlessui.com/v1)
 
-![alt text](./static/headlessui-ui.png)
+![alt text](./static/headlessui-ui.webp)
 
 Completely unstyled, fully accessible UI components, designed to integrate beautifully with Tailwind CSS.
 
@@ -215,6 +215,6 @@ Completely unstyled, fully accessible UI components, designed to integrate beaut
 
 ## [UI Layouts](https://www.ui-layouts.com/)
 
-![alt text](./static/ui-layouts.png)
+![alt text](./static/ui-layouts.webp)
 
 地址：https://www.ui-layouts.com/

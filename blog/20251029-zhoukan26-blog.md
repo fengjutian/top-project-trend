@@ -24,7 +24,7 @@ tags: []
 
 ## [Gooey](https://github.com/cookiengineer/gooey)
 
-![alt text](./imgs/gooey.png)
+![alt text](./imgs/gooey.webp)
 
 它是一个用 Go 语言编写的 WebAssembly 框架，主要用于构建 Web 应用。
 
@@ -41,7 +41,7 @@ tags: []
 
 ## 【星辰Agent】【https://github.com/iflytek/astron-agent?tab=readme-ov-file】
 
-![alt text](./imgs/astron-agent.png)
+![alt text](./imgs/astron-agent.webp)
 
 星辰Agent是一个企业级、商业友好的 Agentic Workflow开发平台，融合了 AI 工作流编排、模型管理、AI 与 MCP 工具集、RPA 自动化和团队空间等特性。 平台支持高可用部署，帮助企业快速构建可规模化落地的智能体应用，打造面向未来的 AI 基座。
 
@@ -49,7 +49,7 @@ tags: []
 
 ## [qscan](https://github.com/qi4L/qscan)
 
-![alt text](./imgs/qscan.png)
+![alt text](./imgs/qscan.webp)
 
 一个速度极快的内网扫描器，具备端口扫描、协议检测、指纹识别，暴力破解，漏洞探测等功能。支持协议1200+，协议指纹10000+，应用指纹20000+，暴力破解协议10余种
 
@@ -65,7 +65,7 @@ tags: []
 
 ## [ladybird](https://github.com/LadybirdBrowser/ladybird)
 
-![alt text](./imgs/ladybird.png)
+![alt text](./imgs/ladybird.webp)
 
 Ladybird是一个真正独立的网页浏览器，采用全新的引擎并基于现代网页标准开发。它采用多进程架构，包括独立的渲染进程、图像解码进程和网络请求进程，以提高安全性和稳定性。目前项目处于预发布阶段，适合开发者参与。Ladybird可在Linux、macOS和Windows等系统运行，并继承了SerenityOS的多个核心组件。该项目采用2-clause BSD开源协议，欢迎开发者加入社区共同建设。
 
@@ -81,7 +81,7 @@ Ladybird是一个真正独立的网页浏览器，采用全新的引擎并基于
 
 ## [Goose](https://github.com/block/goose)
 
-![alt text](./imgs/goose.png)
+![alt text](./imgs/goose.webp)
 
 Goose是一个开源的AI助手，专门为开发者设计，能帮你自动完成各种编程任务。它不只是简单的代码补全，还能从头开始构建项目、编写执行代码、调试错误、管理复杂的工作流程，甚至和外部API交互。你可以把它当作一个本地AI小助手，支持各种大语言模型，还能通过桌面应用或命令行使用，让开发更高效。无论是快速原型设计还是优化现有代码，Goose都能帮你节省时间，专注于创新。
 
@@ -89,7 +89,7 @@ Goose是一个开源的AI助手，专门为开发者设计，能帮你自动完�
 
 ## [System Design Primer](https://github.com/donnemartin/system-design-primer?tab=readme-ov-file)
 
-![alt text](./imgs/system-design-primer-1.png)
+![alt text](./imgs/system-design-primer-1.webp)
 
 系统设计
 
@@ -105,7 +105,7 @@ Goose是一个开源的AI助手，专门为开发者设计，能帮你自动完�
 
 ## [mem0ai](https://github.com/mem0ai/mem0)
 
-![alt text](./imgs/mem0ai.png)
+![alt text](./imgs/mem0ai.webp)
 
 为 AI 提供可扩展的长期记忆，使其能记住用户偏好、适应个性化需求，并持续学习。
 
@@ -126,7 +126,7 @@ Goose是一个开源的AI助手，专门为开发者设计，能帮你自动完�
 
 ## [OpenTelemetry Collector](https://github.com/open-telemetry/opentelemetry-collector)
 
-![alt text](./imgs/opentelemetry-collector.png)
+![alt text](./imgs/opentelemetry-collector.webp)
 
 地址：https://github.com/open-telemetry/opentelemetry-collector
 
@@ -148,7 +148,7 @@ Goose是一个开源的AI助手，专门为开发者设计，能帮你自动完�
 
 ## [Shadcn Themer](https://shadcnthemer.com/)
 
-![alt text](./imgs/shadcnthemer.png)
+![alt text](./imgs/shadcnthemer.webp)
 
 这个网站收集 ShadCN UI 的各种主题。
 

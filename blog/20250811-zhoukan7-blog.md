@@ -53,7 +53,7 @@ flashdim：专业级 Android 手电筒应用。这是一款免费、无广告、
 
 ## [Trail-Sense](https://github.com/kylecorry31/Trail-Sense)
 
-![alt text](./static/imgs/trail-sense.png)
+![alt text](./static/imgs/trail-sense.webp)
 
 Trail-Sense：野外生存必备 Android 应用。这是一款专为徒步、露营、野外生存等场景设计的开源 Android 应用。它利用手机的传感器，提供离线导航、日落提醒、照片地图、路径追踪等实用功能，所有功能均可在无网络环境下使用
 

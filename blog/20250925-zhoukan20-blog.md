@@ -7,13 +7,13 @@ tags: []
 
 ## [langshift](https://langshift.dev/)
 
-![alt text](./imgs/langshift.png)
+![alt text](./imgs/langshift.webp)
 
 地址：https://langshift.dev/
 
 ## [AppFlowy](https://github.com/AppFlowy-IO/AppFlowy)
 
-![alt text](./imgs/AppFlowy.png)
+![alt text](./imgs/AppFlowy.webp)
 
 AppFlowy is the AI workspace where you achieve more without losing control of your data
 
@@ -77,7 +77,7 @@ ZenStack 是一个基于 TypeScript 的全栈开发工具包，最初构建于 P
 
 ## [elysia](https://elysiajs.com/)
 
-![alt text](./imgs/elysiajs.png)
+![alt text](./imgs/elysiajs.webp)
 
 ElysiaJS 是一个由 Bun 驱动的现代 Web 框架，专为人类设计，强调人体工学（Ergonomic）、类型安全（Type Safety）和卓越的开发体验。它是首个生产可用、广受欢迎的 Bun 框架。
 
@@ -109,7 +109,7 @@ Better-T-Stack 是一个现代化、开源的命令行工具（CLI），用于�
 
 ## [spark-ui](https://spark-ui.dev/)
 
-![alt text](./imgs/spark-ui.png)
+![alt text](./imgs/spark-ui.webp)
 
 Spark UI 是一个用于快速构建动画网站的前端组件库，基于 Vue、TypeScript、TailwindCSS 和 VueUse Motion 打造。它专注于视觉动效与开发效率，适合构建现代化、响应式的 Web 页面。
 
@@ -117,7 +117,7 @@ Spark UI 是一个用于快速构建动画网站的前端组件库，基于 Vue�
 
 ## [helium](https://github.com/imputnet/helium)
 
-![alt text](./imgs/helium.png)
+![alt text](./imgs/helium.webp)
 
 默认启用 uBlock Origin，自动屏蔽广告、追踪器、指纹识别、第三方 Cookie、加密挖矿和钓鱼网站。
 
@@ -147,7 +147,7 @@ Dayflow 是一款 macOS 原生应用，自动记录你的屏幕活动，并通�
 
 ## [hyper3d.ai](https://hyper3d.ai/)
 
-![alt text](./imgs/hyper3d.png)
+![alt text](./imgs/hyper3d.webp)
 
 Rodin 是由 Hyper3D 提供的免费 AI 工具，可将图像快速转换为高质量的 3D 模型，适用于游戏开发、动画制作、3D 打印等领域。
 
@@ -163,7 +163,7 @@ SPlayer 是一个基于 Electron 的简约音乐播放器，支持网易云音�
 
 ## [Caido](https://github.com/caido/caido)
 
-![alt text](./imgs/caido.png)
+![alt text](./imgs/caido.webp)
 
 Caido 是一个专为安全研究人员和渗透测试者设计的 Web 应用审计工具，旨在提升效率与易用性。它提供了丰富的功能用于分析、调试和测试 Web 应用的安全性。
 

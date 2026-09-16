@@ -13,7 +13,7 @@ tags: [api, blog]
 
 ## [public-apis](https://github.com/Marcelscruz/public-apis)
 
-![alt text](./static/imgs/public-apis.png)
+![alt text](./static/imgs/public-apis.webp)
 
 它是一个由社区协作维护的公共 API 列表，专为开发者设计。
 

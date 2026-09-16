@@ -21,7 +21,7 @@ Conductor是Netflix开源的一个微服务编排引擎，专门用来管理和�
 
 ## [Refine](https://github.com/refinedev/refine)
 
-![alt text](./static/refine.png)
+![alt text](./static/refine.webp)
 
 Refine是一个基于React的前端框架，专为快速开发Web应用程序而设计。它通过提供一系列开箱即用的解决方案，显著简化了开发者在构建数据密集型应用时的重复性工作。
 
@@ -31,7 +31,7 @@ Refine是一个基于React的前端框架，专为快速开发Web应用程序而
 
 ## [yn](https://github.com/purocean/yn)
 
-![alt text](./static/yank.png)
+![alt text](./static/yank.webp)
 
 - 使用方便：使用 Monaco 内核，专为 Markdown 优化，拥有和 VSCode 一样的编辑体验。
 - 功能强大：支持历史版本回溯；可在文档中嵌入小工具、可运行的代码块、表格、PlantUML 图形、Drawio 图形、宏替换等；支持 AI Copilot。

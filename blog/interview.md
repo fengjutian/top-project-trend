@@ -29,7 +29,7 @@ Paperless-ngx 是一个文档管理系统，它能帮你把纸质文件扫描、
 
 ## [Comprehensive-Rust](https://google.github.io/comprehensive-rust/index.html)
 
-![alt text](./static/comprehensive.png)
+![alt text](./static/comprehensive.webp)
 
 这是一个由谷歌安卓团队开发的 Rust 语言课程项目，名字叫“Comprehensive Rust”。它提供了从基础语法到高级主题（如泛型、错误处理）的完整学习材料，还包括针对 Android 开发、并发等场景的深入内容。适合用来快速学习或团队培训，尤其适合有 C++ 或 Java 背景的开发者。课程以课堂形式设计，注重互动和实操，你可以在线阅读或本地部署学习。
 

@@ -7,7 +7,7 @@ tags: []
 
 ## [SQLBot](https://github.com/dataease/SQLBot)
 
-![alt text](./static/SQLBot.png)
+![alt text](./static/SQLBot.webp)
 
 SQLBot 是一款基于大模型和 RAG 的智能问数系统。SQLBot 的优势包括：
 
@@ -35,7 +35,7 @@ Paper Burner X - 浏览器即开即用，AI文献识别、文档批量翻译、�
 
 ## [Affinity](https://www.affinity.studio/)
 
-![alt text](./static/Affinity.png)
+![alt text](./static/Affinity.webp)
 
 用于图像编辑的桌面软件，Photoshop 的替代品，被 Canva 公司收购后，现在可以免费下载使用。
 
@@ -43,7 +43,7 @@ Paper Burner X - 浏览器即开即用，AI文献识别、文档批量翻译、�
 
 ## [Memori](https://github.com/GibsonAI/memori)
 
-![alt text](./static/memori.png)
+![alt text](./static/memori.webp)
 
 “Neon”是 Memori 支持的 SQL 数据库之一，用于存储大型语言模型（LLM）的记忆数据。
 

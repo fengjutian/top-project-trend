@@ -27,7 +27,7 @@ tags: []
 
 ## [OpenStock](https://github.com/Open-Dev-Society/OpenStock)
 
-![alt text](./imgs/OpenStock.png)
+![alt text](./imgs/OpenStock.webp)
 
 免费炫酷的股票市场应用。这是一款基于 Next.js、TailwindCSS 和 MongoDB 构建的股票市场平台，提供实时行情、图表（K 线图、热力图）、新闻资讯和个性化监控等功能，专注于数据展示与分析，不支持交易。
 
@@ -43,7 +43,7 @@ tags: []
 
 ## [Twake Drive](https://github.com/linagora/twake-drive)
 
-![alt text](./imgs/twake-drive.png)
+![alt text](./imgs/twake-drive.webp)
 
 免费开源的 Google Drive 替代品。这是一款基于 Node.js 和 MongoDB 构建的云存储平台，提供类似 Google Drive 的文件管理和存储功能，支持 Docker 一键部署。
 
@@ -51,7 +51,7 @@ tags: []
 
 ## [Voice Recorder](https://github.com/FossifyOrg/Voice-Recorder)
 
-![alt text](./imgs/Voice-Recorder.png)
+![alt text](./imgs/Voice-Recorder.webp)
 
 极简的 Android 语音录音应用。这是一款极简易用的 Android 语音录音应用，支持离线录音、无广告、界面清爽，适用于会议记录、课堂笔记、采访、日常备忘等场景。
 
@@ -60,7 +60,7 @@ tags: []
 
 ## [Checkov](http://github.com/bridgecrewio/checkov)
 
-![alt text](./imgs/checkov.png)
+![alt text](./imgs/checkov.webp)
 
 开源的 IaC 静态代码分析工具。这是一款基础设施即代码（IaC）的静态代码分析工具，旨在帮助开发者在构建阶段及时发现和防止云基础设施配置错误及安全漏洞。支持对 AWS、Azure、GCP、Kubernetes 等多种云平台的 IaC 文件（如 Terraform、CloudFormation、Kubernetes YAML 等）进行静态检测，同时可分析容器镜像和开源依赖包中的安全风险。
 
@@ -68,7 +68,7 @@ tags: []
 
 ## [Surf](https://github.com/deta/surf)
 
-![alt text](./imgs/surf.png)
+![alt text](./imgs/surf.webp)
 
 跨媒体的个人 AI 笔记应用。这是一款本地优先的 AI 笔记本工具，能够将多种媒体类型（如本地文件、网页、视频等）整合至本地资料库，并借助 AI 快速生成笔记。它帮助用户在学习和研究过程中，免去在浏览器、笔记应用、PDF 阅读器等多个应用和媒体之间切换、搜索和手动复制粘贴的繁琐操作，同时支持灵活选择 AI 模型。
 
@@ -77,7 +77,7 @@ tags: []
 
 ## [Anki JLPT Decks](https://github.com/5mdld/anki-jlpt-decks)
 
-![alt text](./imgs/anki-jlpt-decks.png)
+![alt text](./imgs/anki-jlpt-decks.webp)
 
 万词语音全配的日语卡组。这是一个为学习软件 Anki 制作的高质量日语单词卡组，涵盖 JLPT（日本语能力测试）N1~N5 等级，共计一万词汇，每个词条都包含释义、例句、词性，以及关联词和反义词等。
 
@@ -126,7 +126,7 @@ Social Analyzer 是一个开源情报工具，它能帮助你在上千个社交�
 
 ## [Awesome LLM Apps](https://github.com/Shubhamsaboo/awesome-llm-apps)
 
-![alt text](./imgs/awesome-llm-apps.png)
+![alt text](./imgs/awesome-llm-apps.webp)
 
 这个项目是一个精选的大型语言模型应用合集，涵盖了各种基于RAG、AI智能体、多智能体协作等技术的实用案例。它包含了使用OpenAI、Anthropic、Gemini等商业模型以及DeepSeek、Qwen、Llama等开源模型的应用程序，覆盖了旅行规划、金融分析、医疗影像、游戏开发等多个领域。你可以在这里找到现成的AI应用代码，学习如何构建自己的智能助手，甚至贡献你的创意项目。
 

@@ -25,7 +25,7 @@ Beego 的一个重要优势是其模块化设计，开发人员可以根据需�
 
 ## [iris](https://iris-go.com/)
 
-![alt text](./static/imgs/iris.png)
+![alt text](./static/imgs/iris.webp)
 
 Iris 内置了对 MVC（模型-视图-控制器）架构的支持，非常适合管理大型应用程序。它提供了会话处理、路由、缓存中间件等基本功能。
 

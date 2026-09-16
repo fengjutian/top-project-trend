@@ -21,7 +21,7 @@ NiceGUI是一个基于Python的轻量级Web-UI框架，其设计理念是简洁�
 
 ## [Jumpserver](https://github.com/jumpserver/jumpserver)
 
-![alt text](./static/jumpserver.png)
+![alt text](./static/jumpserver.webp)
 
 JumpServer 是一个开源的特权访问管理 (PAM) 平台，提供 DevOps 和 IT 团队按需安全访问 SSH、RDP、Kubernetes、数据库和 RemoteApp 端点的功能，均可通过网页浏览器进行访问。
 
@@ -29,7 +29,7 @@ JumpServer 是一个开源的特权访问管理 (PAM) 平台，提供 DevOps 和
 
 ## [Termix](https://github.com/LukeGus/Termix)
 
-![alt text](./static/termix.png)
+![alt text](./static/termix.webp)
 
 Termix 是一个开源的、可自托管的服务器管理平台，让你通过网页就能轻松管理远程服务器。它内置了 SSH 终端操作、文件编辑和端口转发等功能，还支持多标签页和分屏操作，界面简洁直观，适合开发者或运维人员在一个统一的 Web 界面中高效管理多个服务器。
 
@@ -58,7 +58,7 @@ Termix 是一个开源的、可自托管的服务器管理平台，让你通过�
 
 ## [ApeRAG](https://github.com/apecloud/ApeRAG)
 
-![alt text](./static/ApeRAG.png)
+![alt text](./static/ApeRAG.webp)
 
 开源的 RAG（检索增强生成）平台，将图谱 RAG、向量搜索和全文搜索与 AI 代理相结合。
 

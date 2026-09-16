@@ -13,13 +13,13 @@ tags: []
 
 ## [daily.dev](https://app.daily.dev/)
 
-![alt text](./static/daily.png)
+![alt text](./static/daily.webp)
 
 地址：https://app.daily.dev/
 
 ## [dev.to](https://dev.to/)
 
-![alt text](./static/dev.to.png)
+![alt text](./static/dev.to.webp)
 
 地址：https://dev.to/
 
@@ -31,12 +31,12 @@ tags: []
 
 ## [Medium](https://medium.com/)
 
-![alt text](./static/medium.png)
+![alt text](./static/medium.webp)
 
 地址：https://medium.com/
 
 ## [Nextradar](https://nextradar.dev/content/nextjs)
 
-![alt text](./static/nextradar.png)
+![alt text](./static/nextradar.webp)
 
 地址：https://nextradar.dev/content/nextjs

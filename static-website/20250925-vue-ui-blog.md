@@ -13,6 +13,6 @@ tags: []
 
 ## [Reka UI](https://reka-ui.com/)
 
-![alt text](./static/reka-ui.png)
+![alt text](./static/reka-ui.webp)
 
 地址：https://reka-ui.com/

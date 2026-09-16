@@ -66,7 +66,7 @@ npmgraph：可视化 npm 模块依赖关系的工具 — 为这个基于 Web 的
 
 ## [pintura](https://pqina.nl/pintura/install/)
 
-![alt text](./imgs/pintura.png)
+![alt text](./imgs/pintura.webp)
 
 为您的 Web 应用程序提供即插即用图像编辑器 — 省去构建图像编辑器的麻烦。导入 pintura 模块，为其提供图像源，并立即获得裁剪、旋转、调整大小和注释等功能。需要帮助？支持可以满足您的需求
 
@@ -75,7 +75,7 @@ npmgraph：可视化 npm 模块依赖关系的工具 — 为这个基于 Web 的
 
 ## [animejs](https://animejs.com/)
 
-![alt text](./imgs/animejs.png)
+![alt text](./imgs/animejs.webp)
 
 如果您厌倦了 Web 动画，也许Anime.js会让您胃口大开。这是对用于动画处理 CSS 属性、SVG、DOM 和 JS 对象的成熟库的重大升级。
 
@@ -83,7 +83,7 @@ npmgraph：可视化 npm 模块依赖关系的工具 — 为这个基于 Web 的
 
 ## [uvcanvas](https://uvcanvas.com/)
 
-![alt text](./imgs/uvcanvas.png)
+![alt text](./imgs/uvcanvas.webp)
 
 React 渲染精美的阴影画布
 
@@ -91,7 +91,7 @@ React 渲染精美的阴影画布
 
 ## [danfojs](https://github.com/javascriptdata/danfojs)
 
-![alt text](./imgs/danfojs.png)
+![alt text](./imgs/danfojs.webp)
 
 受 Pandas 启发的 JavaScript 数据分析工具包
 
@@ -106,7 +106,7 @@ React 渲染精美的阴影画布
 
 ## [BlockNote](https://github.com/blocknote/blocknote)
 
-![alt text](./imgs/blocknote.png)
+![alt text](./imgs/blocknote.webp)
 
 类型：基于 React 的块状富文本编辑器，风格类似 Notion
 
@@ -132,7 +132,7 @@ Streamdown：支持流媒体的嵌入式 react-markdown 替代品 — react-mark
 
 ## [QuickJS](https://github.com/sebastianwessel/quickjs)
 
-![alt text](./imgs/quickjs.png)
+![alt text](./imgs/quickjs.webp)
 
 QuickJS Sandbox 2.0：在 QuickJS 支持的沙箱中执行 JS/TS — QuickJS 是由 Fabrice Bellard 构建的小型可嵌入 JavaScript 引擎，它扩展了它，使其可以轻松地在隔离的沙盒环境中运行代码，以及一些基本的 Node 模块支持和虚拟文件系统。GitHub 存储库。
 

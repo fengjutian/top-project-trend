@@ -7,7 +7,7 @@ tags: []
 
 ## [GLSL.app](https://glsl.app/)
 
-![alt text](./imgs/glsl.app.png)
+![alt text](./imgs/glsl.app.webp)
 
 地址：https://glsl.app/
 
@@ -33,7 +33,7 @@ The Book of Shaders 是一个 WebGL 着色器语言的教程，通过示例来�
 
 ## [WGPU](https://wgpu.rs/)
 
-![alt text](./imgs/wgpu.png)
+![alt text](./imgs/wgpu.webp)
 
 一个基于 WebGPU API 的 Rust 图形库，强调安全性和跨平台性。
 
@@ -41,7 +41,7 @@ The Book of Shaders 是一个 WebGL 着色器语言的教程，通过示例来�
 
 ## [Three.js Resources](https://threejsresources.com/)
 
-![alt text](./imgs/threejsresources.png)
+![alt text](./imgs/threejsresources.webp)
 
 一个 Three.js 资源库，包含各种资源、工具和教程。
 

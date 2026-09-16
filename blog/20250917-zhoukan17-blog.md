@@ -23,7 +23,7 @@ TypeScript Result 将类型带入其中，以帮助您以更类型安全的方�
 
 ## [Tricolore.js](https://riatelab.github.io/tricolore.js/)
 
-![alt text](./static/tricolore.png)
+![alt text](./static/tricolore.webp)
 
 使用等值线图可视化三元构图
 
@@ -114,7 +114,7 @@ Cornerstone3D 4.0：构建基于 Web 的医学成像应用程序 — 一组 Java
 
 ## [JavaScript Weekly](https://javascriptweekly.com/)
 
-![alt text](./static/javascriptweekly.png)
+![alt text](./static/javascriptweekly.webp)
 
 JavaScript Weekly 是一个每周发布的 JavaScript 相关新闻、文章、库和工具的电子邮件列表。
 
@@ -130,7 +130,7 @@ Dependency Cruiser 17：可视化依赖关系的方法 — 如果您想查看输
 
 ## [TanStack DB](https://tanstack.com/db)
 
-![alt text](./static/tanstack-db.png)
+![alt text](./static/tanstack-db.webp)
 
 用于 TanStack 查询的嵌入式客户端数据库 — 团队 React 的数据库！TanStack DB 是一个嵌入式客户端数据库，它使用差异数据流来支持实时、关系查询、亚毫秒增量更新和乐观写入。
 

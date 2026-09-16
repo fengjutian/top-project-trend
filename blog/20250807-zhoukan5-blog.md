@@ -8,7 +8,7 @@ tags: [Frigate]
 
 ## [Frigate](https://github.com/blakeblackshear/frigate)
 
-![alt text](./static/frigate.png)
+![alt text](./static/frigate.webp)
 
 一个完整的本地网络视频录像机（NVR），专为Home Assistant设计，具备AI物体检测功能。使用OpenCV和TensorFlow在本地为IP摄像头执行实时物体检测。
 

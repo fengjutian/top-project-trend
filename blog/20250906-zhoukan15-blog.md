@@ -9,13 +9,13 @@ tags: []
 
 多人屏幕共享服务器
 
-![alt text](./static//server.png)
+![alt text](./static//server.webp)
 
 地址：https://github.com/screego/server
 
 ## [PAG](https://pag.io/en/)
 
-![alt text](./static/pag.png)
+![alt text](./static/pag.webp)
 
 libpag 是 PAG (Portable Animated Graphics) 动效文件的渲染 SDK，目前已覆盖几乎所有的主流平台，包括：iOS, Android, OpenHarmony, macOS, Windows, Linux, 以及 Web 端。
 
@@ -33,7 +33,7 @@ This is a repo with links to everything you'd ever want to learn about data engi
 
 ## [algorithm-visualizer](https://github.com/algorithm-visualizer/algorithm-visualizer)
 
-![alt text](./static/algorithm-visualizer.png)
+![alt text](./static/algorithm-visualizer.webp)
 
 一个交互式在线平台，旨在通过可视化让算法变得生动易懂。无论你是学生、教师还是专业人士，我们的平台都提供了一种引人入胜的方式来探索和理解各种算法。
 

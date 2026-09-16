@@ -16,19 +16,19 @@ tags: [react, blog]
 
 ## [21st](https://21st.dev/home)
 
-![alt text](./static/21st.png)
+![alt text](./static/21st.webp)
 
 地址：https://21st.dev/home
 
 ## [aceternity](https://ui.aceternity.com/)
 
-![alt text](./static/aceternity.png)
+![alt text](./static/aceternity.webp)
 
 地址：https://ui.aceternity.com/
 
 ## [animista](https://animista.net/)
 
-![alt text](./static/animista.png)
+![alt text](./static/animista.webp)
 
 地址：https://magicui.design/
 
@@ -46,7 +46,7 @@ tags: [react, blog]
 
 ## [kokonutui](https://kokonutui.com/)
 
-![alt text](./static/kokonutui.png)
+![alt text](./static/kokonutui.webp)
 
 地址：https://kokonutui.com/
 
