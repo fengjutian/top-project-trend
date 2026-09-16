@@ -7,7 +7,7 @@ tags: []
 
 ## [Doxx](https://github.com/bgreenwell/doxx)
 
-![alt text](./static/doxx.gif)
+<OptimizedVideo src={require('./static/doxx.mp4').default} />
 
 doxx：终端里的 Word 文档阅读器。这是一款用 Rust 开发的终端 Word 文档查看工具，可在命令行中快速渲染 .docx 文件，保留格式、表格和颜色效果。它提供交互式界面，支持全文搜索、图片显示、多格式导出等功能。
 

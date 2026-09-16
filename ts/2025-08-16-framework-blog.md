@@ -15,7 +15,7 @@ Encore.ts 是一款面向 TypeScript 的新型后端框架，号称在性能上�
 
 ## [Motia](https://github.com/MotiaDev/motia)
 
-![alt text](./static/imgs/motia.gif)
+<OptimizedVideo src={require('./static/imgs/motia.mp4').default} />
 
 这是一款一站式后端后框架，集成了 API、事件驱动、定时任务、实时数据流和 AI Agent 等能力，支持 TypeScript、Python 等多语言混合开发。它内置状态管理、结构化日志、端到端链路追踪与可视化调试器（Workbench），支持流程图、日志流和实时测试等功能。
 

@@ -37,7 +37,7 @@ OpenList：支持多种存储的文件列表程序。这是一个基于 Gin 和 
 
 ## [remotion](https://github.com/remotion-dev/remotion)
 
-![alt text](./static/imgs/remotion.gif)
+<OptimizedVideo src={require('./static/imgs/remotion.mp4').default} />
 
 remotion：用 React 制作动态视频。这是一个能够通过代码生成视频的平台，开发者可以用 Web 技术（如 CSS、Canvas、SVG、WebGL）、React 组件、变量和函数动态生成视频内容，支持复杂的动画和效果。
 

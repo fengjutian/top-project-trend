@@ -96,7 +96,7 @@ Cloudflare Sandbox 是一项新服务，用于在基于容器的安全“沙盒�
 
 ## [Image Classification with Local VLMs](https://github.com/Paulescu/image-classification-with-local-vlms)
 
-![alt text](./imgs/image-classification-with-local-vlms.gif)
+<OptimizedVideo src={require('./imgs/image-classification-with-local-vlms.mp4').default} />
 
 使用本地视觉语言模型（Visual Language Models, VLMs）在边缘设备上构建和部署高效图像分类器。
 

@@ -7,7 +7,7 @@ tags: []
 
 ## [flutter_flip_card](https://github.com/imtheguna/flutter_flip_card)
 
-![alt text](./static/imgs/flutter_flip_card.gif)
+<OptimizedVideo src={require('./static/imgs/flutter_flip_card.mp4').default} />
 
 提供翻转卡片动画的组件。可用于隐藏和显示产品的详细信息。
 
