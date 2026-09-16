@@ -432,17 +432,16 @@ a:hover {
 
 .theme-blog-post-page article img {
   display: block;
-  width: 100%;
+  width: auto;
   max-width: 100%;
   height: auto !important;
   max-height: none;
-  aspect-ratio: auto;
   margin: 1.5rem auto 1.75rem;
   border: 1px solid var(--article-border-color);
   border-radius: 16px;
   box-shadow: var(--article-image-shadow);
   background: var(--ifm-background-surface-color);
-  object-fit: initial;
+  object-fit: contain;
 }
 
 /* Docusaurus keeps an empty TOC column on short posts. Reclaim that space. */
