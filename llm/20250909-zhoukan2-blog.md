@@ -23,7 +23,7 @@ Parlant是一个专门为实际应用设计的LLM智能体开发框架，主打"
 
 ## [KiloCode](https://github.com/Kilo-Org/kilocode)
 
-![](./static/kilo.gif)
+<OptimizedVideo src={require('./static/kilo.mp4').default} />
 
 Kilo Code 是一款开源的 VS Code AI 编程助手，能帮你用自然语言生成代码、自动化重复任务，还能自动重构和调试代码。它整合了多个开源项目的特性，内置了包括 GPT-5、Claude 和 Gemini 等 400+ 最新 AI 模型，无需额外配置 API 密钥即可使用。你还可以通过 MCP 服务器市场扩展它的功能，让它更贴合你的开发 workflow。
 

@@ -23,7 +23,7 @@ tags: []
 
 ## [flash_card](https://pub.dev/packages/flash_card)
 
-![alt text](./static/imgs/flash_card.gif)
+<OptimizedVideo src={require('./static/imgs/flash_card.mp4').default} />
 
 支持创建Flash Cards的学习方法，使用户更容易记住信息。
 

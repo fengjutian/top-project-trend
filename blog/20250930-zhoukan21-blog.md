@@ -58,7 +58,7 @@ Node.js 最佳实践
 
 ## [eclaire](https://github.com/eclaire-labs/eclaire)
 
-![alt text](./imgs/eclaire-demo-preview.gif)
+<OptimizedVideo src={require('./imgs/eclaire-demo-preview.mp4').default} />
 
 一款完全本地运行的开源 AI 助手：Eclaire，集成了超多 AI 功能。  支持文档、图片、笔记、书签等数据类型的统一管理，并通过本地 LLM 模型提供问答对话。
 

@@ -133,7 +133,7 @@ chrome-devtools-mcp 是一个 Model-Context-Protocol (MCP) 服务器，允许 AI
 
 ## [Dayflow](https://github.com/JerryZLiu/Dayflow)
 
-![alt text](./imgs/Dayflow.gif)
+<OptimizedVideo src={require('./imgs/Dayflow.mp4').default} />
 
 Dayflow 是一款 macOS 原生应用，自动记录你的屏幕活动，并通过 AI 每 15 分钟分析一次，生成清晰的时间线和摘要，帮助你了解一天的工作节奏与分心时刻。
 

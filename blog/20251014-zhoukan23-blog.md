@@ -39,7 +39,7 @@ SyncTV 是一个允许您远程一起观看电影和直播的程序。它提供�
 
 ## [Open Agent Builder](https://github.com/firecrawl/open-agent-builder?tab=readme-ov-file)
 
-![alt text](./imgs/open-agent.gif)
+<OptimizedVideo src={require('./imgs/open-agent.mp4').default} />
 
 可视化构建 AI Agent 工作流，支持实时执行
 

@@ -29,7 +29,7 @@ Infisical 是一个开源的密码管理工具，用于存储和管理敏感信�
 
 ## [Flowise](https://github.com/FlowiseAI/Flowise)
 
-![alt text](./imgs/flowise_agentflow.gif)
+<OptimizedVideo src={require('./imgs/flowise_agentflow.mp4').default} />
 
 Flowise 是一个基于 Node.js 的可视化低代码平台，用于构建和部署自定义的 AI 应用程序。该项目的目标是简化 AI 应用程序的开发过程，使用户能够快速创建和部署功能强大的 AI 应用程序。
 

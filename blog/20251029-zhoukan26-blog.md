@@ -7,7 +7,7 @@ tags: []
 
 ## [AI Engineering Hub](https://github.com/patchy631/ai-engineering-hub)
 
-![alt text](./imgs/ai-engineering-hub.gif)
+<OptimizedVideo src={require('./imgs/ai-engineering-hub.mp4').default} />
 
 这是一个专注于AI工程实践的GitHub仓库，提供关于大语言模型（LLMs）、检索增强生成（RAGs）和真实AI应用场景的详细教程。无论你是初学者还是专业人士，都能在这里找到实用的代码示例和资源，帮助你快速上手和扩展AI项目。仓库鼓励大家参与贡献，还提供免费的数据科学电子书和最新资讯订阅。所有内容采用MIT开源协议，欢迎一起交流学习！
 

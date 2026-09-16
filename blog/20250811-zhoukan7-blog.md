@@ -21,7 +21,7 @@ f2：跨平台的批量重命名工具。这是一款命令行批量重命名工
 
 ## [logdy-core](https://github.com/logdyhq/logdy-core)
 
-![alt text](./static/imgs/logdy-core.gif)
+<OptimizedVideo src={require('./static/imgs/logdy-core.mp4').default} />
 
 logdy-core：自带 Web 界面的实时日志查看工具。这是一款轻量级的实时日志查看工具，无需安装、开箱即用。它内置 Web 界面，可通过浏览器像 tail -f 一样实时查看与过滤日志，支持多种输入模式和自定义解析器。
 
@@ -61,7 +61,7 @@ Trail-Sense：野外生存必备 Android 应用。这是一款专为徒步、露
 
 ## [ebook2audiobook](https://github.com/DrewThomasson/ebook2audiobook)
 
-![alt text](./static/imgs/ebook2audiobook.gif)
+<OptimizedVideo src={require('./static/imgs/ebook2audiobook.mp4').default} />
 
 ebook2audiobook：电子书转有声书的工具。这款开源工具可以轻松将电子书转换为有声书，支持多种常见格式，如 EPUB、MOBI、PDF 等。它通过 calibre 提取电子书文本，并运用语音合成技术（Text-to-Speech），能够生成包含章节和元数据的有声书，支持包括中文在内的 1000 多种语言。
 
