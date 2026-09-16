@@ -73,7 +73,7 @@ Ladybird是一个真正独立的网页浏览器，采用全新的引擎并基于
 
 ## [Public APIs](https://github.com/public-apis/public-apis)
 
-![alt text](./imgs/public-apis.png)
+![alt text](./imgs/public-apis.webp)
 
 这是一个收集了各种免费API的GitHub仓库，里面包含了大量不同领域的公共接口，比如天气、股票、动物、动漫、书籍等。你可以直接使用这些API来开发自己的应用或项目，无需付费。这个仓库由社区成员和APILayer团队共同维护，相当于一个免费API的宝藏库，方便开发者快速找到需要的接口。
 

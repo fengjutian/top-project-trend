@@ -35,7 +35,7 @@ Heroicons 是一套简单直接的高品质图标库，由大名鼎鼎的前端�
 
 ## [remixicon](https://remixicon.com/)
 
-![alt text](./static/imgs/remixicon.png)
+![alt text](./static/imgs/remixicon.webp)
 
 
 地址：https://remixicon.com/

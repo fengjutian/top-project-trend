@@ -21,7 +21,7 @@ tags: []
 
 ## [paperless-ngx](https://github.com/paperless-ngx/paperless-ngx)
 
-![alt text](./static/paperless.png)
+![alt text](./static/paperless.webp)
 
 Paperless-ngx 是一个文档管理系统，它能帮你把纸质文件扫描、整理成可搜索的电子档案，让你告别堆积如山的纸张。它是原版 Paperless 项目的升级版，由社区共同维护，支持多语言和多种安装方式（比如用 Docker 一键部署）。你可以用它存档发票、合同等重要文件，但官方提醒敏感信息最好只在本地家庭服务器上使用，确保安全。
 

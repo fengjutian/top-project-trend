@@ -12,7 +12,7 @@ BitNet.cpp 是微软推出的高效 CPU 推理框架，专为 1.58 比特大语�
 
 ## [Stremio](https://github.com/Stremio/stremio-web)
 
-![alt text](./imgs/stremio-web.png)
+![alt text](./imgs/stremio-web.webp)
 
 Stremio 是一个开源的视频流服务，用户可以在其平台上订阅和观看各种视频内容。该项目的目标是提供一个统一的视频流平台，使用户能够方便地访问和管理他们的视频收藏。
 
@@ -21,7 +21,7 @@ Stremio 是一个开源的视频流服务，用户可以在其平台上订阅和
 
 ## [Infisical](https://github.com/Infisical/infisical)
 
-![alt text](./imgs/infisical.png)
+![alt text](./imgs/infisical.webp)
 
 Infisical 是一个开源的密码管理工具，用于存储和管理敏感信息，如 API 密钥、数据库密码等。该项目的目标是提供一个安全、方便的方式来管理和分享密码，同时确保数据的机密性和完整性。
 

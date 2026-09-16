@@ -26,7 +26,7 @@ HumanLayer 是一个让 AI 智能体在关键操作中自动引入人工审核�
 
 ## [tray-chrome](https://github.com/cornradio/tray-chrome)
 
-![alt text](./imgs/tray-chrome.png)
+![alt text](./imgs/tray-chrome.webp)
 
 一个基于 WPF 和 WebView2 的轻量级托盘浏览器，专为 Windows 设计。类似 MenubarX，但更加轻便和功能丰富。
 
@@ -89,7 +89,7 @@ openpilot 是一个用于机器人的操作系统，目前主要用来升级300�
 
 ## [lobehub/lobe-chat](https://github.com/lobehub/lobe-chat)
 
-![alt text](./imgs/lobe-chat.png)
+![alt text](./imgs/lobe-chat.webp)
 
 现代化设计的开源 ChatGPT/LLMs 聊天应用与开发框架
 支持语音合成、多模态、可扩展的（function call）插件系统

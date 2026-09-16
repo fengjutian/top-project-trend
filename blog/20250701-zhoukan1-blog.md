@@ -15,7 +15,7 @@ https://github.com/TrionesType/zhuque
 
 
 ## Windows 任务管理器的四种替代品（英文）
-![alt text](./static/imgs/windows.png)
+![alt text](./static/imgs/windows.webp)
 
 https://www.xda-developers.com/powerful-tools-should-use-instead-task-manager/
 

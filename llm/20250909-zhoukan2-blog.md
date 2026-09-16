@@ -7,7 +7,7 @@ tags: []
 
 ## [Spring AI Alibaba](https://sca.aliyun.com/?spm=7145af80.321ad293.0.0.72aa5e63eptpsW)
 
-![alt text](./static/spring-ai.png)
+![alt text](./static/spring-ai.webp)
 
 Spring Cloud Alibaba 为分布式应用开发提供一站式解决方案。它包含开发分布式应用程序所需的所有组件，使您可以轻松地使用 Spring Cloud 微服务框架开发应用程序。
 

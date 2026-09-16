@@ -25,7 +25,7 @@ tags: [react, blog]
 
 ## [HeadlessUI](https://headlessui.com/)
 
-![alt text](./static/headlessui.png)
+![alt text](./static/headlessui.webp)
 
 
 ### 🧩 项目简介：Headless UI
@@ -137,7 +137,7 @@ npx heroui-cli@latest init
 
 ## [React Aria](https://react-spectrum.adobe.com/react-aria/index.html)
 
-![alt text](./static/imgs/react-aria.png)
+![alt text](./static/imgs/react-aria.webp)
 
 
 ### 🎯 项目简介：React Aria

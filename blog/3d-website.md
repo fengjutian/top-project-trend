@@ -7,6 +7,6 @@ tags: [Vue Bits, RustScan, tsx]
 
 ## [Sketchfab](https://sketchfab.com/feed)
 
-![alt text](./static/sketchfab.png)
+![alt text](./static/sketchfab.webp)
 
 地址： https://sketchfab.com/feed

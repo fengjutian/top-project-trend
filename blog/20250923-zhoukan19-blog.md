@@ -55,7 +55,7 @@ tldraw 是一个用于创建无限画布体验的 React 组件库，非常适合
 
 ## [map3d](https://github.com/cartesiancs/map3d)
 
-![alt text](./imgs/map3d.png)
+![alt text](./imgs/map3d.webp)
 
 map3d 是一个开源项目，旨在利用 React Three Fiber（R3F）构建城市 3D 地图。它基于 OpenStreetMap 数据，支持生成包含建筑物和道路信息的 3D 地图，并允许将地图导出为 GLB 文件。
 

@@ -47,7 +47,7 @@ SyncTV 是一个允许您远程一起观看电影和直播的程序。它提供�
 
 ## [Homepage](https://github.com/gethomepage/homepage)
 
-![alt text](./imgs/homepage.png)
+![alt text](./imgs/homepage.webp)
 
 一个现代化、完全静态、快速、安全且高度可定制的起始页（或应用仪表盘），支持 Docker 和超过 100 种服务 API 集成。
 

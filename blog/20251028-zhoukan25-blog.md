@@ -35,7 +35,7 @@ tags: []
 
 ## [Pages CMS](https://github.com/pages-cms/pages-cms)
 
-![alt text](./imgs/pages-cms.png)
+![alt text](./imgs/pages-cms.webp)
 
 专为静态网站打造的 CMS。这是一个专为静态网站生成器设计的内容管理系统（CMS），支持 Jekyll、Next.js、VuePress 和 Hugo 等。它提供友好的用户界面，让非技术人员也能轻松编辑和更新网站内容，所有更改将自动转化为 GitHub 上的提交。
 
@@ -100,7 +100,7 @@ Office 文件在线编辑器。这是一个基于 OnlyOffice 和 WebAssembly 的
 
 ## [GPUI Component](https://github.com/longbridge/gpui-component)
 
-![alt text](./imgs/gpui-component.png)
+![alt text](./imgs/gpui-component.webp)
 
 "GPUI Component 是一个基于 GPUI 的跨平台桌面 UI 组件库，提供 40+ 现代化组件，支持多主题、灵活布局和高性能渲染，已应用于 Longbridge Pro 等应用。
 

@@ -41,7 +41,7 @@ This is a repo with links to everything you'd ever want to learn about data engi
 
 ## [ladybird](https://github.com/LadybirdBrowser/ladybird)
 
-![alt text](./static/ladybird.png)
+![alt text](./static/ladybird.webp)
 
 一个用现代 C++ 编写的浏览器内核项目，目标是构建简洁可维护的网页渲染引擎，适合系统开发者学习研究。
 
@@ -49,7 +49,7 @@ This is a repo with links to everything you'd ever want to learn about data engi
 
 ## [immich](https://github.com/immich-app/immich)
 
-![alt text](./static/immich.png)
+![alt text](./static/immich.webp)
 
 家庭照片系统
 
@@ -57,7 +57,7 @@ This is a repo with links to everything you'd ever want to learn about data engi
 
 ## [MedResearcher-R1](https://github.com/AQ-MedAI/MedResearcher-R1)
 
-![alt text](./static/MedResearcher.png)
+![alt text](./static/MedResearcher.webp)
 
 MedResearcher-R1 是一个综合性的训练数据生成与合成框架，通过知识引导的轨迹合成技术解决领域特定AI推理的挑战。
 

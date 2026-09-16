@@ -15,7 +15,7 @@ tags: [Frigate]
 
 ## [WeKnora](https://github.com/Tencent/WeKnora)
 
-![alt text](./static/imgs/weknora.png)
+![alt text](./static/imgs/weknora.webp)
 
 
 WeKnora（维娜拉） 是一款基于大语言模型（LLM）的文档理解与语义检索框架，专为结构复杂、内容异构的文档场景而打造。

@@ -39,7 +39,7 @@ npmgraph：可视化 npm 模块依赖关系的工具 — 为这个基于 Web 的
 
 ## [snapdom](https://github.com/zumerlab/snapdom)
 
-![alt text](./imgs/snapdom.png)
+![alt text](./imgs/snapdom.webp)
 
 将 DOM 节点捕获为图像 — 一种快速准确的 DOM 到图像捕获机制，可将任何 HTML 元素捕获为可缩放的 SVG 图像，保留样式、字体、背景图像等
 

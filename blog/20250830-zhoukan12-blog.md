@@ -38,7 +38,7 @@ Portable file server with accelerated resumable uploads, dedup, WebDAV, FTP, TFT
 
 ## [Edge Security](https://www.edge-security.com/)
 
-![alt text](./static/security.png)
+![alt text](./static/security.webp)
 
 theHarvester 是一款专门用于网络安全侦察的开源情报（OSINT）收集工具。它可以帮助安全研究人员或渗透测试人员快速查找与目标域名相关的公开信息，比如电子邮件地址、子域名、IP 地址和主机信息。通过集成多个搜索引擎和数据源，它能够自动化地从互联网中搜集这些信息，为后续的安全评估提供基础数据支持。简单来说，它就像是一个“数字侦探”，帮你发现企业在网络上可能暴露的敏感信息。
 

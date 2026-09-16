@@ -155,7 +155,7 @@ Rodin 是由 Hyper3D 提供的免费 AI 工具，可将图像快速转换为高�
 
 ## [SPlayer](https://github.com/imsyy/SPlayer)
 
-![alt text](./imgs/SPlayer.png)
+![alt text](./imgs/SPlayer.webp)
 
 SPlayer 是一个基于 Electron 的简约音乐播放器，支持网易云音乐的多项功能，适用于 Windows 平台，网页端也可使用。项目采用 Vue 3 + TypeScript + Naïve UI 构建，强调本地化体验与功能完整性。
 
