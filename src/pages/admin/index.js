@@ -13,11 +13,25 @@ const SECTIONS = [
   ['lang-chain', 'LangChain'], ['mcp', 'MCP'], ['llm', 'LLM'],
   ['static-website', '资源网站'],
 ];
+const ARTICLE_TEMPLATES = {
+  weekly: {
+    label: '技术周刊',
+    body: '## 本期导读\n\n在这里概括本期内容。\n\n## 项目一\n\n![项目截图]()\n\n**项目地址：** https://github.com/\n\n项目简介与推荐理由。\n\n## 项目二\n\n项目简介与推荐理由。\n\n## 总结\n\n本期内容总结。',
+  },
+  project: {
+    label: '开源项目介绍',
+    body: '## 项目简介\n\n项目解决了什么问题。\n\n## 核心功能\n\n- 功能一\n- 功能二\n- 功能三\n\n## 快速开始\n\n```bash\n# 安装或运行命令\n```\n\n## 使用体验\n\n优点、限制和适用场景。\n\n## 项目地址\n\nhttps://github.com/',
+  },
+  tutorial: {
+    label: '技术教程',
+    body: '## 背景\n\n为什么需要这项技术。\n\n## 环境准备\n\n列出版本和依赖。\n\n## 实现步骤\n\n### 第一步\n\n说明和代码。\n\n### 第二步\n\n说明和代码。\n\n## 常见问题\n\n常见错误及解决方法。\n\n## 总结\n\n回顾关键要点。',
+  },
+};
 
 const emptyArticle = () => ({
   title: '', slug: '', date: new Date().toISOString().slice(0, 10),
   authors: 'fengjutian', tags: [], draft: true, description: '', image: '', body: '',
-  rawFrontmatter: '', path: '', sha: '', savedContent: '',
+  publish_at: '', unpublish_at: '', rawFrontmatter: '', path: '', sha: '', savedContent: '',
 });
 
 function toSlug(value) {
@@ -42,6 +56,18 @@ function safeFilename(value) {
   const dot = value.lastIndexOf('.');
   const stem = dot > 0 ? value.slice(0, dot) : value;
   return toSlug(stem).replace(/[\u4e00-\u9fff]/g, '') || 'image';
+}
+
+function toLocalDateTime(value) {
+  if (!value) return '';
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return value.slice(0, 16);
+  const local = new Date(date.getTime() - date.getTimezoneOffset() * 60000);
+  return local.toISOString().slice(0, 16);
+}
+
+function fromLocalDateTime(value) {
+  return value ? new Date(value).toISOString() : '';
 }
 
 async function optimizeImage(file) {
@@ -100,6 +126,8 @@ function serializeArticle(article) {
     draft: String(article.draft),
     description: article.description,
     image: article.image,
+    publish_at: article.publish_at,
+    unpublish_at: article.unpublish_at,
   };
   const seen = new Set();
   const lines = article.rawFrontmatter.split(/\r?\n/).filter(Boolean).map((line) => {
@@ -151,6 +179,15 @@ function auditArticle(article, articles) {
     .map((match) => match[1]).filter((url) => /^(https?:)/.test(url) && !/^https?:\/\/\S+$/.test(url));
   if (malformedUrls.length) issues.push({level: 'error', text: `发现 ${malformedUrls.length} 个格式异常的外部链接。`});
   return issues;
+}
+
+function articleMetrics(body) {
+  const plain = body.replace(/```[\s\S]*?```/g, '').replace(/<[^>]+>/g, '').replace(/[#>*_`\[\]()!-]/g, ' ');
+  const chinese = (plain.match(/[\u4e00-\u9fff]/g) || []).length;
+  const words = (plain.match(/[A-Za-z0-9]+/g) || []).length;
+  const count = chinese + words;
+  const headings = [...body.matchAll(/^(#{2,4})\s+(.+)$/gm)].map((match) => ({level: match[1].length, title: match[2]}));
+  return {count, minutes: Math.max(1, Math.ceil(count / 350)), headings};
 }
 
 async function github(path, token, options = {}) {
@@ -209,6 +246,8 @@ function AdminApp() {
   const [workspace, setWorkspace] = useState('editor');
   const [selectedPaths, setSelectedPaths] = useState([]);
   const [batching, setBatching] = useState(false);
+  const [deployment, setDeployment] = useState(null);
+  const [focusMode, setFocusMode] = useState(false);
 
   const dirty = useMemo(() => article.savedContent
     ? serializeArticle(article) !== article.savedContent
@@ -232,6 +271,7 @@ function AdminApp() {
     missingDescription: articles.filter((item) => !item.description).length,
     missingImage: articles.filter((item) => !item.image).length,
   }), [articles]);
+  const metrics = useMemo(() => articleMetrics(article.body), [article.body]);
 
   useEffect(() => {
     const warn = (event) => {
@@ -252,6 +292,34 @@ function AdminApp() {
     }, 800);
     return () => window.clearTimeout(timer);
   }, [article, connected, dirty, section]);
+
+  useEffect(() => {
+    const shortcuts = (event) => {
+      if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 's') {
+        event.preventDefault();
+        if (connected && !saving) save();
+      }
+      if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') {
+        event.preventDefault();
+        document.querySelector(`.${styles.search} input`)?.focus();
+      }
+      if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.key.toLowerCase() === 'p') {
+        event.preventDefault();
+        setPreview((value) => !value);
+      }
+    };
+    window.addEventListener('keydown', shortcuts);
+    return () => window.removeEventListener('keydown', shortcuts);
+  });
+
+  async function loadDeployment(authToken = token) {
+    try {
+      const result = await github(`actions/runs?branch=${BRANCH}&per_page=1`, authToken);
+      setDeployment(result.workflow_runs?.[0] || null);
+    } catch {
+      setDeployment(null);
+    }
+  }
 
   async function listMarkdownFiles(directory, authToken) {
     const entries = await github(`contents/${directory}?ref=${BRANCH}`, authToken);
@@ -318,6 +386,7 @@ function AdminApp() {
     setToken(nextToken);
     setConnected(true);
     loadArticles(section, nextToken);
+    loadDeployment(nextToken);
   }
 
   function newArticle() {
@@ -343,6 +412,66 @@ function AdminApp() {
     setSection(nextSection);
     setArticle(emptyArticle());
     setPreview(false);
+    setSelectedPaths([]);
+    setWorkspace('editor');
+  }
+
+  function toggleSelected(path) {
+    setSelectedPaths((current) => current.includes(path) ? current.filter((item) => item !== path) : [...current, path]);
+  }
+
+  async function commitArticleUpdate(item, changes, messageText) {
+    const current = await github(`contents/${item.path}?ref=${BRANCH}`, token);
+    if (current.sha !== item.sha) throw new Error(`《${item.title}》已在其他位置更新，批量操作已停止。`);
+    const changed = {...item, ...changes};
+    await github(`contents/${item.path}`, token, {
+      method: 'PUT',
+      body: JSON.stringify({message: messageText, content: encodeBase64(serializeArticle(changed)), sha: item.sha, branch: BRANCH}),
+    });
+  }
+
+  async function batchSetDraft(draft) {
+    const targets = articles.filter((item) => selectedPaths.includes(item.path));
+    if (!targets.length) return;
+    if (!window.confirm(`确定将 ${targets.length} 篇文章设为${draft ? '草稿' : '已发布'}吗？`)) return;
+    setBatching(true);
+    setMessage('正在执行批量操作…');
+    try {
+      for (const item of targets) {
+        await commitArticleUpdate(item, {draft}, `content: 批量${draft ? '转为草稿' : '发布'} ${item.title}`);
+      }
+      setSelectedPaths([]);
+      await loadArticles(section);
+      setMessage(`已更新 ${targets.length} 篇文章。`);
+    } catch (error) {
+      setMessage(error.message);
+      await loadArticles(section);
+    } finally {
+      setBatching(false);
+    }
+  }
+
+  async function renameTag(oldTag) {
+    const nextTag = window.prompt(`将标签“${oldTag}”合并或重命名为：`, oldTag);
+    if (!nextTag || nextTag.trim() === oldTag) return;
+    const normalized = nextTag.trim();
+    const targets = articles.filter((item) => item.tags.includes(oldTag));
+    if (!window.confirm(`将在 ${targets.length} 篇文章中把“${oldTag}”改为“${normalized}”，是否继续？`)) return;
+    setBatching(true);
+    setMessage('正在更新标签…');
+    try {
+      for (const item of targets) {
+        const tags = [...new Set(item.tags.map((tag) => tag === oldTag ? normalized : tag))];
+        await commitArticleUpdate(item, {tags}, `content: 标签 ${oldTag} 改为 ${normalized}`);
+      }
+      await loadArticles(section);
+      setMessage(`已在 ${targets.length} 篇文章中更新标签。`);
+    } catch (error) {
+      setMessage(error.message);
+      await loadArticles(section);
+    } finally {
+      setBatching(false);
+    }
   }
 
   function duplicateArticle() {
@@ -358,6 +487,14 @@ function AdminApp() {
     };
     setArticle(copy);
     setMessage('已创建副本，修改后保存即可生成新文章。');
+  }
+
+  function applyTemplate(templateName) {
+    const template = ARTICLE_TEMPLATES[templateName];
+    if (!template) return;
+    if (article.body.trim() && !window.confirm('应用模板会替换当前正文，确定继续吗？')) return;
+    update('body', template.body);
+    setMessage(`已应用“${template.label}”模板。`);
   }
 
   async function deleteArticle() {
@@ -505,6 +642,16 @@ function AdminApp() {
       setMessage('标题、链接标识和发布日期不能为空。');
       return;
     }
+    const blockingIssues = currentIssues.filter((issue) => issue.level === 'error');
+    if (!article.draft && blockingIssues.length) {
+      setMessage(`发布已阻止：请先处理 ${blockingIssues.length} 个错误级检查项。`);
+      setPanel('audit');
+      return;
+    }
+    if (article.publish_at && article.unpublish_at && new Date(article.publish_at) >= new Date(article.unpublish_at)) {
+      setMessage('自动下线时间必须晚于定时发布时间。');
+      return;
+    }
     setSaving(true);
     setMessage('');
     try {
@@ -515,9 +662,10 @@ function AdminApp() {
           throw new Error('保存已停止：GitHub 上的文章在你编辑期间发生了变化。请复制当前内容后刷新，再合并修改。');
         }
       }
+      const content = encodeBase64(serializeArticle(article));
       const payload = {
         message: `${article.sha ? 'content: 更新' : 'content: 新增'} ${article.title}`,
-        content: encodeBase64(serializeArticle(article)),
+        content,
         branch: BRANCH,
         ...(article.sha ? {sha: article.sha} : {}),
       };
@@ -525,6 +673,7 @@ function AdminApp() {
       localStorage.removeItem(`top-project-draft:${article.path || `${section}:new`}`);
       await loadArticles(section);
       setMessage('已提交到 GitHub，部署工作流将自动发布。');
+      window.setTimeout(() => loadDeployment(token), 1500);
     } catch (error) {
       setMessage(error.message);
     } finally {
@@ -540,9 +689,10 @@ function AdminApp() {
     <button type="button" onClick={connect} disabled={!tokenInput.trim()}>进入管理后台</button>
   </div>;
 
-  return <div className={styles.studio}>
+  return <div className={`${styles.studio} ${focusMode ? styles.studioFocus : ''}`}>
     <aside className={styles.sidebar}>
       <div className={styles.brand}><span>F</span><div><strong>Content Studio</strong><small>{OWNER}/{REPO}</small></div></div>
+      {deployment && <a className={`${styles.deployStatus} ${deployment.conclusion === 'success' ? styles.deploySuccess : deployment.status === 'in_progress' ? styles.deployRunning : styles.deployFailed}`} href={deployment.html_url} target="_blank" rel="noreferrer"><span />{deployment.status === 'in_progress' ? '正在部署' : deployment.conclusion === 'success' ? '最近部署成功' : '最近部署失败'}</a>}
       <label className={styles.search}><span>⌕</span><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="搜索文章" /></label>
       <select value={section} onChange={(event) => changeSection(event.target.value)}>
         {SECTIONS.map(([value, label]) => <option key={value} value={value}>{label}</option>)}
@@ -551,21 +701,48 @@ function AdminApp() {
         {[['all', '全部'], ['draft', '草稿'], ['published', '已发布']].map(([value, label]) =>
           <button type="button" key={value} className={statusFilter === value ? styles.filterActive : ''} onClick={() => setStatusFilter(value)}>{label}</button>)}
       </div>
+      <button type="button" className={styles.dashboardButton} onClick={() => setWorkspace(workspace === 'dashboard' ? 'editor' : 'dashboard')}>{workspace === 'dashboard' ? '返回编辑器' : '内容仪表盘'}</button>
       <button type="button" className={styles.newButton} onClick={newArticle}>＋ 新建文章</button>
+      {selectedPaths.length > 0 && <div className={styles.batchBar}>
+        <span>已选择 {selectedPaths.length} 篇</span>
+        <div><button type="button" disabled={batching} onClick={() => batchSetDraft(true)}>转草稿</button><button type="button" disabled={batching} onClick={() => batchSetDraft(false)}>发布</button><button type="button" onClick={() => setSelectedPaths([])}>取消</button></div>
+      </div>}
       <div className={styles.articleList}>
         {loading ? <p className={styles.muted}>正在读取文章…</p> : visibleArticles.map((item) =>
-          <button type="button" key={item.path} className={`${styles.articleItem} ${article.path === item.path ? styles.active : ''}`} onClick={() => selectArticle(item)}>
-            <strong>{item.title || item.filename}</strong>
-            <span>{item.date || '无日期'} {item.draft ? '· 草稿' : ''}</span>
-          </button>)}
+          <div key={item.path} className={`${styles.articleRow} ${article.path === item.path ? styles.active : ''}`}>
+            <input type="checkbox" checked={selectedPaths.includes(item.path)} onChange={() => toggleSelected(item.path)} aria-label={`选择 ${item.title}`} />
+            <button type="button" className={styles.articleItem} onClick={() => { selectArticle(item); setWorkspace('editor'); }}>
+              <strong>{item.title || item.filename}</strong>
+              <span>{item.date || '无日期'} {item.draft ? '· 草稿' : ''}</span>
+            </button>
+          </div>)}
       </div>
       <button type="button" className={styles.logout} onClick={logout}>退出当前会话</button>
     </aside>
 
-    <main className={styles.editor}>
+    {workspace === 'dashboard' ? <main className={styles.dashboard}>
+      <header><div><span className={styles.eyebrow}>CONTENT OVERVIEW</span><h1>{SECTIONS.find(([value]) => value === section)?.[1]}仪表盘</h1></div><button type="button" onClick={() => setPanel('tags')}>管理标签</button></header>
+      <div className={styles.metricGrid}>
+        <article><span>文章总数</span><strong>{dashboard.total}</strong></article>
+        <article><span>已发布</span><strong>{dashboard.published}</strong></article>
+        <article><span>草稿</span><strong>{dashboard.drafts}</strong></article>
+        <article><span>存在错误</span><strong>{dashboard.unhealthy}</strong></article>
+        <article><span>缺少摘要</span><strong>{dashboard.missingDescription}</strong></article>
+        <article><span>缺少封面</span><strong>{dashboard.missingImage}</strong></article>
+      </div>
+      <section className={styles.healthTable}>
+        <h2>内容健康度</h2>
+        {articles.map((item) => {
+          const issues = auditArticle(item, articles);
+          return <button type="button" key={item.path} onClick={() => { selectArticle(item); setWorkspace('editor'); }}><span><strong>{item.title}</strong><small>{item.date} · {item.draft ? '草稿' : '已发布'}</small></span><em className={issues.some((issue) => issue.level === 'error') ? styles.issueError : issues.length ? styles.issueWarn : styles.issueOk}>{issues.length ? `${issues.length} 项` : '健康'}</em></button>;
+        })}
+      </section>
+    </main> : <main className={styles.editor}>
       <header className={styles.toolbar}>
         <div><span className={article.draft ? styles.draft : styles.published}>{article.draft ? '草稿' : '已发布'}</span>{dirty && <span className={styles.unsaved}>未保存</span>}<small>{article.path || '新文章'}</small></div>
         <div className={styles.toolbarActions}>
+          <button type="button" onClick={() => setPanel('audit')}>检查 <span className={styles.issueCount}>{currentIssues.length}</span></button>
+          <button type="button" onClick={() => setFocusMode((value) => !value)}>{focusMode ? '退出专注' : '专注'}</button>
           <label className={styles.uploadButton}>{uploading ? '上传中…' : '上传图片'}<input type="file" accept="image/png,image/jpeg,image/webp" onChange={uploadImage} disabled={uploading} /></label>
           <button type="button" onClick={openMedia}>媒体库</button>
           <button type="button" onClick={openHistory} disabled={!article.path}>版本</button>
@@ -584,6 +761,7 @@ function AdminApp() {
         {article.description && <p className={styles.lead}>{article.description}</p>}
         <MarkdownPreview source={article.body} />
       </article> : <div className={styles.form}>
+        {!article.path && <div className={styles.templateBar}><span>从模板开始</span>{Object.entries(ARTICLE_TEMPLATES).map(([name, template]) => <button type="button" key={name} onClick={() => applyTemplate(name)}>{template.label}</button>)}</div>}
         <input className={styles.titleInput} value={article.title} onChange={(event) => {
           const title = event.target.value;
           setArticle((current) => ({...current, title, slug: current.path || current.slug ? current.slug : toSlug(title)}));
@@ -596,28 +774,42 @@ function AdminApp() {
           <label className={styles.checkbox}><input type="checkbox" checked={article.draft} onChange={(event) => update('draft', event.target.checked)} />保存为草稿</label>
         </div>
 
+        <div className={styles.scheduleGrid}>
+          <label>定时发布<input type="datetime-local" value={toLocalDateTime(article.publish_at)} onChange={(event) => { update('publish_at', fromLocalDateTime(event.target.value)); if (event.target.value) update('draft', true); }} /><small>到达时间后自动关闭草稿状态</small></label>
+          <label>自动下线<input type="datetime-local" value={toLocalDateTime(article.unpublish_at)} onChange={(event) => update('unpublish_at', fromLocalDateTime(event.target.value))} /><small>到达时间后自动转为草稿</small></label>
+        </div>
+
         <label>标签<div className={styles.inlineInput}><input value={article.tags.join(', ')} onChange={(event) => update('tags', event.target.value.split(',').map((tag) => tag.trim()).filter(Boolean))} placeholder="React, AI, GitHub" /><button type="button" onClick={() => update('tags', inferTags(article.title, article.body))}>智能提取</button></div></label>
         <label>摘要<div className={styles.inlineInput}><textarea rows="2" value={article.description} onChange={(event) => update('description', event.target.value)} /><button type="button" onClick={() => update('description', inferDescription(article.body))}>自动摘要</button></div></label>
         <label>封面路径<input value={article.image} onChange={(event) => update('image', event.target.value)} placeholder="/top-project-trend/media/..." /></label>
-        <label className={styles.bodyLabel}>正文<textarea value={article.body} onChange={(event) => update('body', event.target.value)} placeholder="使用 Markdown 开始写作…" /></label>
+        <div className={styles.documentMeta}><span>{metrics.count} 字</span><span>约 {metrics.minutes} 分钟阅读</span><span>{metrics.headings.length} 个章节</span><span>自动保存已开启</span></div>
+        <div className={styles.writingArea}>
+          <label className={styles.bodyLabel}>正文<textarea value={article.body} onChange={(event) => update('body', event.target.value)} placeholder="使用 Markdown 开始写作…" /></label>
+          <aside className={styles.outline}><strong>文章大纲</strong>{metrics.headings.length ? metrics.headings.map((heading, index) => <span key={`${heading.title}-${index}`} style={{paddingLeft: `${(heading.level - 2) * 12}px`}}>{heading.title}</span>) : <small>使用二级或三级标题组织正文</small>}</aside>
+        </div>
       </div>}
-    </main>
+    </main>}
 
     {panel && <div className={styles.modalBackdrop} onMouseDown={(event) => { if (event.target === event.currentTarget) setPanel(null); }}>
       <section className={styles.modal}>
-        <header><div><span className={styles.eyebrow}>{panel === 'history' ? 'VERSION CONTROL' : 'MEDIA LIBRARY'}</span><h2>{panel === 'history' ? '文章版本' : `${SECTIONS.find(([value]) => value === section)?.[1]}媒体库`}</h2></div><button type="button" onClick={() => setPanel(null)}>×</button></header>
+        <header><div><span className={styles.eyebrow}>{panel === 'history' ? 'VERSION CONTROL' : panel === 'media' ? 'MEDIA LIBRARY' : panel === 'audit' ? 'CONTENT AUDIT' : 'TAG MANAGER'}</span><h2>{panel === 'history' ? '文章版本' : panel === 'media' ? `${SECTIONS.find(([value]) => value === section)?.[1]}媒体库` : panel === 'audit' ? '发布前检查' : '标签管理'}</h2></div><button type="button" onClick={() => setPanel(null)}>×</button></header>
         {panelLoading ? <p className={styles.panelEmpty}>正在读取…</p> : panel === 'history' ? <div className={styles.historyList}>
           {history.length ? history.map((item) => <div key={item.sha} className={styles.historyItem}>
             <div><strong>{item.commit.message}</strong><span>{item.commit.author?.name} · {new Date(item.commit.author?.date).toLocaleString()}</span><code>{item.sha.slice(0, 8)}</code></div>
             <button type="button" onClick={() => restoreVersion(item.sha)}>载入此版本</button>
           </div>) : <p className={styles.panelEmpty}>暂无版本记录</p>}
-        </div> : <div className={styles.mediaGrid}>
+        </div> : panel === 'media' ? <div className={styles.mediaGrid}>
           {media.length ? media.map((item) => <article key={item.path} className={styles.mediaItem}>
             <img src={item.download_url} alt={item.name} loading="lazy" />
             <strong title={item.path}>{item.name}</strong>
             <span>{Math.round((item.size || 0) / 1024)}KB</span>
             <div><button type="button" onClick={() => insertMedia(item)}>插入</button><button type="button" className={styles.danger} onClick={() => deleteMedia(item)}>删除</button></div>
           </article>) : <p className={styles.panelEmpty}>当前栏目还没有集中管理的媒体文件</p>}
+        </div> : panel === 'audit' ? <div className={styles.auditList}>
+          {currentIssues.length ? currentIssues.map((issue, index) => <div key={`${issue.text}-${index}`} className={issue.level === 'error' ? styles.auditError : styles.auditWarn}><span>{issue.level === 'error' ? '错误' : '建议'}</span><p>{issue.text}</p></div>) : <div className={styles.auditSuccess}>未发现发布阻断项，文章状态良好。</div>}
+          <p className={styles.auditNote}>外部链接是否真实可访问需要服务端检查，本页面只检查链接格式。</p>
+        </div> : <div className={styles.tagList}>
+          {tagStats.length ? tagStats.map(([tag, count]) => <button type="button" key={tag} onClick={() => renameTag(tag)} disabled={batching}><strong>{tag}</strong><span>{count} 篇</span><em>合并 / 重命名</em></button>) : <p className={styles.panelEmpty}>当前栏目还没有标签</p>}
         </div>}
       </section>
     </div>}

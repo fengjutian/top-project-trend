@@ -17,6 +17,7 @@
     "media:audit:strict": "node scripts/media-audit.mjs --strict",
     "article:new": "node scripts/article-new.mjs",
     "article:dates": "node scripts/article-dates.mjs",
+    "article:schedule": "node scripts/article-schedule.mjs",
     "preinstall": "npx only-allow pnpm",
     "del": "rimraf node_modules",
     "commit": "cz"

@@ -59,6 +59,22 @@ content:
             type: boolean
             default: true
             description: 开启时只在本地开发环境显示，不会出现在生产站点。
+          - name: publish_at
+            label: 定时发布
+            type: date
+            required: false
+            default: ""
+            options:
+              time: true
+              format: yyyy-MM-dd'T'HH:mm:ssXXX
+          - name: unpublish_at
+            label: 自动下线
+            type: date
+            required: false
+            default: ""
+            options:
+              time: true
+              format: yyyy-MM-dd'T'HH:mm:ssXXX
           - name: description
             label: 摘要
             type: text
