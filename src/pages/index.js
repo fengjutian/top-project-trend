@@ -75,6 +75,16 @@ export default function Home() {
   const [isDarkMode, setIsDarkMode] = React.useState(false);
 
   React.useEffect(() => {
+    document.documentElement.classList.add('home-page-no-scroll');
+    document.body.classList.add('home-page-no-scroll');
+
+    return () => {
+      document.documentElement.classList.remove('home-page-no-scroll');
+      document.body.classList.remove('home-page-no-scroll');
+    };
+  }, []);
+
+  React.useEffect(() => {
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     setIsDarkMode(prefersDark);
   }, []);

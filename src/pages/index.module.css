@@ -18,7 +18,9 @@
 
 .heroBackground {
   width: 100%;
-  min-height: calc(100vh - var(--ifm-navbar-height));
+  height: calc(100vh - var(--ifm-navbar-height));
+  height: calc(100dvh - var(--ifm-navbar-height));
+  min-height: 0;
   position: relative;
   overflow: hidden;
 }

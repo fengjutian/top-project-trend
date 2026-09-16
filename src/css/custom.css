@@ -54,6 +54,13 @@ html {
   scroll-behavior: smooth;
 }
 
+html.home-page-no-scroll,
+body.home-page-no-scroll {
+  height: 100%;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
 body {
   font-family: var(--site-serif-font);
   line-height: 1.6;
