@@ -454,21 +454,6 @@ html.blog-post-page article p {
   object-position: center;
 }
 
-/* Give article media more room than Docusaurus' default 3/7/2 layout. */
-@media (min-width: 997px) {
-  html.blog-post-page .row > aside.col--3 {
-    --ifm-col-width: 16.6667%;
-    flex: 0 0 var(--ifm-col-width);
-    max-width: var(--ifm-col-width);
-  }
-
-  html.blog-post-page .row > main.col--7 {
-    --ifm-col-width: 66.6667%;
-    flex: 0 0 var(--ifm-col-width);
-    max-width: var(--ifm-col-width);
-  }
-}
-
 /* Docusaurus keeps an empty TOC column on short posts. Reclaim that space. */
 html.blog-post-page .row:not(:has(.table-of-contents)) > main.col {
   --ifm-col-width: 75%;
