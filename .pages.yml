@@ -23,13 +23,23 @@ content:
           field: create
         view:
           primary: title
-          fields: [title, slug, draft]
+          fields: [title, date, slug, draft]
+          sort: [date, title]
           search: [title, slug, tags]
+          default:
+            sort: date
+            order: desc
         fields: &article_fields
           - name: title
             label: 标题
             type: string
             required: true
+          - name: date
+            label: 发布日期
+            type: date
+            required: true
+            options:
+              format: yyyy-MM-dd
           - name: slug
             label: 链接标识
             type: string
@@ -76,7 +86,7 @@ content:
         format: yaml-frontmatter
         subfolders: false
         filename: {template: "{year}{month}{day}-{slug}-blog.md", field: create}
-        view: {primary: title, fields: [title, slug, draft], search: [title, slug, tags]}
+        view: {primary: title, fields: [title, date, slug, draft], sort: [date, title], search: [title, slug, tags], default: {sort: date, order: desc}}
         fields: *article_fields
 
       - name: code
@@ -86,7 +96,7 @@ content:
         format: yaml-frontmatter
         subfolders: false
         filename: {template: "{year}{month}{day}-{slug}-blog.md", field: create}
-        view: {primary: title, fields: [title, slug, draft], search: [title, slug, tags]}
+        view: {primary: title, fields: [title, date, slug, draft], sort: [date, title], search: [title, slug, tags], default: {sort: date, order: desc}}
         fields: *article_fields
 
       - name: ts
@@ -96,7 +106,7 @@ content:
         format: yaml-frontmatter
         subfolders: false
         filename: {template: "{year}{month}{day}-{slug}-blog.md", field: create}
-        view: {primary: title, fields: [title, slug, draft], search: [title, slug, tags]}
+        view: {primary: title, fields: [title, date, slug, draft], sort: [date, title], search: [title, slug, tags], default: {sort: date, order: desc}}
         fields: *article_fields
 
       - name: algorithm
@@ -106,7 +116,7 @@ content:
         format: yaml-frontmatter
         subfolders: false
         filename: {template: "{year}{month}{day}-{slug}-blog.md", field: create}
-        view: {primary: title, fields: [title, slug, draft], search: [title, slug, tags]}
+        view: {primary: title, fields: [title, date, slug, draft], sort: [date, title], search: [title, slug, tags], default: {sort: date, order: desc}}
         fields: *article_fields
 
       - name: golang
@@ -116,7 +126,7 @@ content:
         format: yaml-frontmatter
         subfolders: false
         filename: {template: "{year}{month}{day}-{slug}-blog.md", field: create}
-        view: {primary: title, fields: [title, slug, draft], search: [title, slug, tags]}
+        view: {primary: title, fields: [title, date, slug, draft], sort: [date, title], search: [title, slug, tags], default: {sort: date, order: desc}}
         fields: *article_fields
 
       - name: rust
@@ -126,7 +136,7 @@ content:
         format: yaml-frontmatter
         subfolders: false
         filename: {template: "{year}{month}{day}-{slug}-blog.md", field: create}
-        view: {primary: title, fields: [title, slug, draft], search: [title, slug, tags]}
+        view: {primary: title, fields: [title, date, slug, draft], sort: [date, title], search: [title, slug, tags], default: {sort: date, order: desc}}
         fields: *article_fields
 
       - name: python
@@ -136,7 +146,7 @@ content:
         format: yaml-frontmatter
         subfolders: false
         filename: {template: "{year}{month}{day}-{slug}-blog.md", field: create}
-        view: {primary: title, fields: [title, slug, draft], search: [title, slug, tags]}
+        view: {primary: title, fields: [title, date, slug, draft], sort: [date, title], search: [title, slug, tags], default: {sort: date, order: desc}}
         fields: *article_fields
 
       - name: android
@@ -146,7 +156,7 @@ content:
         format: yaml-frontmatter
         subfolders: false
         filename: {template: "{year}{month}{day}-{slug}-blog.md", field: create}
-        view: {primary: title, fields: [title, slug, draft], search: [title, slug, tags]}
+        view: {primary: title, fields: [title, date, slug, draft], sort: [date, title], search: [title, slug, tags], default: {sort: date, order: desc}}
         fields: *article_fields
 
       - name: lang_chain
@@ -156,7 +166,7 @@ content:
         format: yaml-frontmatter
         subfolders: false
         filename: {template: "{year}{month}{day}-{slug}-blog.md", field: create}
-        view: {primary: title, fields: [title, slug, draft], search: [title, slug, tags]}
+        view: {primary: title, fields: [title, date, slug, draft], sort: [date, title], search: [title, slug, tags], default: {sort: date, order: desc}}
         fields: *article_fields
 
       - name: mcp
@@ -166,7 +176,7 @@ content:
         format: yaml-frontmatter
         subfolders: false
         filename: {template: "{year}{month}{day}-{slug}-blog.md", field: create}
-        view: {primary: title, fields: [title, slug, draft], search: [title, slug, tags]}
+        view: {primary: title, fields: [title, date, slug, draft], sort: [date, title], search: [title, slug, tags], default: {sort: date, order: desc}}
         fields: *article_fields
 
       - name: llm
@@ -176,7 +186,7 @@ content:
         format: yaml-frontmatter
         subfolders: false
         filename: {template: "{year}{month}{day}-{slug}-blog.md", field: create}
-        view: {primary: title, fields: [title, slug, draft], search: [title, slug, tags]}
+        view: {primary: title, fields: [title, date, slug, draft], sort: [date, title], search: [title, slug, tags], default: {sort: date, order: desc}}
         fields: *article_fields
 
       - name: static_website
@@ -186,7 +196,7 @@ content:
         format: yaml-frontmatter
         subfolders: false
         filename: {template: "{year}{month}{day}-{slug}-blog.md", field: create}
-        view: {primary: title, fields: [title, slug, draft], search: [title, slug, tags]}
+        view: {primary: title, fields: [title, date, slug, draft], sort: [date, title], search: [title, slug, tags], default: {sort: date, order: desc}}
         fields: *article_fields
 
 settings:

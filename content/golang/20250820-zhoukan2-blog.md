@@ -1,4 +1,5 @@
 ---
+date: 2025-08-20
 slug: zhoukan2
 title: 收集
 authors: fengjutian

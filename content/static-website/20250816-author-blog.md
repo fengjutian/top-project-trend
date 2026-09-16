@@ -1,4 +1,5 @@
 ---
+date: 2025-08-16
 slug: author
 title: 权限认证
 authors: fengjutian

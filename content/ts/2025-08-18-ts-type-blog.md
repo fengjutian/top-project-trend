@@ -1,4 +1,5 @@
 ---
+date: 2025-08-18
 slug: ts-type
 title: TypeScript 类型
 authors: fengjutian

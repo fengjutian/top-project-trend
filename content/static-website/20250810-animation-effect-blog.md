@@ -1,4 +1,5 @@
 ---
+date: 2025-08-10
 slug: animation-effect
 title: 动效库
 authors: fengjutian

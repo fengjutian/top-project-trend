@@ -1,4 +1,5 @@
 ---
+date: 2025-09-09
 slug: 周刊二
 title: 周刊二
 authors: fengjutian

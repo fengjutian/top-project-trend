@@ -1,4 +1,5 @@
 ---
+date: 2025-09-25
 slug: vue-ui-blog
 title: vue  ui
 authors: fengjutian

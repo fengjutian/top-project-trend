@@ -1,4 +1,5 @@
 ---
+date: 2025-09-25
 slug: npm-project-blog
 title: npm 库
 authors: fengjutian

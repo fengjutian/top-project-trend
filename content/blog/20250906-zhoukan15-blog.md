@@ -1,4 +1,5 @@
 ---
+date: 2025-09-06
 slug: zhoukan15
 title: 技术周刊十五
 authors: fengjutian

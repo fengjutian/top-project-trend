@@ -1,4 +1,5 @@
 ---
+date: 2025-09-18
 slug: zhoukan18
 title: 技术周刊十八
 authors: fengjutian

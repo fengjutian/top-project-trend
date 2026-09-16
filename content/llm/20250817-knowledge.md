@@ -1,4 +1,5 @@
 ---
+date: 2025-08-17
 slug: knowledge
 title: 知识库
 authors: fengjutian

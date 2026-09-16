@@ -1,4 +1,5 @@
 ---
+date: 2025-09-25
 slug: algorithms
 title: 强化学习算法
 authors: fengjutian

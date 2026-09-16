@@ -1,4 +1,5 @@
 ---
+date: 2025-08-13
 slug: opensource-1
 title: 开源项目
 authors: fengjutian

@@ -1,4 +1,5 @@
 ---
+date: 2025-08-15
 slug: whiteboard
 title: 白板
 authors: fengjutian

@@ -1,4 +1,5 @@
 ---
+date: 2025-08-08
 slug: zhoukan6
 title: 技术周刊六
 authors: fengjutian

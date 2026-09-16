@@ -1,4 +1,5 @@
 ---
+date: 2025-08-16
 slug: flutter-component
 title: Flutter 组件
 authors: fengjutian

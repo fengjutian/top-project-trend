@@ -1,4 +1,5 @@
 ---
+date: 2025-09-10
 slug: zhoukan16
 title: 技术周刊十六
 authors: fengjutian

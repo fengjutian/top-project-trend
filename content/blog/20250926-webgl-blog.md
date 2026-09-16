@@ -1,4 +1,5 @@
 ---
+date: 2025-09-26
 slug: WebGL
 title: WebGL
 authors: fengjutian

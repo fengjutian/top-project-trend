@@ -1,4 +1,5 @@
 ---
+date: 2025-08-13
 slug: games
 title: 有趣的游戏
 authors: fengjutian

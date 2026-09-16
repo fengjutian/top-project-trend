@@ -1,4 +1,5 @@
 ---
+date: 2025-08-16
 slug: framework
 title: TypeScript 框架
 authors: fengjutian

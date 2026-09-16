@@ -1,4 +1,5 @@
 ---
+date: 2025-08-28
 slug: zhoukan11
 title: 技术周刊十一
 authors: fengjutian

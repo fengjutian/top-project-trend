@@ -1,4 +1,5 @@
 ---
+date: 2025-08-17
 slug: golang-sources
 title: Golang 资源
 authors: fengjutian

@@ -1,4 +1,5 @@
 ---
+date: 2025-06-06
 slug: wallpaper
 title: 壁纸
 authors: fengjutian

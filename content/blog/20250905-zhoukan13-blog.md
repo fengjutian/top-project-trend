@@ -1,4 +1,5 @@
 ---
+date: 2025-09-05
 slug: zhoukan13
 title: 技术周刊十三
 authors: fengjutian

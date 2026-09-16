@@ -1,4 +1,5 @@
 ---
+date: 2025-08-30
 slug: zhoukan12
 title: 技术周刊十二
 authors: fengjutian

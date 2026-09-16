@@ -1,4 +1,5 @@
 ---
+date: 2025-09-25
 slug: zhoukan20
 title: 技术周刊二十
 authors: fengjutian

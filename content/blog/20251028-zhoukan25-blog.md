@@ -1,4 +1,5 @@
 ---
+date: 2025-10-28
 slug: zhoukan25
 title: 技术周刊二十五
 authors: fengjutian

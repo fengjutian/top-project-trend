@@ -19,13 +19,14 @@ const slug = title
   .toLowerCase()
   .replace(/[^a-z0-9\u4e00-\u9fff]+/g, '-')
   .replace(/^-|-$/g, '') || 'new-article';
-const date = new Date().toISOString().slice(0, 10).replaceAll('-', '');
-const filename = `${date}-${slug}-blog.md`;
+const publishDate = new Date().toISOString().slice(0, 10);
+const filename = `${publishDate.replaceAll('-', '')}-${slug}-blog.md`;
 const path = resolve('content', section, filename);
 
 if (existsSync(path)) throw new Error(`Article already exists: ${path}`);
 
 writeFileSync(path, `---
+date: ${publishDate}
 slug: ${slug}
 title: ${title}
 authors: fengjutian

@@ -1,4 +1,5 @@
 ---
+date: 2025-07-01
 slug: zhoukan1
 title: 技术周刊一
 authors: fengjutian

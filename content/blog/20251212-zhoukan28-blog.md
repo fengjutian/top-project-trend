@@ -1,4 +1,5 @@
 ---
+date: 2025-12-12
 slug: zhoukan28
 title: 技术周刊二十八
 authors: fengjutian

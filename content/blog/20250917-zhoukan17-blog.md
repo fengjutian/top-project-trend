@@ -1,4 +1,5 @@
 ---
+date: 2025-09-17
 slug: zhoukan17
 title: 技术周刊十七
 authors: fengjutian

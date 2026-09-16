@@ -1,4 +1,5 @@
 ---
+date: 2025-11-17
 slug: 周刊三
 title: 周刊三
 authors: fengjutian

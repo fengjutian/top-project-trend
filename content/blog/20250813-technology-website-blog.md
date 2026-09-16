@@ -1,4 +1,5 @@
 ---
+date: 2025-08-13
 slug: technology-website
 title: 技术网站
 authors: fengjutian

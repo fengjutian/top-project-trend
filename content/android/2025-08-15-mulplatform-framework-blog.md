@@ -1,4 +1,5 @@
 ---
+date: 2025-08-15
 slug: mulplatform-framework
 title: 跨端应用框架
 authors: fengjutian

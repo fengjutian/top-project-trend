@@ -1,4 +1,5 @@
 ---
+date: 2025-08-23
 slug: zhoukan10
 title: 技术周刊十
 authors: fengjutian

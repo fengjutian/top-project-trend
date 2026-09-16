@@ -1,4 +1,5 @@
 ---
+date: 2025-08-16
 slug: text-editoer-blog
 title: 文本编辑器
 authors: fengjutian

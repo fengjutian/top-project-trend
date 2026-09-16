@@ -1,4 +1,5 @@
 ---
+date: 2025-08-15
 slug: zhoukan9
 title: 技术周刊九
 authors: fengjutian

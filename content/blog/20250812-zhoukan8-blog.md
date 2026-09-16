@@ -1,4 +1,5 @@
 ---
+date: 2025-08-12
 slug: zhoukan8
 title: 技术周刊八
 authors: fengjutian
