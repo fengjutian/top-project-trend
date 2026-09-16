@@ -12,6 +12,9 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
+    "media:import": "node scripts/media-import.mjs",
+    "media:audit": "node scripts/media-audit.mjs",
+    "media:audit:strict": "node scripts/media-audit.mjs --strict",
     "preinstall": "npx only-allow pnpm",
     "del": "rimraf node_modules",
     "commit": "cz"
