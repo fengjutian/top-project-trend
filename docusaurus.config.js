@@ -61,6 +61,21 @@ const config = {
         indexBlog: true,
         indexDocs: true,
         indexPages: true,
+        blogDir: [
+          'content/blog',
+          'content/java',
+          'content/code',
+          'content/ts',
+          'content/algorithm',
+          'content/golang',
+          'content/rust',
+          'content/python',
+          'content/android',
+          'content/lang-chain',
+          'content/mcp',
+          'content/llm',
+          'content/static-website',
+        ],
         // 启用开发环境下的搜索功能
         docsRouteBasePath: '/docs',
         blogRouteBasePath: '/blog',
@@ -69,7 +84,7 @@ const config = {
     ['@docusaurus/plugin-content-blog',
       {
         id: 'java',
-        path: 'content/topics/java',
+        path: 'content/java',
         routeBasePath: 'java',
         showReadingTime: true,
         blogSidebarCount: 10,
@@ -80,7 +95,7 @@ const config = {
     ['@docusaurus/plugin-content-blog',
       {
         id: 'code',
-        path: 'content/topics/code',
+        path: 'content/code',
         routeBasePath: 'code',
         showReadingTime: true,
         blogSidebarCount: 10,
@@ -91,7 +106,7 @@ const config = {
     ['@docusaurus/plugin-content-blog',
       {
         id: 'ts',
-        path: 'content/topics/typescript',
+        path: 'content/ts',
         routeBasePath: 'ts',
         showReadingTime: true,
         blogSidebarCount: 10,
@@ -102,7 +117,7 @@ const config = {
     ['@docusaurus/plugin-content-blog',
       {
         id: 'algorithm',
-        path: 'content/topics/algorithm',
+        path: 'content/algorithm',
         routeBasePath: 'algorithm',
         showReadingTime: true,
         blogSidebarCount: 10,
@@ -113,7 +128,7 @@ const config = {
     ['@docusaurus/plugin-content-blog',
       {
         id: 'golang',
-        path: 'content/topics/golang',
+        path: 'content/golang',
         routeBasePath: 'golang',
         showReadingTime: true,
         blogSidebarCount: 10,
@@ -125,7 +140,7 @@ const config = {
     ['@docusaurus/plugin-content-blog',
       {
         id: 'rust',
-        path: 'content/topics/rust',
+        path: 'content/rust',
         routeBasePath: 'rust',
         showReadingTime: true,
         blogSidebarCount: 10,
@@ -136,7 +151,7 @@ const config = {
     ['@docusaurus/plugin-content-blog',
       {
         id: 'python',
-        path: 'content/topics/python',
+        path: 'content/python',
         routeBasePath: 'python',
         showReadingTime: true,
         blogSidebarCount: 10,
@@ -147,7 +162,7 @@ const config = {
     ['@docusaurus/plugin-content-blog',
       {
         id: 'android',
-        path: 'content/topics/android',
+        path: 'content/android',
         routeBasePath: 'android',
         showReadingTime: true,
         blogSidebarCount: 10,
@@ -158,7 +173,7 @@ const config = {
     ['@docusaurus/plugin-content-blog',
       {
         id: 'LangChain',
-        path: 'content/topics/lang-chain',
+        path: 'content/lang-chain',
         routeBasePath: 'lang-chain',
         showReadingTime: true,
         blogSidebarCount: 10,
@@ -169,7 +184,7 @@ const config = {
     ['@docusaurus/plugin-content-blog',
       {
         id: 'mcp',
-        path: 'content/topics/mcp',
+        path: 'content/mcp',
         routeBasePath: 'mcp',
         showReadingTime: true,
         blogSidebarCount: 10,
@@ -180,7 +195,7 @@ const config = {
     ['@docusaurus/plugin-content-blog',
       {
         id: 'llm',
-        path: 'content/topics/llm',
+        path: 'content/llm',
         routeBasePath: 'llm',
         showReadingTime: true,
         blogSidebarCount: 10,
@@ -191,7 +206,7 @@ const config = {
     ['@docusaurus/plugin-content-blog',
       {
         id: 'static-website',
-        path: 'content/resources/static-website',
+        path: 'content/static-website',
         routeBasePath: 'static-website',
         showReadingTime: true,
         blogSidebarCount: 10,
@@ -224,7 +239,7 @@ const config = {
             'https://github.com/fengjutian/top-project-trend/tree/main',
         },
         blog: {
-          path: 'content/weekly',
+          path: 'content/blog',
           showReadingTime: true,
           blogSidebarTitle: '博文',
           blogSidebarCount: 10,

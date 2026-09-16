@@ -94,9 +94,11 @@ npm run serve
 ├── src/pages/AuroraBackground.js # 极光动画 SVG 组件
 ├── static/img/                 # 静态资源，包括恐龙吉祥物 SVG
 ├── content/                    # 网站内容
-│   ├── weekly/                 # 技术周刊
-│   ├── topics/                 # Java、TypeScript 等技术栏目
-│   └── resources/              # 资源网站栏目
+│   ├── blog/                   # 技术周刊
+│   ├── java/                   # Java 技术栏目
+│   ├── ts/                     # TypeScript 技术栏目
+│   ├── ...                     # 其他技术栏目
+│   └── static-website/         # 资源网站栏目
 ├── docs/                       # 文档教程
 ├── docusaurus.config.js        # 项目配置文件
 ├── package.json                # 依赖管理

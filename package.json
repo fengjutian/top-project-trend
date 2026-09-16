@@ -15,6 +15,7 @@
     "media:import": "node scripts/media-import.mjs",
     "media:audit": "node scripts/media-audit.mjs",
     "media:audit:strict": "node scripts/media-audit.mjs --strict",
+    "article:new": "node scripts/article-new.mjs",
     "preinstall": "npx only-allow pnpm",
     "del": "rimraf node_modules",
     "commit": "cz"
