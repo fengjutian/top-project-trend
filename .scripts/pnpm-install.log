@@ -1,0 +1,16 @@
+(node:56020) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Progress: resolved 21, reused 14, downloaded 1, added 0
+Progress: resolved 21, reused 14, downloaded 4, added 0
+Progress: resolved 194, reused 161, downloaded 7, added 0
+Progress: resolved 370, reused 340, downloaded 9, added 0
+Progress: resolved 382, reused 345, downloaded 10, added 0
+Progress: resolved 393, reused 348, downloaded 15, added 0
+Progress: resolved 401, reused 352, downloaded 22, added 0
+Progress: resolved 406, reused 353, downloaded 24, added 0
+Progress: resolved 418, reused 356, downloaded 29, added 0
+Progress: resolved 421, reused 357, downloaded 36, added 0
+Progress: resolved 426, reused 362, downloaded 40, added 0
+Progress: resolved 435, reused 370, downloaded 43, added 0
+Progress: resolved 441, reused 375, downloaded 43, added 0
