@@ -19,13 +19,13 @@ import {safeFilename, optimizeImage, blobToBase64} from '../../admin/lib/media';
 import {useDeployment} from '../../admin/hooks/useDeployment';
 import {useArticles, type ArticleEntry} from '../../admin/hooks/useArticles';
 import {useMedia} from '../../admin/hooks/useMedia';
-import {useOperations} from '../../admin/hooks/useOperations';
+import {useOperations, type DashboardArticle} from '../../admin/hooks/useOperations';
 import DeploymentStatus from '../../admin/components/DeploymentStatus';
 import ConnectCard from '../../admin/components/ConnectCard';
 import EditorForm from '../../admin/components/EditorForm';
 import EditorToolbar from '../../admin/components/EditorToolbar';
 import Sidebar, {type StatusFilter, type Workspace} from '../../admin/components/Sidebar';
-import Dashboard from '../../admin/components/Dashboard';
+import Dashboard, {type Calendar, type CalendarCell} from '../../admin/components/Dashboard';
 import ArticlePreview from '../../admin/components/ArticlePreview';
 import PanelModal, {type PanelType} from '../../admin/components/PanelModal';
 
@@ -96,15 +96,14 @@ function AdminApp() {
     missingImage: operationsArticles.filter((item) => !item.image).length,
   }), [operationsArticles]);
   const metrics = useMemo(() => articleMetrics(article.body), [article.body]);
-  type CalendarCell = {day: number; date: string; events: typeof operationsArticles};
-  const calendar = useMemo<Array<CalendarCell | null>>(() => {
+  const calendar = useMemo<Calendar>(() => {
     const [year, month] = calendarMonth.split('-').map(Number);
     const firstDay = new Date(year, month - 1, 1);
     const count = new Date(year, month, 0).getDate();
-    const cells: Array<CalendarCell | null> = Array.from({length: firstDay.getDay()}, () => null);
+    const cells: Calendar = Array.from({length: firstDay.getDay()}, () => null);
     for (let day = 1; day <= count; day += 1) {
       const date = `${calendarMonth}-${String(day).padStart(2, '0')}`;
-      const events = operationsArticles.filter((item) => item.date === date || item.publish_at?.slice(0, 10) === date || item.unpublish_at?.slice(0, 10) === date);
+      const events = (operationsArticles as DashboardArticle[]).filter((item) => item.date === date || item.publish_at?.slice(0, 10) === date || item.unpublish_at?.slice(0, 10) === date);
       cells.push({day, date, events});
     }
     return cells;
@@ -149,7 +148,7 @@ function AdminApp() {
     return () => window.removeEventListener('keydown', shortcuts);
   });
 
-  function withRecoveredDraft<T extends ArticleEntry>(item: T): T {
+  function withRecoveredDraft(item: ArticleEntry): ArticleEntry {
     const key = `top-project-draft:${item.path || `${section}:new`}`;
     const saved = localStorage.getItem(key);
     if (!saved) return item;
@@ -160,7 +159,7 @@ function AdminApp() {
         localStorage.removeItem(key);
         return item;
       }
-      return {...parseArticle(draft.content), path: item.path, sha: item.sha, filename: item.filename, savedContent: item.savedContent} as T;
+      return {...parseArticle(draft.content), path: item.path, sha: item.sha, filename: item.filename, savedContent: item.savedContent} as ArticleEntry;
     } catch {
       localStorage.removeItem(key);
       return item;
@@ -172,7 +171,8 @@ function AdminApp() {
     setMessage('');
     try {
       const entries = await refreshArticles(nextSection, authToken);
-      setArticle(withRecoveredDraft(entries[0] || emptyArticle()));
+      const first = entries[0];
+      setArticle(first ? withRecoveredDraft(first) : emptyArticle());
     } catch (error) {
       setMessage((error as Error).message);
     }
@@ -204,7 +204,7 @@ function AdminApp() {
 
   function newArticle(): void {
     if (dirty && !window.confirm('当前修改尚未保存，确定新建文章吗？')) return;
-    setArticle(withRecoveredDraft(emptyArticle()));
+    setArticle(withRecoveredDraft({...emptyArticle(), filename: ''} as ArticleEntry));
     setPreview(false);
     setMessage('正在创建新文章');
   }
@@ -385,7 +385,7 @@ function AdminApp() {
     try {
       const data = await github<{content: string}>(`contents/${article.path}?ref=${commitSha}`, token);
       const restored = parseArticle(decodeBase64(data.content));
-      setArticle((current) => ({...restored, path: current.path, sha: current.sha, filename: current.filename, savedContent: current.savedContent}));
+      setArticle((current) => ({...restored, path: current.path, sha: current.sha, filename: (current as ArticleEntry).filename, savedContent: current.savedContent}));
       setPanel(null);
       setMessage('历史版本已载入编辑器，确认内容后点击保存才会提交。');
     } catch (error) {
@@ -555,7 +555,7 @@ function AdminApp() {
       onOpenCleanup={() => setPanel('cleanup')}
       linkReport={linkReport}
       mediaReport={mediaReport}
-      operationsArticles={operationsArticles}
+      operationsArticles={operationsArticles as DashboardArticle[]}
     /> : <main className={styles.editor}>
       <EditorToolbar
         article={article}

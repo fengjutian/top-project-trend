@@ -15,3 +15,25 @@ declare module '@theme/MDXComponents' {
   const components: Record<string, React.ComponentType<unknown>>;
   export default components;
 }
+
+declare module '@theme/Layout' {
+  import type {ComponentType, ReactNode} from 'react';
+  interface LayoutProps {
+    title: string;
+    description?: string;
+    noFooter?: boolean;
+    children: ReactNode;
+  }
+  const Layout: ComponentType<LayoutProps>;
+  export default Layout;
+}
+
+declare module '@docusaurus/BrowserOnly' {
+  import type {ComponentType, ReactNode} from 'react';
+  interface BrowserOnlyProps {
+    children: () => ReactNode;
+    fallback?: ReactNode;
+  }
+  const BrowserOnly: ComponentType<BrowserOnlyProps>;
+  export default BrowserOnly;
+}

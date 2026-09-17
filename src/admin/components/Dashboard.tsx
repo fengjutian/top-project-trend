@@ -8,7 +8,7 @@ import styles from '../../pages/admin/styles.module.css';
 
 const WEEKDAYS = ['日', '一', '二', '三', '四', '五', '六'];
 
-interface DashboardMetrics {
+export interface DashboardMetrics {
   total: number;
   drafts: number;
   published: number;
@@ -17,13 +17,13 @@ interface DashboardMetrics {
   missingImage: number;
 }
 
-interface CalendarCell {
+export interface CalendarCell {
   day: number;
   date: string;
   events: DashboardArticle[];
 }
 
-type Calendar = Array<CalendarCell | null>;
+export type Calendar = Array<CalendarCell | null>;
 
 interface CalendarEventProps {
   item: DashboardArticle;
