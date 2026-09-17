@@ -1,5 +1,5 @@
 import type {ChangeEvent} from 'react';
-import React, {useEffect, useMemo, useState} from 'react';
+import React, {useEffect, useMemo, useRef, useState} from 'react';
 import Layout from '@theme/Layout';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import styles from './styles.module.css';
@@ -54,14 +54,30 @@ function AdminApp() {
   const [saving, setSaving] = useState<boolean>(false);
   const [message, setMessage] = useState<string>('');
   const [messageLevel, setMessageLevel] = useState<'info' | 'error'>('info');
+  const noticeTimer = useRef<number | null>(null);
 
   function setNotice(text: string, level: 'info' | 'error' = 'info'): void {
+    if (noticeTimer.current) {
+      window.clearTimeout(noticeTimer.current);
+      noticeTimer.current = null;
+    }
     setMessage(text);
     setMessageLevel(level);
+    if (level === 'info' && text) {
+      noticeTimer.current = window.setTimeout(() => {
+        noticeTimer.current = null;
+        setMessage('');
+        setMessageLevel('info');
+      }, 3500);
+    }
   }
 
   function clearNotice(): void {
-    clearNotice();
+    if (noticeTimer.current) {
+      window.clearTimeout(noticeTimer.current);
+      noticeTimer.current = null;
+    }
+    setMessage('');
     setMessageLevel('info');
   }
   const [preview, setPreview] = useState<boolean>(false);
@@ -69,6 +85,7 @@ function AdminApp() {
   const [statusFilter, setStatusFilter] = useState<StatusFilter>('all');
   const [uploading, setUploading] = useState<boolean>(false);
   const [panel, setPanel] = useState<PanelType | null>(null);
+  const [mediaPickTarget, setMediaPickTarget] = useState<'body' | 'image'>('body');
   const [history, setHistory] = useState<HistoryCommit[]>([]);
   const [panelLoading, setPanelLoading] = useState<boolean>(false);
   const [workspace, setWorkspace] = useState<Workspace>('editor');
@@ -204,6 +221,10 @@ function AdminApp() {
   }
 
   useEffect(() => { if (connected) loadArticles(section); }, [section]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  useEffect(() => () => {
+    if (noticeTimer.current) window.clearTimeout(noticeTimer.current);
+  }, []);
 
   function connect(nextToken: string): void {
     sessionStorage.setItem('top-project-admin-token', nextToken);
@@ -407,6 +428,7 @@ function AdminApp() {
   }
 
   async function openMedia(): Promise<void> {
+    setMediaPickTarget('body');
     setPanel('media');
     setPanelLoading(true);
     try {
@@ -416,6 +438,22 @@ function AdminApp() {
     } finally {
       setPanelLoading(false);
     }
+  }
+
+  function pickMediaForImage(): void {
+    setMediaPickTarget('image');
+    setPanel('media');
+    setPanelLoading(true);
+    refreshMedia(section, token)
+      .catch((error: unknown) => setNotice((error as Error).message, 'error'))
+      .finally(() => setPanelLoading(false));
+  }
+
+  function selectImageMedia(item: {path: string; name: string}): void {
+    update('image', mediaPublicPath(item));
+    setPanel(null);
+    setMediaPickTarget('body');
+    setNotice(`已用《${item.name}》作为封面,请保存文章。`);
   }
 
   function mediaPublicPath(item: {path: string}): string {
@@ -592,7 +630,7 @@ function AdminApp() {
         <button type="button" className={styles.messageClose} onClick={clearNotice} aria-label="关闭通知">×</button>
       </div>}
 
-      {preview ? <ArticlePreview article={article} /> : <EditorForm article={article} onUpdate={update} onApplyTemplate={applyTemplate} metrics={metrics} />}
+      {preview ? <ArticlePreview article={article} /> : <EditorForm article={article} onUpdate={update} onApplyTemplate={applyTemplate} metrics={metrics} onPickMediaForImage={pickMediaForImage} />}
     </main>}
 
     {panel && <PanelModal
@@ -603,7 +641,9 @@ function AdminApp() {
         history={history}
         onRestoreVersion={restoreVersion}
         media={media}
+        mediaPickTarget={mediaPickTarget}
         onInsertMedia={insertMedia}
+        onSelectImageMedia={selectImageMedia}
         onDeleteMedia={deleteMedia}
         issues={currentIssues}
         mediaReport={mediaReport}

@@ -37,7 +37,9 @@ interface PanelModalProps {
   history: HistoryCommit[];
   onRestoreVersion: (sha: string) => void;
   media: GitHubEntry[];
+  mediaPickTarget: 'body' | 'image';
   onInsertMedia: (item: GitHubEntry) => void;
+  onSelectImageMedia: (item: GitHubEntry) => void;
   onDeleteMedia: (item: GitHubEntry) => void;
   issues: AuditIssue[];
   mediaReport: MediaReport | null;
@@ -58,7 +60,7 @@ function resolveTitle(panel: PanelType, section: string): string | null {
 export default function PanelModal({
   panel, section, panelLoading, onClose,
   history, onRestoreVersion,
-  media, onInsertMedia, onDeleteMedia,
+  media, mediaPickTarget, onInsertMedia, onSelectImageMedia, onDeleteMedia,
   issues,
   mediaReport, onDeleteCleanupMedia,
   tagStats, onRenameTag, batching,
@@ -96,7 +98,9 @@ export default function PanelModal({
                  <strong title={item.path}>{item.name}</strong>
                  <span>{Math.round((item.size || 0) / 1024)}KB</span>
                  <div>
-                   <button type="button" onClick={() => onInsertMedia(item)}>插入</button>
+                   {mediaPickTarget === 'image'
+                     ? <button type="button" className={styles.primary} onClick={() => onSelectImageMedia(item)}>设为封面</button>
+                     : <button type="button" onClick={() => onInsertMedia(item)}>插入</button>}
                    <button type="button" className={styles.danger} onClick={() => onDeleteMedia(item)}>删除</button>
                  </div>
                </article>

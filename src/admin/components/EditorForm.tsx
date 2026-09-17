@@ -13,9 +13,10 @@ interface EditorFormProps {
   onUpdate: ArticleUpdate & ArticleUpdater;
   onApplyTemplate: (templateName: string) => void;
   metrics: ArticleMetrics;
+  onPickMediaForImage?: () => void;
 }
 
-export default function EditorForm({article, onUpdate, onApplyTemplate, metrics}: EditorFormProps) {
+export default function EditorForm({article, onUpdate, onApplyTemplate, metrics, onPickMediaForImage}: EditorFormProps) {
   const handleTitle = (event: ChangeEvent<HTMLInputElement>) => {
     const title = event.target.value;
     onUpdate((current) => ({...current, title, slug: current.path || current.slug ? current.slug : toSlug(title)}));
@@ -56,7 +57,7 @@ export default function EditorForm({article, onUpdate, onApplyTemplate, metrics}
 
       <label>标签<div className={styles.inlineInput}><input value={article.tags.join(', ')} onChange={(event) => onUpdate('tags', event.target.value.split(',').map((tag) => tag.trim()).filter(Boolean))} placeholder="React, AI, GitHub" /><button type="button" onClick={() => onUpdate('tags', inferTags(article.title, article.body))}>智能提取</button></div></label>
       <label>摘要<div className={styles.inlineInput}><textarea rows={2} value={article.description} onChange={(event) => onUpdate('description', event.target.value)} /><button type="button" onClick={() => onUpdate('description', inferDescription(article.body))}>自动摘要</button></div></label>
-      <label>封面路径<input value={article.image} onChange={(event) => onUpdate('image', event.target.value)} placeholder="/top-project-trend/media/..." /></label>
+      <label>封面路径<div className={styles.inlineInput}><input value={article.image} onChange={(event) => onUpdate('image', event.target.value)} placeholder="/top-project-trend/media/..." />{onPickMediaForImage && <button type="button" onClick={onPickMediaForImage}>从媒体库选</button>}</div></label>
       <div className={styles.documentMeta}>
         <span>{metrics.count} 字</span>
         <span>约 {metrics.minutes} 分钟阅读</span>

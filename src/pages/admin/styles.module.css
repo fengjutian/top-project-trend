@@ -59,6 +59,12 @@
 .auditItemWarn strong { background: #ffe3a8; color: #8c4d00; }
 .auditMore { padding: 8px 10px; border-radius: 7px; background: #f6f7fb; color: #5c6075; font-size: 11px; cursor: pointer; }
 .auditEmpty { padding: 10px; color: #85899b; font-size: 12px; text-align: center; }
+.moreWrapper { position: relative; display: inline-flex; }
+.moreWrapper > button { padding: 8px 12px; font-size: 16px; line-height: 1; }
+.moreMenu { position: absolute; top: calc(100% + 8px); right: 0; min-width: 140px; padding: 6px; border-radius: 10px; background: white; box-shadow: 0 12px 36px rgba(27, 30, 54, .18); border: 1px solid #e5e7ef; z-index: 5; display: grid; gap: 2px; }
+.moreMenu button { width: 100%; text-align: left; border: 0; background: transparent; border-radius: 7px; padding: 8px 10px; cursor: pointer; color: #202234; font-size: 14px; line-height: 1.25; font-weight: 400; }
+.moreMenu button:hover:not(:disabled) { background: #f6f7fb; }
+.moreMenu button:disabled { color: #a0a4b4; cursor: not-allowed; }
 .message { margin: 18px auto 0; max-width: 980px; border-radius: 10px; padding: 11px 14px; color: #554a97; background: #ece9ff; display: flex; align-items: center; gap: 12px; }
 .message > span { flex: 1; min-width: 0; word-break: break-word; }
 .messageError { color: #b42318; background: #fef3f2; }

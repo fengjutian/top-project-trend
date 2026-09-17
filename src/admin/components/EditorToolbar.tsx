@@ -1,6 +1,6 @@
 // Toolbar above the article editor: status pill, action buttons, save / delete / preview.
 
-import {useState, type ChangeEvent} from 'react';
+import {useEffect, useRef, useState, type ChangeEvent} from 'react';
 import styles from '../../pages/admin/styles.module.css';
 import type {Article, AuditIssue} from '../lib/article';
 
@@ -29,8 +29,25 @@ export default function EditorToolbar({
   onDuplicate, onDelete, onSave, onUploadImage,
 }: EditorToolbarProps) {
   const [auditOpen, setAuditOpen] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
+  const moreRef = useRef<HTMLDivElement>(null);
   const previewIssues = issues.slice(0, 4);
   const moreCount = issues.length - previewIssues.length;
+
+  useEffect(() => {
+    if (!moreOpen) return undefined;
+    const handle = (event: MouseEvent) => {
+      if (moreRef.current && !moreRef.current.contains(event.target as Node)) setMoreOpen(false);
+    };
+    document.addEventListener('mousedown', handle);
+    return () => document.removeEventListener('mousedown', handle);
+  }, [moreOpen]);
+
+  const runMore = (action: () => void) => () => {
+    setMoreOpen(false);
+    action();
+  };
+
   return (
     <header className={styles.toolbar}>
       <div>
@@ -78,16 +95,31 @@ export default function EditorToolbar({
             </div>
           )}
         </div>
-        <button type="button" onClick={onToggleFocus}>
-          {focusMode ? '退出专注' : '专注'}
-        </button>
         <label className={styles.uploadButton}>
           {uploading ? '上传中…' : '上传图片'}
           <input type="file" accept="image/png,image/jpeg,image/webp" onChange={onUploadImage} disabled={uploading} />
         </label>
-        <button type="button" onClick={onOpenMedia}>媒体库</button>
-        <button type="button" onClick={onOpenHistory} disabled={!article.path}>版本</button>
-        <button type="button" onClick={onDuplicate} disabled={!article.title}>复制</button>
+        <div className={styles.moreWrapper} ref={moreRef}>
+          <button
+            type="button"
+            onClick={() => setMoreOpen((value) => !value)}
+            aria-haspopup="menu"
+            aria-expanded={moreOpen}
+            aria-label="更多操作"
+          >
+            ⋯
+          </button>
+          {moreOpen && (
+            <div className={styles.moreMenu} role="menu">
+              <button type="button" role="menuitem" onClick={runMore(onOpenMedia)}>媒体库</button>
+              <button type="button" role="menuitem" onClick={runMore(onToggleFocus)}>
+                {focusMode ? '退出专注' : '专注'}
+              </button>
+              <button type="button" role="menuitem" onClick={runMore(onOpenHistory)} disabled={!article.path}>版本</button>
+              <button type="button" role="menuitem" onClick={runMore(onDuplicate)} disabled={!article.title}>复制</button>
+            </div>
+          )}
+        </div>
         <button type="button" className={styles.danger} onClick={onDelete} disabled={!article.path || saving}>删除</button>
         <button type="button" onClick={onTogglePreview}>
           {preview ? '继续编辑' : '预览'}
