@@ -1,0 +1,171 @@
+(node:12372) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+ WARN  A pnpm-lock.yaml file exists. The current configuration prohibits to read or write a lockfile
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Progress: resolved 13, reused 13, downloaded 0, added 0
+Progress: resolved 15, reused 15, downloaded 0, added 0
+Progress: resolved 19, reused 17, downloaded 1, added 0
+Progress: resolved 22, reused 19, downloaded 2, added 0
+Progress: resolved 22, reused 19, downloaded 3, added 0
+Progress: resolved 23, reused 19, downloaded 3, added 0
+Progress: resolved 23, reused 20, downloaded 3, added 0
+Progress: resolved 24, reused 20, downloaded 3, added 0
+Progress: resolved 68, reused 44, downloaded 4, added 0
+Progress: resolved 77, reused 53, downloaded 4, added 0
+Progress: resolved 88, reused 64, downloaded 4, added 0
+Progress: resolved 94, reused 68, downloaded 5, added 0
+Progress: resolved 102, reused 76, downloaded 5, added 0
+Progress: resolved 113, reused 85, downloaded 5, added 0
+Progress: resolved 130, reused 103, downloaded 5, added 0
+Progress: resolved 134, reused 107, downloaded 6, added 0
+Progress: resolved 135, reused 108, downloaded 6, added 0
+Progress: resolved 142, reused 114, downloaded 6, added 0
+Progress: resolved 148, reused 120, downloaded 6, added 0
+Progress: resolved 153, reused 125, downloaded 6, added 0
+Progress: resolved 154, reused 125, downloaded 6, added 0
+Progress: resolved 158, reused 129, downloaded 6, added 0
+Progress: resolved 160, reused 131, downloaded 7, added 0
+Progress: resolved 164, reused 135, downloaded 8, added 0
+Progress: resolved 169, reused 139, downloaded 8, added 0
+Progress: resolved 174, reused 144, downloaded 8, added 0
+Progress: resolved 180, reused 149, downloaded 8, added 0
+Progress: resolved 185, reused 154, downloaded 8, added 0
+Progress: resolved 186, reused 155, downloaded 8, added 0
+Progress: resolved 190, reused 159, downloaded 8, added 0
+Progress: resolved 194, reused 162, downloaded 8, added 0
+Progress: resolved 198, reused 166, downloaded 9, added 0
+Progress: resolved 205, reused 171, downloaded 9, added 0
+Progress: resolved 206, reused 172, downloaded 9, added 0
+Progress: resolved 212, reused 178, downloaded 11, added 0
+Progress: resolved 213, reused 179, downloaded 11, added 0
+Progress: resolved 215, reused 180, downloaded 12, added 0
+Progress: resolved 216, reused 181, downloaded 13, added 0
+Progress: resolved 218, reused 182, downloaded 13, added 0
+Progress: resolved 219, reused 182, downloaded 13, added 0
+Progress: resolved 220, reused 183, downloaded 14, added 0
+Progress: resolved 221, reused 184, downloaded 14, added 0
+Progress: resolved 222, reused 185, downloaded 14, added 0
+Progress: resolved 225, reused 187, downloaded 14, added 0
+Progress: resolved 229, reused 191, downloaded 14, added 0
+Progress: resolved 232, reused 193, downloaded 14, added 0
+Progress: resolved 233, reused 194, downloaded 14, added 0
+Progress: resolved 238, reused 197, downloaded 14, added 0
+Progress: resolved 241, reused 200, downloaded 14, added 0
+Progress: resolved 248, reused 207, downloaded 17, added 0
+Progress: resolved 255, reused 213, downloaded 17, added 0
+Progress: resolved 259, reused 217, downloaded 17, added 0
+Progress: resolved 262, reused 219, downloaded 17, added 0
+Progress: resolved 264, reused 221, downloaded 17, added 0
+Progress: resolved 272, reused 226, downloaded 18, added 0
+Progress: resolved 275, reused 228, downloaded 19, added 0
+Progress: resolved 278, reused 231, downloaded 20, added 0
+Progress: resolved 292, reused 245, downloaded 20, added 0
+Progress: resolved 295, reused 248, downloaded 20, added 0
+Progress: resolved 303, reused 254, downloaded 21, added 0
+Progress: resolved 309, reused 260, downloaded 23, added 0
+Progress: resolved 318, reused 265, downloaded 25, added 0
+Progress: resolved 320, reused 266, downloaded 29, added 0
+Progress: resolved 326, reused 271, downloaded 30, added 0
+Progress: resolved 335, reused 279, downloaded 30, added 0
+Progress: resolved 350, reused 292, downloaded 30, added 0
+Progress: resolved 355, reused 294, downloaded 31, added 0
+Progress: resolved 365, reused 302, downloaded 33, added 0
+Progress: resolved 374, reused 308, downloaded 35, added 0
+Progress: resolved 381, reused 315, downloaded 37, added 0
+Progress: resolved 393, reused 324, downloaded 40, added 0
+Progress: resolved 405, reused 336, downloaded 43, added 0
+Progress: resolved 415, reused 344, downloaded 43, added 0
+Progress: resolved 440, reused 368, downloaded 43, added 0
+Progress: resolved 442, reused 369, downloaded 45, added 0
+Progress: resolved 445, reused 370, downloaded 47, added 0
+Progress: resolved 448, reused 371, downloaded 50, added 0
+Progress: resolved 455, reused 372, downloaded 53, added 0
+Progress: resolved 460, reused 373, downloaded 59, added 0
+Progress: resolved 469, reused 374, downloaded 63, added 0
+Progress: resolved 478, reused 376, downloaded 71, added 0
+Progress: resolved 491, reused 379, downloaded 82, added 0
+Progress: resolved 512, reused 381, downloaded 96, added 0
+Progress: resolved 529, reused 396, downloaded 105, added 0
+Progress: resolved 572, reused 422, downloaded 106, added 0
+Progress: resolved 580, reused 430, downloaded 107, added 0
+Progress: resolved 595, reused 440, downloaded 109, added 0
+Progress: resolved 608, reused 451, downloaded 112, added 0
+Progress: resolved 636, reused 473, downloaded 113, added 0
+Progress: resolved 648, reused 483, downloaded 118, added 0
+Progress: resolved 657, reused 492, downloaded 119, added 0
+Progress: resolved 665, reused 499, downloaded 121, added 0
+Progress: resolved 680, reused 509, downloaded 123, added 0
+Progress: resolved 693, reused 520, downloaded 128, added 0
+Progress: resolved 711, reused 538, downloaded 130, added 0
+Progress: resolved 739, reused 566, downloaded 131, added 0
+Progress: resolved 778, reused 603, downloaded 131, added 0
+Progress: resolved 794, reused 619, downloaded 131, added 0
+Progress: resolved 827, reused 652, downloaded 132, added 0
+Progress: resolved 856, reused 681, downloaded 132, added 0
+Progress: resolved 864, reused 688, downloaded 132, added 0
+Progress: resolved 876, reused 700, downloaded 133, added 0
+Progress: resolved 894, reused 717, downloaded 133, added 0
+Progress: resolved 913, reused 734, downloaded 134, added 0
+Progress: resolved 935, reused 751, downloaded 140, added 0
+Progress: resolved 953, reused 763, downloaded 144, added 0
+Progress: resolved 996, reused 781, downloaded 148, added 0
+Progress: resolved 1003, reused 785, downloaded 150, added 0
+Progress: resolved 1005, reused 785, downloaded 151, added 0
+Progress: resolved 1037, reused 812, downloaded 154, added 0
+Progress: resolved 1077, reused 850, downloaded 156, added 0
+Progress: resolved 1095, reused 864, downloaded 160, added 0
+Progress: resolved 1103, reused 870, downloaded 163, added 0
+Progress: resolved 1111, reused 877, downloaded 166, added 0
+Progress: resolved 1122, reused 888, downloaded 167, added 0
+Progress: resolved 1142, reused 907, downloaded 169, added 0
+Progress: resolved 1179, reused 943, downloaded 169, added 0
+Progress: resolved 1224, reused 988, downloaded 171, added 0
+Progress: resolved 1261, reused 1025, downloaded 171, added 0
+Progress: resolved 1289, reused 1050, downloaded 171, added 0
+Progress: resolved 1324, reused 1081, downloaded 172, added 0
+Progress: resolved 1363, reused 1108, downloaded 175, added 0
+Progress: resolved 1388, reused 1138, downloaded 178, added 0
+Progress: resolved 1423, reused 1172, downloaded 182, added 0
+Progress: resolved 1438, reused 1186, downloaded 183, added 0
+Progress: resolved 1473, reused 1216, downloaded 185, added 0
+Progress: resolved 1502, reused 1240, downloaded 189, added 0
+Progress: resolved 1548, reused 1284, downloaded 195, added 0
+Progress: resolved 1579, reused 1311, downloaded 200, added 0
+Progress: resolved 1588, reused 1319, downloaded 209, added 0
+Progress: resolved 1594, reused 1323, downloaded 210, added 0
+Progress: resolved 1595, reused 1324, downloaded 212, added 0
+Progress: resolved 1595, reused 1324, downloaded 213, added 0
+Progress: resolved 1595, reused 1324, downloaded 214, added 0
+Progress: resolved 1596, reused 1324, downloaded 214, added 0
+Progress: resolved 1596, reused 1325, downloaded 214, added 0
+Progress: resolved 1597, reused 1326, downloaded 214, added 0
+ WARN  5 deprecated subdependencies found: glob@11.1.0, glob@7.2.3, inflight@1.0.6, uuid@8.3.2, whatwg-encoding@3.1.1
+Packages: +421 -199
+++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------
+Progress: resolved 1599, reused 1327, downloaded 214, added 0
+Progress: resolved 1599, reused 1327, downloaded 214, added 218
+Progress: resolved 1599, reused 1327, downloaded 214, added 411
+Progress: resolved 1599, reused 1327, downloaded 215, added 418
+Progress: resolved 1599, reused 1327, downloaded 215, added 419
+Progress: resolved 1599, reused 1327, downloaded 215, added 421, done
+.../core-js@3.50.0/node_modules/core-js postinstall$ node -e "try{require('./postinstall')}catch(e){}"
+.../core-js@3.50.0/node_modules/core-js postinstall: Thank you for using core-js ( https://github.com/zloirock/core-js ) for polyfilling JavaScript standard library!
+.../core-js@3.50.0/node_modules/core-js postinstall: The project needs your help! Please consider supporting core-js:
+.../core-js@3.50.0/node_modules/core-js postinstall: > https://opencollective.com/core-js 
+.../core-js@3.50.0/node_modules/core-js postinstall: > https://patreon.com/zloirock 
+.../core-js@3.50.0/node_modules/core-js postinstall: > https://boosty.to/zloirock 
+.../core-js@3.50.0/node_modules/core-js postinstall: > bitcoin: bc1qlea7544qtsmj2rayg0lthvza9fau63ux0fstcz 
+.../core-js@3.50.0/node_modules/core-js postinstall: I highly recommend reading this: https://github.com/zloirock/core-js/blob/master/docs/2023-02-14-so-whats-next.md 
+.../core-js@3.50.0/node_modules/core-js postinstall: Done
+
+dependencies:
+- react-snowfall 2.3.0
++ react-snowfall 2.4.0
+- rimraf 6.0.1
++ rimraf 6.1.3
+
+devDependencies:
+- commitizen 4.3.1
++ commitizen 4.3.2
+
+Done in 4m 3s using pnpm v9.15.9

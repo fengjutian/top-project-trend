@@ -1,0 +1,38 @@
+(node:27436) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+Progress: resolved 0, reused 1, downloaded 0, added 0
+Progress: resolved 21, reused 21, downloaded 0, added 0
+Progress: resolved 387, reused 351, downloaded 0, added 0
+Progress: resolved 1656, reused 1622, downloaded 0, added 0
+Progress: resolved 1697, reused 1639, downloaded 0, added 0
+Progress: resolved 1753, reused 1694, downloaded 0, added 0
+Progress: resolved 1893, reused 1835, downloaded 1, added 0
+Progress: resolved 1903, reused 1845, downloaded 1, added 0
+Progress: resolved 1904, reused 1845, downloaded 1, added 0
+ WARN  10 deprecated subdependencies found: @babel/plugin-proposal-object-rest-spread@7.12.1, glob@11.0.3, glob@7.2.3, inflight@1.0.6, rimraf@3.0.2, source-map@0.8.0-beta.0, stable@0.1.8, trim@0.0.1, uuid@8.3.2, whatwg-encoding@3.1.1
+Packages: +713 -181
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------
+Progress: resolved 1904, reused 1846, downloaded 1, added 1
+Progress: resolved 1904, reused 1846, downloaded 1, added 2
+Progress: resolved 1904, reused 1846, downloaded 1, added 3, done
+
+devDependencies:
++ yaml 2.9.1
+
+ WARN  Issues with peer dependencies found
+.
+├─┬ @docusaurus/types 2.0.1
+│ ├── ✕ unmet peer react@"^16.8.4 || ^17.0.0": found 18.3.1
+│ └── ✕ unmet peer react-dom@"^16.8.4 || ^17.0.0": found 18.3.1
+└─┬ @easyops-cn/docusaurus-search-local 0.55.3
+  └─┬ @docusaurus/plugin-content-docs 2.0.1
+    ├── ✕ unmet peer react@"^16.8.4 || ^17.0.0": found 18.3.1
+    ├── ✕ unmet peer react-dom@"^16.8.4 || ^17.0.0": found 18.3.1
+    ├─┬ @docusaurus/mdx-loader 2.0.1
+    │ ├── ✕ unmet peer react@"^16.8.4 || ^17.0.0": found 18.3.1
+    │ └── ✕ unmet peer react-dom@"^16.8.4 || ^17.0.0": found 18.3.1
+    └─┬ @docusaurus/core 2.0.1
+      ├── ✕ unmet peer react@"^16.8.4 || ^17.0.0": found 18.3.1
+      └── ✕ unmet peer react-dom@"^16.8.4 || ^17.0.0": found 18.3.1
+
+Done in 13.7s using pnpm v9.15.9
