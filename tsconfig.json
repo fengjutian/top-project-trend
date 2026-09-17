@@ -12,7 +12,8 @@
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "strict": true
+    "strict": true,
+    "types": ["node", "react", "react-dom", "three"]
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "scripts/**/*.ts"],
   "exclude": ["node_modules", "build", ".docusaurus"]
