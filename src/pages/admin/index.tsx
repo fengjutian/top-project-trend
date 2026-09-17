@@ -2,7 +2,8 @@ import type {ChangeEvent} from 'react';
 import React, {useEffect, useMemo, useRef, useState} from 'react';
 import Layout from '@theme/Layout';
 import BrowserOnly from '@docusaurus/BrowserOnly';
-import styles from './styles.module.css';
+import {toast} from 'sonner';
+import '../../css/tailwind.css';
 import {BRANCH, github, decodeBase64, listMarkdownFiles} from '../../admin/lib/github';
 import {
   ARTICLE_TEMPLATES,
@@ -28,6 +29,8 @@ import Sidebar, {type StatusFilter, type Workspace} from '../../admin/components
 import Dashboard, {type Calendar, type CalendarCell} from '../../admin/components/Dashboard';
 import ArticlePreview from '../../admin/components/ArticlePreview';
 import PanelModal, {type PanelType} from '../../admin/components/PanelModal';
+import {Toaster} from '../../admin/components/ui/sonner';
+import {cn} from '../../admin/lib/utils';
 
 interface HistoryCommit {
   sha: string;
@@ -52,24 +55,19 @@ function AdminApp() {
   } = useOperations(token);
   const [article, setArticle] = useState<Article>(emptyArticle);
   const [saving, setSaving] = useState<boolean>(false);
-  const [message, setMessage] = useState<string>('');
-  const [messageLevel, setMessageLevel] = useState<'info' | 'error'>('info');
   const noticeTimer = useRef<number | null>(null);
 
   function setNotice(text: string, level: 'info' | 'error' = 'info'): void {
+    if (!text) return;
     if (noticeTimer.current) {
       window.clearTimeout(noticeTimer.current);
       noticeTimer.current = null;
     }
-    setMessage(text);
-    setMessageLevel(level);
-    if (level === 'info' && text) {
-      noticeTimer.current = window.setTimeout(() => {
-        noticeTimer.current = null;
-        setMessage('');
-        setMessageLevel('info');
-      }, 3500);
-    }
+    const id = level === 'error'
+      ? toast.error(text, {duration: 5000})
+      : toast.success(text, {duration: 3000});
+    noticeTimer.current = window.setTimeout(() => { noticeTimer.current = null; }, 3500);
+    return id as unknown as void;
   }
 
   function clearNotice(): void {
@@ -77,8 +75,7 @@ function AdminApp() {
       window.clearTimeout(noticeTimer.current);
       noticeTimer.current = null;
     }
-    setMessage('');
-    setMessageLevel('info');
+    toast.dismiss();
   }
   const [preview, setPreview] = useState<boolean>(false);
   const [query, setQuery] = useState<string>('');
@@ -165,7 +162,7 @@ function AdminApp() {
       }
       if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') {
         event.preventDefault();
-        document.querySelector<HTMLInputElement>(`.${styles.search} input`)?.focus();
+        document.querySelector<HTMLInputElement>('aside input[placeholder="搜索文章"]')?.focus();
       }
       if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.key.toLowerCase() === 'p') {
         event.preventDefault();
@@ -574,7 +571,12 @@ function AdminApp() {
 
   if (!connected) return <ConnectCard onConnect={connect} />;
 
-  return <div className={`${styles.studio} ${focusMode ? styles.studioFocus : ''}`}>
+  return <div className={cn('h-screen overflow-hidden', focusMode && 'grid-cols-1')}>
+    <Toaster />
+    <div className={cn(
+      'grid h-screen overflow-hidden bg-background text-foreground',
+      focusMode ? 'grid-cols-[1fr]' : 'grid-cols-[300px_1fr]'
+    )}>
     <Sidebar
       deployment={deployment}
       query={query} onQueryChange={setQuery}
@@ -605,7 +607,7 @@ function AdminApp() {
       linkReport={linkReport}
       mediaReport={mediaReport}
       operationsArticles={operationsArticles as DashboardArticle[]}
-    /> : <main className={styles.editor}>
+    /> : <main className="min-w-0 h-screen overflow-auto">
       <EditorToolbar
         article={article}
         dirty={dirty}
@@ -624,11 +626,6 @@ function AdminApp() {
         onSave={save}
         onUploadImage={uploadImage}
       />
-
-      {message && <div className={`${styles.message} ${messageLevel === 'error' ? styles.messageError : ''}`}>
-        <span>{message}</span>
-        <button type="button" className={styles.messageClose} onClick={clearNotice} aria-label="关闭通知">×</button>
-      </div>}
 
       {preview ? <ArticlePreview article={article} /> : <EditorForm article={article} onUpdate={update} onApplyTemplate={applyTemplate} metrics={metrics} onPickMediaForImage={pickMediaForImage} />}
     </main>}
@@ -652,12 +649,13 @@ function AdminApp() {
         onRenameTag={renameTag}
         batching={batching}
       />}
+    </div>
   </div>;
 }
 
 export default function AdminPage() {
   return <Layout title="内容管理" noFooter>
-    <BrowserOnly fallback={<div className={styles.loading}>正在加载管理后台…</div>}>
+    <BrowserOnly fallback={<div className="grid h-screen place-items-center text-muted-foreground">正在加载管理后台…</div>}>
       {() => <AdminApp />}
     </BrowserOnly>
   </Layout>;

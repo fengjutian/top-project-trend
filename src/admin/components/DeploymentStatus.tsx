@@ -1,29 +1,33 @@
 // Renders the deployment status pill (success / running / failed) at the top of
 // the sidebar. Returns null when no deployment data is available.
 
-import styles from '../../pages/admin/styles.module.css';
 import type {WorkflowRun} from '../lib/github';
+import {cn} from '../lib/utils';
 
 export default function DeploymentStatus({deployment}: {deployment: WorkflowRun | null}) {
   if (!deployment) return null;
-  const variant = deployment.conclusion === 'success'
-    ? styles.deploySuccess
-    : deployment.status === 'in_progress'
-      ? styles.deployRunning
-      : styles.deployFailed;
-  const text = deployment.status === 'in_progress'
+  const isSuccess = deployment.conclusion === 'success';
+  const isRunning = deployment.status === 'in_progress';
+  const text = isRunning
     ? '正在部署'
-    : deployment.conclusion === 'success'
+    : isSuccess
       ? '最近部署成功'
       : '最近部署失败';
+
+  const dotClass = isSuccess
+    ? 'bg-emerald-400'
+    : isRunning
+      ? 'bg-amber-400 shadow-[0_0_0_4px_rgba(251,191,36,0.15)]'
+      : 'bg-rose-400';
+
   return (
     <a
-      className={`${styles.deployStatus} ${variant}`}
+      className="mx-5 mb-2 flex items-center gap-2 text-[11px] text-[hsl(var(--sidebar-muted))] hover:text-white transition-colors no-underline"
       href={deployment.html_url}
       target="_blank"
       rel="noreferrer"
     >
-      <span />
+      <span className={cn('h-1.5 w-1.5 rounded-full', dotClass)} />
       {text}
     </a>
   );

@@ -157,7 +157,6 @@ const Silk: React.FC<SilkProps> = ({
   );
 
   return (
-    // @ts-expect-error R3F@7 Canvas type is incompatible with React 17 JSX signature; safe at runtime
     <Canvas dpr={[1, 2]} frameloop="always"
      className={styles["silk-canvas"]}>
       <SilkPlane  ref={meshRef} uniforms={uniforms} />
