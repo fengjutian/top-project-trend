@@ -1,275 +1,51 @@
 import React, {useEffect, useMemo, useState} from 'react';
 import Layout from '@theme/Layout';
 import BrowserOnly from '@docusaurus/BrowserOnly';
-import {evaluate} from 'mdx-runtime-compiler';
-import * as jsxRuntime from 'react/jsx-runtime';
-import MDXComponents from '@theme/MDXComponents';
 import styles from './styles.module.css';
-
-const OWNER = 'fengjutian';
-const REPO = 'top-project-trend';
-const BRANCH = 'main';
-const SECTIONS = [
-  ['blog', '技术周刊'], ['java', 'Java'], ['code', '编程综合'],
-  ['ts', 'TypeScript'], ['algorithm', '算法'], ['golang', 'Go'],
-  ['rust', 'Rust'], ['python', 'Python'], ['android', 'Android'],
-  ['lang-chain', 'LangChain'], ['mcp', 'MCP'], ['llm', 'LLM'],
-  ['static-website', '资源网站'],
-];
-const ARTICLE_TEMPLATES = {
-  weekly: {
-    label: '技术周刊',
-    body: '## 本期导读\n\n在这里概括本期内容。\n\n## 项目一\n\n![项目截图]()\n\n**项目地址：** https://github.com/\n\n项目简介与推荐理由。\n\n## 项目二\n\n项目简介与推荐理由。\n\n## 总结\n\n本期内容总结。',
-  },
-  project: {
-    label: '开源项目介绍',
-    body: '## 项目简介\n\n项目解决了什么问题。\n\n## 核心功能\n\n- 功能一\n- 功能二\n- 功能三\n\n## 快速开始\n\n```bash\n# 安装或运行命令\n```\n\n## 使用体验\n\n优点、限制和适用场景。\n\n## 项目地址\n\nhttps://github.com/',
-  },
-  tutorial: {
-    label: '技术教程',
-    body: '## 背景\n\n为什么需要这项技术。\n\n## 环境准备\n\n列出版本和依赖。\n\n## 实现步骤\n\n### 第一步\n\n说明和代码。\n\n### 第二步\n\n说明和代码。\n\n## 常见问题\n\n常见错误及解决方法。\n\n## 总结\n\n回顾关键要点。',
-  },
-};
-
-const emptyArticle = () => ({
-  title: '', slug: '', date: new Date().toISOString().slice(0, 10),
-  authors: 'fengjutian', tags: [], draft: true, description: '', image: '', body: '',
-  publish_at: '', unpublish_at: '', rawFrontmatter: '', path: '', sha: '', savedContent: '',
-});
-
-function toSlug(value) {
-  return value.normalize('NFKD').toLowerCase()
-    .replace(/[^a-z0-9\u4e00-\u9fff]+/g, '-')
-    .replace(/^-|-$/g, '') || 'new-article';
-}
-
-function decodeBase64(value) {
-  const bytes = Uint8Array.from(atob(value.replace(/\n/g, '')), (char) => char.charCodeAt(0));
-  return new TextDecoder().decode(bytes);
-}
-
-function encodeBase64(value) {
-  const bytes = new TextEncoder().encode(value);
-  let binary = '';
-  bytes.forEach((byte) => { binary += String.fromCharCode(byte); });
-  return btoa(binary);
-}
-
-function safeFilename(value) {
-  const dot = value.lastIndexOf('.');
-  const stem = dot > 0 ? value.slice(0, dot) : value;
-  return toSlug(stem).replace(/[\u4e00-\u9fff]/g, '') || 'image';
-}
-
-function toLocalDateTime(value) {
-  if (!value) return '';
-  const date = new Date(value);
-  if (Number.isNaN(date.getTime())) return value.slice(0, 16);
-  const local = new Date(date.getTime() - date.getTimezoneOffset() * 60000);
-  return local.toISOString().slice(0, 16);
-}
-
-function fromLocalDateTime(value) {
-  return value ? new Date(value).toISOString() : '';
-}
-
-async function optimizeImage(file) {
-  const bitmap = await createImageBitmap(file);
-  const scale = Math.min(1, 2560 / bitmap.width);
-  const canvas = document.createElement('canvas');
-  canvas.width = Math.round(bitmap.width * scale);
-  canvas.height = Math.round(bitmap.height * scale);
-  canvas.getContext('2d').drawImage(bitmap, 0, 0, canvas.width, canvas.height);
-  bitmap.close();
-
-  let quality = 0.84;
-  let blob;
-  do {
-    blob = await new Promise((resolve) => canvas.toBlob(resolve, 'image/webp', quality));
-    quality -= 0.08;
-  } while (blob?.size > 200 * 1024 && quality >= 0.36);
-  if (!blob || blob.size > 200 * 1024) throw new Error('图片压缩后仍超过 200KB，请先裁剪后再上传。');
-  return blob;
-}
-
-async function blobToBase64(blob) {
-  const bytes = new Uint8Array(await blob.arrayBuffer());
-  let binary = '';
-  bytes.forEach((byte) => { binary += String.fromCharCode(byte); });
-  return btoa(binary);
-}
-
-function parseArticle(source) {
-  const match = source.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?/);
-  const rawFrontmatter = match?.[1] ?? '';
-  const body = match ? source.slice(match[0].length) : source;
-  const value = emptyArticle();
-  value.rawFrontmatter = rawFrontmatter;
-  value.body = body;
-
-  for (const line of rawFrontmatter.split(/\r?\n/)) {
-    const field = line.match(/^([A-Za-z_][\w-]*):\s*(.*)$/);
-    if (!field) continue;
-    const [, key, raw] = field;
-    if (key === 'tags') value.tags = raw.replace(/^\[|\]$/g, '').split(',').map((tag) => tag.trim()).filter(Boolean);
-    else if (key === 'draft') value.draft = raw.trim() === 'true';
-    else if (Object.hasOwn(value, key)) value[key] = raw.replace(/^['"]|['"]$/g, '');
-  }
-  value.savedContent = serializeArticle(value);
-  return value;
-}
-
-function serializeArticle(article) {
-  const known = {
-    date: article.date,
-    slug: article.slug,
-    title: article.title,
-    authors: article.authors || 'fengjutian',
-    tags: `[${article.tags.join(', ')}]`,
-    draft: String(article.draft),
-    description: article.description,
-    image: article.image,
-    publish_at: article.publish_at,
-    unpublish_at: article.unpublish_at,
-  };
-  const seen = new Set();
-  const lines = article.rawFrontmatter.split(/\r?\n/).filter(Boolean).map((line) => {
-    const match = line.match(/^([A-Za-z_][\w-]*):/);
-    if (!match || !(match[1] in known)) return line;
-    seen.add(match[1]);
-    return known[match[1]] ? `${match[1]}: ${known[match[1]]}` : null;
-  }).filter(Boolean);
-  for (const [key, value] of Object.entries(known)) {
-    if (!seen.has(key) && value) lines.push(`${key}: ${value}`);
-  }
-  return `---\n${lines.join('\n')}\n---\n\n${article.body.trim()}\n`;
-}
-
-function inferDescription(body) {
-  return body.replace(/<[^>]+>/g, '').replace(/!\[[^\]]*\]\([^)]*\)/g, '')
-    .replace(/\[[^\]]+\]\([^)]*\)/g, (match) => match.slice(1, match.indexOf(']')))
-    .replace(/^#{1,6}\s+/gm, '').replace(/[`*_>-]/g, '').replace(/\s+/g, ' ').trim().slice(0, 160);
-}
-
-function inferTags(title, body) {
-  const text = `${title} ${body}`.toLowerCase();
-  const keywords = ['React', 'Vue', 'TypeScript', 'JavaScript', 'Python', 'Rust', 'Go', 'Java', 'Android', 'AI', 'LLM', 'MCP', 'CSS', 'WebGL', 'GitHub'];
-  return keywords.filter((keyword) => text.includes(keyword.toLowerCase())).slice(0, 6);
-}
-
-function auditArticle(article, articles) {
-  const issues = [];
-  if (article.title.trim().length < 6) issues.push({level: 'warn', text: '标题较短，建议至少 6 个字符。'});
-  if (article.title.length > 60) issues.push({level: 'warn', text: '标题超过 60 个字符，搜索结果可能被截断。'});
-  if (!article.description) issues.push({level: 'error', text: '缺少文章摘要。'});
-  else if (article.description.length > 160) issues.push({level: 'warn', text: '摘要超过 160 个字符。'});
-  if (!article.image) issues.push({level: 'warn', text: '缺少社交分享封面。'});
-  if (!article.tags.length) issues.push({level: 'warn', text: '至少添加一个标签。'});
-  if (articles.some((item) => item.path !== article.path && item.slug === article.slug)) issues.push({level: 'error', text: `链接标识 ${article.slug} 与其他文章重复。`});
-  const emptyLinks = [...article.body.matchAll(/\[[^\]]*\]\(\s*\)/g)];
-  if (emptyLinks.length) issues.push({level: 'error', text: `发现 ${emptyLinks.length} 个空链接。`});
-  const images = [...article.body.matchAll(/!\[([^\]]*)\]\(([^)]+)\)/g)];
-  const missingAlt = images.filter((match) => !match[1].trim()).length;
-  if (missingAlt) issues.push({level: 'warn', text: `${missingAlt} 张图片缺少替代文字。`});
-  const headings = [...article.body.matchAll(/^(#{1,6})\s+/gm)].map((match) => match[1].length);
-  for (let index = 1; index < headings.length; index += 1) {
-    if (headings[index] - headings[index - 1] > 1) {
-      issues.push({level: 'warn', text: '正文标题层级存在跳级。'});
-      break;
-    }
-  }
-  const malformedUrls = [...article.body.matchAll(/\[[^\]]*\]\(([^)]+)\)/g)]
-    .map((match) => match[1]).filter((url) => /^(https?:)/.test(url) && !/^https?:\/\/\S+$/.test(url));
-  if (malformedUrls.length) issues.push({level: 'error', text: `发现 ${malformedUrls.length} 个格式异常的外部链接。`});
-  return issues;
-}
-
-function articleMetrics(body) {
-  const plain = body.replace(/```[\s\S]*?```/g, '').replace(/<[^>]+>/g, '').replace(/[#>*_`\[\]()!-]/g, ' ');
-  const chinese = (plain.match(/[\u4e00-\u9fff]/g) || []).length;
-  const words = (plain.match(/[A-Za-z0-9]+/g) || []).length;
-  const count = chinese + words;
-  const headings = [...body.matchAll(/^(#{2,4})\s+(.+)$/gm)].map((match) => ({level: match[1].length, title: match[2]}));
-  return {count, minutes: Math.max(1, Math.ceil(count / 350)), headings};
-}
-
-async function github(path, token, options = {}) {
-  const response = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/${path}`, {
-    ...options,
-    headers: {
-      Accept: 'application/vnd.github+json',
-      Authorization: `Bearer ${token}`,
-      'X-GitHub-Api-Version': '2022-11-28',
-      'Content-Type': 'application/json',
-      ...options.headers,
-    },
-  });
-  if (!response.ok) {
-    const detail = await response.json().catch(() => ({}));
-    throw new Error(detail.message || `GitHub 请求失败（${response.status}）`);
-  }
-  return response.json();
-}
-
-function previewSource(source, articlePath) {
-  const directory = articlePath ? articlePath.slice(0, articlePath.lastIndexOf('/')) : 'content/blog';
-  const raw = (relativePath) => `https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}/${directory}/${relativePath.replace(/^\.\//, '')}`;
-  return source
-    .replace(/require\((['"])(\.\/[^'"]+)\1\)\.default/g, (_match, _quote, path) => JSON.stringify(raw(path)))
-    .replace(/\]\((?![a-z]+:|\/|#)([^)]+)\)/gi, (_match, path) => `](${raw(path)})`)
-    .replace(/(src|href)=(['"])(?![a-z]+:|\/|#)([^'"]+)\2/gi, (_match, attribute, quote, path) => `${attribute}=${quote}${raw(path)}${quote}`)
-    .replace(/\]\(\/media\//g, '](/top-project-trend/media/')
-    .replace(/(src|href)=(['"])\/media\//g, '$1=$2/top-project-trend/media/');
-}
-
-class PreviewErrorBoundary extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {error: null};
-  }
-
-  static getDerivedStateFromError(error) {
-    return {error};
-  }
-
-  render() {
-    if (this.state.error) return <div className={styles.previewError}><strong>MDX 无法渲染</strong><p>{this.state.error.message}</p><small>检查未闭合的 JSX 标签、花括号或代码块。</small></div>;
-    return this.props.children;
-  }
-}
-
-function ExactMdxPreview({source, articlePath}) {
-  const compiledSource = useMemo(() => previewSource(source, articlePath), [source, articlePath]);
-  const [result, setResult] = useState({Content: null, error: null});
-
-  useEffect(() => {
-    let active = true;
-    setResult({Content: null, error: null});
-    evaluate(compiledSource, {...jsxRuntime, development: false})
-      .then((module) => { if (active) setResult({Content: module.default, error: null}); })
-      .catch((error) => { if (active) setResult({Content: null, error}); });
-    return () => { active = false; };
-  }, [compiledSource]);
-
-  if (result.error) return <div className={styles.previewError}><strong>MDX 无法编译</strong><p>{result.error.message}</p><small>检查未闭合的 JSX 标签、花括号或代码块。</small></div>;
-  if (!result.Content) return <div className={styles.previewLoading}>正在编译真实 MDX 预览…</div>;
-  const Content = result.Content;
-  return <PreviewErrorBoundary key={compiledSource} source={compiledSource}>
-    <article className={`theme-doc-markdown markdown ${styles.previewBody}`}>
-      <Content components={MDXComponents} />
-    </article>
-  </PreviewErrorBoundary>;
-}
+import {OWNER, REPO, BRANCH, github, loadReport, listMarkdownFiles} from '../../admin/lib/github';
+import {
+  SECTIONS,
+  ARTICLE_TEMPLATES,
+  emptyArticle,
+  toSlug,
+  encodeBase64,
+  toLocalDateTime,
+  fromLocalDateTime,
+  parseArticle,
+  serializeArticle,
+  inferDescription,
+  inferTags,
+  auditArticle,
+  articleMetrics,
+} from '../../admin/lib/article';
+import {safeFilename, optimizeImage, blobToBase64} from '../../admin/lib/media';
+import {useDeployment} from '../../admin/hooks/useDeployment';
+import {useArticles} from '../../admin/hooks/useArticles';
+import {useMedia} from '../../admin/hooks/useMedia';
+import {useOperations} from '../../admin/hooks/useOperations';
+import DeploymentStatus from '../../admin/components/DeploymentStatus';
+import ConnectCard from '../../admin/components/ConnectCard';
+import EditorForm from '../../admin/components/EditorForm';
+import EditorToolbar from '../../admin/components/EditorToolbar';
+import Sidebar from '../../admin/components/Sidebar';
+import Dashboard from '../../admin/components/Dashboard';
+import ArticlePreview from '../../admin/components/ArticlePreview';
+import PanelModal from '../../admin/components/PanelModal';
 
 function AdminApp() {
   const storedToken = sessionStorage.getItem('top-project-admin-token') || '';
   const [token, setToken] = useState(storedToken);
-  const [tokenInput, setTokenInput] = useState(storedToken);
   const [connected, setConnected] = useState(Boolean(storedToken));
   const [section, setSection] = useState('blog');
-  const [articles, setArticles] = useState([]);
+  const {articles, setArticles, loading, refresh: refreshArticles} = useArticles(section, token);
+  const {media, setMedia, refresh: refreshMedia} = useMedia(section, token);
+  const {
+    globalArticles, setGlobalArticles,
+    linkReport, setLinkReport,
+    mediaReport, setMediaReport,
+    loading: operationsLoading, refresh: refreshOperations,
+  } = useOperations(token);
   const [article, setArticle] = useState(emptyArticle);
-  const [loading, setLoading] = useState(false);
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState('');
   const [preview, setPreview] = useState(false);
@@ -278,17 +54,12 @@ function AdminApp() {
   const [uploading, setUploading] = useState(false);
   const [panel, setPanel] = useState(null);
   const [history, setHistory] = useState([]);
-  const [media, setMedia] = useState([]);
   const [panelLoading, setPanelLoading] = useState(false);
   const [workspace, setWorkspace] = useState('editor');
   const [selectedPaths, setSelectedPaths] = useState([]);
   const [batching, setBatching] = useState(false);
-  const [deployment, setDeployment] = useState(null);
+  const [deployment, refreshDeployment] = useDeployment(token);
   const [focusMode, setFocusMode] = useState(false);
-  const [globalArticles, setGlobalArticles] = useState([]);
-  const [operationsLoading, setOperationsLoading] = useState(false);
-  const [linkReport, setLinkReport] = useState(null);
-  const [mediaReport, setMediaReport] = useState(null);
   const [calendarMonth, setCalendarMonth] = useState(new Date().toISOString().slice(0, 7));
 
   useEffect(() => {
@@ -372,33 +143,6 @@ function AdminApp() {
     return () => window.removeEventListener('keydown', shortcuts);
   });
 
-  async function loadDeployment(authToken = token) {
-    try {
-      const result = await github(`actions/runs?branch=${BRANCH}&per_page=1`, authToken);
-      setDeployment(result.workflow_runs?.[0] || null);
-    } catch {
-      setDeployment(null);
-    }
-  }
-
-  async function listMarkdownFiles(directory, authToken) {
-    const entries = await github(`contents/${directory}?ref=${BRANCH}`, authToken);
-    const nested = await Promise.all(entries.map(async (entry) => {
-      if (entry.type === 'dir') return listMarkdownFiles(entry.path, authToken);
-      return entry.type === 'file' && /\.mdx?$/.test(entry.name) ? [entry] : [];
-    }));
-    return nested.flat();
-  }
-
-  async function listFiles(directory, authToken, matcher) {
-    const entries = await github(`contents/${directory}?ref=${BRANCH}`, authToken);
-    const nested = await Promise.all(entries.map(async (entry) => {
-      if (entry.type === 'dir') return listFiles(entry.path, authToken, matcher);
-      return entry.type === 'file' && matcher(entry) ? [entry] : [];
-    }));
-    return nested.flat();
-  }
-
   function withRecoveredDraft(item) {
     const key = `top-project-draft:${item.path || `${section}:new`}`;
     const saved = localStorage.getItem(key);
@@ -419,58 +163,21 @@ function AdminApp() {
 
   async function loadArticles(nextSection = section, authToken = token) {
     if (!authToken) return;
-    setLoading(true);
     setMessage('');
     try {
-      const markdownFiles = await listMarkdownFiles(`content/${nextSection}`, authToken);
-      const entries = await Promise.all(markdownFiles.map(async (file) => {
-        const data = await github(`contents/${file.path}?ref=${BRANCH}`, authToken);
-        const parsed = parseArticle(decodeBase64(data.content));
-        return {...parsed, path: file.path, sha: data.sha, filename: file.name};
-      }));
-      entries.sort((a, b) => (b.date || '').localeCompare(a.date || '') || a.title.localeCompare(b.title));
-      setArticles(entries);
+      const entries = await refreshArticles(nextSection, authToken);
       setArticle(withRecoveredDraft(entries[0] || emptyArticle()));
     } catch (error) {
       setMessage(error.message);
-    } finally {
-      setLoading(false);
-    }
-  }
-
-  async function loadReport(path, authToken) {
-    try {
-      const data = await github(`contents/${path}?ref=${BRANCH}`, authToken);
-      return JSON.parse(decodeBase64(data.content));
-    } catch {
-      return null;
     }
   }
 
   async function loadOperationsData() {
-    if (!token || operationsLoading) return;
-    setOperationsLoading(true);
+    if (operationsLoading) return;
     try {
-      const filesBySection = await Promise.all(SECTIONS.map(async ([sectionName]) => {
-        const files = await listMarkdownFiles(`content/${sectionName}`, token);
-        return files.map((file) => ({...file, section: sectionName}));
-      }));
-      const entries = await Promise.all(filesBySection.flat().map(async (file) => {
-        const data = await github(`contents/${file.path}?ref=${BRANCH}`, token);
-        return {...parseArticle(decodeBase64(data.content)), path: file.path, sha: data.sha, filename: file.name, section: file.section};
-      }));
-      entries.sort((a, b) => (b.date || '').localeCompare(a.date || ''));
-      setGlobalArticles(entries);
-      const [links, mediaManifest] = await Promise.all([
-        loadReport('static/reports/link-report.json', token),
-        loadReport('static/media-manifest.json', token),
-      ]);
-      setLinkReport(links);
-      setMediaReport(mediaManifest);
+      await refreshOperations(token);
     } catch (error) {
       setMessage(error.message);
-    } finally {
-      setOperationsLoading(false);
     }
   }
 
@@ -481,13 +188,12 @@ function AdminApp() {
 
   useEffect(() => { if (connected) loadArticles(section); }, [section]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  function connect() {
-    const nextToken = tokenInput.trim();
+  function connect(nextToken) {
     sessionStorage.setItem('top-project-admin-token', nextToken);
     setToken(nextToken);
     setConnected(true);
     loadArticles(section, nextToken);
-    loadDeployment(nextToken);
+    refreshDeployment(nextToken);
   }
 
   function newArticle() {
@@ -498,7 +204,8 @@ function AdminApp() {
   }
 
   function update(field, value) {
-    setArticle((current) => ({...current, [field]: value}));
+    if (typeof field === 'function') setArticle(field);
+    else setArticle((current) => ({...current, [field]: value}));
   }
 
   function selectArticle(item) {
@@ -684,12 +391,9 @@ function AdminApp() {
     setPanel('media');
     setPanelLoading(true);
     try {
-      const files = await listFiles(`static/media/${section}`, token, (entry) => /\.(webp|png|jpe?g|gif|svg)$/i.test(entry.name));
-      files.sort((a, b) => b.path.localeCompare(a.path));
-      setMedia(files);
+      await refreshMedia(section, token);
     } catch (error) {
-      if (/404/.test(error.message) || /Not Found/i.test(error.message)) setMedia([]);
-      else setMessage(error.message);
+      setMessage(error.message);
     } finally {
       setPanelLoading(false);
     }
@@ -759,7 +463,6 @@ function AdminApp() {
     if (dirty && !window.confirm('当前修改尚未保存，确定退出吗？')) return;
     sessionStorage.removeItem('top-project-admin-token');
     setToken('');
-    setTokenInput('');
     setConnected(false);
     setArticles([]);
     setArticle(emptyArticle());
@@ -801,7 +504,7 @@ function AdminApp() {
       localStorage.removeItem(`top-project-draft:${article.path || `${section}:new`}`);
       await loadArticles(section);
       setMessage('已提交到 GitHub，部署工作流将自动发布。');
-      window.setTimeout(() => loadDeployment(token), 1500);
+      window.setTimeout(() => refreshDeployment(token), 1500);
     } catch (error) {
       setMessage(error.message);
     } finally {
@@ -809,160 +512,81 @@ function AdminApp() {
     }
   }
 
-  if (!connected) return <div className={styles.connectCard}>
-    <div className={styles.eyebrow}>CONTENT STUDIO</div>
-    <h1>连接 GitHub</h1>
-    <p>使用只授权当前仓库 Contents 读写权限的 Fine-grained Token。Token 仅保存在当前浏览器会话，关闭标签页后清除。</p>
-    <input type="password" value={tokenInput} onChange={(event) => setTokenInput(event.target.value)} placeholder="github_pat_..." />
-    <button type="button" onClick={connect} disabled={!tokenInput.trim()}>进入管理后台</button>
-  </div>;
+  if (!connected) return <ConnectCard onConnect={connect} />;
 
   return <div className={`${styles.studio} ${focusMode ? styles.studioFocus : ''}`}>
-    <aside className={styles.sidebar}>
-      <div className={styles.brand}><span>F</span><div><strong>Content Studio</strong><small>{OWNER}/{REPO}</small></div></div>
-      {deployment && <a className={`${styles.deployStatus} ${deployment.conclusion === 'success' ? styles.deploySuccess : deployment.status === 'in_progress' ? styles.deployRunning : styles.deployFailed}`} href={deployment.html_url} target="_blank" rel="noreferrer"><span />{deployment.status === 'in_progress' ? '正在部署' : deployment.conclusion === 'success' ? '最近部署成功' : '最近部署失败'}</a>}
-      <label className={styles.search}><span>⌕</span><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="搜索文章" /></label>
-      <select value={section} onChange={(event) => changeSection(event.target.value)}>
-        {SECTIONS.map(([value, label]) => <option key={value} value={value}>{label}</option>)}
-      </select>
-      <div className={styles.filters}>
-        {[['all', '全部'], ['draft', '草稿'], ['published', '已发布']].map(([value, label]) =>
-          <button type="button" key={value} className={statusFilter === value ? styles.filterActive : ''} onClick={() => setStatusFilter(value)}>{label}</button>)}
-      </div>
-      <button type="button" className={styles.dashboardButton} onClick={openDashboard}>{workspace === 'dashboard' ? '返回编辑器' : '全站仪表盘'}</button>
-      <button type="button" className={styles.newButton} onClick={newArticle}>＋ 新建文章</button>
-      {selectedPaths.length > 0 && <div className={styles.batchBar}>
-        <span>已选择 {selectedPaths.length} 篇</span>
-        <div><button type="button" disabled={batching} onClick={() => batchSetDraft(true)}>转草稿</button><button type="button" disabled={batching} onClick={() => batchSetDraft(false)}>发布</button><button type="button" onClick={() => setSelectedPaths([])}>取消</button></div>
-      </div>}
-      <div className={styles.articleList}>
-        {loading ? <p className={styles.muted}>正在读取文章…</p> : visibleArticles.map((item) =>
-          <div key={item.path} className={`${styles.articleRow} ${article.path === item.path ? styles.active : ''}`}>
-            <input type="checkbox" checked={selectedPaths.includes(item.path)} onChange={() => toggleSelected(item.path)} aria-label={`选择 ${item.title}`} />
-            <button type="button" className={styles.articleItem} onClick={() => { selectArticle(item); setWorkspace('editor'); }}>
-              <strong>{item.title || item.filename}</strong>
-              <span>{item.date || '无日期'} {item.draft ? '· 草稿' : ''}</span>
-            </button>
-          </div>)}
-      </div>
-      <button type="button" className={styles.logout} onClick={logout}>退出当前会话</button>
-    </aside>
+    <Sidebar
+      deployment={deployment}
+      query={query} onQueryChange={setQuery}
+      section={section} onSectionChange={changeSection}
+      statusFilter={statusFilter} onStatusFilterChange={setStatusFilter}
+      workspace={workspace} onOpenDashboard={openDashboard}
+      onNewArticle={newArticle}
+      loading={loading}
+      visibleArticles={visibleArticles}
+      activePath={article.path}
+      selectedPaths={selectedPaths}
+      onToggleSelected={toggleSelected}
+      onClearSelection={() => setSelectedPaths([])}
+      batching={batching}
+      onBatchSetDraft={batchSetDraft}
+      onSelectArticle={selectArticle}
+      onSetWorkspace={setWorkspace}
+      onLogout={logout}
+    />
 
-    {workspace === 'dashboard' ? <main className={styles.dashboard}>
-      <header><div><span className={styles.eyebrow}>SITE OPERATIONS</span><h1>全站内容仪表盘</h1></div><div className={styles.dashboardActions}><button type="button" onClick={loadOperationsData} disabled={operationsLoading}>{operationsLoading ? '汇总中…' : '刷新数据'}</button><button type="button" onClick={() => setPanel('tags')}>管理标签</button></div></header>
-      <div className={styles.metricGrid}>
-        <article><span>文章总数</span><strong>{dashboard.total}</strong></article>
-        <article><span>已发布</span><strong>{dashboard.published}</strong></article>
-        <article><span>草稿</span><strong>{dashboard.drafts}</strong></article>
-        <article><span>存在错误</span><strong>{dashboard.unhealthy}</strong></article>
-        <article><span>缺少摘要</span><strong>{dashboard.missingDescription}</strong></article>
-        <article><span>缺少封面</span><strong>{dashboard.missingImage}</strong></article>
-      </div>
-      <section className={styles.calendarPanel}>
-        <header><div><h2>发布日历</h2><p>蓝色为发布日期，黄色为定时发布，灰色为自动下线。</p></div><input type="month" value={calendarMonth} onChange={(event) => setCalendarMonth(event.target.value)} /></header>
-        <div className={styles.calendarWeek}>{['日', '一', '二', '三', '四', '五', '六'].map((day) => <span key={day}>{day}</span>)}</div>
-        <div className={styles.calendarGrid}>{calendar.map((cell, index) => cell ? <div key={cell.date} className={styles.calendarDay}><strong>{cell.day}</strong>{cell.events.slice(0, 4).map((item) => <span key={`${item.path}-${item.publish_at}-${item.unpublish_at}`} className={item.publish_at?.slice(0, 10) === cell.date ? styles.calendarScheduled : item.unpublish_at?.slice(0, 10) === cell.date ? styles.calendarOffline : styles.calendarPublished} title={item.title}>{item.title}</span>)}{cell.events.length > 4 && <small>+{cell.events.length - 4}</small>}</div> : <div key={`empty-${index}`} className={styles.calendarEmpty} />)}</div>
-      </section>
-      <div className={styles.operationsGrid}>
-        <section className={styles.reportPanel}>
-          <header><div><h2>外链检查</h2><small>{linkReport?.generatedAt ? `更新于 ${new Date(linkReport.generatedAt).toLocaleString()}` : '尚未运行检查工作流'}</small></div><a href={`https://github.com/${OWNER}/${REPO}/actions/workflows/link-audit.yml`} target="_blank" rel="noreferrer">运行检查</a></header>
-          <div className={styles.reportMetrics}><span><strong>{linkReport?.total || 0}</strong>全部链接</span><span><strong>{linkReport?.healthy || 0}</strong>正常</span><span className={styles.reportBad}><strong>{linkReport?.broken || 0}</strong>异常</span></div>
-          <div className={styles.reportList}>{linkReport?.links?.filter((item) => !item.ok).slice(0, 8).map((item) => <a key={item.url} href={item.url} target="_blank" rel="noreferrer"><strong>{item.status || item.error}</strong><span>{item.url}</span></a>)}{!linkReport?.broken && <p>暂无异常外链记录。</p>}</div>
-        </section>
-        <section className={styles.reportPanel}>
-          <header><div><h2>媒体清理</h2><small>{mediaReport?.generatedAt ? `更新于 ${new Date(mediaReport.generatedAt).toLocaleString()}` : '部署后生成媒体报告'}</small></div><button type="button" onClick={() => setPanel('cleanup')}>查看建议</button></header>
-          <div className={styles.reportMetrics}><span><strong>{mediaReport?.summary?.total || 0}</strong>媒体文件</span><span><strong>{mediaReport?.summary?.unreferenced || 0}</strong>可能未引用</span><span><strong>{mediaReport?.summary?.duplicateGroups || 0}</strong>重复组</span></div>
-          <div className={styles.mediaSize}>总大小 <strong>{((mediaReport?.summary?.size || 0) / 1024 / 1024).toFixed(1)} MB</strong></div>
-        </section>
-      </div>
-      <section className={styles.healthTable}>
-        <h2>内容健康度</h2>
-        {operationsArticles.map((item) => {
-          const issues = auditArticle(item, operationsArticles);
-          return <div key={item.path}><span><strong>{item.title}</strong><small>{item.section || item.path.split('/')[1]} · {item.date} · {item.draft ? '草稿' : '已发布'}</small></span><em className={issues.some((issue) => issue.level === 'error') ? styles.issueError : issues.length ? styles.issueWarn : styles.issueOk}>{issues.length ? `${issues.length} 项` : '健康'}</em></div>;
-        })}
-      </section>
-    </main> : <main className={styles.editor}>
-      <header className={styles.toolbar}>
-        <div><span className={article.draft ? styles.draft : styles.published}>{article.draft ? '草稿' : '已发布'}</span>{dirty && <span className={styles.unsaved}>未保存</span>}<small>{article.path || '新文章'}</small></div>
-        <div className={styles.toolbarActions}>
-          <button type="button" onClick={() => setPanel('audit')}>检查 <span className={styles.issueCount}>{currentIssues.length}</span></button>
-          <button type="button" onClick={() => setFocusMode((value) => !value)}>{focusMode ? '退出专注' : '专注'}</button>
-          <label className={styles.uploadButton}>{uploading ? '上传中…' : '上传图片'}<input type="file" accept="image/png,image/jpeg,image/webp" onChange={uploadImage} disabled={uploading} /></label>
-          <button type="button" onClick={openMedia}>媒体库</button>
-          <button type="button" onClick={openHistory} disabled={!article.path}>版本</button>
-          <button type="button" onClick={duplicateArticle} disabled={!article.title}>复制</button>
-          <button type="button" className={styles.danger} onClick={deleteArticle} disabled={!article.path || saving}>删除</button>
-          <button type="button" onClick={() => setPreview((value) => !value)}>{preview ? '继续编辑' : '预览'}</button>
-          <button type="button" className={styles.primary} onClick={save} disabled={saving}>{saving ? '提交中…' : article.draft ? '保存草稿' : '提交并发布'}</button>
-        </div>
-      </header>
+    {workspace === 'dashboard' ? <Dashboard
+      dashboard={dashboard}
+      calendarMonth={calendarMonth} onCalendarMonthChange={setCalendarMonth}
+      calendar={calendar}
+      loading={operationsLoading} onRefresh={loadOperationsData}
+      onOpenTags={() => setPanel('tags')}
+      onOpenCleanup={() => setPanel('cleanup')}
+      linkReport={linkReport}
+      mediaReport={mediaReport}
+      operationsArticles={operationsArticles}
+    /> : <main className={styles.editor}>
+      <EditorToolbar
+        article={article}
+        dirty={dirty}
+        saving={saving}
+        uploading={uploading}
+        preview={preview}
+        focusMode={focusMode}
+        issueCount={currentIssues.length}
+        onTogglePreview={() => setPreview((value) => !value)}
+        onToggleFocus={() => setFocusMode((value) => !value)}
+        onOpenMedia={openMedia}
+        onOpenHistory={openHistory}
+        onOpenAudit={() => setPanel('audit')}
+        onDuplicate={duplicateArticle}
+        onDelete={deleteArticle}
+        onSave={save}
+        onUploadImage={uploadImage}
+      />
 
       {message && <div className={styles.message}>{message}</div>}
 
-      {preview ? <article className={styles.preview}>
-        <div className={styles.previewMeta}>{article.date} · {article.tags.join(' / ')}</div>
-        <h1>{article.title || '无标题文章'}</h1>
-        {article.description && <p className={styles.lead}>{article.description}</p>}
-        <ExactMdxPreview source={article.body} articlePath={article.path} />
-      </article> : <div className={styles.form}>
-        {!article.path && <div className={styles.templateBar}><span>从模板开始</span>{Object.entries(ARTICLE_TEMPLATES).map(([name, template]) => <button type="button" key={name} onClick={() => applyTemplate(name)}>{template.label}</button>)}</div>}
-        <input className={styles.titleInput} value={article.title} onChange={(event) => {
-          const title = event.target.value;
-          setArticle((current) => ({...current, title, slug: current.path || current.slug ? current.slug : toSlug(title)}));
-        }} placeholder="文章标题" />
-
-        <div className={styles.grid}>
-          <label>发布日期<input type="date" value={article.date} onChange={(event) => update('date', event.target.value)} /></label>
-          <label>链接标识<div className={styles.inlineInput}><input value={article.slug} onChange={(event) => update('slug', event.target.value)} /><button type="button" onClick={() => update('slug', toSlug(article.title))}>生成</button></div></label>
-          <label>作者<input value={article.authors} onChange={(event) => update('authors', event.target.value)} /></label>
-          <label className={styles.checkbox}><input type="checkbox" checked={article.draft} onChange={(event) => update('draft', event.target.checked)} />保存为草稿</label>
-        </div>
-
-        <div className={styles.scheduleGrid}>
-          <label>定时发布<input type="datetime-local" value={toLocalDateTime(article.publish_at)} onChange={(event) => { update('publish_at', fromLocalDateTime(event.target.value)); if (event.target.value) update('draft', true); }} /><small>到达时间后自动关闭草稿状态</small></label>
-          <label>自动下线<input type="datetime-local" value={toLocalDateTime(article.unpublish_at)} onChange={(event) => update('unpublish_at', fromLocalDateTime(event.target.value))} /><small>到达时间后自动转为草稿</small></label>
-        </div>
-
-        <label>标签<div className={styles.inlineInput}><input value={article.tags.join(', ')} onChange={(event) => update('tags', event.target.value.split(',').map((tag) => tag.trim()).filter(Boolean))} placeholder="React, AI, GitHub" /><button type="button" onClick={() => update('tags', inferTags(article.title, article.body))}>智能提取</button></div></label>
-        <label>摘要<div className={styles.inlineInput}><textarea rows="2" value={article.description} onChange={(event) => update('description', event.target.value)} /><button type="button" onClick={() => update('description', inferDescription(article.body))}>自动摘要</button></div></label>
-        <label>封面路径<input value={article.image} onChange={(event) => update('image', event.target.value)} placeholder="/top-project-trend/media/..." /></label>
-        <div className={styles.documentMeta}><span>{metrics.count} 字</span><span>约 {metrics.minutes} 分钟阅读</span><span>{metrics.headings.length} 个章节</span><span>自动保存已开启</span></div>
-        <div className={styles.writingArea}>
-          <label className={styles.bodyLabel}>正文<textarea value={article.body} onChange={(event) => update('body', event.target.value)} placeholder="使用 Markdown 开始写作…" /></label>
-          <aside className={styles.outline}><strong>文章大纲</strong>{metrics.headings.length ? metrics.headings.map((heading, index) => <span key={`${heading.title}-${index}`} style={{paddingLeft: `${(heading.level - 2) * 12}px`}}>{heading.title}</span>) : <small>使用二级或三级标题组织正文</small>}</aside>
-        </div>
-      </div>}
+      {preview ? <ArticlePreview article={article} /> : <EditorForm article={article} onUpdate={update} onApplyTemplate={applyTemplate} metrics={metrics} />}
     </main>}
 
-    {panel && <div className={styles.modalBackdrop} onMouseDown={(event) => { if (event.target === event.currentTarget) setPanel(null); }}>
-      <section className={styles.modal}>
-        <header><div><span className={styles.eyebrow}>{panel === 'history' ? 'VERSION CONTROL' : panel === 'media' ? 'MEDIA LIBRARY' : panel === 'audit' ? 'CONTENT AUDIT' : panel === 'cleanup' ? 'MEDIA CLEANUP' : 'TAG MANAGER'}</span><h2>{panel === 'history' ? '文章版本' : panel === 'media' ? `${SECTIONS.find(([value]) => value === section)?.[1]}媒体库` : panel === 'audit' ? '发布前检查' : panel === 'cleanup' ? '媒体清理建议' : '标签管理'}</h2></div><button type="button" onClick={() => setPanel(null)}>×</button></header>
-        {panelLoading ? <p className={styles.panelEmpty}>正在读取…</p> : panel === 'history' ? <div className={styles.historyList}>
-          {history.length ? history.map((item) => <div key={item.sha} className={styles.historyItem}>
-            <div><strong>{item.commit.message}</strong><span>{item.commit.author?.name} · {new Date(item.commit.author?.date).toLocaleString()}</span><code>{item.sha.slice(0, 8)}</code></div>
-            <button type="button" onClick={() => restoreVersion(item.sha)}>载入此版本</button>
-          </div>) : <p className={styles.panelEmpty}>暂无版本记录</p>}
-        </div> : panel === 'media' ? <div className={styles.mediaGrid}>
-          {media.length ? media.map((item) => <article key={item.path} className={styles.mediaItem}>
-            <img src={item.download_url} alt={item.name} loading="lazy" />
-            <strong title={item.path}>{item.name}</strong>
-            <span>{Math.round((item.size || 0) / 1024)}KB</span>
-            <div><button type="button" onClick={() => insertMedia(item)}>插入</button><button type="button" className={styles.danger} onClick={() => deleteMedia(item)}>删除</button></div>
-          </article>) : <p className={styles.panelEmpty}>当前栏目还没有集中管理的媒体文件</p>}
-        </div> : panel === 'audit' ? <div className={styles.auditList}>
-          {currentIssues.length ? currentIssues.map((issue, index) => <div key={`${issue.text}-${index}`} className={issue.level === 'error' ? styles.auditError : styles.auditWarn}><span>{issue.level === 'error' ? '错误' : '建议'}</span><p>{issue.text}</p></div>) : <div className={styles.auditSuccess}>未发现发布阻断项，文章状态良好。</div>}
-          <p className={styles.auditNote}>外部链接是否真实可访问需要服务端检查，本页面只检查链接格式。</p>
-        </div> : panel === 'cleanup' ? <div className={styles.cleanupList}>
-          <p className={styles.cleanupNotice}>“未引用”基于文件名匹配，删除前仍需人工确认。重复文件仅展示，不自动删除。</p>
-          {(mediaReport?.media || []).filter((item) => !item.referenced).map((item) => <div key={item.path}><span><strong>{item.path}</strong><small>{Math.round(item.size / 1024)}KB</small></span><button type="button" onClick={() => deleteCleanupMedia(item)}>删除</button></div>)}
-          {!mediaReport?.summary?.unreferenced && <p className={styles.panelEmpty}>没有发现未引用媒体。</p>}
-          {!!mediaReport?.duplicates?.length && <details><summary>{mediaReport.duplicates.length} 组重复文件</summary>{mediaReport.duplicates.map((paths, index) => <p key={index}>{paths.join(' ｜ ')}</p>)}</details>}
-        </div> : <div className={styles.tagList}>
-          {tagStats.length ? tagStats.map(([tag, count]) => <button type="button" key={tag} onClick={() => renameTag(tag)} disabled={batching}><strong>{tag}</strong><span>{count} 篇</span><em>合并 / 重命名</em></button>) : <p className={styles.panelEmpty}>当前栏目还没有标签</p>}
-        </div>}
-      </section>
-    </div>}
+    {panel && <PanelModal
+        panel={panel}
+        section={section}
+        panelLoading={panelLoading}
+        onClose={() => setPanel(null)}
+        history={history}
+        onRestoreVersion={restoreVersion}
+        media={media}
+        onInsertMedia={insertMedia}
+        onDeleteMedia={deleteMedia}
+        issues={currentIssues}
+        mediaReport={mediaReport}
+        onDeleteCleanupMedia={deleteCleanupMedia}
+        tagStats={tagStats}
+        onRenameTag={renameTag}
+        batching={batching}
+      />}
   </div>;
 }
 
