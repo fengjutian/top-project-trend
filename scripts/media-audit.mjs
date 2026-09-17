@@ -73,7 +73,19 @@ for (const paths of duplicates.slice(0, 10)) console.log(`  DUPLICATE ${paths.jo
 
 if (writeManifest) {
   const manifestPath = resolve(root, 'static', 'media-manifest.json');
-  writeFileSync(manifestPath, `${JSON.stringify({generatedAt: new Date().toISOString(), media: records}, null, 2)}\n`);
+  writeFileSync(manifestPath, `${JSON.stringify({
+    generatedAt: new Date().toISOString(),
+    summary: {
+      total: records.length,
+      size: records.reduce((sum, item) => sum + item.size, 0),
+      oversized: oversized.length,
+      tooWide: tooWide.length,
+      unreferenced: unreferenced.length,
+      duplicateGroups: duplicates.length,
+    },
+    duplicates,
+    media: records,
+  }, null, 2)}\n`);
   console.log(`Manifest: ${relative(root, manifestPath)}`);
 }
 

@@ -1,7 +1,9 @@
-.studio { min-height: calc(100vh - 60px); display: grid; grid-template-columns: 300px 1fr; background: #f6f7fb; color: #202234; }
+:global(body.content-studio-page .navbar) { display: none; }
+:global(body.content-studio-page) { overflow: hidden; }
+.studio { height: 100vh; display: grid; grid-template-columns: 300px 1fr; overflow: hidden; background: #f6f7fb; color: #202234; }
 .studioFocus { grid-template-columns: 1fr; }
 .studioFocus .sidebar { display: none; }
-.sidebar { background: #111425; color: #f7f8ff; padding: 24px 18px; display: flex; flex-direction: column; min-height: calc(100vh - 60px); }
+.sidebar { background: #111425; color: #f7f8ff; padding: 24px 18px; display: flex; flex-direction: column; height: 100vh; }
 .brand { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
 .brand > span { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 12px; font-weight: 800; background: linear-gradient(135deg, #6d5dfc, #38bdf8); }
 .brand div { display: flex; flex-direction: column; }
@@ -32,7 +34,7 @@
 .articleItem span, .muted { color: #777e9d; font-size: 12px; }
 .articleItem:hover, .articleRow.active .articleItem { color: white; }
 .logout { margin-top: 12px; border: 1px solid #303550; border-radius: 9px; padding: 9px; color: #9299b8; background: transparent; cursor: pointer; }
-.editor { min-width: 0; }
+.editor { min-width: 0; height: 100vh; overflow: auto; }
 .toolbar { height: 72px; padding: 0 34px; display: flex; align-items: center; justify-content: space-between; background: white; border-bottom: 1px solid #e7e8ef; position: sticky; top: 0; z-index: 2; }
 .toolbar > div:first-child { display: flex; align-items: center; gap: 12px; min-width: 0; }
 .toolbar small { color: #85889a; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -75,9 +77,13 @@
 .preview > h1 { font-size: 40px; margin-bottom: 12px; }
 .previewMeta { color: #7a7e93; font-size: 13px; }
 .lead { color: #676b7d; font-size: 18px; }
-.previewBody { white-space: pre-wrap; line-height: 1.8; }
+.previewBody { line-height: 1.8; }
 .previewBody img { display: block; max-width: 100%; margin: 20px auto; border-radius: 10px; }
 .previewBody pre { overflow: auto; padding: 16px; border-radius: 10px; background: #171a29; color: #eef0ff; }
+.previewError { padding: 20px; border: 1px solid #fecaca; border-radius: 10px; color: #991b1b; background: #fff1f2; }
+.previewError p { margin: 8px 0; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
+.previewError small { color: #b45353; }
+.previewLoading { padding: 50px; text-align: center; color: #85899b; }
 .connectCard { max-width: 540px; margin: 90px auto; padding: 42px; border: 1px solid #e2e4ee; border-radius: 20px; background: white; box-shadow: 0 20px 70px rgba(31,36,69,.1); }
 .connectCard h1 { margin: 8px 0 10px; }
 .connectCard p { color: #6b6f83; }
@@ -106,18 +112,19 @@
 .mediaItem button { flex: 1; }
 .mediaItem button.danger { color: #b42318; }
 .panelEmpty { grid-column: 1 / -1; padding: 60px 20px; text-align: center; color: #85899b; }
-.dashboard { min-width: 0; padding: 38px; overflow: auto; }
+.dashboard { min-width: 0; height: 100vh; padding: 38px; overflow: auto; }
 .dashboard > header { display: flex; justify-content: space-between; align-items: center; max-width: 1100px; margin: 0 auto 24px; }
 .dashboard h1 { margin: 3px 0 0; }
 .dashboard > header button { border: 1px solid #d8dae5; border-radius: 9px; padding: 9px 14px; background: white; cursor: pointer; }
+.dashboardActions { display: flex; gap: 8px; }
 .metricGrid { max-width: 1100px; margin: 0 auto 24px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 13px; }
 .metricGrid article { padding: 20px; border: 1px solid #e1e3eb; border-radius: 13px; background: white; }
 .metricGrid span { display: block; color: #74788d; font-size: 13px; }
 .metricGrid strong { display: block; margin-top: 8px; font-size: 30px; }
 .healthTable { max-width: 1100px; margin: 0 auto; padding: 22px; border: 1px solid #e1e3eb; border-radius: 14px; background: white; }
 .healthTable h2 { margin-top: 0; }
-.healthTable > button { width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 12px 5px; border: 0; border-top: 1px solid #eceef3; background: transparent; text-align: left; cursor: pointer; }
-.healthTable > button > span { display: grid; gap: 3px; }
+.healthTable > div { width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 12px 5px; border-top: 1px solid #eceef3; }
+.healthTable > div > span { display: grid; gap: 3px; }
 .healthTable small { color: #868a9d; }
 .healthTable em { border-radius: 99px; padding: 4px 8px; font-size: 11px; font-style: normal; }
 .issueError { color: #a62b21; background: #fee4e2; }
@@ -137,6 +144,41 @@
 .tagList button { display: grid; grid-template-columns: 1fr auto auto; gap: 16px; align-items: center; padding: 12px 14px; border: 1px solid #e1e3eb; border-radius: 9px; background: white; text-align: left; cursor: pointer; }
 .tagList span { color: #72768a; }
 .tagList em { color: #6556e9; font-size: 12px; font-style: normal; }
+.calendarPanel, .reportPanel { max-width: 1100px; margin: 0 auto 24px; padding: 22px; border: 1px solid #e1e3eb; border-radius: 14px; background: white; }
+.calendarPanel > header, .reportPanel > header { display: flex; align-items: center; justify-content: space-between; gap: 15px; margin-bottom: 16px; }
+.calendarPanel h2, .reportPanel h2 { margin: 0; }
+.calendarPanel p, .reportPanel small { margin: 3px 0 0; color: #85899b; font-size: 12px; }
+.calendarPanel input { border: 1px solid #d8dae5; border-radius: 8px; padding: 8px; }
+.calendarWeek, .calendarGrid { display: grid; grid-template-columns: repeat(7, 1fr); }
+.calendarWeek span { padding: 7px; color: #8b8fa1; text-align: center; font-size: 11px; }
+.calendarDay, .calendarEmpty { min-height: 105px; padding: 7px; border-top: 1px solid #eceef3; border-right: 1px solid #eceef3; }
+.calendarDay strong { display: block; margin-bottom: 5px; font-size: 12px; }
+.calendarDay span { display: block; overflow: hidden; margin: 3px 0; padding: 3px 5px; border-radius: 4px; font-size: 10px; text-overflow: ellipsis; white-space: nowrap; }
+.calendarDay small { color: #777b8f; font-size: 10px; }
+.calendarPublished { color: #254fa3; background: #e0ebff; }
+.calendarScheduled { color: #8b5700; background: #fff0c2; }
+.calendarOffline { color: #5f6475; background: #e9eaf0; }
+.operationsGrid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.operationsGrid .reportPanel { width: 100%; min-width: 0; }
+.reportPanel header a, .reportPanel header button { border: 1px solid #d8dae5; border-radius: 8px; padding: 7px 10px; color: #5548ba; background: white; font-size: 12px; text-decoration: none; cursor: pointer; }
+.reportMetrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.reportMetrics span { padding: 10px; border-radius: 8px; color: #777b8f; background: #f4f5f8; font-size: 11px; }
+.reportMetrics strong { display: block; color: #272a3d; font-size: 20px; }
+.reportMetrics .reportBad strong { color: #b42318; }
+.reportList { max-height: 220px; overflow: auto; margin-top: 12px; }
+.reportList a { display: grid; grid-template-columns: 45px 1fr; gap: 6px; padding: 7px 0; border-bottom: 1px solid #eceef3; color: #5f6378; font-size: 11px; }
+.reportList span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.reportList p, .mediaSize { color: #85899b; font-size: 12px; }
+.mediaSize { margin-top: 15px; }
+.cleanupList { overflow: auto; padding: 20px; }
+.cleanupNotice { padding: 10px; border-radius: 8px; color: #815600; background: #fff2ca; font-size: 12px; }
+.cleanupList > div { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 4px; border-bottom: 1px solid #e5e7ed; }
+.cleanupList > div > span { min-width: 0; display: grid; gap: 3px; }
+.cleanupList strong { overflow-wrap: anywhere; font-size: 12px; }
+.cleanupList small { color: #85899b; }
+.cleanupList button { border: 1px solid #fecaca; border-radius: 7px; padding: 6px 9px; color: #b42318; background: white; cursor: pointer; }
+.cleanupList details { margin-top: 18px; }
+.cleanupList details p { overflow-wrap: anywhere; color: #6f7387; font-size: 11px; }
 @media (max-width: 900px) {
   .studio { grid-template-columns: 1fr; }
   .sidebar { min-height: auto; max-height: 360px; }
@@ -149,4 +191,6 @@
   .modalBackdrop { padding: 10px; }
   .dashboard { padding: 24px 14px; }
   .metricGrid { grid-template-columns: repeat(2, 1fr); }
+  .operationsGrid { grid-template-columns: 1fr; }
+  .calendarDay, .calendarEmpty { min-height: 72px; }
 }

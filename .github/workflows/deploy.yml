@@ -39,7 +39,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Audit media budgets
-        run: pnpm media:audit:strict
+        run: pnpm media:audit:build
 
       - name: Build site
         run: pnpm build

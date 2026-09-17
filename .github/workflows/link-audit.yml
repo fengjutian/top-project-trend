@@ -1,0 +1,32 @@
+name: External link audit
+
+on:
+  schedule:
+    - cron: "20 2 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Check external links
+        continue-on-error: true
+        run: node scripts/link-audit.mjs
+      - name: Commit report
+        shell: bash
+        run: |
+          if git diff --quiet static/reports/link-report.json; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add static/reports/link-report.json
+          git commit -m "chore: update external link report"
+          git push
