@@ -1,7 +1,13 @@
-import React from 'react';
+import React, {type CSSProperties, type ImgHTMLAttributes, type VideoHTMLAttributes} from 'react';
 import MDXComponents from '@theme-original/MDXComponents';
 
-function LazyImage({loading, decoding, style, ...props}) {
+type LazyImageProps = ImgHTMLAttributes<HTMLImageElement> & {
+  loading?: 'eager' | 'lazy';
+  decoding?: 'auto' | 'sync' | 'async';
+  style?: CSSProperties;
+};
+
+function LazyImage({loading, decoding, style, ...props}: LazyImageProps) {
   return (
     <img
       {...props}
@@ -22,9 +28,13 @@ function LazyImage({loading, decoding, style, ...props}) {
   );
 }
 
-function OptimizedVideo({src, ...props}) {
-  const videoRef = React.useRef(null);
-  const [shouldLoad, setShouldLoad] = React.useState(false);
+type OptimizedVideoProps = VideoHTMLAttributes<HTMLVideoElement> & {
+  src: string;
+};
+
+function OptimizedVideo({src, ...props}: OptimizedVideoProps) {
+  const videoRef = React.useRef<HTMLVideoElement>(null);
+  const [shouldLoad, setShouldLoad] = React.useState<boolean>(false);
 
   React.useEffect(() => {
     const video = videoRef.current;

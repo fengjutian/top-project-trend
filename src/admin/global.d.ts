@@ -63,3 +63,23 @@ declare module '@docusaurus/useDocusaurusContext' {
   }
   export default function useDocusaurusContext(): DocusaurusContextValue;
 }
+
+declare module '@theme/BlogSidebar' {
+  import type {ComponentType} from 'react';
+  interface BlogSidebarItem {
+    title?: string;
+    permalink?: string;
+    items?: BlogSidebarItem[];
+  }
+  interface BlogSidebarProps {
+    sidebar: {items: BlogSidebarItem[]};
+    className?: string;
+  }
+  const BlogSidebar: ComponentType<BlogSidebarProps>;
+  export default BlogSidebar;
+}
+
+declare module '@theme-original/MDXComponents' {
+  const components: Record<string, React.ComponentType<unknown>>;
+  export default components;
+}
