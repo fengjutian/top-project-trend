@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Hide the site navbar/footer when the Content Studio page is mounted,
+   so the admin takes the full viewport. The body class is toggled from
+   src/pages/admin/index.tsx via useEffect. */
+body.content-studio-page .navbar,
+body.content-studio-page .footer,
+body.content-studio-page nav.navbar { display: none !important; }
+body.content-studio-page { overflow: hidden; }
+
 @layer base {
   :root {
     /* Reading theme: warm paper + ink */
