@@ -18,6 +18,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-*.log*
+.scripts/*.log
 
 # Per-build scratch logs (e.g. _build.log, _build2.log, _clear.log)
 _*.log

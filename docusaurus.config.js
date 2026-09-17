@@ -57,6 +57,7 @@ const config = {
         routeBasePath: 'java',
         showReadingTime: true,
         blogSidebarCount: 100,
+          onUntruncatedBlogPosts: 'ignore',
         editUrl:
           'https://github.com/fengjutian/top-project-trend/tree/main',
       },
@@ -68,6 +69,7 @@ const config = {
         routeBasePath: 'code',
         showReadingTime: true,
         blogSidebarCount: 100,
+          onUntruncatedBlogPosts: 'ignore',
         editUrl:
           'https://github.com/fengjutian/top-project-trend/tree/main',
       },
@@ -79,6 +81,7 @@ const config = {
         routeBasePath: 'ts',
         showReadingTime: true,
         blogSidebarCount: 100,
+          onUntruncatedBlogPosts: 'ignore',
         editUrl:
           'https://github.com/fengjutian/top-project-trend/tree/main',
       },
@@ -90,6 +93,7 @@ const config = {
         routeBasePath: 'algorithm',
         showReadingTime: true,
         blogSidebarCount: 100,
+          onUntruncatedBlogPosts: 'ignore',
         editUrl:
           'https://github.com/fengjutian/top-project-trend/tree/main',
       },
@@ -101,6 +105,7 @@ const config = {
         routeBasePath: 'golang',
         showReadingTime: true,
         blogSidebarCount: 100,
+          onUntruncatedBlogPosts: 'ignore',
         editUrl:
           'https://github.com/fengjutian/top-project-trend/tree/main',
       },
@@ -113,6 +118,7 @@ const config = {
         routeBasePath: 'rust',
         showReadingTime: true,
         blogSidebarCount: 100,
+          onUntruncatedBlogPosts: 'ignore',
         editUrl:
           'https://github.com/fengjutian/top-project-trend/tree/main',
       },
@@ -124,6 +130,7 @@ const config = {
         routeBasePath: 'python',
         showReadingTime: true,
         blogSidebarCount: 100,
+          onUntruncatedBlogPosts: 'ignore',
         editUrl:
           'https://github.com/fengjutian/top-project-trend/tree/main',
       },
@@ -135,6 +142,7 @@ const config = {
         routeBasePath: 'android',
         showReadingTime: true,
         blogSidebarCount: 100,
+          onUntruncatedBlogPosts: 'ignore',
         editUrl:
           'https://github.com/fengjutian/top-project-trend/tree/main',
       },
@@ -146,6 +154,7 @@ const config = {
         routeBasePath: 'lang-chain',
         showReadingTime: true,
         blogSidebarCount: 100,
+          onUntruncatedBlogPosts: 'ignore',
         editUrl:
           'https://github.com/fengjutian/top-project-trend/tree/main',
       },
@@ -157,6 +166,7 @@ const config = {
         routeBasePath: 'mcp',
         showReadingTime: true,
         blogSidebarCount: 100,
+          onUntruncatedBlogPosts: 'ignore',
         editUrl:
           'https://github.com/fengjutian/top-project-trend/tree/main',
       },
@@ -168,6 +178,7 @@ const config = {
         routeBasePath: 'llm',
         showReadingTime: true,
         blogSidebarCount: 100,
+          onUntruncatedBlogPosts: 'ignore',
         editUrl:
           'https://github.com/fengjutian/top-project-trend/tree/main',
       },
@@ -179,6 +190,7 @@ const config = {
         routeBasePath: 'static-website',
         showReadingTime: true,
         blogSidebarCount: 100,
+          onUntruncatedBlogPosts: 'ignore',
         blogSidebarTitle: '静态网站',
         editUrl:
           'https://github.com/fengjutian/top-project-trend/tree/main',
@@ -212,6 +224,7 @@ const config = {
           showReadingTime: true,
           blogSidebarTitle: '博文',
           blogSidebarCount: 100,
+          onUntruncatedBlogPosts: 'ignore',
           editUrl:
             'https://github.com/fengjutian/top-project-trend/tree/main',
         },
