@@ -1,18 +1,22 @@
+// Adds an explicit `date:` field to every content/* markdown file that has a
+// YYYYMMDD-style filename prefix but is missing the date front matter entry.
+
 import {readdirSync, readFileSync, writeFileSync} from 'node:fs';
 import {extname, resolve} from 'node:path';
+import type {Dirent} from 'node:fs';
 
 const contentRoot = resolve('content');
-const articleExtensions = new Set(['.md', '.mdx']);
+const ARTICLE_EXTENSIONS = new Set(['.md', '.mdx']);
 let updated = 0;
 
-function visit(directory) {
-  for (const entry of readdirSync(directory, {withFileTypes: true})) {
+function visit(directory: string): void {
+  for (const entry of readdirSync(directory, {withFileTypes: true}) as Dirent[]) {
     const path = resolve(directory, entry.name);
     if (entry.isDirectory()) {
       visit(path);
       continue;
     }
-    if (!articleExtensions.has(extname(entry.name).toLowerCase())) continue;
+    if (!ARTICLE_EXTENSIONS.has(extname(entry.name).toLowerCase())) continue;
 
     const match = entry.name.match(/^(\d{4})-?(\d{2})-?(\d{2})/);
     if (!match) continue;

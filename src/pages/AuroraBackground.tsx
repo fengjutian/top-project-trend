@@ -25,4 +25,4 @@ export default function AuroraBackground() {
       </svg>
     </div>
   );
-} 
+}

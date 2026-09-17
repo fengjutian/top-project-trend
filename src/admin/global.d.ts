@@ -37,3 +37,29 @@ declare module '@docusaurus/BrowserOnly' {
   const BrowserOnly: ComponentType<BrowserOnlyProps>;
   export default BrowserOnly;
 }
+
+declare module '@docusaurus/Link' {
+  import type {ComponentType, ReactNode} from 'react';
+  interface LinkProps {
+    to: string;
+    children?: ReactNode;
+    className?: string;
+    activeClassName?: string;
+  }
+  const Link: ComponentType<LinkProps>;
+  export default Link;
+}
+
+declare module '@docusaurus/useDocusaurusContext' {
+  interface DocusaurusContextValue {
+    siteConfig: {
+      title: string;
+      tagline?: string;
+      url: string;
+      baseUrl: string;
+    };
+    globalData: Record<string, unknown>;
+    i18n: {currentLocale: string; defaultLocale: string; locales: string[]};
+  }
+  export default function useDocusaurusContext(): DocusaurusContextValue;
+}

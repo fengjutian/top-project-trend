@@ -1,7 +1,12 @@
+// Walks the repo for media files, checks references in text content, detects
+// duplicates and oversize assets, and (optionally) writes a manifest to
+// static/media-manifest.json for the admin dashboard.
+
 import {createHash} from 'node:crypto';
 import {readdirSync, readFileSync, statSync, writeFileSync} from 'node:fs';
 import {extname, relative, resolve, sep} from 'node:path';
 import {spawnSync} from 'node:child_process';
+import type {Dirent} from 'node:fs';
 
 const root = resolve(new URL('..', import.meta.url).pathname.replace(/^\/(.:)/, '$1'));
 const strict = process.argv.includes('--strict');
@@ -10,8 +15,17 @@ const mediaExtensions = new Set(['.png', '.jpg', '.jpeg', '.webp', '.gif', '.mp4
 const textExtensions = new Set(['.md', '.mdx', '.js', '.jsx', '.ts', '.tsx', '.css', '.json']);
 const ignored = new Set(['.git', 'node_modules', 'build', '.docusaurus', '.cache-loader']);
 
-function walk(directory, predicate, files = []) {
-  for (const entry of readdirSync(directory, {withFileTypes: true})) {
+interface MediaRecord {
+  path: string;
+  size: number;
+  hash: string;
+  referenced: boolean;
+  width?: number;
+  height?: number;
+}
+
+function walk(directory: string, predicate: (path: string) => boolean, files: string[] = []): string[] {
+  for (const entry of readdirSync(directory, {withFileTypes: true}) as Dirent[]) {
     if (ignored.has(entry.name)) continue;
     const path = resolve(directory, entry.name);
     if (entry.isDirectory()) walk(path, predicate, files);
@@ -20,43 +34,50 @@ function walk(directory, predicate, files = []) {
   return files;
 }
 
-function dimensions(path) {
+function dimensions(path: string): {width?: number; height?: number} {
   if (extname(path).toLowerCase() === '.svg') return {};
   const result = spawnSync('ffprobe', [
     '-v', 'error', '-select_streams', 'v:0',
     '-show_entries', 'stream=width,height', '-of', 'json', path,
   ], {encoding: 'utf8'});
   if (result.status !== 0) return {};
-  const stream = JSON.parse(result.stdout).streams?.[0] ?? {};
+  const stream = (JSON.parse(result.stdout) as {streams?: Array<{width?: number; height?: number}>}).streams?.[0] ?? {};
   return {width: stream.width, height: stream.height};
+}
+
+function toRepoPath(path: string): string {
+  return relative(root, path).split(sep).join('/');
 }
 
 const media = walk(root, (path) => mediaExtensions.has(extname(path).toLowerCase()));
 const text = walk(root, (path) => textExtensions.has(extname(path).toLowerCase()))
   .map((path) => readFileSync(path, 'utf8')).join('\n');
-const hashes = new Map();
-const records = [];
+const hashes = new Map<string, string[]>();
+const records: MediaRecord[] = [];
 
 for (const path of media) {
   const buffer = readFileSync(path);
   const hash = createHash('sha256').update(buffer).digest('hex');
   const info = statSync(path);
   const ext = extname(path).toLowerCase();
-  const item = {
-    path: relative(root, path).split(sep).join('/'),
+  const repoPath = toRepoPath(path);
+  const item: MediaRecord = {
+    path: repoPath,
     size: info.size,
     hash,
-    referenced: text.includes(relative(root, path).split(sep).join('/')) || text.includes(path.split(sep).pop()),
+    referenced: text.includes(repoPath) || text.includes(path.split(sep).pop() ?? ''),
     ...dimensions(path),
   };
   records.push(item);
-  hashes.set(hash, [...(hashes.get(hash) ?? []), item.path]);
+  const peers = hashes.get(hash) ?? [];
+  peers.push(item.path);
+  hashes.set(hash, peers);
 }
 
 const oversized = records.filter((item) =>
   (item.path.endsWith('.mp4') && item.size > 3 * 1024 * 1024) ||
   (!item.path.endsWith('.mp4') && item.size > 200 * 1024));
-const tooWide = records.filter((item) => item.width > 2560);
+const tooWide = records.filter((item) => (item.width ?? 0) > 2560);
 const unreferenced = records.filter((item) => !item.referenced);
 const duplicates = [...hashes.values()].filter((paths) => paths.length > 1);
 

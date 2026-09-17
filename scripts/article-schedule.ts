@@ -1,30 +1,34 @@
+// Walks every content/* markdown file and applies pending schedule / unpublish
+// changes whose `publish_at` or `unpublish_at` timestamp is in the past.
+
 import {readdirSync, readFileSync, writeFileSync} from 'node:fs';
 import {extname, resolve} from 'node:path';
+import type {Dirent} from 'node:fs';
 
 const root = resolve('content');
 const now = Date.now();
-const changed = [];
+const changed: string[] = [];
 
-function frontmatterValue(source, name) {
+function frontmatterValue(source: string, name: string): string {
   const match = source.match(new RegExp(`^${name}:\\s*(.+?)\\s*$`, 'm'));
   return match?.[1]?.replace(/^['"]|['"]$/g, '') || '';
 }
 
-function setField(source, name, value) {
+function setField(source: string, name: string, value: string): string {
   const line = new RegExp(`^${name}:.*(?:\\r?\\n)?`, 'm');
   if (!value) return source.replace(line, '');
   if (line.test(source)) return source.replace(line, `${name}: ${value}\n`);
   return source.replace(/^---\r?\n/, `---\n${name}: ${value}\n`);
 }
 
-function due(value) {
+function due(value: string): boolean {
   if (!value) return false;
   const timestamp = Date.parse(value);
   return Number.isFinite(timestamp) && timestamp <= now;
 }
 
-function visit(directory) {
-  for (const entry of readdirSync(directory, {withFileTypes: true})) {
+function visit(directory: string): void {
+  for (const entry of readdirSync(directory, {withFileTypes: true}) as Dirent[]) {
     const path = resolve(directory, entry.name);
     if (entry.isDirectory()) {
       visit(path);

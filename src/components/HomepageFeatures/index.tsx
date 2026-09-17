@@ -2,7 +2,13 @@ import React from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.css';
 
-const FeatureList = [
+interface FeatureItem {
+  title: string;
+  icon: string;
+  description: React.ReactNode;
+}
+
+const FeatureList: FeatureItem[] = [
   {
     title: '📚 技术分享',
     icon: '🚀',
@@ -35,7 +41,7 @@ const FeatureList = [
   },
 ];
 
-function Feature({icon, title, description}) {
+function Feature({icon, title, description}: FeatureItem) {
   return (
     <div className={clsx('col col--4')}>
       <div className={styles.featureCard}>

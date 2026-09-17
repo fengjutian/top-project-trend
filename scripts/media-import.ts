@@ -1,17 +1,21 @@
+// Imports an image or video into static/media/<section>/<year>/<article>/,
+// transcodes it (WebP for images, MP4/H.264 for video) and prints a Markdown
+// snippet ready to paste into an article.
+
 import {createHash} from 'node:crypto';
-import {existsSync, mkdirSync, readFileSync, renameSync, rmSync} from 'node:fs';
+import {existsSync, mkdirSync, readFileSync, renameSync} from 'node:fs';
 import {basename, extname, join, relative, resolve, sep} from 'node:path';
 import {spawnSync} from 'node:child_process';
 
 const root = resolve(new URL('..', import.meta.url).pathname.replace(/^\/(.:)/, '$1'));
 const args = process.argv.slice(2);
 
-function option(name, fallback) {
+function option(name: string, fallback: string | undefined): string | undefined {
   const index = args.indexOf(`--${name}`);
   return index >= 0 ? args[index + 1] : fallback;
 }
 
-function slug(value) {
+function slug(value: string): string {
   return value
     .normalize('NFKD')
     .toLowerCase()
@@ -19,19 +23,20 @@ function slug(value) {
     .replace(/^-|-$/g, '') || 'media';
 }
 
-function run(command, commandArgs) {
+function run(command: string, commandArgs: readonly string[]): void {
   const result = spawnSync(command, commandArgs, {stdio: 'inherit'});
-  if (result.error?.code === 'ENOENT') {
+  const err = result.error as NodeJS.ErrnoException | undefined;
+  if (err?.code === 'ENOENT') {
     throw new Error(`${command} is required but was not found in PATH.`);
   }
   if (result.status !== 0) throw new Error(`${command} exited with ${result.status}.`);
 }
 
 const inputArg = args.find((arg) => !arg.startsWith('--') && !args[args.indexOf(arg) - 1]?.startsWith('--'));
-const article = option('article');
-const section = slug(option('section', 'blog'));
-const year = option('year', String(new Date().getFullYear()));
-const purpose = slug(option('purpose', 'image'));
+const article = option('article', undefined);
+const section = slug(option('section', 'blog') ?? 'blog');
+const year = option('year', String(new Date().getFullYear())) ?? String(new Date().getFullYear());
+const purpose = slug(option('purpose', 'image') ?? 'image');
 
 if (!inputArg || !article) {
   console.error('Usage: pnpm media:import <file> --article <slug> [--section blog] [--year 2026] [--purpose cover]');
@@ -73,7 +78,7 @@ try {
   const finalPath = join(destination, filename);
 
   if (existsSync(finalPath)) {
-    rmSync(temporary);
+    spawnSync('rm', [temporary]);
   } else {
     renameSync(temporary, finalPath);
   }
@@ -84,5 +89,5 @@ try {
     ? `<OptimizedVideo src="${publicPath}" />`
     : `![${originalName}](${publicPath})`);
 } finally {
-  if (existsSync(temporary)) rmSync(temporary);
+  if (existsSync(temporary)) spawnSync('rm', [temporary]);
 }
