@@ -53,6 +53,17 @@ function AdminApp() {
   const [article, setArticle] = useState<Article>(emptyArticle);
   const [saving, setSaving] = useState<boolean>(false);
   const [message, setMessage] = useState<string>('');
+  const [messageLevel, setMessageLevel] = useState<'info' | 'error'>('info');
+
+  function setNotice(text: string, level: 'info' | 'error' = 'info'): void {
+    setMessage(text);
+    setMessageLevel(level);
+  }
+
+  function clearNotice(): void {
+    clearNotice();
+    setMessageLevel('info');
+  }
   const [preview, setPreview] = useState<boolean>(false);
   const [query, setQuery] = useState<string>('');
   const [statusFilter, setStatusFilter] = useState<StatusFilter>('all');
@@ -168,13 +179,13 @@ function AdminApp() {
 
   async function loadArticles(nextSection = section, authToken = token): Promise<void> {
     if (!authToken) return;
-    setMessage('');
+    clearNotice();
     try {
       const entries = await refreshArticles(nextSection, authToken);
       const first = entries[0];
       setArticle(first ? withRecoveredDraft(first) : emptyArticle());
     } catch (error) {
-      setMessage((error as Error).message);
+      setNotice((error as Error).message, 'error');
     }
   }
 
@@ -183,7 +194,7 @@ function AdminApp() {
     try {
       await refreshOperations(token);
     } catch (error) {
-      setMessage((error as Error).message);
+      setNotice((error as Error).message, 'error');
     }
   }
 
@@ -206,7 +217,7 @@ function AdminApp() {
     if (dirty && !window.confirm('当前修改尚未保存，确定新建文章吗？')) return;
     setArticle(withRecoveredDraft({...emptyArticle(), filename: ''} as ArticleEntry));
     setPreview(false);
-    setMessage('正在创建新文章');
+    setNotice('正在创建新文章');
   }
 
   function update<K extends keyof Article>(field: K, value: Article[K]): void;
@@ -220,7 +231,7 @@ function AdminApp() {
     if (dirty && article.path !== item.path && !window.confirm('当前修改尚未保存，确定切换文章吗？')) return;
     setArticle(withRecoveredDraft(item));
     setPreview(false);
-    setMessage('');
+    clearNotice();
   }
 
   function changeSection(nextSection: string): void {
@@ -251,16 +262,16 @@ function AdminApp() {
     if (!targets.length) return;
     if (!window.confirm(`确定将 ${targets.length} 篇文章设为${draft ? '草稿' : '已发布'}吗？`)) return;
     setBatching(true);
-    setMessage('正在执行批量操作…');
+    setNotice('正在执行批量操作…');
     try {
       for (const item of targets) {
         await commitArticleUpdate(item, {draft}, `content: 批量${draft ? '转为草稿' : '发布'} ${item.title}`);
       }
       setSelectedPaths([]);
       await loadArticles(section);
-      setMessage(`已更新 ${targets.length} 篇文章。`);
+      setNotice(`已更新 ${targets.length} 篇文章。`);
     } catch (error) {
-      setMessage((error as Error).message);
+      setNotice((error as Error).message, 'error');
       await loadArticles(section);
     } finally {
       setBatching(false);
@@ -274,7 +285,7 @@ function AdminApp() {
     const targets = operationsArticles.filter((item) => item.tags.includes(oldTag));
     if (!window.confirm(`将在 ${targets.length} 篇文章中把“${oldTag}”改为“${normalized}”，是否继续？`)) return;
     setBatching(true);
-    setMessage('正在更新标签…');
+    setNotice('正在更新标签…');
     try {
       for (const item of targets) {
         const tags = [...new Set(item.tags.map((tag) => tag === oldTag ? normalized : tag))];
@@ -282,9 +293,9 @@ function AdminApp() {
       }
       await loadArticles(section);
       await loadOperationsData();
-      setMessage(`已在 ${targets.length} 篇文章中更新标签。`);
+      setNotice(`已在 ${targets.length} 篇文章中更新标签。`);
     } catch (error) {
-      setMessage((error as Error).message);
+      setNotice((error as Error).message, 'error');
       await loadArticles(section);
     } finally {
       setBatching(false);
@@ -303,7 +314,7 @@ function AdminApp() {
       rawFrontmatter: article.rawFrontmatter.replace(/^date:.*$/m, '').replace(/^slug:.*$/m, '').replace(/^title:.*$/m, ''),
     };
     setArticle(copy);
-    setMessage('已创建副本，修改后保存即可生成新文章。');
+    setNotice('已创建副本，修改后保存即可生成新文章。');
   }
 
   function applyTemplate(templateName: string): void {
@@ -311,7 +322,7 @@ function AdminApp() {
     if (!template) return;
     if (article.body.trim() && !window.confirm('应用模板会替换当前正文，确定继续吗？')) return;
     update('body', template.body);
-    setMessage(`已应用“${template.label}”模板。`);
+    setNotice(`已应用“${template.label}”模板。`);
   }
 
   async function deleteArticle(): Promise<void> {
@@ -324,9 +335,9 @@ function AdminApp() {
         body: JSON.stringify({message: `content: 删除 ${article.title}`, sha: article.sha, branch: BRANCH}),
       });
       await loadArticles(section);
-      setMessage('文章已从当前版本删除，可通过 Git 历史恢复。');
+      setNotice('文章已从当前版本删除，可通过 Git 历史恢复。');
     } catch (error) {
-      setMessage((error as Error).message);
+      setNotice((error as Error).message, 'error');
     } finally {
       setSaving(false);
     }
@@ -337,11 +348,11 @@ function AdminApp() {
     event.target.value = '';
     if (!file) return;
     if (!article.slug) {
-      setMessage('请先填写标题并生成链接标识。');
+      setNotice('请先填写标题并生成链接标识。');
       return;
     }
     setUploading(true);
-    setMessage('正在压缩并上传图片…');
+    setNotice('正在压缩并上传图片…');
     try {
       const blob = await optimizeImage(file);
       const year = article.date.slice(0, 4);
@@ -357,9 +368,9 @@ function AdminApp() {
       });
       const publicPath = `/top-project-trend/media/${section}/${year}/${article.slug}/${filename}`;
       update('body', `${article.body.trimEnd()}\n\n![${file.name.replace(/\.[^.]+$/, '')}](${publicPath})\n`);
-      setMessage(`图片已压缩至 ${Math.round(blob.size / 1024)}KB 并插入正文，请保存文章。`);
+      setNotice(`图片已压缩至 ${Math.round(blob.size / 1024)}KB 并插入正文，请保存文章。`);
     } catch (error) {
-      setMessage((error as Error).message);
+      setNotice((error as Error).message, 'error');
     } finally {
       setUploading(false);
     }
@@ -373,7 +384,7 @@ function AdminApp() {
       const commits = await github<HistoryCommit[]>(`commits?path=${encodeURIComponent(article.path)}&sha=${BRANCH}&per_page=20`, token);
       setHistory(commits);
     } catch (error) {
-      setMessage((error as Error).message);
+      setNotice((error as Error).message, 'error');
       setPanel(null);
     } finally {
       setPanelLoading(false);
@@ -387,9 +398,9 @@ function AdminApp() {
       const restored = parseArticle(decodeBase64(data.content));
       setArticle((current) => ({...restored, path: current.path, sha: current.sha, filename: (current as ArticleEntry).filename, savedContent: current.savedContent}));
       setPanel(null);
-      setMessage('历史版本已载入编辑器，确认内容后点击保存才会提交。');
+      setNotice('历史版本已载入编辑器，确认内容后点击保存才会提交。');
     } catch (error) {
-      setMessage((error as Error).message);
+      setNotice((error as Error).message, 'error');
     } finally {
       setPanelLoading(false);
     }
@@ -401,7 +412,7 @@ function AdminApp() {
     try {
       await refreshMedia(section, token);
     } catch (error) {
-      setMessage((error as Error).message);
+      setNotice((error as Error).message, 'error');
     } finally {
       setPanelLoading(false);
     }
@@ -415,14 +426,14 @@ function AdminApp() {
     const path = mediaPublicPath(item);
     update('body', `${article.body.trimEnd()}\n\n![${item.name.replace(/\.[^.]+$/, '')}](${path})\n`);
     setPanel(null);
-    setMessage('图片已插入正文，请保存文章。');
+    setNotice('图片已插入正文，请保存文章。');
   }
 
   async function deleteMedia(item: {path: string; name: string; sha: string}): Promise<void> {
     const publicPath = mediaPublicPath(item);
     const references = articles.filter((entry) => entry.body.includes(publicPath) || entry.body.includes(item.name));
     if (references.length) {
-      setMessage(`无法删除：该图片可能被 ${references.length} 篇文章引用。`);
+      setNotice(`无法删除：该图片可能被 ${references.length} 篇文章引用。`);
       return;
     }
     if (!window.confirm(`确定删除媒体文件 ${item.name} 吗？`)) return;
@@ -433,9 +444,9 @@ function AdminApp() {
         body: JSON.stringify({message: `media: 删除 ${item.name}`, sha: item.sha, branch: BRANCH}),
       });
       setMedia((current) => current.filter((entry) => entry.path !== item.path));
-      setMessage('媒体文件已删除。');
+      setNotice('媒体文件已删除。');
     } catch (error) {
-      setMessage((error as Error).message);
+      setNotice((error as Error).message, 'error');
     } finally {
       setPanelLoading(false);
     }
@@ -443,7 +454,7 @@ function AdminApp() {
 
   async function deleteCleanupMedia(item: {path: string; referenced: boolean; size: number}): Promise<void> {
     if (item.referenced) {
-      setMessage('该文件仍被文章引用，不能从清理面板删除。');
+      setNotice('该文件仍被文章引用，不能从清理面板删除。');
       return;
     }
     if (!window.confirm(`媒体审计将“${item.path}”标记为可能未引用。仍建议人工复核，确定删除吗？`)) return;
@@ -462,9 +473,9 @@ function AdminApp() {
           media: report.media.filter((entry) => entry.path !== item.path),
         };
       });
-      setMessage('媒体文件已删除；下一次部署会重新生成审计报告。');
+      setNotice('媒体文件已删除；下一次部署会重新生成审计报告。');
     } catch (error) {
-      setMessage((error as Error).message);
+      setNotice((error as Error).message, 'error');
     } finally {
       setPanelLoading(false);
     }
@@ -481,21 +492,21 @@ function AdminApp() {
 
   async function save(): Promise<void> {
     if (!article.title.trim() || !article.slug.trim() || !article.date) {
-      setMessage('标题、链接标识和发布日期不能为空。');
+      setNotice('标题、链接标识和发布日期不能为空。');
       return;
     }
     const blockingIssues = currentIssues.filter((issue) => issue.level === 'error');
     if (!article.draft && blockingIssues.length) {
-      setMessage(`发布已阻止：请先处理 ${blockingIssues.length} 个错误级检查项。`);
+      setNotice(`发布已阻止：请先处理 ${blockingIssues.length} 个错误级检查项。`);
       setPanel('audit');
       return;
     }
     if (article.publish_at && article.unpublish_at && new Date(article.publish_at) >= new Date(article.unpublish_at)) {
-      setMessage('自动下线时间必须晚于定时发布时间。');
+      setNotice('自动下线时间必须晚于定时发布时间。');
       return;
     }
     setSaving(true);
-    setMessage('');
+    clearNotice();
     try {
       const filename = article.path || `content/${section}/${article.date.replaceAll('-', '')}-${article.slug}-blog.md`;
       if (article.path && article.sha) {
@@ -514,10 +525,10 @@ function AdminApp() {
       await github(`contents/${filename}`, token, {method: 'PUT', body: JSON.stringify(payload)});
       localStorage.removeItem(`top-project-draft:${article.path || `${section}:new`}`);
       await loadArticles(section);
-      setMessage('已提交到 GitHub，部署工作流将自动发布。');
+      setNotice('已提交到 GitHub，部署工作流将自动发布。');
       window.setTimeout(() => refreshDeployment(token), 1500);
     } catch (error) {
-      setMessage((error as Error).message);
+      setNotice((error as Error).message, 'error');
     } finally {
       setSaving(false);
     }
@@ -564,7 +575,7 @@ function AdminApp() {
         uploading={uploading}
         preview={preview}
         focusMode={focusMode}
-        issueCount={currentIssues.length}
+        issues={currentIssues}
         onTogglePreview={() => setPreview((value) => !value)}
         onToggleFocus={() => setFocusMode((value) => !value)}
         onOpenMedia={openMedia}
@@ -576,7 +587,10 @@ function AdminApp() {
         onUploadImage={uploadImage}
       />
 
-      {message && <div className={styles.message}>{message}</div>}
+      {message && <div className={`${styles.message} ${messageLevel === 'error' ? styles.messageError : ''}`}>
+        <span>{message}</span>
+        <button type="button" className={styles.messageClose} onClick={clearNotice} aria-label="关闭通知">×</button>
+      </div>}
 
       {preview ? <ArticlePreview article={article} /> : <EditorForm article={article} onUpdate={update} onApplyTemplate={applyTemplate} metrics={metrics} />}
     </main>}

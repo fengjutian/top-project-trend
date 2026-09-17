@@ -1,8 +1,8 @@
 // Toolbar above the article editor: status pill, action buttons, save / delete / preview.
 
-import type {ChangeEvent} from 'react';
+import {useState, type ChangeEvent} from 'react';
 import styles from '../../pages/admin/styles.module.css';
-import type {Article} from '../lib/article';
+import type {Article, AuditIssue} from '../lib/article';
 
 interface EditorToolbarProps {
   article: Article;
@@ -11,7 +11,7 @@ interface EditorToolbarProps {
   uploading: boolean;
   preview: boolean;
   focusMode: boolean;
-  issueCount: number;
+  issues: AuditIssue[];
   onTogglePreview: () => void;
   onToggleFocus: () => void;
   onOpenMedia: () => void;
@@ -24,10 +24,13 @@ interface EditorToolbarProps {
 }
 
 export default function EditorToolbar({
-  article, dirty, saving, uploading, preview, focusMode, issueCount,
+  article, dirty, saving, uploading, preview, focusMode, issues,
   onTogglePreview, onToggleFocus, onOpenMedia, onOpenHistory, onOpenAudit,
   onDuplicate, onDelete, onSave, onUploadImage,
 }: EditorToolbarProps) {
+  const [auditOpen, setAuditOpen] = useState(false);
+  const previewIssues = issues.slice(0, 4);
+  const moreCount = issues.length - previewIssues.length;
   return (
     <header className={styles.toolbar}>
       <div>
@@ -38,9 +41,43 @@ export default function EditorToolbar({
         <small>{article.path || '新文章'}</small>
       </div>
       <div className={styles.toolbarActions}>
-        <button type="button" onClick={onOpenAudit}>
-          检查 <span className={styles.issueCount}>{issueCount}</span>
-        </button>
+        <div
+          className={styles.auditWrapper}
+          onMouseEnter={() => setAuditOpen(true)}
+          onMouseLeave={() => setAuditOpen(false)}
+        >
+          <button
+            type="button"
+            onClick={onOpenAudit}
+            aria-expanded={auditOpen}
+            aria-haspopup="dialog"
+          >
+            检查 <span className={styles.issueCount}>{issues.length}</span>
+          </button>
+          {auditOpen && issues.length > 0 && (
+            <div
+              className={styles.auditPopover}
+              role="tooltip"
+              onClick={() => {
+                setAuditOpen(false);
+                onOpenAudit();
+              }}
+            >
+              {previewIssues.map((issue, index) => (
+                <div key={index} className={`${styles.auditItem} ${issue.level === 'error' ? styles.auditItemError : styles.auditItemWarn}`}>
+                  <strong>{issue.level === 'error' ? '错误' : '提示'}</strong>
+                  <span>{issue.text}</span>
+                </div>
+              ))}
+              {moreCount > 0 && (
+                <div className={styles.auditMore}>还有 {moreCount} 项，点此查看全部</div>
+              )}
+              {previewIssues.length === 0 && (
+                <div className={styles.auditEmpty}>暂无检查项</div>
+              )}
+            </div>
+          )}
+        </div>
         <button type="button" onClick={onToggleFocus}>
           {focusMode ? '退出专注' : '专注'}
         </button>
