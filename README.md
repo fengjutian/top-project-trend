@@ -1,155 +1,182 @@
 # fengjutian 技术周刊
 
-![首页预览](static/img/fengjutian-animated.svg)
+一个基于 Docusaurus 构建的中文技术内容站，聚合技术周刊、编程语言、AI、开源项目与开发资源。仓库同时内置单人内容管理后台，可直接在浏览器中管理 MDX 文章并提交到 GitHub。
 
-> 现代化开源项目趋势周刊，探索前端技术前沿，分享开源生态动态，打造极致阅读体验。
+![站点预览](static/img/fengjutian-animated.svg)
 
-## 项目简介
+## 在线访问
 
-fengjutian技术周刊是一个专注于前端技术与开源生态的综合性技术平台，致力于为开发者提供最新的技术资讯、开源趋势分析和优质的学习资源。通过精心设计的用户界面和流畅的阅读体验，帮助开发者紧跟技术发展潮流。
+- 站点：<https://fengjutian.github.io/top-project-trend/>
+- 内容后台：<https://fengjutian.github.io/top-project-trend/admin>
 
-## 项目愿景
+后台面向仓库维护者，不提供多人账号系统。登录凭证使用 GitHub Fine-grained personal access token，并且只保存在当前标签页的 `sessionStorage` 中。
 
-我们的目标是构建一个集技术资讯、开源趋势、动效设计于一体的高质量技术社区。通过简洁优雅的界面设计、流畅的动画效果和优质的内容输出，为开发者提供有价值的技术参考和灵感来源，助力技术成长与知识分享。
+## 主要功能
 
-## 核心特色
+### 内容站点
 
-<div style="display: flex; flex-wrap: wrap; gap: 1.5rem; margin: 2rem 0;">
-  <div style="flex: 1; min-width: 250px; background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px;">
-    <h3 style="margin-top: 0; display: flex; align-items: center;">🦕 恐龙吉祥物</h3>
-    <p>可爱独特的恐龙形象，成为品牌的标志性符号，为技术内容增添趣味性与识别度。</p>
-  </div>
-  <div style="flex: 1; min-width: 250px; background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px;">
-    <h3 style="margin-top: 0; display: flex; align-items: center;">🌌 极光动画背景</h3>
-    <p>采用 SVG+CSS 实现的流动渐变极光效果，创造沉浸式阅读体验，灵感源自 vue-bits.dev。</p>
-  </div>
-  <div style="flex: 1; min-width: 250px; background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px;">
-    <h3 style="margin-top: 0; display: flex; align-items: center;">⚡ 高性能体验</h3>
-    <p>响应式设计、暗黑模式支持、PWA 功能，确保在各种设备上都能获得流畅的用户体验。</p>
-  </div>
-</div>
+- 13 个内容栏目，文章统一存放在 `content/` 下
+- 按发布日期倒序展示文章
+- 支持 Markdown、MDX、自定义 React 组件和代码高亮
+- 支持中英文全文搜索、深色模式、PWA 与响应式布局
+- GitHub Pages 自动构建和发布
+
+### Content Studio
+
+访问 `/admin` 即可进入内置 CMS：
+
+- 新建、编辑、复制、删除、搜索和筛选文章
+- 草稿、发布、定时发布和自动下线
+- 全部文章按时间倒序排列
+- 标签、摘要、封面、链接标识和文章大纲管理
+- 本地自动暂存、离开提醒和 Git SHA 冲突检测
+- Git 历史版本查看与恢复
+- 使用真实站点主题进行 MDX 预览
+- 支持代码高亮、图片、`OptimizedVideo` 和站点自定义组件
+- 图片上传、WebP 转换、压缩与媒体库复用
+- 发布前内容检查与批量草稿/发布操作
+- 全站仪表盘、发布日历、外链检查和媒体清理
+- 最近一次 GitHub Actions 部署状态
+
+后台保存后会通过 GitHub Contents API 直接提交到 `main` 分支，并触发自动部署。
 
 ## 技术栈
 
-本项目基于现代前端技术栈构建，主要包括：
+- Docusaurus 2
+- React 17
+- MDX
+- Prism 代码高亮
+- `@easyops-cn/docusaurus-search-local`
+- GitHub Actions 与 GitHub Pages
+- pnpm
 
-- <strong>Docusaurus 2</strong>：强大的静态站点生成器，提供完整的文档站点功能
-- <strong>React</strong>：用于构建用户界面的 JavaScript 库，提供组件化开发能力
-- <strong>Framer Motion</strong>：流畅的动画效果实现，提升用户体验
-- <strong>SVG</strong>：矢量图形技术，确保界面清晰度和高性能
-- <strong>MDX</strong>：增强的 Markdown，支持在文档中嵌入 React 组件
-- <strong>@easyops-cn/docusaurus-search-local</strong>：提供本地化搜索功能
+## 本地开发
 
-## 快速开始
-
-### 环境准备
-
-- Node.js (v14.0.0 或更高版本)
-- npm/yarn/pnpm 包管理器
-
-### 安装与运行
+环境要求：Node.js 16.14 或更高版本、pnpm 9。
 
 ```bash
-# 克隆仓库
 git clone https://github.com/fengjutian/top-project-trend.git
 cd top-project-trend
-
-# 安装依赖
-npm install
-# 或使用 yarn
-# yarn install
-# 或使用 pnpm
-# pnpm install
-
-# 本地开发（启动开发服务器）
-npm run start
-# 或
-# yarn start
-# 或
-# pnpm start
-
-# 构建生产环境
-npm run build
-# 或
-# yarn build
-# 或
-# pnpm build
-
-# 本地预览生产构建
-npm run serve
-# 或
-# yarn serve
-# 或
-# pnpm serve
+pnpm install
+pnpm dev
 ```
 
-开发服务器启动后，访问 http://localhost:3000/top-project-trend/ 即可查看站点。
+本地地址：
+
+- 站点：<http://localhost:3000/top-project-trend/>
+- 内容后台：<http://localhost:3000/top-project-trend/admin>
+
+常用命令：
+
+```bash
+pnpm dev            # 启动开发服务器
+pnpm build          # 生成生产构建
+pnpm serve          # 本地预览生产构建
+pnpm clear          # 清理 Docusaurus 缓存
+```
+
+## 使用后台
+
+首次进入 `/admin` 时，需要填写 GitHub Fine-grained personal access token：
+
+1. Repository access 只选择 `fengjutian/top-project-trend`。
+2. Repository permissions 只开启 **Contents: Read and write**。
+3. 将 Token 粘贴到后台连接窗口。
+
+Token 不会写入源码、提交到 Git 或持久保存在服务器。关闭标签页或在后台退出后，当前会话中的 Token 会被清除。
+
+后台常用快捷键：
+
+- `Ctrl/Cmd + S`：保存文章
+- `Ctrl/Cmd + K`：聚焦文章搜索
+- `Ctrl/Cmd + Shift + P`：切换编辑与预览
+
+## 本地写作
+
+创建一篇默认处于草稿状态的文章：
+
+```bash
+pnpm article:new blog "文章标题"
+```
+
+文章 Front Matter 示例：
+
+```yaml
+---
+title: 文章标题
+slug: article-slug
+date: 2026-09-17
+authors: fengjutian
+tags: [React, GitHub]
+description: 文章摘要
+image: /media/blog/2026/article-slug/cover.webp
+draft: true
+---
+```
+
+发布时将 `draft` 改为 `false`。所有栏目中的文章都应包含明确的 `date`，站点和后台均按日期倒序展示。
+
+更多发布细节见 [文章发布指南](docs/publishing.md)。
+
+## 内容与媒体工具
+
+```bash
+pnpm article:dates       # 检查或补齐文章日期
+pnpm article:schedule    # 处理定时发布与自动下线
+pnpm links:audit         # 检查文章外链
+pnpm media:import -- ./image.png --article demo --section blog --year 2026 --purpose cover
+pnpm media:audit         # 审计媒体引用、重复项和体积
+pnpm media:audit:strict  # 严格模式媒体审计
+```
+
+导入图片时会生成适合网站使用的媒体文件。后台上传 PNG、JPEG 或 WebP 时，也会在浏览器中自动转换并压缩为 WebP。
+
+## 自动化流程
+
+仓库包含以下 GitHub Actions：
+
+- `deploy.yml`：构建、媒体审计并部署 GitHub Pages
+- `ci.yml`：持续集成检查
+- `scheduled-publishing.yml`：每 15 分钟处理定时发布和自动下线
+- `link-audit.yml`：定期检查全站外链，并生成后台可读取的报告
+
+首次启用部署时，在 GitHub 仓库的 **Settings → Pages** 中将 **Build and deployment → Source** 设置为 **GitHub Actions**。
 
 ## 目录结构
 
-项目采用清晰的目录结构，便于维护和扩展：
-
-```
-├── src/pages/index.js          # 首页主视觉与极光动画
-├── src/pages/AuroraBackground.js # 极光动画 SVG 组件
-├── static/img/                 # 静态资源，包括恐龙吉祥物 SVG
-├── content/                    # 网站内容
-│   ├── blog/                   # 技术周刊
-│   ├── java/                   # Java 技术栏目
-│   ├── ts/                     # TypeScript 技术栏目
-│   ├── ...                     # 其他技术栏目
-│   └── static-website/         # 资源网站栏目
-├── docs/                       # 文档教程
-├── docusaurus.config.js        # 项目配置文件
-├── package.json                # 依赖管理
-└── README.md                   # 项目说明文档
+```text
+content/                     各栏目 MDX 文章
+docs/                        站点说明文档
+scripts/                     文章、外链和媒体维护脚本
+src/pages/admin/             单人内容管理后台
+static/media/                文章媒体资源
+static/reports/              自动化检查报告
+.github/workflows/           CI、部署与定时任务
+.pages.yml                   Pages CMS 兼容配置
+docusaurus.config.js         站点与栏目配置
 ```
 
-## 搜索功能
+## 发布
 
-本项目集成了本地搜索功能，支持中英文搜索、结果高亮等特性。使用前需注意：
+推送到 `main` 分支后，GitHub Actions 会执行媒体检查和生产构建；检查通过后自动发布到 GitHub Pages。
 
-- 在开发环境中，需要先运行 `npm run build` 生成搜索索引
-- 搜索功能在生产环境中默认可用
-
-## 部署指南
-
-项目支持多种部署方式，以下是 GitHub Pages 部署步骤（Windows 环境）：
-
-```powershell
-# 配置 SSH（可选，但推荐）
-$env:USE_SSH="true"
-
-# 配置 GitHub 用户名
-$env:GIT_USER="你的GitHub用户名"
-
-# 部署到 GitHub Pages
-npm run deploy
-# 或
-# yarn deploy
-# 或
-# pnpm deploy
+```bash
+git add .
+git commit -m "content: 发布文章标题"
+git push
 ```
 
-部署成功后，站点将可通过 https://你的用户名.github.io/top-project-trend/ 访问。
+也可以运行 `pnpm deploy` 手动执行 Docusaurus 的部署流程。
 
-## 贡献指南
+## 安全说明
 
-我们欢迎并感谢社区的贡献！无论是内容更新、bug 修复还是功能增强，都可以通过以下步骤参与：
-
-1. Fork 本仓库
-2. 创建特性分支 (`git checkout -b feature/your-feature`)
-3. 提交更改 (`git commit -am 'Add some feature'`)
-4. 推送到分支 (`git push origin feature/your-feature`)
-5. 创建新的 Pull Request
-
-## 许可协议
-
-本项目采用 MIT 许可证，详情请见 [LICENSE](LICENSE) 文件。
+- 不要把 GitHub Token 写入代码、配置文件或提交记录。
+- CMS 只需要目标仓库的 Contents 读写权限。
+- 删除文章或媒体前会要求确认；Git 提交历史可用于恢复内容。
+- 媒体清理结果属于静态分析，删除未引用文件前仍应人工复核。
 
 ---
 
-由 [fengjutian](https://github.com/fengjutian) 设计与维护
+由 [fengjutian](https://github.com/fengjutian) 维护。
 
 [![GitHub stars](https://img.shields.io/github/stars/fengjutian/top-project-trend.svg?style=social&label=Star)](https://github.com/fengjutian/top-project-trend)
-        
