@@ -3,11 +3,34 @@
 
 import {OWNER, REPO} from '../lib/github';
 import {auditArticle} from '../lib/article';
+import type {DashboardArticle, LinkReport, MediaReport} from '../hooks/useOperations';
 import styles from '../../pages/admin/styles.module.css';
 
 const WEEKDAYS = ['日', '一', '二', '三', '四', '五', '六'];
 
-function CalendarEvent({item, cellDate}) {
+interface DashboardMetrics {
+  total: number;
+  drafts: number;
+  published: number;
+  unhealthy: number;
+  missingDescription: number;
+  missingImage: number;
+}
+
+interface CalendarCell {
+  day: number;
+  date: string;
+  events: DashboardArticle[];
+}
+
+type Calendar = Array<CalendarCell | null>;
+
+interface CalendarEventProps {
+  item: DashboardArticle;
+  cellDate: string;
+}
+
+function CalendarEvent({item, cellDate}: CalendarEventProps) {
   const day = cellDate.slice(0, 10);
   const variant = item.publish_at?.slice(0, 10) === day
     ? styles.calendarScheduled
@@ -15,6 +38,20 @@ function CalendarEvent({item, cellDate}) {
       ? styles.calendarOffline
       : styles.calendarPublished;
   return <span key={`${item.path}-${item.publish_at}-${item.unpublish_at}`} className={variant} title={item.title}>{item.title}</span>;
+}
+
+interface DashboardProps {
+  dashboard: DashboardMetrics;
+  calendarMonth: string;
+  onCalendarMonthChange: (value: string) => void;
+  calendar: Calendar;
+  loading: boolean;
+  onRefresh: () => void;
+  onOpenTags: () => void;
+  onOpenCleanup: () => void;
+  linkReport: LinkReport | null;
+  mediaReport: MediaReport | null;
+  operationsArticles: DashboardArticle[];
 }
 
 export default function Dashboard({
@@ -26,7 +63,7 @@ export default function Dashboard({
   linkReport,
   mediaReport,
   operationsArticles,
-}) {
+}: DashboardProps) {
   return (
     <main className={styles.dashboard}>
       <header>

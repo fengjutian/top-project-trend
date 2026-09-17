@@ -2,9 +2,43 @@
 // dashboard / new buttons, batch actions, article list, logout.
 
 import DeploymentStatus from './DeploymentStatus';
-import {OWNER, REPO} from '../lib/github';
+import {OWNER, REPO, type WorkflowRun} from '../lib/github';
 import {SECTIONS} from '../lib/article';
+import type {ArticleEntry} from '../hooks/useArticles';
 import styles from '../../pages/admin/styles.module.css';
+
+export type StatusFilter = 'all' | 'draft' | 'published';
+export type Workspace = 'editor' | 'dashboard';
+
+interface SidebarProps {
+  deployment: WorkflowRun | null;
+  query: string;
+  onQueryChange: (value: string) => void;
+  section: string;
+  onSectionChange: (value: string) => void;
+  statusFilter: StatusFilter;
+  onStatusFilterChange: (value: StatusFilter) => void;
+  workspace: Workspace;
+  onOpenDashboard: () => void;
+  onNewArticle: () => void;
+  loading: boolean;
+  visibleArticles: ArticleEntry[];
+  activePath: string;
+  selectedPaths: string[];
+  onToggleSelected: (path: string) => void;
+  onClearSelection: () => void;
+  batching: boolean;
+  onBatchSetDraft: (draft: boolean) => void;
+  onSelectArticle: (item: ArticleEntry) => void;
+  onSetWorkspace: (workspace: Workspace) => void;
+  onLogout: () => void;
+}
+
+const STATUS_FILTERS: Array<[StatusFilter, string]> = [
+  ['all', '全部'],
+  ['draft', '草稿'],
+  ['published', '已发布'],
+];
 
 export default function Sidebar({
   deployment,
@@ -21,7 +55,7 @@ export default function Sidebar({
   onSelectArticle,
   onSetWorkspace,
   onLogout,
-}) {
+}: SidebarProps) {
   return (
     <aside className={styles.sidebar}>
       <div className={styles.brand}>
@@ -37,7 +71,7 @@ export default function Sidebar({
         {SECTIONS.map(([value, label]) => <option key={value} value={value}>{label}</option>)}
       </select>
       <div className={styles.filters}>
-        {[['all', '全部'], ['draft', '草稿'], ['published', '已发布']].map(([value, label]) => (
+        {STATUS_FILTERS.map(([value, label]) => (
           <button
             type="button"
             key={value}
