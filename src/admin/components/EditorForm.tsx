@@ -1,15 +1,26 @@
 // Article editor form. Owns no state — receives the article and emits
 // field updates through callbacks.
 
+import type {ChangeEvent} from 'react';
 import styles from '../../pages/admin/styles.module.css';
-import {ARTICLE_TEMPLATES, toSlug, toLocalDateTime, fromLocalDateTime, inferTags, inferDescription} from '../lib/article';
+import {ARTICLE_TEMPLATES, toSlug, toLocalDateTime, fromLocalDateTime, inferTags, inferDescription, type Article, type ArticleMetrics} from '../lib/article';
 
-export default function EditorForm({article, onUpdate, onApplyTemplate, metrics}) {
-  const handleTitle = (event) => {
+export type ArticleUpdate = (field: keyof Article, value: unknown) => void;
+export type ArticleUpdater = ((updater: (current: Article) => Article) => void);
+
+interface EditorFormProps {
+  article: Article;
+  onUpdate: ArticleUpdate & ArticleUpdater;
+  onApplyTemplate: (templateName: string) => void;
+  metrics: ArticleMetrics;
+}
+
+export default function EditorForm({article, onUpdate, onApplyTemplate, metrics}: EditorFormProps) {
+  const handleTitle = (event: ChangeEvent<HTMLInputElement>) => {
     const title = event.target.value;
     onUpdate((current) => ({...current, title, slug: current.path || current.slug ? current.slug : toSlug(title)}));
   };
-  const handlePublishAt = (event) => {
+  const handlePublishAt = (event: ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     onUpdate((current) => ({...current, publish_at: fromLocalDateTime(value), draft: value ? true : current.draft}));
   };
@@ -44,7 +55,7 @@ export default function EditorForm({article, onUpdate, onApplyTemplate, metrics}
       </div>
 
       <label>标签<div className={styles.inlineInput}><input value={article.tags.join(', ')} onChange={(event) => onUpdate('tags', event.target.value.split(',').map((tag) => tag.trim()).filter(Boolean))} placeholder="React, AI, GitHub" /><button type="button" onClick={() => onUpdate('tags', inferTags(article.title, article.body))}>智能提取</button></div></label>
-      <label>摘要<div className={styles.inlineInput}><textarea rows="2" value={article.description} onChange={(event) => onUpdate('description', event.target.value)} /><button type="button" onClick={() => onUpdate('description', inferDescription(article.body))}>自动摘要</button></div></label>
+      <label>摘要<div className={styles.inlineInput}><textarea rows={2} value={article.description} onChange={(event) => onUpdate('description', event.target.value)} /><button type="button" onClick={() => onUpdate('description', inferDescription(article.body))}>自动摘要</button></div></label>
       <label>封面路径<input value={article.image} onChange={(event) => onUpdate('image', event.target.value)} placeholder="/top-project-trend/media/..." /></label>
       <div className={styles.documentMeta}>
         <span>{metrics.count} 字</span>

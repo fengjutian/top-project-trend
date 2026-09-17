@@ -1,36 +1,68 @@
 // Modal that hosts the secondary panels (history / media / audit / cleanup / tags).
 // Renders the matching body based on the `panel` prop.
 
-import {SECTIONS} from '../lib/article';
+import {SECTIONS, type AuditIssue} from '../lib/article';
+import type {GitHubEntry} from '../lib/github';
+import type {MediaReport} from '../hooks/useOperations';
 import styles from '../../pages/admin/styles.module.css';
 
-const HEADER_MAP = {
-  history:   {eyebrow: 'VERSION CONTROL', title: '文章版本'},
-  media:     {eyebrow: 'MEDIA LIBRARY',   title: null},
-  audit:     {eyebrow: 'CONTENT AUDIT',   title: '发布前检查'},
-  cleanup:   {eyebrow: 'MEDIA CLEANUP',   title: '媒体清理建议'},
-  tags:      {eyebrow: 'TAG MANAGER',     title: '标签管理'},
+export type PanelType = 'history' | 'media' | 'audit' | 'cleanup' | 'tags';
+
+interface HeaderDef {
+  eyebrow: string;
+  title: string | null;
+}
+
+const HEADER_MAP: Record<PanelType, HeaderDef> = {
+  history: {eyebrow: 'VERSION CONTROL', title: '文章版本'},
+  media:   {eyebrow: 'MEDIA LIBRARY',   title: null},
+  audit:   {eyebrow: 'CONTENT AUDIT',   title: '发布前检查'},
+  cleanup: {eyebrow: 'MEDIA CLEANUP',   title: '媒体清理建议'},
+  tags:    {eyebrow: 'TAG MANAGER',     title: '标签管理'},
 };
 
-function resolveTitle(panel, section) {
+interface HistoryCommit {
+  sha: string;
+  commit: {
+    message: string;
+    author?: {name?: string; date?: string};
+  };
+}
+
+interface PanelModalProps {
+  panel: PanelType | null;
+  section: string;
+  panelLoading: boolean;
+  onClose: () => void;
+  history: HistoryCommit[];
+  onRestoreVersion: (sha: string) => void;
+  media: GitHubEntry[];
+  onInsertMedia: (item: GitHubEntry) => void;
+  onDeleteMedia: (item: GitHubEntry) => void;
+  issues: AuditIssue[];
+  mediaReport: MediaReport | null;
+  onDeleteCleanupMedia: (item: MediaReport['media'][number]) => void;
+  tagStats: Array<[string, number]>;
+  onRenameTag: (tag: string) => void;
+  batching: boolean;
+}
+
+function resolveTitle(panel: PanelType, section: string): string | null {
   if (panel === 'media') {
     const found = SECTIONS.find(([value]) => value === section);
     return `${found?.[1] ?? ''}媒体库`;
   }
-  return HEADER_MAP[panel]?.title;
+  return HEADER_MAP[panel]?.title ?? null;
 }
 
 export default function PanelModal({
-  panel,
-  section,
-  panelLoading,
-  onClose,
+  panel, section, panelLoading, onClose,
   history, onRestoreVersion,
   media, onInsertMedia, onDeleteMedia,
   issues,
   mediaReport, onDeleteCleanupMedia,
   tagStats, onRenameTag, batching,
-}) {
+}: PanelModalProps) {
   if (!panel) return null;
   const header = HEADER_MAP[panel];
   const title = resolveTitle(panel, section);
@@ -49,7 +81,7 @@ export default function PanelModal({
                <div key={item.sha} className={styles.historyItem}>
                  <div>
                    <strong>{item.commit.message}</strong>
-                   <span>{item.commit.author?.name} · {new Date(item.commit.author?.date).toLocaleString()}</span>
+                   <span>{item.commit.author?.name} · {new Date(item.commit.author?.date ?? '').toLocaleString()}</span>
                    <code>{item.sha.slice(0, 8)}</code>
                  </div>
                  <button type="button" onClick={() => onRestoreVersion(item.sha)}>载入此版本</button>
@@ -60,7 +92,7 @@ export default function PanelModal({
            <div className={styles.mediaGrid}>
              {media.length ? media.map((item) => (
                <article key={item.path} className={styles.mediaItem}>
-                 <img src={item.download_url} alt={item.name} loading="lazy" />
+                 <img src={item.download_url ?? ''} alt={item.name} loading="lazy" />
                  <strong title={item.path}>{item.name}</strong>
                  <span>{Math.round((item.size || 0) / 1024)}KB</span>
                  <div>

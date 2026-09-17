@@ -1,25 +1,33 @@
 // Toolbar above the article editor: status pill, action buttons, save / delete / preview.
 
+import type {ChangeEvent} from 'react';
 import styles from '../../pages/admin/styles.module.css';
+import type {Article} from '../lib/article';
+
+interface EditorToolbarProps {
+  article: Article;
+  dirty: boolean;
+  saving: boolean;
+  uploading: boolean;
+  preview: boolean;
+  focusMode: boolean;
+  issueCount: number;
+  onTogglePreview: () => void;
+  onToggleFocus: () => void;
+  onOpenMedia: () => void;
+  onOpenHistory: () => void;
+  onOpenAudit: () => void;
+  onDuplicate: () => void;
+  onDelete: () => void;
+  onSave: () => void;
+  onUploadImage: (event: ChangeEvent<HTMLInputElement>) => void;
+}
 
 export default function EditorToolbar({
-  article,
-  dirty,
-  saving,
-  uploading,
-  preview,
-  focusMode,
-  issueCount,
-  onTogglePreview,
-  onToggleFocus,
-  onOpenMedia,
-  onOpenHistory,
-  onOpenAudit,
-  onDuplicate,
-  onDelete,
-  onSave,
-  onUploadImage,
-}) {
+  article, dirty, saving, uploading, preview, focusMode, issueCount,
+  onTogglePreview, onToggleFocus, onOpenMedia, onOpenHistory, onOpenAudit,
+  onDuplicate, onDelete, onSave, onUploadImage,
+}: EditorToolbarProps) {
   return (
     <header className={styles.toolbar}>
       <div>
