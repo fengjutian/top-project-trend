@@ -2,8 +2,9 @@
 // the sidebar. Returns null when no deployment data is available.
 
 import styles from '../../pages/admin/styles.module.css';
+import type {WorkflowRun} from '../lib/github';
 
-export default function DeploymentStatus({deployment}) {
+export default function DeploymentStatus({deployment}: {deployment: WorkflowRun | null}) {
   if (!deployment) return null;
   const variant = deployment.conclusion === 'success'
     ? styles.deploySuccess

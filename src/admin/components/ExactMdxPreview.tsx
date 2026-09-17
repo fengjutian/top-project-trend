@@ -8,13 +8,29 @@ import MDXComponents from '@theme/MDXComponents';
 import styles from '../../pages/admin/styles.module.css';
 import {previewSource} from '../lib/github';
 
-class PreviewErrorBoundary extends React.Component {
-  constructor(props) {
+type MDXContentComponent = React.ComponentType<{components?: Record<string, React.ComponentType<unknown>>}>;
+
+interface PreviewResult {
+  Content: MDXContentComponent | null;
+  error: Error | null;
+}
+
+interface PreviewErrorBoundaryProps {
+  source: string;
+  children: React.ReactNode;
+}
+
+interface PreviewErrorBoundaryState {
+  error: Error | null;
+}
+
+class PreviewErrorBoundary extends React.Component<PreviewErrorBoundaryProps, PreviewErrorBoundaryState> {
+  constructor(props: PreviewErrorBoundaryProps) {
     super(props);
     this.state = {error: null};
   }
 
-  static getDerivedStateFromError(error) {
+  static getDerivedStateFromError(error: Error): PreviewErrorBoundaryState {
     return {error};
   }
 
@@ -30,16 +46,20 @@ class PreviewErrorBoundary extends React.Component {
   }
 }
 
-export default function ExactMdxPreview({source, articlePath}) {
+export default function ExactMdxPreview({source, articlePath}: {source: string; articlePath: string}) {
   const compiledSource = useMemo(() => previewSource(source, articlePath), [source, articlePath]);
-  const [result, setResult] = useState({Content: null, error: null});
+  const [result, setResult] = useState<PreviewResult>({Content: null, error: null});
 
   useEffect(() => {
     let active = true;
     setResult({Content: null, error: null});
     evaluate(compiledSource, {...jsxRuntime, development: false})
-      .then((module) => { if (active) setResult({Content: module.default, error: null}); })
-      .catch((error) => { if (active) setResult({Content: null, error}); });
+      .then((module: {default: MDXContentComponent}) => {
+        if (active) setResult({Content: module.default, error: null});
+      })
+      .catch((error: Error) => {
+        if (active) setResult({Content: null, error});
+      });
     return () => { active = false; };
   }, [compiledSource]);
 

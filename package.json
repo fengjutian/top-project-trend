@@ -20,6 +20,7 @@
     "article:schedule": "node scripts/article-schedule.mjs",
     "links:audit": "node scripts/link-audit.mjs",
     "media:audit:build": "node scripts/media-audit.mjs --strict --write-manifest",
+    "typecheck": "tsc --noEmit",
     "preinstall": "npx only-allow pnpm",
     "del": "rimraf node_modules",
     "commit": "cz"

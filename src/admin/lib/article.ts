@@ -1,7 +1,7 @@
 // Article data layer for the Content Studio admin.
 // Pure functions, no React. Safe to import from client-only code paths.
 
-export const SECTIONS = [
+export const SECTIONS: ReadonlyArray<[string, string]> = [
   ['blog', '技术周刊'], ['java', 'Java'], ['code', '编程综合'],
   ['ts', 'TypeScript'], ['algorithm', '算法'], ['golang', 'Go'],
   ['rust', 'Rust'], ['python', 'Python'], ['android', 'Android'],
@@ -9,7 +9,12 @@ export const SECTIONS = [
   ['static-website', '资源网站'],
 ];
 
-export const ARTICLE_TEMPLATES = {
+export interface ArticleTemplate {
+  label: string;
+  body: string;
+}
+
+export const ARTICLE_TEMPLATES: Readonly<Record<string, ArticleTemplate>> = {
   weekly: {
     label: '技术周刊',
     body: '## 本期导读\n\n在这里概括本期内容。\n\n## 项目一\n\n![项目截图]()\n\n**项目地址：** https://github.com/\n\n项目简介与推荐理由。\n\n## 项目二\n\n项目简介与推荐理由。\n\n## 总结\n\n本期内容总结。',
@@ -26,7 +31,25 @@ export const ARTICLE_TEMPLATES = {
 
 export const DEFAULT_AUTHORS = 'fengjutian';
 
-export function emptyArticle() {
+export interface Article {
+  title: string;
+  slug: string;
+  date: string;
+  authors: string;
+  tags: string[];
+  draft: boolean;
+  description: string;
+  image: string;
+  body: string;
+  publish_at: string;
+  unpublish_at: string;
+  rawFrontmatter: string;
+  path: string;
+  sha: string;
+  savedContent: string;
+}
+
+export function emptyArticle(): Article {
   return {
     title: '', slug: '', date: new Date().toISOString().slice(0, 10),
     authors: DEFAULT_AUTHORS, tags: [], draft: true, description: '', image: '', body: '',
@@ -34,20 +57,20 @@ export function emptyArticle() {
   };
 }
 
-export function toSlug(value) {
+export function toSlug(value: string): string {
   return value.normalize('NFKD').toLowerCase()
     .replace(/[^a-z0-9\u4e00-\u9fff]+/g, '-')
     .replace(/^-|-$/g, '') || 'new-article';
 }
 
-export function encodeBase64(value) {
+export function encodeBase64(value: string): string {
   const bytes = new TextEncoder().encode(value);
   let binary = '';
   bytes.forEach((byte) => { binary += String.fromCharCode(byte); });
   return btoa(binary);
 }
 
-export function toLocalDateTime(value) {
+export function toLocalDateTime(value: string): string {
   if (!value) return '';
   const date = new Date(value);
   if (Number.isNaN(date.getTime())) return value.slice(0, 16);
@@ -55,11 +78,11 @@ export function toLocalDateTime(value) {
   return local.toISOString().slice(0, 16);
 }
 
-export function fromLocalDateTime(value) {
+export function fromLocalDateTime(value: string): string {
   return value ? new Date(value).toISOString() : '';
 }
 
-export function parseArticle(source) {
+export function parseArticle(source: string): Article {
   const match = source.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?/);
   const rawFrontmatter = match?.[1] ?? '';
   const body = match ? source.slice(match[0].length) : source;
@@ -70,17 +93,17 @@ export function parseArticle(source) {
   for (const line of rawFrontmatter.split(/\r?\n/)) {
     const field = line.match(/^([A-Za-z_][\w-]*):\s*(.*)$/);
     if (!field) continue;
-    const [, key, raw] = field;
+    const [, key, raw] = field as [string, keyof Article | string, string];
     if (key === 'tags') value.tags = raw.replace(/^\[|\]$/g, '').split(',').map((tag) => tag.trim()).filter(Boolean);
     else if (key === 'draft') value.draft = raw.trim() === 'true';
-    else if (Object.hasOwn(value, key)) value[key] = raw.replace(/^['"]|['"]$/g, '');
+    else if (Object.hasOwn(value, key)) (value as unknown as Record<string, unknown>)[key] = raw.replace(/^['"]|['"]$/g, '');
   }
   value.savedContent = serializeArticle(value);
   return value;
 }
 
-export function serializeArticle(article) {
-  const known = {
+export function serializeArticle(article: Article): string {
+  const known: Record<string, string> = {
     date: article.date,
     slug: article.slug,
     title: article.title,
@@ -92,20 +115,20 @@ export function serializeArticle(article) {
     publish_at: article.publish_at,
     unpublish_at: article.unpublish_at,
   };
-  const seen = new Set();
+  const seen = new Set<string>();
   const lines = article.rawFrontmatter.split(/\r?\n/).filter(Boolean).map((line) => {
     const match = line.match(/^([A-Za-z_][\w-]*):/);
     if (!match || !(match[1] in known)) return line;
     seen.add(match[1]);
     return known[match[1]] ? `${match[1]}: ${known[match[1]]}` : null;
-  }).filter(Boolean);
+  }).filter((line): line is string => Boolean(line));
   for (const [key, value] of Object.entries(known)) {
     if (!seen.has(key) && value) lines.push(`${key}: ${value}`);
   }
   return `---\n${lines.join('\n')}\n---\n\n${article.body.trim()}\n`;
 }
 
-export function inferDescription(body) {
+export function inferDescription(body: string): string {
   return body.replace(/<[^>]+>/g, '').replace(/!\[[^\]]*\]\([^)]*\)/g, '')
     .replace(/\[[^\]]+\]\([^)]*\)/g, (match) => match.slice(1, match.indexOf(']')))
     .replace(/^#{1,6}\s+/gm, '').replace(/[`*_>-]/g, '').replace(/\s+/g, ' ').trim().slice(0, 160);
@@ -113,13 +136,20 @@ export function inferDescription(body) {
 
 const TAG_KEYWORDS = ['React', 'Vue', 'TypeScript', 'JavaScript', 'Python', 'Rust', 'Go', 'Java', 'Android', 'AI', 'LLM', 'MCP', 'CSS', 'WebGL', 'GitHub'];
 
-export function inferTags(title, body) {
+export function inferTags(title: string, body: string): string[] {
   const text = `${title} ${body}`.toLowerCase();
   return TAG_KEYWORDS.filter((keyword) => text.includes(keyword.toLowerCase())).slice(0, 6);
 }
 
-export function auditArticle(article, articles) {
-  const issues = [];
+export type AuditLevel = 'warn' | 'error';
+
+export interface AuditIssue {
+  level: AuditLevel;
+  text: string;
+}
+
+export function auditArticle(article: Article, articles: Article[]): AuditIssue[] {
+  const issues: AuditIssue[] = [];
   if (article.title.trim().length < 6) issues.push({level: 'warn', text: '标题较短，建议至少 6 个字符。'});
   if (article.title.length > 60) issues.push({level: 'warn', text: '标题超过 60 个字符，搜索结果可能被截断。'});
   if (!article.description) issues.push({level: 'error', text: '缺少文章摘要。'});
@@ -145,7 +175,13 @@ export function auditArticle(article, articles) {
   return issues;
 }
 
-export function articleMetrics(body) {
+export interface ArticleMetrics {
+  count: number;
+  minutes: number;
+  headings: Array<{level: number; title: string}>;
+}
+
+export function articleMetrics(body: string): ArticleMetrics {
   const plain = body.replace(/```[\s\S]*?```/g, '').replace(/<[^>]+>/g, '').replace(/[#>*_`\[\]()!-]/g, ' ');
   const chinese = (plain.match(/[\u4e00-\u9fff]/g) || []).length;
   const words = (plain.match(/[A-Za-z0-9]+/g) || []).length;

@@ -4,7 +4,7 @@
 import {useState} from 'react';
 import styles from '../../pages/admin/styles.module.css';
 
-export default function ConnectCard({onConnect}) {
+export default function ConnectCard({onConnect}: {onConnect: (token: string) => void}) {
   const [token, setToken] = useState('');
   return (
     <div className={styles.connectCard}>

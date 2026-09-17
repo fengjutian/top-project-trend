@@ -2,8 +2,9 @@
 
 import ExactMdxPreview from './ExactMdxPreview';
 import styles from '../../pages/admin/styles.module.css';
+import type {Article} from '../lib/article';
 
-export default function ArticlePreview({article}) {
+export default function ArticlePreview({article}: {article: Article}) {
   return (
     <article className={styles.preview}>
       <div className={styles.previewMeta}>{article.date} · {article.tags.join(' / ')}</div>
