@@ -2,6 +2,7 @@
 // Note: type annotations allow type checking and IDEs autocompletion
 
 const {themes: prismThemes} = require('prism-react-renderer');
+const path = require('path');
 const lightCodeTheme = prismThemes.github;
 const darkCodeTheme = prismThemes.dracula;
 
@@ -357,5 +358,23 @@ const config = {
       },
     }),
 };
+
+module.exports = config;
+
+// Add Tailwind CSS for the admin panel
+function tailwindPlugin(context, options) {
+  return {
+    name: 'tailwind-plugin',
+    configurePostCss(postcssOptions) {
+      postcssOptions.plugins = [
+        ...(postcssOptions.plugins || []),
+        require(path.resolve(__dirname, 'node_modules/.pnpm/tailwindcss@3.4.19_yaml@2.9.1/node_modules/tailwindcss/lib/plugin.js')),
+      ];
+      return postcssOptions;
+    },
+  };
+}
+
+config.plugins = [...(config.plugins || []), tailwindPlugin];
 
 module.exports = config;
