@@ -377,4 +377,29 @@ function tailwindPlugin(context, options) {
 
 config.plugins = [...(config.plugins || []), tailwindPlugin];
 
+// Workaround: @easyops-cn/docusaurus-search-local@0.55.3 hoists an old
+// @docusaurus/plugin-content-docs@2.0.1 which lacks DocsPreferredVersionContextProvider.
+// Redirect its client entry to the project's Docusaurus 3.10.2 build.
+function searchCompatPlugin() {
+  const docsClient = path.resolve(
+    __dirname,
+    'node_modules/.pnpm/@docusaurus+plugin-content-docs@3.10.2_@mdx-js+react@3.1.1_@types+react@18.3.31_react@18.3.1__2xtxk2kjcxqqoyk2bhylfskphi/node_modules/@docusaurus/plugin-content-docs/lib/client/index.js'
+  );
+  return {
+    name: 'search-compat-plugin',
+    configureWebpack(config) {
+      return {
+        resolve: {
+          alias: {
+            ...(config.resolve && config.resolve.alias),
+            '@docusaurus/plugin-content-docs/client': docsClient,
+          },
+        },
+      };
+    },
+  };
+}
+
+config.plugins = [...(config.plugins || []), searchCompatPlugin];
+
 module.exports = config;
