@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-09-16T09:42:33.494Z",
+  "generatedAt": "2026-09-18T01:59:33.164Z",
   "summary": {
-    "total": 423,
-    "size": 46850278,
+    "total": 429,
+    "size": 47153043,
     "oversized": 0,
     "tooWide": 0,
-    "unreferenced": 16,
+    "unreferenced": 0,
     "duplicateGroups": 47
   },
   "duplicates": [
@@ -829,6 +829,14 @@
       "referenced": true,
       "width": 1380,
       "height": 916
+    },
+    {
+      "path": "content/blog/imgs/graphify.webp",
+      "size": 33116,
+      "hash": "ad3ba3e87ae9faab66d48aa0c48d4fbda5cc2a52667a3d161c6f24c38502f324",
+      "referenced": true,
+      "width": 1280,
+      "height": 634
     },
     {
       "path": "content/blog/imgs/helium.webp",
@@ -2042,7 +2050,7 @@
       "path": "content/blog/static/imgs/下载.png",
       "size": 157766,
       "hash": "b7617ccfd10ff84f70aadde87c7669b796bb8d7b2877f88fbc369e78bf1c8f80",
-      "referenced": false,
+      "referenced": true,
       "width": 1182,
       "height": 598
     },
@@ -2383,6 +2391,14 @@
       "height": 962
     },
     {
+      "path": "content/blog/static/system-design-notes.webp",
+      "size": 38312,
+      "hash": "040be91b63bea8e8221c323e2229fe4e36a67c3b707a182f44203972848e0d83",
+      "referenced": true,
+      "width": 1280,
+      "height": 718
+    },
+    {
       "path": "content/blog/static/tanstack-db.webp",
       "size": 23326,
       "hash": "ed653e55f75aa03ef5071669215b1d0d232eebad0ac0a78ed3409c7a99f11445",
@@ -2631,6 +2647,14 @@
       "height": 450
     },
     {
+      "path": "content/llm/static/agentic-ai-engineering.webp",
+      "size": 16216,
+      "hash": "a54483e335ea8c60a22a2718f723d305b2cedc7336b021e31382373756080bb3",
+      "referenced": true,
+      "width": 1280,
+      "height": 634
+    },
+    {
       "path": "content/llm/static/Archon.webp",
       "size": 32468,
       "hash": "9402bfef6ece599cffe9e2b87e26f4e2139d6c0c735eac7e033f13a87f10a9c6",
@@ -2645,6 +2669,14 @@
       "referenced": true,
       "width": 1500,
       "height": 500
+    },
+    {
+      "path": "content/llm/static/claude-howto.png",
+      "size": 157911,
+      "hash": "d0fa66fda947730b688726cc891bda34ccf67376cbf5e49fc35e16e32fda9cc5",
+      "referenced": true,
+      "width": 1376,
+      "height": 664
     },
     {
       "path": "content/llm/static/docutranslate.png",
@@ -3306,7 +3338,7 @@
       "path": "content/static-website/static/imgs/下载.png",
       "size": 157766,
       "hash": "b7617ccfd10ff84f70aadde87c7669b796bb8d7b2877f88fbc369e78bf1c8f80",
-      "referenced": false,
+      "referenced": true,
       "width": 1182,
       "height": 598
     },
@@ -3338,7 +3370,7 @@
       "path": "content/static-website/static/magicui.png",
       "size": 121379,
       "hash": "6ead82b4aa31848b0fa554cb7f55f2065e9e8c6f2656b7ee4d58020d8e599c42",
-      "referenced": false,
+      "referenced": true,
       "width": 1912,
       "height": 962
     },
@@ -3415,6 +3447,22 @@
       "height": 962
     },
     {
+      "path": "content/static-website/static/storm.webp",
+      "size": 24062,
+      "hash": "8b4624dda2d95ee6b92af42a9a9bc29ccdc58c093714a0f0e9c6f74b0e1aabbb",
+      "referenced": true,
+      "width": 1280,
+      "height": 634
+    },
+    {
+      "path": "content/static-website/static/tailcat.webp",
+      "size": 33148,
+      "hash": "ff16fe43f7141bf44408bd25b40f507791ab90985a49ca64ee540050901bfaf4",
+      "referenced": true,
+      "width": 1280,
+      "height": 634
+    },
+    {
       "path": "content/static-website/static/tldraw.png",
       "size": 95053,
       "hash": "9740da4c06d28068c4b7a5d047dc560b5601fdba10f835e5950d26b50435db17",
@@ -3482,7 +3530,7 @@
       "path": "static/img/banner.png",
       "size": 67856,
       "hash": "7bd52443f45efcca98de843409e0e38a8573d7af5f67c91437b668376ce0d188",
-      "referenced": false,
+      "referenced": true,
       "width": 2486,
       "height": 516
     },
@@ -3490,7 +3538,7 @@
       "path": "static/img/dinosaur-animated.svg",
       "size": 3457,
       "hash": "4c1ae2d4ba86212f6bfc71681dd574070eeec6150ada4807f95bef9424a5f906",
-      "referenced": false
+      "referenced": true
     },
     {
       "path": "static/img/dinosaur-cute.svg",
@@ -3508,7 +3556,7 @@
       "path": "static/img/dinosaur-logo.svg",
       "size": 1659,
       "hash": "b6cd8061c0bddd70c565f05af62e29b03f2b26b0fc47a21d3fb2d036daf0d5c0",
-      "referenced": false
+      "referenced": true
     },
     {
       "path": "static/img/docusaurus.jpg",
@@ -3522,7 +3570,7 @@
       "path": "static/img/docusaurus.png",
       "size": 5142,
       "hash": "9204212d3905bc1b8d1d882825d1eceb5ad942329222277d7257831a7d47d827",
-      "referenced": false,
+      "referenced": true,
       "width": 200,
       "height": 200
     },
@@ -3530,7 +3578,7 @@
       "path": "static/img/favicon-fengjutian.svg",
       "size": 646,
       "hash": "9a8e2137e73694cd9839c6b127a747b3db2b7dad29e12bb37e612593944a0d9f",
-      "referenced": false
+      "referenced": true
     },
     {
       "path": "static/img/fengjutian-animated.svg",
@@ -3542,49 +3590,49 @@
       "path": "static/img/fengjutian-logo-square.svg",
       "size": 653,
       "hash": "6f73f093dfe624ae71e4fbcf4de75e0f9e1ceb31ec8626a23f6deedef9177ec2",
-      "referenced": false
+      "referenced": true
     },
     {
       "path": "static/img/fengjutian-logo.svg",
       "size": 637,
       "hash": "944ff39f7702d46580bb8df3af367380b9a3d8899d4bb813dbc1787599b14aa6",
-      "referenced": false
+      "referenced": true
     },
     {
       "path": "static/img/fengjutian-modern.svg",
       "size": 817,
       "hash": "c61fbd88022cd1fdf91a30c89dd848e192347e1065cf6f52fc5ee307c5d707f9",
-      "referenced": false
+      "referenced": true
     },
     {
       "path": "static/img/fengjutian-simple.svg",
       "size": 637,
       "hash": "f684ab34c3a87972252eedd9c53c8ab72e2114d72f547c564dfba4f890623422",
-      "referenced": false
+      "referenced": true
     },
     {
       "path": "static/img/logo.svg",
       "size": 6438,
       "hash": "c2ae4b0e5603791e869ed5bc34a60a709d1ec6343fc22f75d97937aaafafd7f7",
-      "referenced": false
+      "referenced": true
     },
     {
       "path": "static/img/undraw_docusaurus_mountain.svg",
       "size": 31657,
       "hash": "4cb7e390a137da7952f2e97da3edb1a1582040249f986abf05973c24dc54bbb1",
-      "referenced": false
+      "referenced": true
     },
     {
       "path": "static/img/undraw_docusaurus_react.svg",
       "size": 36172,
       "hash": "5d0b0c45c60d5c18e435156f4056aafd476be018d1f24e8b3b767b86ade82ff9",
-      "referenced": false
+      "referenced": true
     },
     {
       "path": "static/img/undraw_docusaurus_tree.svg",
       "size": 11927,
       "hash": "17dec0d95da84caa5b7ea20f776d51ca79cab14a09fdedb92a307fe503acb471",
-      "referenced": false
+      "referenced": true
     }
   ]
 }
