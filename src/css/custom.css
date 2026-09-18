@@ -229,6 +229,23 @@ a:hover {
   border-right: 1px solid rgba(139, 92, 246, 0.2);
 }
 
+/* blog 侧栏：隐藏 year 分组标题（2026/2025），保留文章条目 */
+.blog-sidebar .menu__list-item-collapsible {
+  display: none;
+}
+.blog-sidebar .menu__list-item:not(.menu__list-item-collapsible) {
+  margin-left: 0;
+}
+/* 侧栏标题：单行 + 省略号 */
+.blog-sidebar .menu__link,
+.theme-doc-sidebar-container .menu__link {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
 /* 页脚美化 - Vue Bits 风格 */
 .footer {
   background: var(--ifm-footer-background-color);
@@ -358,6 +375,21 @@ a:hover {
 }
 
 /* Article reading experience */
+
+/* 防止 navbar 链接（特别是含外链 icon 的 GitHub）换行 + 垂直居中 */
+.navbar__items .navbar__item,
+.navbar__items .navbar__link {
+  white-space: nowrap;
+}
+
+/* 含外链 icon 的 navbar link：让 label 和 svg 垂直居中对齐 */
+.navbar__items .navbar__link[target="_blank"],
+.navbar__items .navbar__link[href^="http"] {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
 :root {
   --site-content-width: 1440px;
   --article-content-width: 920px;
