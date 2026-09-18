@@ -12,7 +12,6 @@ const config = {
   url: 'https://fengjutian.github.io',
   baseUrl: '/top-project-trend/',
   onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
   favicon: 'img/dinosaur-favicon.svg',
 
   // GitHub pages deployment config.
@@ -202,6 +201,11 @@ const config = {
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
+  },
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -380,19 +384,30 @@ config.plugins = [...(config.plugins || []), tailwindPlugin];
 // Workaround: @easyops-cn/docusaurus-search-local@0.55.3 hoists an old
 // @docusaurus/plugin-content-docs@2.0.1 which lacks DocsPreferredVersionContextProvider.
 // Redirect its client entry to the project's Docusaurus 3.10.2 build.
+// Also pin the mark.js path used by search-local's generated.js so it resolves
+// on Windows (JSON.stringify produces backslashed absolute paths in `export ... from`).
 function searchCompatPlugin() {
   const docsClient = path.resolve(
     __dirname,
     'node_modules/.pnpm/@docusaurus+plugin-content-docs@3.10.2_@mdx-js+react@3.1.1_@types+react@18.3.31_react@18.3.1__2xtxk2kjcxqqoyk2bhylfskphi/node_modules/@docusaurus/plugin-content-docs/lib/client/index.js'
   );
+  const markJsEntry = path.resolve(
+    __dirname,
+    'node_modules/.pnpm/mark.js@8.11.1/node_modules/mark.js/dist/mark.js'
+  );
+  // search-local's generate.js emits `export { default as Mark } from "<abs path with \\>"`.
+  // Webpack on Windows can fail to resolve that. Pre-create a normal module id by aliasing
+  // the absolute path through a webpack alias keyed on the resolved require.resolve result.
   return {
     name: 'search-compat-plugin',
     configureWebpack(config) {
+      const existingAlias = (config.resolve && config.resolve.alias) || {};
       return {
         resolve: {
           alias: {
-            ...(config.resolve && config.resolve.alias),
+            ...existingAlias,
             '@docusaurus/plugin-content-docs/client': docsClient,
+            [markJsEntry]: markJsEntry,
           },
         },
       };
