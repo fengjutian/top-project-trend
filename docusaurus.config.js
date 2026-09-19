@@ -384,33 +384,56 @@ config.plugins = [...(config.plugins || []), tailwindPlugin];
 // Workaround: @easyops-cn/docusaurus-search-local@0.55.3 hoists an old
 // @docusaurus/plugin-content-docs@2.0.1 which lacks DocsPreferredVersionContextProvider.
 // Redirect its client entry to the project's Docusaurus 3.10.2 build.
-// Also pin the mark.js path used by search-local's generated.js so it resolves
-// on Windows (JSON.stringify produces backslashed absolute paths in `export ... from`).
+//
+// IMPORTANT: never hardcode the pnpm store hash directory — pnpm generates
+// different hashes per platform / dep graph (local Windows hash was
+// `2xtxk2kjcxqqoyk2bhylfskphi`, Vercel Linux container produced
+// `54jvbfe625wlbp52zisa63tyxu`). Hardcoded paths silently break on every
+// environment where the hash differs. Resolve dynamically instead.
 function searchCompatPlugin() {
+  const fs = require('fs');
+  const pnpmStoreDir = path.resolve(__dirname, 'node_modules/.pnpm');
+  const entries = fs.readdirSync(pnpmStoreDir);
+
+  const docsClientMatch = entries.find((name) =>
+    name.startsWith('@docusaurus+plugin-content-docs@3.10.2_')
+  );
+  if (!docsClientMatch) {
+    throw new Error(
+      `[search-compat-plugin] Cannot find @docusaurus/plugin-content-docs@3.10.2 in pnpm store at ${pnpmStoreDir}. ` +
+      `Run \`pnpm install\` first.`
+    );
+  }
   const docsClient = path.resolve(
-    __dirname,
-    'node_modules/.pnpm/@docusaurus+plugin-content-docs@3.10.2_@mdx-js+react@3.1.1_@types+react@18.3.31_react@18.3.1__2xtxk2kjcxqqoyk2bhylfskphi/node_modules/@docusaurus/plugin-content-docs/lib/client/index.js'
+    pnpmStoreDir,
+    docsClientMatch,
+    'node_modules/@docusaurus/plugin-content-docs/lib/client/index.js'
   );
-  const markJsEntry = path.resolve(
-    __dirname,
-    'node_modules/.pnpm/mark.js@8.11.1/node_modules/mark.js/dist/mark.js'
-  );
+
   // search-local's generate.js emits `export { default as Mark } from "<abs path with \\>"`.
-  // Webpack on Windows can fail to resolve that. Pre-create a normal module id by aliasing
-  // the absolute path through a webpack alias keyed on the resolved require.resolve result.
+  // Webpack on Windows can fail to resolve that backslashed absolute path. Pre-create a
+  // normal module id by aliasing the absolute path through a webpack alias keyed on the
+  // resolved file. The mark.js hash also varies by env, so look it up dynamically too.
+  const markJsMatch = entries.find((name) => {
+    if (!name.startsWith('mark.js@')) return false;
+    return fs.existsSync(
+      path.resolve(pnpmStoreDir, name, 'node_modules/mark.js/dist/mark.js')
+    );
+  });
+  const markJsEntry = markJsMatch
+    ? path.resolve(pnpmStoreDir, markJsMatch, 'node_modules/mark.js/dist/mark.js')
+    : null;
+
   return {
     name: 'search-compat-plugin',
     configureWebpack(config) {
       const existingAlias = (config.resolve && config.resolve.alias) || {};
-      return {
-        resolve: {
-          alias: {
-            ...existingAlias,
-            '@docusaurus/plugin-content-docs/client': docsClient,
-            [markJsEntry]: markJsEntry,
-          },
-        },
+      const alias = {
+        ...existingAlias,
+        '@docusaurus/plugin-content-docs/client': docsClient,
       };
+      if (markJsEntry) alias[markJsEntry] = markJsEntry;
+      return { resolve: { alias } };
     },
   };
 }
